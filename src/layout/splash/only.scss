@@ -1,0 +1,39 @@
+@mixin align-states {
+  &_middle-center,
+  &_center-middle {
+    @extend %center-middles;
+  }
+
+  &_center {
+    @extend %centers;
+  }
+
+  &_middle {
+    @extend %middles;
+  }
+}
+
+@mixin splash-rule($options: null) {
+  $options: rule-arguments($options, z-index);
+  $selector: map-get($options, selector);
+  $z-index: map-get-if($options, z-index, 1000);
+  @at-root #{$selector} {
+    &-splash {
+      @include position-fixed($z-index);
+      &-wrap {
+        @include align-states;
+      }
+      @content;
+    }
+  }
+}
+
+@mixin splash-child-rule($options: null) {
+  @include splash-rule(
+                  arguments(
+                                  $options,
+                                  z-index,
+                                  (parent-selector: unquote("#{&}"))
+                  )
+  );
+}

@@ -1,0 +1,113 @@
+@import '../layout/vars';
+
+// frame rule
+@mixin frame-rule($options: null) {
+  $options: rule-args($options, max-width);
+
+  $standard-width: map-get-if($options, standard-width, $__layout-standard-width);
+  $max-width: map-get-if($options, max-width, $standard-width);
+  $min-width: map-get-if($options, min-width, $__layout-min-width);
+
+  $side-width: map-get-if($options, side-width);
+
+  $sticky-resize: map-get-if($options, sticky-resize, $__layout-sticky-resize);
+
+  $query: map-get($options, query);
+  $parent-query: unquote("#{&}");
+
+  @if not ends-width($query, '-') {
+    $query: $query + '-';
+  }
+
+  $id-query: '#' + map-get($options, query-string);
+
+  $containers: #{$id-query + '-head'}, #{$id-query + '-main'}, #{$id-query + '-foot'};
+
+  $wrappers: #{$id-query+'-head-wrap'}, #{$id-query+'-main-wrap'}, #{$id-query+'-foot-wrap'};
+
+  @at-root {
+    #{$containers} {
+      @include ie610 {
+        text-align: left;
+      }
+    }
+
+    #{$query+'width'},
+    #{$wrappers} {
+      min-width: px($min-width);
+      max-width: px($max-width);
+      margin: 0 auto;
+
+      @include ie610 {
+        width: px($max-width);
+      }
+
+      $last-sticky-width: null;
+      @each $width in $__layout-widths {
+        $main-width: $width - $side-width;
+        // stick resizing width
+        @if ($sticky-resize) {
+          @if ($width >= $standard-width and $width <= $max-width) {
+            @include mq-min($width) {
+              max-width: px($main-width);
+            }
+            $last-sticky-width: $width;
+          }
+        }
+      }
+      /*
+      // if you use side, add maximum size as wish
+      @if $side-width and $last-sticky-width {
+        $width: $last-sticky-width + $side-width;
+        @include mq-min($width) {
+          max-width: px($width);
+        }
+      }
+      */
+    }
+
+    %width-resize {
+      max-width: inherit;
+    }
+
+    @if $side-width {
+      #{$containers} {
+        padding-left: px($side-width);
+      }
+
+      #{$query+'side'},
+      #{$id-query+'-side'} {
+        width: px($side-width);
+        position: fixed;
+        top: 0;
+        left: 0;
+
+        &#{$containers},
+        #{$containers} {
+          padding-left: inherit;
+        }
+
+        &#{$wrappers},
+        #{$wrappers} {
+          @extend %width-resize;
+          min-width: inherit;
+        }
+      }
+
+    }
+
+    #{$query+'resize'} {
+      #{$containers} {
+        @extend %width-resize;
+      }
+    }
+
+    /*
+    #{$containers+$query} {
+      &resize {
+        @extend %width-resize;
+      }
+    }
+    */
+  }
+}

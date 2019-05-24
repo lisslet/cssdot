@@ -1,0 +1,36 @@
+@import '../scss';
+
+@mixin layout-vendors-rule($options: ()) {
+
+  $li-gap: map-get-if($options, li-gap, 1.25em);
+  $dt-gap: map-get-if($options, dt-gap, 0.313em);
+
+  .vendors {
+
+    &, dl {
+      font-size: 0;
+    }
+
+    li,
+    dl,
+    dt,
+    dd {
+      @include -d-ib;
+    }
+
+    li {
+      @include right-gap($li-gap);
+    }
+
+    li, dt, dd {
+      @include -fs-r();
+    }
+
+    dt {
+      margin-right: $dt-gap;
+      i {
+        font-style: normal;
+      }
+    }
+  }
+}

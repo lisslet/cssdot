@@ -1,0 +1,108 @@
+@function --lift-get-step($min, $max, $total-step, $step) {
+  @if $step > 0 {
+    @return to-fixed($min + ((($max - $min) / $total-step) * $step), 2);
+  }
+  @return $min;
+}
+
+@function --lift-get-rgba($color, $min, $max, $total-step, $step) {
+  @if $step > 0 {
+    @return rgba($color, --lift-get-step($min, $max, $total-step, $step));
+  }
+  @return rgba($color, $min);
+}
+
+@function --lift-get-shadows($color, $limit) {
+  $bottom-color: rgba($color, 0.14);
+  $bottom-alpha-min: 0.3;
+  $bottom-alpha-max: 0.4;
+
+  $glow-min: 3px;
+  $glow-max: 48px * 2;
+  $glow-alpha-min: 0.12;
+  $glow-alpha-max: 0.24;
+
+  $shadow-alpha-min: 0.12;
+  $shadow-alpha-max: 0.36;
+  $shadow-min: 1px;
+  $shadow-max: (48 * 4);
+
+
+  $limit-before: $limit - 1;
+
+  $shadows: ();
+
+  @for $level from 1 through $limit {
+
+    $level-before: $level - 1;
+
+    $bottom-color: --lift-get-rgba($color, $bottom-alpha-min, $bottom-alpha-max, $limit-before, $level-before);
+    $bottom-fix: 1px;
+    $bottom-fix2: 1px;
+
+    $glow-color: --lift-get-rgba($color, $glow-alpha-min, $glow-alpha-max, $limit-before, $level-before);
+    $glow-range: --lift-get-step($glow-min, $glow-max, $limit-before, $level-before);
+    $glow-y: round($glow-range / $limit * round($level / 1.5));
+
+    $shadow-range: --lift-get-step($shadow-min, $shadow-max, $limit-before, $level-before);
+    $shadow-y: round($shadow-range / $limit * 1.2);
+
+    $shadow-color: --lift-get-rgba($color, $shadow-alpha-min, $shadow-alpha-max, $limit-before, $level-before);
+
+    $lifted: (0 $glow-y $glow-range $glow-color, 0 2px $bottom-fix #{'-'+$bottom-fix2} $bottom-color, 0 $shadow-y $shadow-range $shadow-color);
+    $shadows: append($shadows, $lifted);
+  }
+  @return $shadows;
+}
+
+@function --lift-get-hover-selector($level, $hover-level) {
+  @return $level + '-' + $hover-level;
+}
+
+@mixin lift-rule($options: null) {
+  $options: rule-arguments($options, null, lift);
+
+  $selector: map-get($options, selector);
+
+  $color: map-get-if($options, color, #000);
+  $limit: 10;
+  $hover-step: 2;
+  $hover-limit: $limit + $hover-step + 1;
+
+  $shadows: --lift-get-shadows($color, $hover-limit);
+
+  @for $level from 1 through $hover-limit {
+    %shadow#{$level} {
+      box-shadow: nth($shadows, $level);
+      @include trans(box-shadow);
+    }
+  }
+
+  @for $level from 1 through $limit+1 {
+    @at-root {
+      #{$selector+$level} {
+        @extend %shadow#{$level};
+      }
+
+
+      $next-level: $level + $hover-step;
+      #{$selector+$level+'_next'} {
+        @extend %shadow#{$level};
+
+        &:hover {
+          @extend %shadow#{$next-level};
+        }
+      }
+
+      @for $hover-level from $level + 1 through $limit {
+        #{$selector+$level+'-'+ ($hover-level)} {
+          @extend %shadow#{$level};
+
+          &:hover {
+            @extend %shadow#{$hover-level};
+          }
+        }
+      }
+    }
+  }
+}

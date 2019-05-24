@@ -1,0 +1,57 @@
+$dot-imported-mixin-extenders: true !default;
+
+%floats {
+  @include float;
+}
+
+%indents {
+  @include indent;
+}
+
+%outdents {
+  @include outdent;
+}
+
+%hides {
+  @include hide;
+}
+
+%shows {
+  @include show;
+}
+
+%ellipsises {
+  @include ellipsis;
+}
+
+%middles {
+  @include middle;
+}
+
+%centers {
+  @include center;
+}
+
+%center-middles {
+  @include center-middle;
+}
+
+%middle-centers {
+  @include center-middle;
+}
+
+%respond-squares {
+  @include respond-height(100%);
+}
+
+%inline-blocks {
+  @include -d-ib();
+}
+
+%position-fulls {
+  @include position-full;
+}
+
+%position-fixeds {
+  @include position-fixed;
+}

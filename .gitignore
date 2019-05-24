@@ -1,0 +1,25 @@
+*~
+
+# OS
+.DS_Store*
+thumbs.db
+Icon?
+Thumbs.db
+
+# node.js
+node_modules/
+.npmignore
+package-lock.json
+
+# PHP Composer
+vendor/
+composer.lock
+
+# IDEA
+.idea/
+.ssh/
+tests/
+test/
+**/*.css.map
+
+sassdoc/

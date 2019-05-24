@@ -1,0 +1,19 @@
+@mixin pagebar-rule($options) {
+  $options: dot-rule-initiate($options, 'pagebar');
+
+  $selector: map-get($options, 'selector');
+
+  @at-root #{$selector} {
+    text-align: center;
+    font-size: 0;
+    li {
+      display: inline-block;
+      font-size: 1rem;
+    }
+
+    a {
+      margin: 0 0.313em;
+      padding: 0.313em;
+    }
+  }
+}

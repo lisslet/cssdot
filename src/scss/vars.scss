@@ -1,0 +1,27 @@
+$dot-imported-vars: true !default;
+$__alphabet-map: (a: A, b: B, c: C, d: D, e: E, f: F, g: G, h: H, i: I, j: J, k: K, l: L, m: M, n: N, o: O, p: P, q: Q, r: R, s: S, t: T, u: U, v: V, w: W, x: X, y: Y, z: Z) !default;
+$__number-map: ('0': 0, '1': 1, '2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7, '8': 8, '9': 9) !default;
+$__unit-map: ('px': 1px, 'cm': 1cm, 'mm': 1mm, '%': 1%, 'ch': 1ch, 'pc': 1pc, 'in': 1in, 'em': 1em, 'rem': 1rem, 'pt': 1pt, 'ex': 1ex, 'vw': 1vw, 'vh': 1vh, 'vmin': 1vmin, 'vmax': 1vmax) !default;
+
+$__units: map-keys($__unit-map) !default;
+$__numbers: map-keys($__number-map) !default;
+$__uppercases: map-values($__alphabet-map) !default;
+$__lowercases: map-keys($__alphabet-map) !default;
+$__alphabets: join($__uppercases, $__lowercases) !default;
+$__chars: join($__alphabets, $__numbers) !default;
+
+$__aspect-ratios: (
+        32: 66.66%,
+        43: 75%,
+        85: 62.5%,
+        169: 56.25%,
+        1610: 62.5%,
+        219: 42.85%
+) !default;
+
+$__query-prefix: dot !default;
+$__width_selector_glue: -at- !default;
+
+/// default duration of animation, transition
+$__global_duration: 0.3s !default;
+$__global_gap: 22px;

@@ -1,0 +1,51 @@
+.dot-box {
+  display: block;
+  background-color: #fff;
+  box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12); }
+  .dot-boxes .dot-box {
+    margin-bottom: 22px; }
+    .dot-boxes .dot-box:last-child {
+      margin-bottom: 0; }
+  .dot-box_full {
+    height: 100%; }
+  .dot-box-pad {
+    padding: 1.256rem; }
+  .dot-box-media {
+    position: relative; }
+    .dot-box-media {
+      position: relative; }
+      .dot-box-media .dot-box-media32, .dot-box-media .dot-box-media43, .dot-box-media .dot-box-media85, .dot-box-media .dot-box-media169, .dot-box-media .dot-box-media1610, .dot-box-media .dot-box-media219 {
+        position: relative;
+        height: 0; }
+      .dot-box-media32 {
+        padding-bottom: 66.66%;
+        position: relative; }
+        .dot-box-media32 .ratio-wrap {
+          position: absolute; }
+      .dot-box-media43 {
+        padding-bottom: 75%;
+        position: relative; }
+        .dot-box-media43 .ratio-wrap {
+          position: absolute; }
+      .dot-box-media85 {
+        padding-bottom: 62.5%;
+        position: relative; }
+        .dot-box-media85 .ratio-wrap {
+          position: absolute; }
+      .dot-box-media169 {
+        padding-bottom: 56.25%;
+        position: relative; }
+        .dot-box-media169 .ratio-wrap {
+          position: absolute; }
+      .dot-box-media1610 {
+        padding-bottom: 62.5%;
+        position: relative; }
+        .dot-box-media1610 .ratio-wrap {
+          position: absolute; }
+      .dot-box-media219 {
+        padding-bottom: 42.85%;
+        position: relative; }
+        .dot-box-media219 .ratio-wrap {
+          position: absolute; }
+      .dot-box-media .dot-box-wrap {
+        position: absolute; }

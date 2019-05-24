@@ -1,0 +1,308 @@
+@import 'mixins/hack';
+
+@mixin -h($value) {
+  height: $value;
+  line-height: $value;
+}
+
+@mixin -d-ib() {
+  display: inline-block;
+  @include ie10 {
+    display: inline;
+  }
+}
+
+@mixin rem($property, $size) {
+  $size: to-number($size, true);
+  $rem-size: $size;
+  @if ($size > 10) {
+    $rem-size: ($size / 16) * 1;
+  } @else {
+    $size: $size * 16;
+  }
+
+  #{$property}: #{$size}px;
+  #{$property}: #{$rem-size}rem;
+}
+
+@mixin -fs-r($value:1) {
+  @include rem(font-size, $value);
+}
+
+@mixin -lh-r($value:1) {
+  @include rem(line-height, $value);
+}
+
+@mixin mq-width($type, $width) {
+  $width: px($width);
+  @media only screen and (#{$type}-width: $width) {
+    @content;
+  }
+}
+
+@mixin mq-min($width) {
+  @include mq-width('min', $width) {
+    @content;
+  }
+}
+
+@mixin mq-max($width) {
+  @include mq-width('max', $width) {
+    @content;
+  }
+}
+
+@mixin ratio-query($type, $ratio) {
+  @media only screen and (#{$type}-aspect-ratio: $ratio) {
+    @content;
+  }
+}
+
+@mixin min-ratio-query($ratio) {
+  @include ratio-query('max', $ratio) {
+    @content;
+  }
+}
+
+@mixin min-ratio-query($ratio) {
+  @include ratio-query('min', $ratio) {
+    @content;
+  }
+}
+
+@mixin media($width) {
+}
+
+@mixin media-map($property, $map) {
+  @each $width, $value in $map {
+    @include media-min($width) {
+      #{$property}: $value;
+    }
+  }
+}
+
+@mixin float($ie: true) {
+  @if $ie {
+    zoom: #{"expression(this.style.zoom=1, this.innerHTML+='<div style=\"clear:both;\">')"};
+  }
+
+  &:after {
+    content: '';
+    display: block;
+    clear: both;
+    height: 0;
+  }
+}
+
+@mixin indent() {
+  display: block;
+  text-indent: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+@mixin outdent() {
+  text-indent: 0;
+  overflow: inherit;
+  white-space: normal;
+}
+
+@mixin hide() {
+  position: absolute;
+  top: 0;
+  width: 0;
+  opacity: 0;
+  display: none \9
+;
+}
+
+@mixin show() {
+  position: static;
+  top: inherit;
+  width: auto;
+  opacity: 1;
+  display: block \9
+;
+}
+
+@mixin ellipsis() {
+  display: block;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+@mixin middle() {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@mixin center() {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@mixin center-middle() {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin middle-center {
+  @include center-middle();
+}
+
+@mixin respond-height($height:100%) {
+  height: 0;
+  padding-bottom: $height;
+  position: relative;
+  display: block;
+}
+
+/// set margin like grid-gap
+/// just not set for to the last child.
+@mixin gap($gap: $__global_gap, $to: bottom, $property: margin) {
+  $property: #{$property}-#{$to};
+
+  @if $gap == false {
+    #{$property}: 0;
+    &:last-child {
+      #{$property}: inherit;
+    }
+  } @else {
+    #{$property}: $gap;
+    &:last-child {
+      #{$property}: 0;
+    }
+  }
+}
+
+@mixin top-gap($gap: $__global_gap) {
+  @include gap($gap, top);
+}
+
+@mixin right-gap($gap: $__global_gap) {
+  @include gap($gap, right);
+}
+
+@mixin bottom-gap($gap: $__global_gap) {
+  @include gap($gap, bottom);
+}
+
+@mixin left-gap($gap: $__global_gap) {
+  @include gap($gap, left);
+}
+
+@mixin position-full() {
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@mixin position-fixed($z-index:null) {
+  @include position-full;
+  position: fixed;
+  cursor: progress;
+  @if ($z-index not null) {
+    z-index: $z-index;
+  }
+}
+
+@mixin frames($name) {
+  @at-root {
+    @keyframes #{$name} {
+      @content;
+    }
+  }
+}
+
+/// set animation and keyframes
+/// @param $value [0.3s] the property value of animation
+/// @param $delay the property value of animation-delay
+/// @content keyframes
+@mixin animate($value: $__global_duration, $delay: null) {
+  $name: rand-string();
+  animation: $name $value;
+  @if ($delay) {
+    animation-delay: $delay;
+  }
+  @include frames($name) {
+    @content;
+  }
+}
+
+@mixin animate-delays($interval: 0.1s, $to: 10) {
+  @for $nth from 2 through $to + 1 {
+    &:nth-child(#{$nth}) {
+      $delay: ($nth - 1) * $interval;
+      animation-delay: $delay;
+    }
+  }
+}
+
+@mixin trans($properties, $duration: 0.3s) {
+  transition-duration: $duration;
+  transition-property: zip($properties);
+}
+
+@mixin pseudo-cover() {
+  @include position-full;
+  position: absolute;
+  content: '';
+  display: block;
+  @content;
+}
+
+@mixin before-cover() {
+  &:before {
+    @include pseudo-cover() {
+      @content;
+    }
+  }
+}
+
+@mixin after-cover() {
+  &:after {
+    @include pseudo-cover() {
+      @content;
+    }
+  }
+}
+
+@mixin guide-lines {
+  $colors: (
+          red,
+          green,
+          blue,
+          violet,
+          orange,
+          skyblue,
+          navy
+  );
+
+  $selector: ();
+
+  body {
+    * {
+      outline-style: solid;
+      outline-width: 4px;
+      background-color: rgba(0, 0, 0, 0.05);
+    }
+
+    @each $color in $colors {
+      $selector: append($selector, '*');
+      #{$selector} {
+        outline-color: rgba($color, 0.3);
+      }
+    }
+  }
+}
+
+@import 'mixins/extenders';
+@import 'mixins/decorate';

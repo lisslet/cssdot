@@ -1,0 +1,107 @@
+@import './variables';
+
+@function pick($color, $labels: 'primary') {
+  $labels: if($labels, if(is-not-list($labels), str-split($labels, '-'), $labels), 'primary');
+  $length: length($labels);
+  @if dot-type-of($color, 'theme') {
+    $color: map-get($color, 'palette')
+  }
+
+  @while is-map($color) {
+    $label: 'primary';
+    @if $length > 0 {
+      $label: nth($labels, 1);
+      $labels: shift($labels);
+      $length: $length - 1;
+    }
+
+    $color: map-get($color, $label);
+    // @debug 'Palette => ', $label, $labels, dot-type-of($color);
+  }
+
+  @return $color;
+}
+
+@function palette($values) {
+
+  @if is-color($values) {
+    $values: (
+            'primary': $values
+    );
+  }
+
+  @each $label, $fill in $PALETTE-AUTOFILL {
+    $value: map-get-if($values, $label, null);
+    @if $value == null {
+      @if is-color($fill) {
+        $value: $fill;
+      } @else if is-string($fill) {
+        $value: map-get($values, $fill);
+      } @else if is-map($fill) {
+        $reference: map-get-if($fill, 'reference', 'primary');
+        $reference: pick($values, $reference);
+
+        $method: map-get($fill, 'method');
+        @if $method == 'text' {
+          $value: if(is-safe-with-black($reference), black, white);
+        } @else if $method == 'grayscale' {
+          $value: grayscale($reference);
+        } @else if $method == 'invert' {
+          $value: invert($reference);
+        } @else {
+          // require amount
+          $amount: map-get-if($fill, 'amount', 10%);
+          @if $method == 'tint' {
+            $value: tint($reference, $amount);
+          } @else if ($method == 'shade') {
+            $value: shade($reference, $amount);
+          } @else if ($method == 'contrast') {
+            $value: lighten($reference, $amount);
+          }
+        }
+      }
+
+      $values: map-set($values, $label, $value);
+    }
+  }
+
+  $values: dot-type('palette', $values);
+  @return $values;
+}
+
+@function theme($values) {
+  @if is-color($values) {
+    $values: palette($values);
+  }
+
+  @if dot-type-of($values, 'palette') {
+    $values: ('palette': $values);
+  }
+
+  $values: dot-type('theme', $values);
+  @return $values;
+}
+
+@function -primary($theme) {
+  @return pick($theme, 'primary')
+}
+
+@function -accent($theme) {
+  @return pick($theme, 'accent');
+}
+
+@function -warn($theme) {
+  @return pick($theme, 'warn');
+}
+
+@function -field($theme) {
+  @return pick($theme, 'field');
+}
+
+@function -text($theme) {
+  @return pick($theme, 'text');
+}
+
+@function -link($theme){
+  @return pick($theme, 'link');
+}

@@ -1,0 +1,31 @@
+{
+  "name": "@lisslet/cssdot",
+  "version": "32.3.19",
+  "description": "SASS based CSS Framework",
+  "main": "index.js",
+  "scripts": {
+    "document": "sassdoc src/ --verbose"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/lisslet/cssdot.git"
+  },
+  "keywords": [
+    "CSS",
+    "SASS"
+  ],
+  "author": "protyliss",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lisslet/cssdot/issues"
+  },
+  "homepage": "https://github.com/lisslet/cssdot#readme",
+  "devDependencies": {
+    "gulp": "^4.0.0",
+    "gulp-combine-mq": "^0.4.0",
+    "gulp-load-plugins": "^1.5.0",
+    "gulp-sass": "^4.0.1",
+    "sassdoc": "^2.5.1"
+  },
+  "dependencies": {}
+}

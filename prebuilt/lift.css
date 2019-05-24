@@ -1,0 +1,64 @@
+.dot-lift1, .dot-lift1_next, .dot-lift1-2, .dot-lift1-3, .dot-lift1-4, .dot-lift1-5, .dot-lift1-6, .dot-lift1-7, .dot-lift1-8, .dot-lift1-9, .dot-lift1-10 {
+  box-shadow: 0 0px 3px rgba(0, 0, 0, 0.12), 0 2px 1px -1px rgba(0, 0, 0, 0.3), 0 0px 1px rgba(0, 0, 0, 0.12);
+  transition-duration: 0.3s;
+  transition-property: box-shadow; }
+
+.dot-lift1-2:hover, .dot-lift2, .dot-lift2_next, .dot-lift2-3, .dot-lift2-4, .dot-lift2-5, .dot-lift2-6, .dot-lift2-7, .dot-lift2-8, .dot-lift2-9, .dot-lift2-10 {
+  box-shadow: 0 1px 10.75px rgba(0, 0, 0, 0.13), 0 2px 1px -1px rgba(0, 0, 0, 0.31), 0 2px 16.92px rgba(0, 0, 0, 0.14);
+  transition-duration: 0.3s;
+  transition-property: box-shadow; }
+
+.dot-lift1_next:hover, .dot-lift1-3:hover, .dot-lift2-3:hover, .dot-lift3, .dot-lift3_next, .dot-lift3-4, .dot-lift3-5, .dot-lift3-6, .dot-lift3-7, .dot-lift3-8, .dot-lift3-9, .dot-lift3-10 {
+  box-shadow: 0 3px 18.5px rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.32), 0 3px 32.83px rgba(0, 0, 0, 0.16);
+  transition-duration: 0.3s;
+  transition-property: box-shadow; }
+
+.dot-lift1-4:hover, .dot-lift2_next:hover, .dot-lift2-4:hover, .dot-lift3-4:hover, .dot-lift4, .dot-lift4_next, .dot-lift4-5, .dot-lift4-6, .dot-lift4-7, .dot-lift4-8, .dot-lift4-9, .dot-lift4-10 {
+  box-shadow: 0 6px 26.25px rgba(0, 0, 0, 0.15), 0 2px 1px -1px rgba(0, 0, 0, 0.33), 0 5px 48.75px rgba(0, 0, 0, 0.18);
+  transition-duration: 0.3s;
+  transition-property: box-shadow; }
+
+.dot-lift1-5:hover, .dot-lift2-5:hover, .dot-lift3_next:hover, .dot-lift3-5:hover, .dot-lift4-5:hover, .dot-lift5, .dot-lift5_next, .dot-lift5-6, .dot-lift5-7, .dot-lift5-8, .dot-lift5-9, .dot-lift5-10 {
+  box-shadow: 0 8px 34px rgba(0, 0, 0, 0.16), 0 2px 1px -1px rgba(0, 0, 0, 0.33), 0 6px 64.67px rgba(0, 0, 0, 0.2);
+  transition-duration: 0.3s;
+  transition-property: box-shadow; }
+
+.dot-lift1-6:hover, .dot-lift2-6:hover, .dot-lift3-6:hover, .dot-lift4_next:hover, .dot-lift4-6:hover, .dot-lift5-6:hover, .dot-lift6, .dot-lift6_next, .dot-lift6-7, .dot-lift6-8, .dot-lift6-9, .dot-lift6-10 {
+  box-shadow: 0 13px 41.75px rgba(0, 0, 0, 0.17), 0 2px 1px -1px rgba(0, 0, 0, 0.34), 0 7px 80.58px rgba(0, 0, 0, 0.22);
+  transition-duration: 0.3s;
+  transition-property: box-shadow; }
+
+.dot-lift1-7:hover, .dot-lift2-7:hover, .dot-lift3-7:hover, .dot-lift4-7:hover, .dot-lift5_next:hover, .dot-lift5-7:hover, .dot-lift6-7:hover, .dot-lift7, .dot-lift7_next, .dot-lift7-8, .dot-lift7-9, .dot-lift7-10 {
+  box-shadow: 0 19px 49.5px rgba(0, 0, 0, 0.18), 0 2px 1px -1px rgba(0, 0, 0, 0.35), 0 9px 96.5px rgba(0, 0, 0, 0.24);
+  transition-duration: 0.3s;
+  transition-property: box-shadow; }
+
+.dot-lift1-8:hover, .dot-lift2-8:hover, .dot-lift3-8:hover, .dot-lift4-8:hover, .dot-lift5-8:hover, .dot-lift6_next:hover, .dot-lift6-8:hover, .dot-lift7-8:hover, .dot-lift8, .dot-lift8_next, .dot-lift8-9, .dot-lift8-10 {
+  box-shadow: 0 22px 57.25px rgba(0, 0, 0, 0.19), 0 2px 1px -1px rgba(0, 0, 0, 0.36), 0 10px 112.42px rgba(0, 0, 0, 0.26);
+  transition-duration: 0.3s;
+  transition-property: box-shadow; }
+
+.dot-lift1-9:hover, .dot-lift2-9:hover, .dot-lift3-9:hover, .dot-lift4-9:hover, .dot-lift5-9:hover, .dot-lift6-9:hover, .dot-lift7_next:hover, .dot-lift7-9:hover, .dot-lift8-9:hover, .dot-lift9, .dot-lift9_next, .dot-lift9-10 {
+  box-shadow: 0 30px 65px rgba(0, 0, 0, 0.2), 0 2px 1px -1px rgba(0, 0, 0, 0.37), 0 12px 128.33px rgba(0, 0, 0, 0.28);
+  transition-duration: 0.3s;
+  transition-property: box-shadow; }
+
+.dot-lift1-10:hover, .dot-lift2-10:hover, .dot-lift3-10:hover, .dot-lift4-10:hover, .dot-lift5-10:hover, .dot-lift6-10:hover, .dot-lift7-10:hover, .dot-lift8_next:hover, .dot-lift8-10:hover, .dot-lift9-10:hover, .dot-lift10, .dot-lift10_next, .dot-lift10-11, .dot-lift10-10, .dot-lift10-10:hover, .dot-lift11-10:hover {
+  box-shadow: 0 39px 72.75px rgba(0, 0, 0, 0.21), 0 2px 1px -1px rgba(0, 0, 0, 0.38), 0 13px 144.25px rgba(0, 0, 0, 0.3);
+  transition-duration: 0.3s;
+  transition-property: box-shadow; }
+
+.dot-lift9_next:hover, .dot-lift10-11:hover, .dot-lift11, .dot-lift11_next, .dot-lift11-12, .dot-lift11-11, .dot-lift11-11:hover, .dot-lift11-10 {
+  box-shadow: 0 43px 80.5px rgba(0, 0, 0, 0.22), 0 2px 1px -1px rgba(0, 0, 0, 0.38), 0 15px 160.17px rgba(0, 0, 0, 0.32);
+  transition-duration: 0.3s;
+  transition-property: box-shadow; }
+
+.dot-lift10_next:hover, .dot-lift11-12:hover {
+  box-shadow: 0 54px 88.25px rgba(0, 0, 0, 0.23), 0 2px 1px -1px rgba(0, 0, 0, 0.39), 0 16px 176.08px rgba(0, 0, 0, 0.34);
+  transition-duration: 0.3s;
+  transition-property: box-shadow; }
+
+.dot-lift11_next:hover {
+  box-shadow: 0 66px 96px rgba(0, 0, 0, 0.24), 0 2px 1px -1px rgba(0, 0, 0, 0.4), 0 18px 192px rgba(0, 0, 0, 0.36);
+  transition-duration: 0.3s;
+  transition-property: box-shadow; }

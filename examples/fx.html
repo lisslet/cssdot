@@ -1,0 +1,52 @@
+<html>
+<head>
+    <link rel="stylesheet" href="../prebuilt/reset.css">
+    <link rel="stylesheet" href="../prebuilt/animate.css">
+    <link rel="stylesheet" href="fx.css">
+</head>
+<body>
+<div id="fx-elements">
+
+</div>
+<script>
+	const frameGroup = [
+		['fade'],
+		['up', 'down'],
+        ['top', 'right', 'bottom', 'left'],
+		['flip', 'spin']
+	];
+
+	const mixedFrames = [];
+	frameGroup.forEach((frames, groupIndex) => {
+		const preFrames = Array.from(mixedFrames);
+		frames.forEach(frame => {
+			if (groupIndex) {
+				preFrames.forEach(mixedFrame => {
+					mixedFrames.push(mixedFrame + '-' + frame);
+				});
+			}
+			mixedFrames.push(frame);
+		});
+	});
+
+	console.log(mixedFrames.length);
+
+	const elements = document.getElementById('fx-elements');
+	mixedFrames.forEach(mixedFrame => {
+		const type = '--dot-' + mixedFrame;
+		const wrap = document.createElement('div');
+		const title = document.createElement('h3');
+		title.innerHTML = type;
+
+		const node = document.createElement('span');
+		node.className = type;
+		node.style.animationIterationCount = 'infinite';
+
+		wrap.appendChild(title);
+		wrap.appendChild(node);
+
+		elements.appendChild(wrap);
+	});
+</script>
+</body>
+</html>

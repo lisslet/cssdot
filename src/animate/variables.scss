@@ -1,0 +1,46 @@
+
+$DOT-ANIMATE-TRANSLATE-FRAMES: (
+        'top': (
+                'transform': translateY(-30%)
+        ),
+        'right': (
+                'transform': translateX(30%)
+        ),
+        'bottom': (
+                'transform': translateY(30%)
+        ),
+        'left': (
+                'transform': translateX(-30%)
+        )
+) !default;
+
+$DOT-ANIMATE-SCALE-FRAMES: (
+        'up': (
+                'transform': scale(1.4)
+        ),
+        'down': (
+                'transform': scale(0.6)
+        )
+) !default;
+
+$DOT-ANIMATE-ROTATE-FRAMES: (
+        'flip': (
+                'transform': rotateY(0.5turn)
+        ),
+        'spin': (
+                'transform': rotate(-90deg)
+        )
+) !default;
+
+$DOT-ANIMATE-WILD-FRAMES: (
+        'fade': (
+                'opacity': 0
+        )
+) !default;
+
+$DOT-ANIMATE-FRAMES: (
+        $DOT-ANIMATE-WILD-FRAMES,
+        $DOT-ANIMATE-SCALE-FRAMES,
+        $DOT-ANIMATE-TRANSLATE-FRAMES,
+        $DOT-ANIMATE-ROTATE-FRAMES
+) !default;

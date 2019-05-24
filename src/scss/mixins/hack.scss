@@ -1,0 +1,72 @@
+$dot-imported-mixins-hack: true !default;
+
+@mixin ie6() {
+  @at-root {
+    .ie6 & {
+      @content;
+    }
+  }
+}
+
+@mixin ie7() {
+  @at-root {
+    .ie7 & {
+      @content;
+    }
+  }
+}
+
+@mixin ie67 {
+  @at-root {
+    .ie67 & {
+      @content;
+    }
+  }
+}
+
+@mixin ie8() {
+  @at-root {
+    .ie8 & {
+      @content;
+    }
+  }
+}
+
+@mixin ie68() {
+  @at-root {
+    .ie68 & {
+      @content;
+    }
+  }
+}
+
+@mixin ie9 {
+  @at-root {
+    .ie9 & {
+      @content;
+    }
+  }
+}
+
+@mixin ie69 {
+  .ie69 & {
+    @content;
+  }
+}
+
+@mixin ie10() {
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    & {
+      @content;
+    }
+  }
+}
+
+@mixin ie610 {
+  @include ie69 {
+    @content;
+  }
+  @include ie10 {
+    @content;
+  }
+}

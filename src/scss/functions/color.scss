@@ -1,0 +1,42 @@
+
+/// https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html
+/// https://www.w3.org/TR/2008/REC-WCAG20-20081211/#relativeluminancedef
+@function relative-luminance($color) {
+  $r: red($color) / 255;
+  $g: green($color) / 255;
+  $b: blue($color) / 255;
+
+  $r: if($r <= 0.03928, $r / 12.92, pow($r / 1.055, 2.4));
+  $g: if($g <= 0.03928, $g / 12.92, pow($g / 1.055, 2.4));
+  $b: if($b <= 0.03928, $b / 12.92, pow($b / 1.055, 2.4));
+
+  @return (0.2126 * $r) + (0.7152 * $g) + (0.0722 * $b);
+}
+
+$white-relative-luminance: relative-luminance(white) !default;
+$black-relative-luminance: relative-luminance(black) !default;
+
+@function contrast-ratio($luminance1, $luminance2) {
+  @return ($luminance1 + 0.05) / ($luminance2 + 0.05)
+}
+
+
+@function is-safe-with-black($color) {
+  $white: contrast-ratio($white-relative-luminance, relative-luminance($color));
+  $black: contrast-ratio(relative-luminance($color), $black-relative-luminance);
+  @return $white < $black;
+}
+
+@function is-safe-with-white($color) {
+  @return not is-safe-with-black($color);
+}
+
+/// Slightly lighten a color
+@function tint($color, $amount) {
+  @return mix(white, $color, $amount);
+}
+
+/// Slightly darken a color
+@function shade($color, $amount) {
+  @return mix(black, $color, $amount);
+}

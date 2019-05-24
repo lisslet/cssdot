@@ -1,0 +1,32 @@
+@mixin ratio-rule($options:null) {
+  $options: rule-arguments($options, ratio);
+  $selector: map-get($options, selector);
+
+  @at-root #{$selector} {
+    %ratio {
+      position: relative;
+      height: 0;
+    }
+
+    @each $key, $value in $__aspect-ratios {
+      &#{$key} {
+        @extend %ratio;
+        padding-bottom: $value;
+        position: relative;
+
+        .ratio-wrap {
+          position: absolute;
+        }
+      }
+    }
+
+    position: relative;
+    @content;
+  }
+}
+
+@mixin ratio-child-rule($options:null) {
+  @include ratio-rule(arguments($options, (parent-selector: unquote("#{&}")))) {
+    @content;
+  }
+}

@@ -1,0 +1,27 @@
+@import '../../src/layout/nav/standalone';
+
+.dot-nav {
+  @include nav-scroll;
+  @include nav-style((
+          'text': #333,
+          'padding': 0.626em,
+          'react-field': blue
+  ), (
+          'field': blue,
+          'text': #fff
+  ), (
+          'field': navy
+  )
+  );
+}
+
+// @include guide-lines;
+
+.example {
+  min-height: 10em;
+
+  &-scroll {
+    width: 320px;
+    border: solid;
+  }
+}

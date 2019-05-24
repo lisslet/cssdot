@@ -1,0 +1,25 @@
+@import '../../src/scss';
+
+// color variables
+$primary: #E91E63;
+$accent: #448AFF; //#F50057;
+$warn: #00838F;
+$border: null;
+$link: null;
+$react: null;
+$active: null;
+
+// colors to palette
+$palette: palette((
+        'primary': $primary,
+        'accent': $accent,
+        'warn': $warn,
+        'border': $border,
+        'link': $link,
+        'react': $react,
+        'active': $active,
+));
+
+$theme: theme(('palette': $palette));
+
+// @debug $theme;

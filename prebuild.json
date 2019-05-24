@@ -1,0 +1,77 @@
+[
+  "reset",
+  {
+    "scss": "grid/standalone",
+    "files": [
+      {
+        "filename": "dynamic/grid",
+        "content": "@include grid-rule()"
+      },
+      {
+        "filename": "dynamic/desktop/grid",
+        "content": "@include grid-rule()"
+      },
+      {
+        "filename": "static/grid",
+        "content": "@include grid-rule()"
+      }
+    ]
+  },
+  {
+    "scss": "layout/frame/standalone",
+    "reference": "layout/vars",
+    "repeat": {
+      "each": {
+        "iterator": "__layout_width_map",
+        "condition": {
+          "gte": "__layout_standard_width"
+        },
+        "value": "width"
+      }
+    },
+    "files": [
+      {
+        "filename": "dynamic/frame/$width",
+        "content": "@include layout-frame-rule($width);"
+      },
+      {
+        "filename": "dynamic/desktop/frame/$width",
+        "content": "@include layout-frame-rule((max-width:$width, desktop-first: true));"
+      },
+      {
+        "filename": "static/frame/$width",
+        "content": "@include layout-frame-rule((max-width: $width, response: false));"
+      }
+    ]
+  },
+  {
+    "scss": "layout/nav/standalone",
+    "files": {
+      "filename": "nav",
+      "content": "@include nav-rules"
+    }
+  },
+  {
+    "scss": "layout/box/standalone",
+    "files": [
+      {
+        "filename": "box",
+        "content": "@include box-rule;"
+      }
+    ]
+  },
+  {
+    "scss":"layout/lift/standalone",
+    "files": {
+        "filename": "lift",
+        "content": "@include lift-rule;"
+      }
+  },
+  {
+    "scss":"animate/standalone",
+    "files": {
+        "filename": "animate",
+        "content": "@include animate-rule;"
+      }
+  }
+]

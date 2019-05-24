@@ -1,0 +1,100 @@
+@import '../../src/scss';
+
+.align_right {
+  text-align: right;
+}
+
+@mixin fx-ripple($parent) {
+  overflow: hidden;
+
+  #{$parent} {
+    position: relative;
+
+    &:before,
+    &:after {
+      @include center-middle;
+      content: '';
+      background-color: #000;
+      opacity: 0.2;
+      width: 120%;
+      padding-top: 120%;
+      border-radius: 100%;
+      display: none;
+
+      @include animate(0.42s both) {
+        from {
+          width: 0;
+          padding-top: 0;
+        }
+        to {
+          opacity: 0;
+        }
+      }
+    }
+  }
+
+  &:hover {
+    span:before {
+      display: block;
+    }
+  }
+
+  &:focus {
+    span:after {
+      display: block;
+    }
+  }
+
+  &.fx-ripple-flood {
+    overflow: visible;
+  }
+}
+
+@mixin link-core() {
+  button.dot-link {
+    border: none;
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+
+  }
+
+  a.dot-link {
+    display: inline-block;
+  }
+
+  .dot-link {
+    vertical-align: middle;
+    background-color: #ccc;
+    @include fx-ripple('span');
+    font-size: 1em;
+    height: 24px;
+
+    &:focus {
+      outline: none;
+    }
+
+    span {
+      display: inline-block;
+      padding: 0.313em;
+    }
+  }
+}
+
+@mixin link-rule() {
+
+}
+
+@mixin link-ghost-rule() {
+
+}
+
+@mixin link-solid-rule() {
+
+}
+
+@include link-core;
+
+body {
+  margin: 200px;
+}

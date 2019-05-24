@@ -1,0 +1,51 @@
+@function to-fixed($float, $digits: 2) {
+  $pow: pow(10, $digits);
+  @return round($float * $pow) / $pow;
+}
+
+@function pct($value) {
+  @if (type-of($value) == number) {
+    @if ($value > 0) {
+      @return unquote($value * 100 + '%');
+    }
+    @return 0;
+  }
+  @return $value;
+}
+
+@function pow($x, $n) {
+  $result: 1;
+  @if $n >= 0 {
+    @for $i from 1 through $n {
+      $result: $result * $x;
+    }
+  } @else {
+    @for $i from $n to 0 {
+      $result: $result / $x;
+    }
+  }
+  @return $result;
+}
+
+@function px($number) {
+  @if is-number($number) {
+    @if ($number == 0) {
+      @return 0;
+    }
+
+    @return if(str-index(inspect($number), px), $number, unquote('#{$number}px'));
+  }
+  @return $number;
+}
+
+@function width($number) {
+  @if is-number($number) {
+    @if $number == 0 {
+      @return 0;
+    }
+
+    @return if($number < 101, $number + '%', px($number));
+  }
+
+  @return $number;
+}

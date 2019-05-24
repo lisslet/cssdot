@@ -1,0 +1,58 @@
+@import '../scss';
+
+@function get-prefix($values, $key: selector-prefix) {
+  $value: map-get-if($values, $key);
+  @if ($value) {
+    @return $value + '-';
+  }
+  @return '';
+}
+
+@mixin wrap-rule($values:()) {
+  @if (not is-map($values)) {
+    $values: (width: $values);
+  }
+
+  $standard-width: $dot-layout-standard-width;
+
+  $prefix: get-prefix($values);
+  $width: map-get-if-has($values, width, $standard-width);
+  $sticky-width: map-get-if($values, stick-width);
+
+  $class-selector: '.' + $prefix;
+  $id-selector: '#' + $prefix;
+
+  #{$class-selector}width {
+
+    min-width: px($dot-layout-min-width);
+    max-width: px($width);
+
+    margin: 0 auto;
+
+    @each $width-key, $width-value in $dot-layout-widths {
+
+      //@debug $width-value;
+
+      $property: width;
+      $resizing: false;
+
+      @if ($sticky-width) {
+        @if ($width-value < $width) {
+          @include media-min($width-value) {
+            width: px($width-value);
+          }
+        }
+      }
+    }
+  }
+
+  #{$id-selector}head,
+  #{$id-selector}foot {
+    &-wrap {
+      position: relative;
+    }
+  }
+  #{$id-selector}main {
+    background-color: #fff;
+  }
+}

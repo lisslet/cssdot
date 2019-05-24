@@ -1,0 +1,11 @@
+@import '../../src/scss';
+@import '../../src/frame/only';
+
+@include frame-rule((
+        max-width: 1600,
+        side-width: 150
+));
+
+table {
+  width: 100%;
+}

@@ -1,0 +1,55 @@
+@mixin text-color($text, $link:null, $react:null, $active:null) {
+
+  @if not $link {
+    $link: $text;
+  }
+
+  @if not $react {
+    $react: $link;
+  }
+
+  @if not $active {
+    $active: $react;
+  }
+
+  color: $text;
+
+  a {
+    color: $link;
+    &:hover {
+      color: $react;
+    }
+    &:active {
+      color: $active;
+    }
+  }
+}
+
+@mixin global-rules($values: ()) {
+  $color: map-get-if($values, color c, #000);
+  $a-color: map-get-if($values, a-color ac, $color);
+  $letter-spacing: map-get-if($values, letter-spacing ls);
+  $font-size: map-get-if($values, font-size fs);
+  $font-family: map-get-if($values, font-family ff);
+
+  body, th, td, input, button, select, textarea {
+    color: $color;
+
+    @if ($letter-spacing) {
+      letter-spacing: $letter-spacing;
+    }
+
+    @if ($font-size) {
+      font-size: $font-size;
+    }
+
+    @if ($font-family) {
+      font-family: $font-family;
+    }
+  }
+
+  a {
+    color: $a-color;
+    text-decoration: none;
+  }
+}

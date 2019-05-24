@@ -1,0 +1,57 @@
+.dot-width,
+#dot-head-wrap, #dot-main-wrap, #dot-foot-wrap {
+  min-width: 320px;
+  max-width: 1800px;
+  margin: 0 auto; }
+  .ie69 .dot-width, .ie69
+  #dot-head-wrap, .ie69 #dot-main-wrap, .ie69 #dot-foot-wrap {
+    width: 1800; }
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    .dot-width,
+    #dot-head-wrap, #dot-main-wrap, #dot-foot-wrap {
+      width: 1800; } }
+  @media only screen and (min-width: 1000px) {
+    .dot-width,
+    #dot-head-wrap, #dot-main-wrap, #dot-foot-wrap {
+      max-width: 1000px; } }
+  @media only screen and (min-width: 1200px) {
+    .dot-width,
+    #dot-head-wrap, #dot-main-wrap, #dot-foot-wrap {
+      max-width: 1200px; } }
+  @media only screen and (min-width: 1400px) {
+    .dot-width,
+    #dot-head-wrap, #dot-main-wrap, #dot-foot-wrap {
+      max-width: 1400px; } }
+  @media only screen and (min-width: 1600px) {
+    .dot-width,
+    #dot-head-wrap, #dot-main-wrap, #dot-foot-wrap {
+      max-width: 1600px; } }
+  @media only screen and (min-width: 1800px) {
+    .dot-width,
+    #dot-head-wrap, #dot-main-wrap, #dot-foot-wrap {
+      max-width: 1800px; } }
+
+.dot-resize #dot-head-wrap, .dot-resize #dot-main-wrap, .dot-resize #dot-foot-wrap, #dot-head-wrap.dot-resize, #dot-main-wrap.dot-resize, #dot-foot-wrap.dot-resize {
+  max-width: inherit; }
+
+.dot-width_left {
+  margin: 0; }
+
+.dot-width_right {
+  margin: 0 0 auto 0; }
+
+#dothead-wrap, #dotfoot-wrap {
+  position: relative; }
+
+#dotmain {
+  background-color: #fff;
+  overflow-x: hidden; }
+
+.align_left {
+  text-align: right; }
+
+.align_center {
+  text-align: center; }
+
+.align_right {
+  text-align: right; }

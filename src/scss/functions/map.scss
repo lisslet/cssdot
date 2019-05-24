@@ -1,0 +1,151 @@
+@function map-has-not-key($map, $key) {
+  @return map-has-key($map, $key) == false;
+}
+
+@function map-set($map, $index, $value) {
+  @return map-merge($map, ($index: $value));
+}
+
+@function map-default($map, $key, $refs: (), $defaults: null) {
+  @if (map-has-key($map, $key)) {
+    @return $map;
+  }
+  @if ($refs) {
+    @if (is-list($refs)) {
+      @each $ref in $refs {
+        @if (map-has-key($map, $ref)) {
+          @return map-merge($map, ($key: map-get($map, $ref)));
+        }
+      }
+    } @else {
+      @if (map-has-key($map, $refs)) {
+        @return map-merge($map, ($key: map-get($map, $refs)));
+      }
+    }
+  }
+  @return map-merge($map, ($key: $defaults));
+}
+
+@function map-column($map, $index) {
+  $values: ();
+  @each $item in $map {
+    $values: append($values, map-get($item, $index));
+  }
+  @return $values;
+}
+
+@function _map-get-if($map, $key, $defaults: null) {
+  @return if(
+                  has-key($map, $key),
+                  map-get($map, $key),
+                  $defaults
+  );
+}
+
+@function map-get-if($map, $key, $defaults: null) {
+  @if (is-list($key)) {
+    $keys: $key;
+    @each $key in $keys {
+      $defaults: _map-get-if($map, $key, $defaults);
+    }
+    @return $defaults;
+  }
+
+  @return _map-get-if($map, $key, $defaults);
+}
+
+@function map-get-if-has($map, $key, $defaults: null) {
+  $result: map-get-if($map, $key);
+
+  @if ($result eq true or $result eq false or $result eq null) {
+    @return $defaults;
+  }
+  @return $result;
+}
+
+@function map-get-eq($map, $index, $match) {
+  @return map-get($map, $index) == $match;
+}
+
+@function map-get-not($map, $index, $match) {
+  @return map-get($map, $index) != $match;
+}
+
+@function map-get-int($map, $key) {
+  @return to-number(map-get($map, $key));
+}
+
+@function map-gets($map, $keys) {
+  @each $key in $keys {
+    @if (map-has-key($map, $key)) {
+      @return map-get($map, $key);
+    }
+  }
+  @return null;
+}
+
+/// @param {*} $map
+/// @param {*} $required
+/// @param {*} $index if $map is not a map, create new map that $index has $map
+/// @return {map}
+@function map-initiate($map, $required:null, $sugar-index: null) {
+  @if is-not-map($map) {
+    @if ($sugar-index) {
+      @return ($sugar-index: $map);
+    }
+    @error map-type-error()
+  }
+
+  @if $required {
+    @if is-not-list($map) {
+      $required: ($required);
+    }
+
+
+    @each $index in $required {
+      @if map-has-not-key($map, $index) {
+        @error __type-has-not($index);
+      }
+    }
+  }
+
+  @return $map;
+}
+
+@function map-last($map) {
+  @if is-not-map($map) {
+    @error map-type-error();
+  }
+
+  $keys: map-keys($map);
+  $key: last($keys);
+  @return map-get($map, $key);
+}
+
+@function map-required($map, $keys) {
+  @if is-not-map($map) {
+    @error map-type-error();
+  }
+
+  @if is-not-list($keys) {
+    $keys: ($keys);
+  }
+
+  @each $key in $keys {
+    @if map-has-not-key($map, $key) {
+      @error '`#{$key}` does not exists.';
+    }
+  }
+
+  @return map-get($map, $index);
+}
+
+/// get map length of value
+/// @param $map the target
+@function map-length($map) {
+  $length: 0;
+  @each $value in $map {
+    $length: $length + 1;
+  }
+  @return $length;
+}

@@ -1,0 +1,2 @@
+@import '../../../layout/frame/standalone.scss';
+@include layout-frame-rule((max-width: 1000, response: false));

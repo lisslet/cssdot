@@ -1,0 +1,305 @@
+@function __number-index($string) {
+  @return index($__number-strings, $string);
+}
+
+@function __number($string) {
+  @return map-get($__numbers, $string);
+}
+
+@function __unit($string) {
+  @return map-get($__units, $string);
+}
+
+/// is type of string
+/// @return {boolean}
+@function is-string($value) {
+  @return type-of($value) == string;
+}
+
+/// is type of number
+/// @return {boolean}
+@function is-number($value) {
+  @return type-of($value) == number;
+}
+
+/// is type of number or string as number
+/// @return {boolean}
+@function is-numeric($value) {
+  @return is-number($value) or is-string($value);
+}
+
+@function is-color($value){
+  @return type-of($value) == 'color';
+}
+
+/// is type of list
+/// @return {boolean}
+@function is-list($target) {
+  @return type-of($target) == list;
+}
+
+@function is-not-list($target) {
+  @return type-of($target) != list;
+}
+
+/// is type of map
+/// @return {boolean}
+@function is-map($map) {
+  $type: type-of($map);
+  @return $type == map or ($type == list and length($map) == 0);
+}
+
+/// is not type of map
+/// @return {boolean}
+@function is-not-map($map) {
+  @return not is-map($map);
+}
+
+@function is-empty($target) {
+  @if $target == '' or $target == null or $target == false {
+    @return true;
+  }
+  @return false;
+}
+
+@function is-class-query($query) {
+  @return starts-with($query, '.');
+}
+
+@import 'functions/list';
+@import 'functions/map';
+@import 'functions/string';
+@import 'functions/number';
+@import 'functions/color';
+@import 'functions/dot';
+
+@function type-error($type, $arg-name: null) {
+  @if not $arg-name {
+    $arg-name: $type;
+  }
+
+  @return '$#{$arg-name} is not a #{$type}';
+}
+
+@function map-type-error($arg-name: map) {
+  @return type-error('map', $arg-name);
+}
+
+$__argments-shorten-index: selector !default;
+
+/// get arguments as can shorten mapping
+/// @deprecated
+@function arguments($args, $shorten-index: $__argments-shorten-index, $merge:null) {
+  @if $merge {
+    @if is-not-map($merge) {
+      @error map-type-error(merge);
+    }
+  } @else if is-map($shorten-index) {
+    $merge: $shorten-index;
+    $shorten-index: $__argments-shorten-index;
+  }
+
+  @if $args == null {
+    @if $merge {
+      @return $merge;
+    }
+    @return (--arguments--: false);
+  } @else if is-not-map($args) {
+    @if $shorten-index {
+      $args: ($shorten-index: $args);
+    } @else {
+      @debug $args;
+      @error type-error(options);
+    }
+  }
+
+  @return if($merge, map-merge($args, $merge), $args);
+}
+
+$__args-shorten-index: query !default;
+
+/// get arguments as can shorten mapping
+@function args($args, $shorten-index: null, $merge: null) {
+  @if $merge {
+    @if is-not-map($merge) {
+      @error map-type-error(merge);
+    }
+  } @else if is-map($shorten-index) {
+    $merge: $shorten-index;
+    $shorten-index: $__args-shorten-index;
+  }
+
+  @if $args == null {
+    @if $merge {
+      @return $merge;
+    }
+    @return ();
+  } @else if is-not-map($args) {
+    @if $shorten-index {
+      $args: ($shorten-index: $args);
+    } @else {
+      @error map-type-error(args)
+    }
+  }
+
+  @return if($merge, map-merge($args, $merge), $args);
+}
+
+/// get arguments as can shorten mapping
+/// adding the query value for rule selector
+@function rule-args($args, $shorten-index:query, $sub-query: null) {
+  $args: args($args, $shorten-index);
+
+  $query: map-get($args, query);
+  $parent-query: map-get-if($args, parent-query);
+  $sub-query: map-get-if($args, sub-query, $sub-query);
+
+  @if $query {
+    @if $parent-query {
+      $query: $parent-query + $query;
+    }
+  } @else {
+    @if $sub-query {
+      @if $parent-query {
+        $query: $parent-query + $sub-query;
+      } @else {
+        $query: dot-class($sub-query);
+      }
+    } @else {
+      @if $parent-query {
+        $query: $parent-query;
+      } @else {
+        $query: dot-class();
+      }
+    }
+  }
+
+  @if starts-with($query, '.') or starts-with($query, '#') {
+    $args: map-set($args, query-string, str-slice($query, 2, str-length($query)));
+  } @else {
+    $args: map-set($args, query-string, $query);
+    $query: unquote('#{'.'} + $query');
+  }
+
+  @return map-set($args, query, $query);
+}
+
+/// @deprecated
+@function rule-arguments($args, $shorten-index:null, $sub-selector:null) {
+  $args: arguments($args, $shorten-index);
+
+  $selector: map-get($args, selector);
+  $parent-selector: map-get-if($args, parent-selector);
+  $sub-selector: map-get-if($args, sub-selector, $sub-selector);
+
+  @if ($selector) {
+    @if ($parent-selector) {
+      $selector: $parent-selector + $selector;
+    }
+  } @else {
+    @if ($sub-selector) {
+      @if ($parent-selector) {
+        $selector: $parent-selector + $sub-selector;
+      } @else {
+        $selector: dot-class_d($sub-selector);
+      }
+    } @else {
+      @if ($parent-selector) {
+        $selector: $parent-selector;
+      } @else {
+        $selector: dot-class_d();
+      }
+    }
+  }
+
+  @if (starts-with($selector, '.') or starts-with($selector, '#')) {
+    $args: map-set($args, selector-string, str-slice($selector, 2, str-length($selector)));
+  } @else {
+    $args: map-set($args, selector-string, $selector);
+    $selector: #{'.'+$selector};
+  }
+
+  @return map-set($args, selector, $selector);
+}
+
+@function box-values($values: null) {
+
+  @if ($values == null) {
+    @return (top:0, right:0, bottom:0, left:0);
+  }
+
+  @if (is-list($values) == false) {
+    $values: ($values);
+  }
+
+  $length: length($values);
+  $top: nth($values, 1);
+
+  @if ($length==1) {
+    @return (top: $top, right: $top, bottom: $top, left: $top);
+  }
+  @if ($length==2) {
+    $right: nth($values, 2);
+    @return (top: $top, right: $right, bottom: $top, left: $right);
+  }
+
+  $right: nth($values, 2);
+  $bottom: nth($values, 3);
+  $left: nth($values, 4);
+
+  @return (top: $top, right: $right, bottom: $bottom, left: $left);
+}
+
+// todo: can't remember why made todo
+@function border-each-values($values:null) {
+  @if ($values == null) {
+    @return (style: 0, width: 0, color:0);
+  }
+}
+
+@function border-values($values: null) {
+  @if ($values == null) {
+    @return (
+            top: border-each-values(),
+            bottom: border-each-values(),
+            right: border-each-values(),
+            left: border-each-values()
+    );
+  }
+}
+
+@function has-key($value, $key) {
+  @if is-list($value) {
+    @return not (not index($value, $key));
+  } @else if is-map($value) {
+    @return map-has-key($value, $key);
+  } @else {
+    @return not (not str-index(inspect($value), $key));
+  }
+}
+
+/// random value of list or map
+/// @param {list|map} $value
+@function rand($value) {
+  @if is-map($value) {
+    $keys: map-keys($value);
+    $key: nth($keys, random(length($keys)));
+    @return map-get($value, $key);
+  } @else {
+    @return nth($value, length($value));
+  }
+}
+
+/// generate random string
+/// @param {number} $size the string length
+/// @return {string}
+@function rand-string($size: 30) {
+  $result: rand($__alphabets);
+  $size: $size - 1;
+  $length: length($__chars);
+  @while ($size > 0) {
+    $result: $result + nth($__chars, random($length));
+    $size: $size - 1;
+  }
+  @return $result;
+}

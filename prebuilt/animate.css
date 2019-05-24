@@ -1,0 +1,899 @@
+.--dot-fade,
+.--dot-fade-child > *:nth-child(1n) {
+  animation: --dot-fade 0.3s both; }
+
+@keyframes --dot-fade {
+  from {
+    opacity: 0; } }
+
+.--dot-fade-up,
+.--dot-fade-up-child > *:nth-child(1n) {
+  animation: --dot-fade-up 0.3s both; }
+
+@keyframes --dot-fade-up {
+  from {
+    opacity: 0;
+    transform: scale(1.4); } }
+
+.--dot-up,
+.--dot-up-child > *:nth-child(1n) {
+  animation: --dot-up 0.3s both; }
+
+@keyframes --dot-up {
+  from {
+    transform: scale(1.4); } }
+
+.--dot-fade-down,
+.--dot-fade-down-child > *:nth-child(1n) {
+  animation: --dot-fade-down 0.3s both; }
+
+@keyframes --dot-fade-down {
+  from {
+    opacity: 0;
+    transform: scale(0.6); } }
+
+.--dot-down,
+.--dot-down-child > *:nth-child(1n) {
+  animation: --dot-down 0.3s both; }
+
+@keyframes --dot-down {
+  from {
+    transform: scale(0.6); } }
+
+.--dot-fade-top,
+.--dot-fade-top-child > *:nth-child(1n) {
+  animation: --dot-fade-top 0.3s both; }
+
+@keyframes --dot-fade-top {
+  from {
+    opacity: 0;
+    transform: translateY(-30%); } }
+
+.--dot-fade-up-top,
+.--dot-fade-up-top-child > *:nth-child(1n) {
+  animation: --dot-fade-up-top 0.3s both; }
+
+@keyframes --dot-fade-up-top {
+  from {
+    opacity: 0;
+    transform: scale(1.4) translateY(-30%); } }
+
+.--dot-up-top,
+.--dot-up-top-child > *:nth-child(1n) {
+  animation: --dot-up-top 0.3s both; }
+
+@keyframes --dot-up-top {
+  from {
+    transform: scale(1.4) translateY(-30%); } }
+
+.--dot-fade-down-top,
+.--dot-fade-down-top-child > *:nth-child(1n) {
+  animation: --dot-fade-down-top 0.3s both; }
+
+@keyframes --dot-fade-down-top {
+  from {
+    opacity: 0;
+    transform: scale(0.6) translateY(-30%); } }
+
+.--dot-down-top,
+.--dot-down-top-child > *:nth-child(1n) {
+  animation: --dot-down-top 0.3s both; }
+
+@keyframes --dot-down-top {
+  from {
+    transform: scale(0.6) translateY(-30%); } }
+
+.--dot-top,
+.--dot-top-child > *:nth-child(1n) {
+  animation: --dot-top 0.3s both; }
+
+@keyframes --dot-top {
+  from {
+    transform: translateY(-30%); } }
+
+.--dot-fade-right,
+.--dot-fade-right-child > *:nth-child(1n) {
+  animation: --dot-fade-right 0.3s both; }
+
+@keyframes --dot-fade-right {
+  from {
+    opacity: 0;
+    transform: translateX(30%); } }
+
+.--dot-fade-up-right,
+.--dot-fade-up-right-child > *:nth-child(1n) {
+  animation: --dot-fade-up-right 0.3s both; }
+
+@keyframes --dot-fade-up-right {
+  from {
+    opacity: 0;
+    transform: scale(1.4) translateX(30%); } }
+
+.--dot-up-right,
+.--dot-up-right-child > *:nth-child(1n) {
+  animation: --dot-up-right 0.3s both; }
+
+@keyframes --dot-up-right {
+  from {
+    transform: scale(1.4) translateX(30%); } }
+
+.--dot-fade-down-right,
+.--dot-fade-down-right-child > *:nth-child(1n) {
+  animation: --dot-fade-down-right 0.3s both; }
+
+@keyframes --dot-fade-down-right {
+  from {
+    opacity: 0;
+    transform: scale(0.6) translateX(30%); } }
+
+.--dot-down-right,
+.--dot-down-right-child > *:nth-child(1n) {
+  animation: --dot-down-right 0.3s both; }
+
+@keyframes --dot-down-right {
+  from {
+    transform: scale(0.6) translateX(30%); } }
+
+.--dot-right,
+.--dot-right-child > *:nth-child(1n) {
+  animation: --dot-right 0.3s both; }
+
+@keyframes --dot-right {
+  from {
+    transform: translateX(30%); } }
+
+.--dot-fade-bottom,
+.--dot-fade-bottom-child > *:nth-child(1n) {
+  animation: --dot-fade-bottom 0.3s both; }
+
+@keyframes --dot-fade-bottom {
+  from {
+    opacity: 0;
+    transform: translateY(30%); } }
+
+.--dot-fade-up-bottom,
+.--dot-fade-up-bottom-child > *:nth-child(1n) {
+  animation: --dot-fade-up-bottom 0.3s both; }
+
+@keyframes --dot-fade-up-bottom {
+  from {
+    opacity: 0;
+    transform: scale(1.4) translateY(30%); } }
+
+.--dot-up-bottom,
+.--dot-up-bottom-child > *:nth-child(1n) {
+  animation: --dot-up-bottom 0.3s both; }
+
+@keyframes --dot-up-bottom {
+  from {
+    transform: scale(1.4) translateY(30%); } }
+
+.--dot-fade-down-bottom,
+.--dot-fade-down-bottom-child > *:nth-child(1n) {
+  animation: --dot-fade-down-bottom 0.3s both; }
+
+@keyframes --dot-fade-down-bottom {
+  from {
+    opacity: 0;
+    transform: scale(0.6) translateY(30%); } }
+
+.--dot-down-bottom,
+.--dot-down-bottom-child > *:nth-child(1n) {
+  animation: --dot-down-bottom 0.3s both; }
+
+@keyframes --dot-down-bottom {
+  from {
+    transform: scale(0.6) translateY(30%); } }
+
+.--dot-bottom,
+.--dot-bottom-child > *:nth-child(1n) {
+  animation: --dot-bottom 0.3s both; }
+
+@keyframes --dot-bottom {
+  from {
+    transform: translateY(30%); } }
+
+.--dot-fade-left,
+.--dot-fade-left-child > *:nth-child(1n) {
+  animation: --dot-fade-left 0.3s both; }
+
+@keyframes --dot-fade-left {
+  from {
+    opacity: 0;
+    transform: translateX(-30%); } }
+
+.--dot-fade-up-left,
+.--dot-fade-up-left-child > *:nth-child(1n) {
+  animation: --dot-fade-up-left 0.3s both; }
+
+@keyframes --dot-fade-up-left {
+  from {
+    opacity: 0;
+    transform: scale(1.4) translateX(-30%); } }
+
+.--dot-up-left,
+.--dot-up-left-child > *:nth-child(1n) {
+  animation: --dot-up-left 0.3s both; }
+
+@keyframes --dot-up-left {
+  from {
+    transform: scale(1.4) translateX(-30%); } }
+
+.--dot-fade-down-left,
+.--dot-fade-down-left-child > *:nth-child(1n) {
+  animation: --dot-fade-down-left 0.3s both; }
+
+@keyframes --dot-fade-down-left {
+  from {
+    opacity: 0;
+    transform: scale(0.6) translateX(-30%); } }
+
+.--dot-down-left,
+.--dot-down-left-child > *:nth-child(1n) {
+  animation: --dot-down-left 0.3s both; }
+
+@keyframes --dot-down-left {
+  from {
+    transform: scale(0.6) translateX(-30%); } }
+
+.--dot-left,
+.--dot-left-child > *:nth-child(1n) {
+  animation: --dot-left 0.3s both; }
+
+@keyframes --dot-left {
+  from {
+    transform: translateX(-30%); } }
+
+.--dot-fade-flip,
+.--dot-fade-flip-child > *:nth-child(1n) {
+  animation: --dot-fade-flip 0.3s both; }
+
+@keyframes --dot-fade-flip {
+  from {
+    opacity: 0;
+    transform: rotateY(0.5turn); } }
+
+.--dot-fade-up-flip,
+.--dot-fade-up-flip-child > *:nth-child(1n) {
+  animation: --dot-fade-up-flip 0.3s both; }
+
+@keyframes --dot-fade-up-flip {
+  from {
+    opacity: 0;
+    transform: scale(1.4) rotateY(0.5turn); } }
+
+.--dot-up-flip,
+.--dot-up-flip-child > *:nth-child(1n) {
+  animation: --dot-up-flip 0.3s both; }
+
+@keyframes --dot-up-flip {
+  from {
+    transform: scale(1.4) rotateY(0.5turn); } }
+
+.--dot-fade-down-flip,
+.--dot-fade-down-flip-child > *:nth-child(1n) {
+  animation: --dot-fade-down-flip 0.3s both; }
+
+@keyframes --dot-fade-down-flip {
+  from {
+    opacity: 0;
+    transform: scale(0.6) rotateY(0.5turn); } }
+
+.--dot-down-flip,
+.--dot-down-flip-child > *:nth-child(1n) {
+  animation: --dot-down-flip 0.3s both; }
+
+@keyframes --dot-down-flip {
+  from {
+    transform: scale(0.6) rotateY(0.5turn); } }
+
+.--dot-fade-top-flip,
+.--dot-fade-top-flip-child > *:nth-child(1n) {
+  animation: --dot-fade-top-flip 0.3s both; }
+
+@keyframes --dot-fade-top-flip {
+  from {
+    opacity: 0;
+    transform: translateY(-30%) rotateY(0.5turn); } }
+
+.--dot-fade-up-top-flip,
+.--dot-fade-up-top-flip-child > *:nth-child(1n) {
+  animation: --dot-fade-up-top-flip 0.3s both; }
+
+@keyframes --dot-fade-up-top-flip {
+  from {
+    opacity: 0;
+    transform: scale(1.4) translateY(-30%) rotateY(0.5turn); } }
+
+.--dot-up-top-flip,
+.--dot-up-top-flip-child > *:nth-child(1n) {
+  animation: --dot-up-top-flip 0.3s both; }
+
+@keyframes --dot-up-top-flip {
+  from {
+    transform: scale(1.4) translateY(-30%) rotateY(0.5turn); } }
+
+.--dot-fade-down-top-flip,
+.--dot-fade-down-top-flip-child > *:nth-child(1n) {
+  animation: --dot-fade-down-top-flip 0.3s both; }
+
+@keyframes --dot-fade-down-top-flip {
+  from {
+    opacity: 0;
+    transform: scale(0.6) translateY(-30%) rotateY(0.5turn); } }
+
+.--dot-down-top-flip,
+.--dot-down-top-flip-child > *:nth-child(1n) {
+  animation: --dot-down-top-flip 0.3s both; }
+
+@keyframes --dot-down-top-flip {
+  from {
+    transform: scale(0.6) translateY(-30%) rotateY(0.5turn); } }
+
+.--dot-top-flip,
+.--dot-top-flip-child > *:nth-child(1n) {
+  animation: --dot-top-flip 0.3s both; }
+
+@keyframes --dot-top-flip {
+  from {
+    transform: translateY(-30%) rotateY(0.5turn); } }
+
+.--dot-fade-right-flip,
+.--dot-fade-right-flip-child > *:nth-child(1n) {
+  animation: --dot-fade-right-flip 0.3s both; }
+
+@keyframes --dot-fade-right-flip {
+  from {
+    opacity: 0;
+    transform: translateX(30%) rotateY(0.5turn); } }
+
+.--dot-fade-up-right-flip,
+.--dot-fade-up-right-flip-child > *:nth-child(1n) {
+  animation: --dot-fade-up-right-flip 0.3s both; }
+
+@keyframes --dot-fade-up-right-flip {
+  from {
+    opacity: 0;
+    transform: scale(1.4) translateX(30%) rotateY(0.5turn); } }
+
+.--dot-up-right-flip,
+.--dot-up-right-flip-child > *:nth-child(1n) {
+  animation: --dot-up-right-flip 0.3s both; }
+
+@keyframes --dot-up-right-flip {
+  from {
+    transform: scale(1.4) translateX(30%) rotateY(0.5turn); } }
+
+.--dot-fade-down-right-flip,
+.--dot-fade-down-right-flip-child > *:nth-child(1n) {
+  animation: --dot-fade-down-right-flip 0.3s both; }
+
+@keyframes --dot-fade-down-right-flip {
+  from {
+    opacity: 0;
+    transform: scale(0.6) translateX(30%) rotateY(0.5turn); } }
+
+.--dot-down-right-flip,
+.--dot-down-right-flip-child > *:nth-child(1n) {
+  animation: --dot-down-right-flip 0.3s both; }
+
+@keyframes --dot-down-right-flip {
+  from {
+    transform: scale(0.6) translateX(30%) rotateY(0.5turn); } }
+
+.--dot-right-flip,
+.--dot-right-flip-child > *:nth-child(1n) {
+  animation: --dot-right-flip 0.3s both; }
+
+@keyframes --dot-right-flip {
+  from {
+    transform: translateX(30%) rotateY(0.5turn); } }
+
+.--dot-fade-bottom-flip,
+.--dot-fade-bottom-flip-child > *:nth-child(1n) {
+  animation: --dot-fade-bottom-flip 0.3s both; }
+
+@keyframes --dot-fade-bottom-flip {
+  from {
+    opacity: 0;
+    transform: translateY(30%) rotateY(0.5turn); } }
+
+.--dot-fade-up-bottom-flip,
+.--dot-fade-up-bottom-flip-child > *:nth-child(1n) {
+  animation: --dot-fade-up-bottom-flip 0.3s both; }
+
+@keyframes --dot-fade-up-bottom-flip {
+  from {
+    opacity: 0;
+    transform: scale(1.4) translateY(30%) rotateY(0.5turn); } }
+
+.--dot-up-bottom-flip,
+.--dot-up-bottom-flip-child > *:nth-child(1n) {
+  animation: --dot-up-bottom-flip 0.3s both; }
+
+@keyframes --dot-up-bottom-flip {
+  from {
+    transform: scale(1.4) translateY(30%) rotateY(0.5turn); } }
+
+.--dot-fade-down-bottom-flip,
+.--dot-fade-down-bottom-flip-child > *:nth-child(1n) {
+  animation: --dot-fade-down-bottom-flip 0.3s both; }
+
+@keyframes --dot-fade-down-bottom-flip {
+  from {
+    opacity: 0;
+    transform: scale(0.6) translateY(30%) rotateY(0.5turn); } }
+
+.--dot-down-bottom-flip,
+.--dot-down-bottom-flip-child > *:nth-child(1n) {
+  animation: --dot-down-bottom-flip 0.3s both; }
+
+@keyframes --dot-down-bottom-flip {
+  from {
+    transform: scale(0.6) translateY(30%) rotateY(0.5turn); } }
+
+.--dot-bottom-flip,
+.--dot-bottom-flip-child > *:nth-child(1n) {
+  animation: --dot-bottom-flip 0.3s both; }
+
+@keyframes --dot-bottom-flip {
+  from {
+    transform: translateY(30%) rotateY(0.5turn); } }
+
+.--dot-fade-left-flip,
+.--dot-fade-left-flip-child > *:nth-child(1n) {
+  animation: --dot-fade-left-flip 0.3s both; }
+
+@keyframes --dot-fade-left-flip {
+  from {
+    opacity: 0;
+    transform: translateX(-30%) rotateY(0.5turn); } }
+
+.--dot-fade-up-left-flip,
+.--dot-fade-up-left-flip-child > *:nth-child(1n) {
+  animation: --dot-fade-up-left-flip 0.3s both; }
+
+@keyframes --dot-fade-up-left-flip {
+  from {
+    opacity: 0;
+    transform: scale(1.4) translateX(-30%) rotateY(0.5turn); } }
+
+.--dot-up-left-flip,
+.--dot-up-left-flip-child > *:nth-child(1n) {
+  animation: --dot-up-left-flip 0.3s both; }
+
+@keyframes --dot-up-left-flip {
+  from {
+    transform: scale(1.4) translateX(-30%) rotateY(0.5turn); } }
+
+.--dot-fade-down-left-flip,
+.--dot-fade-down-left-flip-child > *:nth-child(1n) {
+  animation: --dot-fade-down-left-flip 0.3s both; }
+
+@keyframes --dot-fade-down-left-flip {
+  from {
+    opacity: 0;
+    transform: scale(0.6) translateX(-30%) rotateY(0.5turn); } }
+
+.--dot-down-left-flip,
+.--dot-down-left-flip-child > *:nth-child(1n) {
+  animation: --dot-down-left-flip 0.3s both; }
+
+@keyframes --dot-down-left-flip {
+  from {
+    transform: scale(0.6) translateX(-30%) rotateY(0.5turn); } }
+
+.--dot-left-flip,
+.--dot-left-flip-child > *:nth-child(1n) {
+  animation: --dot-left-flip 0.3s both; }
+
+@keyframes --dot-left-flip {
+  from {
+    transform: translateX(-30%) rotateY(0.5turn); } }
+
+.--dot-flip,
+.--dot-flip-child > *:nth-child(1n) {
+  animation: --dot-flip 0.3s both; }
+
+@keyframes --dot-flip {
+  from {
+    transform: rotateY(0.5turn); } }
+
+.--dot-fade-spin,
+.--dot-fade-spin-child > *:nth-child(1n) {
+  animation: --dot-fade-spin 0.3s both; }
+
+@keyframes --dot-fade-spin {
+  from {
+    opacity: 0;
+    transform: rotate(-90deg); } }
+
+.--dot-fade-up-spin,
+.--dot-fade-up-spin-child > *:nth-child(1n) {
+  animation: --dot-fade-up-spin 0.3s both; }
+
+@keyframes --dot-fade-up-spin {
+  from {
+    opacity: 0;
+    transform: scale(1.4) rotate(-90deg); } }
+
+.--dot-up-spin,
+.--dot-up-spin-child > *:nth-child(1n) {
+  animation: --dot-up-spin 0.3s both; }
+
+@keyframes --dot-up-spin {
+  from {
+    transform: scale(1.4) rotate(-90deg); } }
+
+.--dot-fade-down-spin,
+.--dot-fade-down-spin-child > *:nth-child(1n) {
+  animation: --dot-fade-down-spin 0.3s both; }
+
+@keyframes --dot-fade-down-spin {
+  from {
+    opacity: 0;
+    transform: scale(0.6) rotate(-90deg); } }
+
+.--dot-down-spin,
+.--dot-down-spin-child > *:nth-child(1n) {
+  animation: --dot-down-spin 0.3s both; }
+
+@keyframes --dot-down-spin {
+  from {
+    transform: scale(0.6) rotate(-90deg); } }
+
+.--dot-fade-top-spin,
+.--dot-fade-top-spin-child > *:nth-child(1n) {
+  animation: --dot-fade-top-spin 0.3s both; }
+
+@keyframes --dot-fade-top-spin {
+  from {
+    opacity: 0;
+    transform: translateY(-30%) rotate(-90deg); } }
+
+.--dot-fade-up-top-spin,
+.--dot-fade-up-top-spin-child > *:nth-child(1n) {
+  animation: --dot-fade-up-top-spin 0.3s both; }
+
+@keyframes --dot-fade-up-top-spin {
+  from {
+    opacity: 0;
+    transform: scale(1.4) translateY(-30%) rotate(-90deg); } }
+
+.--dot-up-top-spin,
+.--dot-up-top-spin-child > *:nth-child(1n) {
+  animation: --dot-up-top-spin 0.3s both; }
+
+@keyframes --dot-up-top-spin {
+  from {
+    transform: scale(1.4) translateY(-30%) rotate(-90deg); } }
+
+.--dot-fade-down-top-spin,
+.--dot-fade-down-top-spin-child > *:nth-child(1n) {
+  animation: --dot-fade-down-top-spin 0.3s both; }
+
+@keyframes --dot-fade-down-top-spin {
+  from {
+    opacity: 0;
+    transform: scale(0.6) translateY(-30%) rotate(-90deg); } }
+
+.--dot-down-top-spin,
+.--dot-down-top-spin-child > *:nth-child(1n) {
+  animation: --dot-down-top-spin 0.3s both; }
+
+@keyframes --dot-down-top-spin {
+  from {
+    transform: scale(0.6) translateY(-30%) rotate(-90deg); } }
+
+.--dot-top-spin,
+.--dot-top-spin-child > *:nth-child(1n) {
+  animation: --dot-top-spin 0.3s both; }
+
+@keyframes --dot-top-spin {
+  from {
+    transform: translateY(-30%) rotate(-90deg); } }
+
+.--dot-fade-right-spin,
+.--dot-fade-right-spin-child > *:nth-child(1n) {
+  animation: --dot-fade-right-spin 0.3s both; }
+
+@keyframes --dot-fade-right-spin {
+  from {
+    opacity: 0;
+    transform: translateX(30%) rotate(-90deg); } }
+
+.--dot-fade-up-right-spin,
+.--dot-fade-up-right-spin-child > *:nth-child(1n) {
+  animation: --dot-fade-up-right-spin 0.3s both; }
+
+@keyframes --dot-fade-up-right-spin {
+  from {
+    opacity: 0;
+    transform: scale(1.4) translateX(30%) rotate(-90deg); } }
+
+.--dot-up-right-spin,
+.--dot-up-right-spin-child > *:nth-child(1n) {
+  animation: --dot-up-right-spin 0.3s both; }
+
+@keyframes --dot-up-right-spin {
+  from {
+    transform: scale(1.4) translateX(30%) rotate(-90deg); } }
+
+.--dot-fade-down-right-spin,
+.--dot-fade-down-right-spin-child > *:nth-child(1n) {
+  animation: --dot-fade-down-right-spin 0.3s both; }
+
+@keyframes --dot-fade-down-right-spin {
+  from {
+    opacity: 0;
+    transform: scale(0.6) translateX(30%) rotate(-90deg); } }
+
+.--dot-down-right-spin,
+.--dot-down-right-spin-child > *:nth-child(1n) {
+  animation: --dot-down-right-spin 0.3s both; }
+
+@keyframes --dot-down-right-spin {
+  from {
+    transform: scale(0.6) translateX(30%) rotate(-90deg); } }
+
+.--dot-right-spin,
+.--dot-right-spin-child > *:nth-child(1n) {
+  animation: --dot-right-spin 0.3s both; }
+
+@keyframes --dot-right-spin {
+  from {
+    transform: translateX(30%) rotate(-90deg); } }
+
+.--dot-fade-bottom-spin,
+.--dot-fade-bottom-spin-child > *:nth-child(1n) {
+  animation: --dot-fade-bottom-spin 0.3s both; }
+
+@keyframes --dot-fade-bottom-spin {
+  from {
+    opacity: 0;
+    transform: translateY(30%) rotate(-90deg); } }
+
+.--dot-fade-up-bottom-spin,
+.--dot-fade-up-bottom-spin-child > *:nth-child(1n) {
+  animation: --dot-fade-up-bottom-spin 0.3s both; }
+
+@keyframes --dot-fade-up-bottom-spin {
+  from {
+    opacity: 0;
+    transform: scale(1.4) translateY(30%) rotate(-90deg); } }
+
+.--dot-up-bottom-spin,
+.--dot-up-bottom-spin-child > *:nth-child(1n) {
+  animation: --dot-up-bottom-spin 0.3s both; }
+
+@keyframes --dot-up-bottom-spin {
+  from {
+    transform: scale(1.4) translateY(30%) rotate(-90deg); } }
+
+.--dot-fade-down-bottom-spin,
+.--dot-fade-down-bottom-spin-child > *:nth-child(1n) {
+  animation: --dot-fade-down-bottom-spin 0.3s both; }
+
+@keyframes --dot-fade-down-bottom-spin {
+  from {
+    opacity: 0;
+    transform: scale(0.6) translateY(30%) rotate(-90deg); } }
+
+.--dot-down-bottom-spin,
+.--dot-down-bottom-spin-child > *:nth-child(1n) {
+  animation: --dot-down-bottom-spin 0.3s both; }
+
+@keyframes --dot-down-bottom-spin {
+  from {
+    transform: scale(0.6) translateY(30%) rotate(-90deg); } }
+
+.--dot-bottom-spin,
+.--dot-bottom-spin-child > *:nth-child(1n) {
+  animation: --dot-bottom-spin 0.3s both; }
+
+@keyframes --dot-bottom-spin {
+  from {
+    transform: translateY(30%) rotate(-90deg); } }
+
+.--dot-fade-left-spin,
+.--dot-fade-left-spin-child > *:nth-child(1n) {
+  animation: --dot-fade-left-spin 0.3s both; }
+
+@keyframes --dot-fade-left-spin {
+  from {
+    opacity: 0;
+    transform: translateX(-30%) rotate(-90deg); } }
+
+.--dot-fade-up-left-spin,
+.--dot-fade-up-left-spin-child > *:nth-child(1n) {
+  animation: --dot-fade-up-left-spin 0.3s both; }
+
+@keyframes --dot-fade-up-left-spin {
+  from {
+    opacity: 0;
+    transform: scale(1.4) translateX(-30%) rotate(-90deg); } }
+
+.--dot-up-left-spin,
+.--dot-up-left-spin-child > *:nth-child(1n) {
+  animation: --dot-up-left-spin 0.3s both; }
+
+@keyframes --dot-up-left-spin {
+  from {
+    transform: scale(1.4) translateX(-30%) rotate(-90deg); } }
+
+.--dot-fade-down-left-spin,
+.--dot-fade-down-left-spin-child > *:nth-child(1n) {
+  animation: --dot-fade-down-left-spin 0.3s both; }
+
+@keyframes --dot-fade-down-left-spin {
+  from {
+    opacity: 0;
+    transform: scale(0.6) translateX(-30%) rotate(-90deg); } }
+
+.--dot-down-left-spin,
+.--dot-down-left-spin-child > *:nth-child(1n) {
+  animation: --dot-down-left-spin 0.3s both; }
+
+@keyframes --dot-down-left-spin {
+  from {
+    transform: scale(0.6) translateX(-30%) rotate(-90deg); } }
+
+.--dot-left-spin,
+.--dot-left-spin-child > *:nth-child(1n) {
+  animation: --dot-left-spin 0.3s both; }
+
+@keyframes --dot-left-spin {
+  from {
+    transform: translateX(-30%) rotate(-90deg); } }
+
+.--dot-spin,
+.--dot-spin-child > *:nth-child(1n) {
+  animation: --dot-spin 0.3s both; }
+
+@keyframes --dot-spin {
+  from {
+    transform: rotate(-90deg); } }
+
+.dot-delay > *:nth-child(2) {
+  animation-delay: 0.025s; }
+
+.dot-delay > *:nth-child(3) {
+  animation-delay: 0.05s; }
+
+.dot-delay > *:nth-child(4) {
+  animation-delay: 0.075s; }
+
+.dot-delay > *:nth-child(5) {
+  animation-delay: 0.1s; }
+
+.dot-delay > *:nth-child(6) {
+  animation-delay: 0.125s; }
+
+.dot-delay > *:nth-child(7) {
+  animation-delay: 0.15s; }
+
+.dot-delay > *:nth-child(8) {
+  animation-delay: 0.175s; }
+
+.dot-delay > *:nth-child(9) {
+  animation-delay: 0.2s; }
+
+.dot-delay > *:nth-child(10) {
+  animation-delay: 0.225s; }
+
+.dot-delay > *:nth-child(11) {
+  animation-delay: 0.25s; }
+
+.dot-delay > *:nth-child(12) {
+  animation-delay: 0.275s; }
+
+.dot-delay > *:nth-child(13) {
+  animation-delay: 0.3s; }
+
+.dot-delay > *:nth-child(14) {
+  animation-delay: 0.325s; }
+
+.dot-delay > *:nth-child(15) {
+  animation-delay: 0.35s; }
+
+.dot-delay > *:nth-child(16) {
+  animation-delay: 0.375s; }
+
+.dot-delay > *:nth-child(17) {
+  animation-delay: 0.4s; }
+
+.dot-delay > *:nth-child(18) {
+  animation-delay: 0.425s; }
+
+.dot-delay > *:nth-child(19) {
+  animation-delay: 0.45s; }
+
+.dot-delay > *:nth-child(20) {
+  animation-delay: 0.475s; }
+
+.dot-delay > *:nth-child(21) {
+  animation-delay: 0.5s; }
+
+.dot-delay > *:nth-child(22) {
+  animation-delay: 0.525s; }
+
+.dot-delay > *:nth-child(23) {
+  animation-delay: 0.55s; }
+
+.dot-delay > *:nth-child(24) {
+  animation-delay: 0.575s; }
+
+.dot-delay > *:nth-child(25) {
+  animation-delay: 0.6s; }
+
+.dot-delay > *:nth-child(26) {
+  animation-delay: 0.625s; }
+
+.dot-delay > *:nth-child(27) {
+  animation-delay: 0.65s; }
+
+.dot-delay > *:nth-child(28) {
+  animation-delay: 0.675s; }
+
+.dot-delay > *:nth-child(29) {
+  animation-delay: 0.7s; }
+
+.dot-delay > *:nth-child(30) {
+  animation-delay: 0.725s; }
+
+.dot-delay > *:nth-child(31) {
+  animation-delay: 0.75s; }
+
+.dot-delay > *:nth-child(32) {
+  animation-delay: 0.775s; }
+
+.dot-delay > *:nth-child(33) {
+  animation-delay: 0.8s; }
+
+.dot-delay > *:nth-child(34) {
+  animation-delay: 0.825s; }
+
+.dot-delay > *:nth-child(35) {
+  animation-delay: 0.85s; }
+
+.dot-delay > *:nth-child(36) {
+  animation-delay: 0.875s; }
+
+.dot-delay > *:nth-child(37) {
+  animation-delay: 0.9s; }
+
+.dot-delay > *:nth-child(38) {
+  animation-delay: 0.925s; }
+
+.dot-delay > *:nth-child(39) {
+  animation-delay: 0.95s; }
+
+.dot-delay > *:nth-child(40) {
+  animation-delay: 0.975s; }
+
+.dot-delay > *:nth-child(41) {
+  animation-delay: 1s; }
+
+.dot-delay > *:nth-child(42) {
+  animation-delay: 1.025s; }
+
+.dot-delay > *:nth-child(43) {
+  animation-delay: 1.05s; }
+
+.dot-delay > *:nth-child(44) {
+  animation-delay: 1.075s; }
+
+.dot-delay > *:nth-child(45) {
+  animation-delay: 1.1s; }
+
+.dot-delay > *:nth-child(46) {
+  animation-delay: 1.125s; }
+
+.dot-delay > *:nth-child(47) {
+  animation-delay: 1.15s; }
+
+.dot-delay > *:nth-child(48) {
+  animation-delay: 1.175s; }
+
+.dot-delay > *:nth-child(49) {
+  animation-delay: 1.2s; }

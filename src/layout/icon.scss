@@ -1,0 +1,21 @@
+@import '../scss';
+
+$dot-icon-increase: 0.5;
+$dot-icon-max-size: 3;
+$dot-icon-vendor-prefixes: '.icon, .far';
+
+@mixin icon-rule() {
+  $icon-size: 0.5;
+
+  @while ($icon-size<$dot-icon-max-size) {
+    @if ($icon-size not 1) {
+      $icon-size: $icon-size+$dot-icon-increase;
+      $selector: str-replace($icon-size, '.', '_');
+      .icon-#{$selector}x {
+        #{unquote($dot-icon-vendor-prefixes)} {
+          font-size: #{$icon-size}em;
+        }
+      }
+    }
+  }
+}

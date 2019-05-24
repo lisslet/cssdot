@@ -1,0 +1,113 @@
+@import '../vars';
+@import '../../suffixes/align';
+
+@function layout-frame-options($options, $parent-selector: null) {
+  $options: map-initiate($options, null, max-width);
+
+  @if $parent-selector {
+    $options: map-set($options, parent-selector, $parent-selector);
+  }
+
+  @return $options;
+}
+
+$__layout-sticky-resize: true;
+
+/// generate layout frame rules
+@mixin layout-frame-rule($options: null) {
+  $options: rule-arguments($options, max-width);
+
+  $selector: map-get($options, selector);
+
+  $max-width: map-get-if($options, max-width, $__layout-standard-width);
+  $min-width: map-get-if($options, min-width, $__layout-min-width);
+
+  $sticky-resize: map-get-if($options, sticky-resize, $__layout-sticky-resize);
+
+  $parent-query: unquote("#{&}");
+
+  @if not ends-width($selector, '-') {
+    $selector: $selector + '-';
+  }
+
+  $id-selector: '#' + map-get($options, selector-string);
+
+  $containers: #{$id-selector+'-head-wrap'},  #{$id-selector+'-main-wrap'},  #{$id-selector+'-foot-wrap'};
+
+  // frame width
+  @at-root {
+    #{$selector+'width'},
+    #{$containers} {
+      min-width: px($__layout-min-width);
+      max-width: px($max-width);
+      margin: 0 auto;
+
+      @include ie610 {
+        width: $max-width;
+      }
+
+      @each $width in $__layout-widths {
+        @if ($sticky-resize) {
+          @if ($width >= $__layout-standard-width and $width <= $max-width) {
+            @include mq-min($width) {
+              max-width: px($width);
+            }
+          }
+        }
+      }
+    }
+
+    %frame-resize {
+      max-width: inherit;
+    }
+
+    #{$selector+'resize'} {
+      #{$containers} {
+        @extend %frame-resize;
+      }
+    }
+
+    #{$containers} {
+      &#{$selector} {
+        &resize {
+          @extend %frame-resize;
+        }
+      }
+    }
+  }
+
+  @at-root #{$selector} {
+    &width {
+      &_left {
+        margin: 0;
+      }
+
+      &_right {
+        margin: 0 0 auto 0;
+      }
+    }
+  }
+
+  @at-root #{$id-selector} {
+    &head,
+    &foot {
+      &-wrap {
+        position: relative;
+      }
+    }
+
+    &main {
+      background-color: #fff;
+      overflow-x: hidden;
+    }
+  }
+
+  .align {
+    @include align-prefix-rule();
+  }
+}
+
+/// generate layout frame rules as child selector
+@mixin layout-frame-child-rule($options: null) {
+  @include layout-frame-rule(arguments($options, max-width, (parent-selector: unquote("#{&}"))))
+}

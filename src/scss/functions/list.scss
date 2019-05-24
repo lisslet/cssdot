@@ -1,0 +1,138 @@
+@function pop($list) {
+  $result: ();
+  @for $i from 1 through length($list) - 1 {
+    $result: append($result, nth($list, $i));
+  }
+  @return $result;
+}
+
+@function to-list($target) {
+  @if is-list($target) {
+    @return $target;
+  } @else {
+    @return ($target);
+  }
+}
+
+@function nth-if($list, $n) {
+  @if (length($list)>=$n) {
+    @return nth($list, $n);
+  } @else {
+    @return null;
+  }
+}
+
+@function last($list) {
+  @return nth($list, length($list));
+}
+
+@function list-min($list) {
+  $min: null;
+  @if length($list) > 0 {
+    @each $value in $list {
+      @if type-of($value) == number {
+        @if ($min == null or $value < $min) {
+          $min: $value;
+        }
+      }
+    }
+  }
+  @return $min;
+}
+
+@function list-min-key($list) {
+  $min: null;
+  $key: null;
+  @if length($list) > 0 {
+    $i: 1;
+    @each $value in $list {
+      @if type-of($value) == number {
+        @if $min == null or $value < $min {
+          $min: $value;
+          $key: $i;
+        }
+      }
+      $i: $i+1;
+    }
+  }
+  @return $key;
+}
+
+@function list-max($list) {
+  $max: null;
+  @if length($list) > 0 {
+    @each $value in $list {
+      @if type-of($value) == number {
+        @if ($max == null or $value > $max) {
+          $max: $value;
+        }
+      }
+    }
+  }
+  @return $max;
+}
+
+@function list-max-key($list) {
+  $max: null;
+  $key: null;
+  @if length($list) > 0 {
+    $i: 1;
+    @each $value in $list {
+      @if type-of($value) == number {
+        @if $max == null or $value > $max {
+          $min: $value;
+          $key: $i;
+        }
+      }
+      $i: $i+1;
+    }
+  }
+  @return $key;
+}
+
+@function range($start, $end, $drain: 1) {
+  $result: ();
+
+  $now: $start;
+  @while $now < $end {
+    $result: append($result, $now);
+    $now: $now + $drain;
+  }
+
+  $result: append($result, $end);
+
+  @return $result;
+}
+
+@function comma($target, $value) {
+  @return append($target, unquote($value), comma);
+}
+
+@function shift($list) {
+  $shifted: ();
+  $length: length($list);
+  @if $length > 0 {
+    @if $length > 1 {
+      @for $index from 2 through $length {
+        $shifted: append($shifted, nth($list, $index));
+      }
+      @return $shifted;
+    }
+    @return ();
+  }
+  @return ();
+}
+
+/// return true when needle in haystack
+@function in-list($needle, $haystack) {
+  @if is-not-list($haystack) {
+    @error type-error('list');
+  }
+
+  @each $value in $haystack {
+    @if $needle == $value {
+      @return true;
+    }
+  }
+  @return false;
+}

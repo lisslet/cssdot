@@ -1,0 +1,120 @@
+$dot-imported-syntax: true !default;
+
+/// mixing prefix and each suffixes
+/// @param {string} $prefix
+/// @param {list} $list
+/// @return {list}
+/// @example
+///   (a, b c) = a-b, a-c
+@function -add($prefix, $list) {
+  @if $prefix {
+    $prefix: unquote($prefix+'-');
+  } @else {
+    $prefix: unquote('');
+  }
+
+  $result: ();
+  @each $value in $list {
+    $result: comma($result, unquote("#{$prefix}#{$value}"));
+  }
+  @return $result;
+}
+
+/// mixing each prefixes and each suffixes
+/// @param {list} $prefixes
+/// @param {list} $prefixes
+/// @return {list}
+/// @example
+///   (a b, c d) = a-c, a-d, b-c, b-d
+@function -mix($prefixes, $suffixes) {
+  $result: ();
+
+  $prefixes: to-list($prefixes);
+  $suffixes: to-list($suffixes);
+
+  @each $prefix in $prefixes {
+    $prefix: if(is-empty($prefix), '', unquote($prefix+'-'));
+    @each $suffix in $suffixes {
+      $result: append($result, #{$prefix}#{$suffix}, comma);
+    }
+  }
+  @return $result;
+}
+
+$-props: (
+        color: (c),
+        padding: (pad),
+        padding-top: -mix(pad, t top),
+        padding-right: -mix(pad, r right),
+        padding-bottom: -mix(pad, b bottom),
+        padding-left: -mix(pad, l left),
+        font-size: -mix('' f font, s size),
+        background: (bg),
+        background-color: -mix(bg, c color),
+        background-repeat: -mix(bg, r repeat),
+        background-position: -mix(bg, p pos position),
+        background-image: -mix(bg, i img image),
+        border: (bd),
+        border-style: -mix(bd border, s style),
+
+        letter-spacing: (ls),
+
+        direction: (d, dir)
+) !global;
+
+$-flipped-props: ();
+@each $property, $shortens in $-props {
+  // add full name to shortens
+  $shortens: map-set($-props, $property, $shortens);
+  // index as value, value as index
+  @each $shorten in $shortens {
+    $-flipped-props: map-set($-flipped-props, $shorten, $property);
+  }
+}
+
+/// get shorten property names
+/// @param {string} $prop
+/// @return {list}
+/// @example
+///   color = (c, color)
+@function -get($prop) {
+  $result: map-get($-props, $prop);
+  @return $result;
+}
+
+// todo: doesn't known
+@function -property($shorten) {
+  @if has-key($-flipped-props, $shorten) {
+    @return map-get($-flipped-props, $shorten);
+  }
+  @return $shorten;
+}
+
+/// @return {list}
+@function -c($prefix: null) {
+  @return -add($prefix, -get(color));
+}
+
+$-c: -c() !global;
+
+/// @return {list}
+@function -bg-c($prefix:null) {
+  @return -add($prefix, -get(border));
+}
+
+
+$-bg-c: -bg-c() !global;
+
+/// @return {list}
+@function -bg-c($prefix: null) {
+  @return -add($prefix, -get(background-color));
+}
+
+$-bd-c: -bd-c() !global;
+
+/// @return {list}
+@function -ls($prefix: null){
+  @return -add($prefix, -get(letter-spacing));
+}
+
+$-ls: -ls() !global;

@@ -1,0 +1,23 @@
+$PALETTE-LABELS: (
+        'primary',
+        'accent',
+        'warn',
+        'text',
+        'link',
+        'react',
+        'active',
+        'disable'
+) !default;
+
+$PALETTE-AUTOFILL: ((
+        'accent' : ('method': 'contrast'),
+        'warn': ('method': 'invert'),
+        'field': #fff,
+        'border': 'primary',
+        'text': ('reference': 'primary', 'method': 'text'),
+        'field-text': ('reference': 'field', 'method': 'text'),
+        'link': ('method': 'invert', 'amount': 50%),
+        'react': ('method': 'tint'),
+        'active': ('method': 'shade'),
+        'disable': ('method': 'grayscale')
+)) !default;

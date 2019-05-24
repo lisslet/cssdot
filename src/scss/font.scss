@@ -1,0 +1,20 @@
+@mixin web-font($font-url, $font-family) {
+  @import url($font-url);
+  body, input, textarea, select, button {
+    font-family: $font-family;
+  }
+}
+
+@mixin google-font($fonts, $selected-font: null) {
+  $font-names: str-split($fonts, '|');
+
+  $font-name: null;
+  @if length($font-names) > 1 and $selected-font != null {
+    $font-name: nth($font-names, $selected-font);
+  } @else {
+    $font-name: nth($font-names, 1);
+  }
+  $font-name: str-replace($font-name, '+', ' ');
+
+  @include web-font(#{'https://fonts.googleapis.com/css?family=' + $fonts}, $font-name);
+}

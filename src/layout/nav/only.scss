@@ -1,0 +1,283 @@
+@import './variables';
+@import '../vars';
+
+@mixin nav-scroll($until-width: $__layout-standard-width) {
+
+  position: relative;
+
+  > ul {
+    overflow: auto;
+    white-space: nowrap;
+  }
+
+  li {
+    position: static;
+    // left:inherit;
+    ul {
+      right: 0;
+      max-height: 50vh;
+      overflow-y: auto;
+
+      ul {
+        overflow-y: visible;
+        height: auto;
+        position: static;
+        display: block;
+        top: 100%;
+        left: 0;
+        padding-left: 1.25em;
+        font-size: 0.875em;
+      }
+    }
+  }
+
+  @include mq-min($__layout-standard-width) {
+    position: inherit;
+    > ul {
+      overflow: visible;
+      white-space: inherit;
+    }
+
+    li {
+      position: relative;
+
+      ul {
+        right: inherit;
+        max-height: inherit;
+        overflow-y: auto;
+      }
+    }
+  }
+}
+
+@mixin -nav-depth-style($depth, $option, $next-options...) {
+  $isRoot: $depth == 1;
+
+  $next-option: null;
+  @if length($next-options) > 0 {
+    $next-option: nth($next-options, 1);
+    $next-options: shift($next-options);
+  }
+
+  $z-index: map-get-if($option, 'z-index', $DOT-NAV-Z-BEGIN);
+  $gap: map-get-if($option, 'gap');
+  $left-gap: map-get-if($option, 'left-gap');
+  $right-gap: map-get-if($option, 'right-gap');
+  $bottom-gap: map-get-if($option, 'bottom-gap');
+
+  $text: map-get-if($option, 'text');
+  $field: map-get-if($option, 'field');
+
+  $react-field: map-get-if($option, 'react-field');
+  $react-text: map-get-if($option, 'react-text');
+  $active-field: map-get-if($option, 'active-field');
+  $active-text: map-get-if($option, 'active-text');
+
+  $padding: map-get-if($option, 'padding');
+  $height: map-get-if($option, 'height');
+
+  $type: map-get-if($option, 'type', 'vertical');
+  $isHorizontal: in-list($type, ('horizontal', 'hor', 'h'));
+  $isVertical: in-list($type, ('vertical', 'ver', 'v', 'tree', 't'));
+
+  @if $isRoot {
+    @if $field {
+      background-color: $field;
+    }
+  } @else {
+    li {
+      @if $field {
+        background-color: $field;
+      }
+    }
+  }
+
+  @if ($text) {
+    color: $text;
+  }
+
+  a {
+    @if ($text) {
+      color: $text;
+    }
+    @if $padding {
+      padding: $padding;
+    }
+  }
+
+  a:hover,
+  li:hover > a {
+    @if $react-text {
+      color: $react-text;
+    }
+
+    @if $react-field {
+      background-color: $react-field;
+    }
+  }
+
+  a.dot_active,
+  li.dot_active > a {
+    @if $active-text {
+      color: $active-text;
+    }
+
+    @if $active-field {
+      background-color: $active-field;
+    }
+  }
+
+  li {
+    @if $height {
+      height: $height;
+      line-height: $height;
+    }
+
+    @if $isHorizontal {
+      @if $left-gap {
+        @include left-gap($left-gap);
+        li {
+          margin-left: 0;
+        }
+      }
+
+      @if $right-gap {
+        @include right-gap($right-gap);
+        li {
+          margin-right: 0;
+        }
+      }
+    }
+
+    @if $isVertical {
+      @if $bottom-gap {
+        @include bottom-gap($bottom-gap);
+        li {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    ul {
+      @if $next-option {
+        @include -nav-depth-style($depth + 1, $next-option, $next-options...);
+      }
+    }
+  }
+}
+
+@mixin nav-style($option, $next-options...) {
+  @include -nav-depth-style(1, $option, $next-options...);
+}
+
+@mixin -nav-depth-rule($depth, $option, $next-options...) {
+
+  $type: map-get-if($option, 'type', 'horizontal');
+  $isHorizontal: in-list($type, ('horizontal', 'hor', 'h'));
+  $isVertical: in-list($type, ('vertical', 'ver', 'v'));
+  $isTree: in-list($type, ('tree', 't'));
+
+  $isRoot: $depth == 1;
+
+  @include nav-style($option, $next-options...);
+
+  @if $isHorizontal {
+    font-size: 0;
+  }
+
+  @if $isRoot {
+    li {
+      position: relative;
+
+      ul {
+        display: none;
+        position: absolute;
+        left: 0;
+        z-index: $DOT-NAV-Z-BEGIN + $depth;
+        min-width: 200px;
+      }
+
+      &:hover > ul {
+        display: block;
+      }
+    }
+
+    a {
+      @include trans(background-color color);
+      display: block;
+      white-space: nowrap;
+    }
+  } @else {
+    li {
+      ul {
+        top: 0;
+        left: 100%;
+      }
+
+      @if $isHorizontal {
+        &:last-child ul {
+          left: inherit;
+          right: 0;
+        }
+      }
+    }
+  }
+
+  li {
+
+    @if $isHorizontal {
+      display: inline-block;
+      font-size: 1rem;
+      white-space: nowrap;
+    }
+
+    @if $isVertical {
+      display: block;
+    }
+
+    ul {
+      @if length($next-options) > 0 {
+        $next-option: nth($next-options, 1);
+        @if map-has-not-key($next-option, 'type') {
+          $next-option: map-set($next-option, 'type', $type);
+        }
+        $next-options: shift($next-options);
+        @include -nav-depth-rule($depth + 1, $next-option, $next-options...);
+      }
+    }
+  }
+
+}
+
+/// @private
+@mixin -nav-rule($option, $next-options...) {
+  $option: dot-rule-initiate($option, nav);
+  $selector: map-get($option, selector);
+
+  @include _nav-depth-rule(1, $option, $next-options...);
+}
+
+// make navigation rule
+@mixin nav-rule($options...) {
+  $fixed-options: ();
+  @each $next-option in $options {
+    @each $depth-option in $next-option {
+      $depth-option: map-initiate($depth-option, null, 'type');
+      $fixed-options: append($fixed-options, $depth-option);
+    }
+  }
+
+  $fixed-option: nth($fixed-options, 1);
+  $fixed-options: shift($fixed-options);
+
+  @include -nav-rule($fixed-option, $fixed-options...);
+}
+
+@mixin nav-rules() {
+  @each $style, $options in $DOT-NAV-STYLES {
+    $style: if($style == 'default', '', '-' + $style);
+    .dot-nav#{$style} {
+      @include nav-rule($options);
+    }
+  }
+}

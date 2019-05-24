@@ -1,0 +1,102 @@
+@import '../layout/vars';
+@import 'vars';
+
+@function __layout-width-key($width) {
+  $index: index($__layout-width-keys, $width);
+
+  // width is width-key
+  @if $index {
+    @return $width;
+  }
+
+  $index: index($width, $__layout-widths);
+
+  // width is width
+  @if ($index) {
+    @return nth($__layout-width-keys, $index);
+  }
+
+  // find similar width
+  $last-width: 0;
+  $last-key: null;
+  @each $layout-width-key, $layout-width in $__layout-width-map {
+
+    @if ($width <= $layout-width) {
+      @if ($width != $layout-width) {
+        @warn '#{$width} replaced as similar width';
+      }
+      @if ($last-width and ($width - $last-width) < ($layout-width - $width)) {
+        $layout-width-key: $last-key;
+      }
+      @return $layout-width-key;
+    }
+    $last-width: $layout-width;
+    $last-key: $layout-width-key;
+  }
+
+  @warn '#{$width} replaced as supported width as maximum';
+  @return $__layout-max-width-key;
+}
+
+@function is-layout-min-width($width) {
+  @return $width == $__layout-min-width;
+}
+
+@function __add-width-selector-suffix($query, $width) {
+  $key: __layout-width-key($width);
+
+  $width: map-get($__layout-width-map, $key);
+  @if (is-layout-min-width($width)) {
+    @return $query;
+  }
+
+  $prefix: $__width_selector_glue + __layout-width-key($width);
+  @return $query + $prefix;
+}
+
+@mixin grid-rule($options:()) {
+  $options: dot-rule-initiate($options, grid);
+
+  $selector: map-get($options, selector);
+  $selector-string: map-get($options, selector-string);
+
+  $attribute-selector: #{'[class*='+$selector-string+']'};
+
+  @at-root #{$selector} {
+
+    @each $layout-width in $__layout-widths {
+      @include mq-min($layout-width) {
+
+        @at-root {
+          %display-grid#{$layout-width} {
+            display: grid;
+          }
+        }
+
+        $gap: 0;
+        @while ($gap <= $dot-grid-gap-to) {
+          $query: __add-width-selector-suffix(-gap#{$gap}, $layout-width);
+
+          &#{$query + $attribute-selector},
+          &#{$query + ' ' + $attribute-selector} {
+            grid-column-gap: px($gap);
+            grid-row-gap: px($gap);
+          }
+          $gap: $gap + $dot-grid-gap-increase;
+        }
+
+        @for $column from 1 through $dot-grid-column-to {
+          $grid-query: __add-width-selector-suffix($column, $layout-width);
+          &#{$grid-query} {
+            @extend %display-grid#{$layout-width};
+            grid-template-columns: repeat($column, 1fr);
+          }
+        }
+      }
+    }
+  }
+}
+
+@mixin grid-child-rule($options: ()) {
+  @include grid-rule(__optimize-parent-selector($options, unquote("#{&}")));
+}

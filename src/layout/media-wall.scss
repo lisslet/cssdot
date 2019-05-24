@@ -1,0 +1,48 @@
+@import '../scss';
+
+@mixin before-block() {
+  &:before {
+    content: '';
+    display: block;
+    @content;
+  }
+}
+
+@mixin media-wall-rule($options: null) {
+  $options: rule-arguments($options, null, media);
+  $selector: map-get($options, selector);
+
+  @at-root #{$selector} {
+    &-back {
+      @include position-fixed;
+      overflow: hidden;
+      z-index: -1;
+
+      @include before-block {
+        @include position-fixed;
+        z-index: -1;
+      }
+
+      @include animate(0.3s both) {
+        from {
+          opacity: 0;
+        }
+      }
+
+      iframe, video {
+        @extend %center-middles;
+        width: 100%;
+      }
+    }
+
+    &-front {
+      @include position-fixed;
+      overflow: auto;
+      z-index: 0;
+    }
+  }
+}
+
+@mixin media-wall-child-rule($options:null) {
+  @include media-wall-rule(arguments($options, (parent-selector: unquote("#{&}"))));
+}

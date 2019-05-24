@@ -1,0 +1,49 @@
+@warn 'functions/theme is deprecated.';
+
+$dot-theme-polyfill: (
+        link: text,
+        react: link,
+        active: accent,
+        primary-accent: accent,
+        primary-warn: warn,
+        primary-text: text,
+        primary-link: link,
+        primary-react: react,
+        primary-active: active,
+        accent-warn: warn,
+        accent-text: text,
+        accent-link: link,
+        accent-react: react,
+        accent-active: active,
+) !default;
+
+@function dot-theme($theme, $polyfill: null) {
+  $theme: map-initiate($theme, null, primary);
+  $theme: map-default($theme, primary, null, #333);
+  $primary: map-get($theme, primary);
+  $theme: map-default($theme, accent, null, lighten($primary, 20%));
+  $theme: map-default($theme, warn, null, complement($primary));
+  $theme: map-default($theme, text, null, grayscale($primary));
+
+  // default polyfill
+  @each $key, $refs in $dot-theme-polyfill {
+    $theme: map-default($theme, $key, $refs);
+  }
+
+  // custom polyfill
+  @if ($polyfill) {
+    @if (is-map($polyfill)) {
+      @each $key, $refs in $polyfill {
+        $theme: map-default($theme, $key, $refs);
+      }
+    } @else {
+      @warn map-type-error(polyfill);
+    }
+  }
+
+  @return $theme;
+}
+
+@function dot-palette() {
+
+}

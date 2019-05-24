@@ -1,0 +1,71 @@
+@mixin ng-mat-buttons-reset() {
+  .mat-button-toggle {
+    &-appearance-standard &-label-content {
+      line-height: 36px !important;
+    }
+  }
+}
+
+@mixin ng-mat-reset(){
+  @include ng-mat-buttons-reset()
+}
+
+@function to-material-palette($color) {
+  $black-87-opacity: rgba(0, 0, 0, 0.87);
+  $white-87-opacity: rgba(0, 0, 0, 0.87);
+
+  $colors: (
+          50: lighten($color, 25%),
+          100: lighten($color, 20%),
+          200: lighten($color, 15%),
+          300: lighten($color, 10%),
+          400: lighten($color, 5%),
+          500: $color,
+          600: darken($color, 3%),
+          700: darken($color, 6%),
+          800: darken($color, 9%),
+          900: darken($color, 12%),
+          A100: darken(lighten($color, 35%), 10%),
+          A200: darken(lighten($color, 30%), 10%),
+          A400: darken(lighten($color, 20%), 10%),
+          A700: darken(lighten($color, 10%), 10%),
+          contrast: (
+                  50: $black-87-opacity,
+                  100: $black-87-opacity,
+                  200: $black-87-opacity,
+                  300: $black-87-opacity,
+                  400: $black-87-opacity,
+                  500: white,
+                  600: white,
+                  700: white,
+                  800: $white-87-opacity,
+                  900: $white-87-opacity,
+                  A100: $black-87-opacity,
+                  A200: white,
+                  A400: white,
+                  A700: white,
+          )
+  );
+  @return $colors;
+}
+
+@mixin set-material-theme($theme, $light: true) {
+
+  $primary: pick($theme, primary);
+  $accent: pick($theme, accent);
+  $warn: pick($theme, warn);
+
+  $primary: to-material-palette($primary);
+  $accent: to-material-palette($accent);
+  $warn: to-material-palette($warn);
+
+  $mat-primary: mat-palette($primary);
+  $mat-accent: mat-palette($accent);
+  $mat-warn: mat-palette($warn);
+
+
+  $mat-theme: if($light, mat-light-theme($mat-primary, $mat-accent, $mat-warn), mat-dark-theme($mat-primary, $mat-accent, $mat-warn));
+
+  @include angular-material-theme($mat-theme);
+  @include ng-mat-reset();
+}

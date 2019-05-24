@@ -1,0 +1,129 @@
+$dot-imported-mixins-decorate: true !default;
+
+@mixin arrow-up($size:0.5em, $color: #000) {
+  width: 0;
+  height: 0;
+  border-left: $size solid transparent;
+  border-right: $size solid transparent;
+  border-bottom: $size solid $color;
+}
+
+@mixin arrow-right($size:0.5em, $color: #000) {
+  width: 0;
+  height: 0;
+  border-top: $size solid transparent;
+  border-bottom: $size solid transparent;
+  border-right: $size solid $color;
+}
+
+@mixin arrow-down($size:0.5em, $color: #000) {
+  width: 0;
+  height: 0;
+  border-left: $size solid transparent;
+  border-right: $size solid transparent;
+  border-top: $size solid $color;
+}
+
+@mixin arrow-left($size:0.5em, $color: #000) {
+  width: 0;
+  height: 0;
+  border-top: $size solid transparent;
+  border-bottom: $size solid transparent;
+  border-left: $size solid $color;
+}
+
+@mixin arrow-left-top($size:0.5em, $color: #000) {
+  $size: $size / 2;
+  width: 0;
+  height: 0;
+  border: $size solid $color;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+}
+
+@mixin arrow-left-bottom($size:0.5em, $color: #000) {
+  $size: $size / 2;
+  width: 0;
+  height: 0;
+  border: $size solid transparent;
+  border-bottom-color: $color;
+  border-left-color: $color;
+}
+
+@mixin arrow-right-top($size:0.5em, $color: #000) {
+  $size: $size / 2;
+  width: 0;
+  height: 0;
+  border: $size solid $color;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+}
+
+@mixin arrow-right-bottom($size:0.5em, $color: #000) {
+  $size: $size / 2;
+  width: 0;
+  height: 0;
+  border: $size solid transparent;
+  border-right-color: $color;
+  border-bottom-color: $color;
+}
+
+@mixin shadows($property, $shadows) {
+  $len: length($shadows);
+  $x: nth($shadows, 1);
+  $y: nth($shadows, 2);
+  $color: nth($shadows, $len);
+  $values: ();
+  @for $index from 3 through $len - 1 {
+    $values: append($values, $x $y nth($shadows, $index) $color, comma);
+  }
+  #{$property}: $values;
+}
+
+@mixin text-shadows($shadows) {
+  @include shadows('text-shadow', $shadows);
+}
+
+@mixin box-shadows($shadows) {
+  @include shadows('box-shadow', $shadows);
+}
+
+@mixin left-radius($radius) {
+  border-top-left-radius: $radius;
+  border-bottom-left-radius: $radius;
+}
+
+@mixin right-radius($radius) {
+  border-top-right-radius: $radius;
+  border-bottom-right-radius: $radius;
+}
+
+@mixin scrollbar($options) {
+  $options: map-initiate($options, thumb, thumb);
+
+  $thumb: map-get($options, thumb);
+  $react-thumb: map-get-if($options, thumb-react thumb);
+  $track: map-get-if($options, track);
+  $size: map-get-if($options, height, 0.5em);
+  $width: map-get-if($options, width, $size);
+  $height: map-get-if($options, height, $size);
+
+  ::-webkit-scrollbar {
+    // does not apply without width
+    width: $width;
+    height: $height;
+
+    &-track {
+      background-color: $track;
+    }
+
+    &-thumb {
+      background-color: $thumb;
+      @if ($react-thumb) {
+        &:hover {
+          background-color: $react-thumb;
+        }
+      }
+    }
+  }
+}

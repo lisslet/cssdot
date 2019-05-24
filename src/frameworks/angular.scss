@@ -1,0 +1,98 @@
+@import 'material';
+
+@mixin ng-parse-date-core() {
+  .timestamp {
+    i {
+      font-style: normal;
+
+    }
+
+    .y-prefix, .h, .i, .s, .m i, .d i {
+      @extend %hides;
+    }
+
+    @include mq-min(480) {
+      .m i, .d i {
+        @include show;
+      }
+    }
+
+    @include mq-min(768) {
+      .y-prefix {
+        @include show;
+      }
+    }
+
+    @include mq-min(1024) {
+      .y-prefix {
+        @include hide;
+      }
+
+      .h, .i {
+        @include show;
+      }
+    }
+
+    @include mq-min(1200) {
+      .y-prefix {
+        @include show;
+      }
+    }
+
+    @include mq-min(1400) {
+      .s {
+        @include show;
+      }
+    }
+  }
+}
+
+@mixin ng-mat-dialog-reset() {
+  body {
+    .mat {
+      &-dialog {
+        &-title {
+          margin: 0;
+        }
+
+        &-container {
+          padding: 0;
+          width: 640px;
+          min-width: 320px;
+          overflow: hidden;
+        }
+
+        &-actions,
+        &-content {
+          display: block;
+          margin: 0;
+          padding: 0;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+@mixin ng-dialog-core($options:()) {
+
+  $padding: map-get-if($options, padding pad, 1.25em);
+
+  @include ng-mat-dialog-reset();
+  .dialog {
+    .mat-form-field {
+      width: 100%;
+    }
+
+    &-head,
+    &-foot,
+    &-main {
+      &-wrap {
+        padding: $padding;
+      }
+    }
+  }
+}
+

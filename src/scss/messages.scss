@@ -1,0 +1,25 @@
+$dot-imported-messages: true !default;
+
+@function __type-numeric($argument: Value) {
+  @return '#{$argument} should be a number or a string.';
+}
+
+@function __type-min($min, $argument: Index) {
+  @return '#{$argument} should be starts with #{$min}';
+}
+
+@function __type-exists($list-or-map, $index) {
+  @if is-map($list-or-map) {
+    $keys: map-keys($list-or-map);
+    @return '#{$index} is not a key of #{$keys}';
+  }
+  @return '#{$index} is not a index of #{$list-or-map}';
+}
+
+@function __type-has-not($key) {
+  @return 'Does not found key: `#{$key}`';
+}
+
+@function __type-class-selector($selector) {
+  @return '`#{$selector}` is not class selector';
+}

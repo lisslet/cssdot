@@ -1,0 +1,152 @@
+/// cssdot selector string
+/// @param {string} $selector [''] selector prefix after cssdot prefix
+/// @return {string}
+@function dot-query_d($selector: null) {
+  @return if($selector, dot-#{$selector}, dot);
+}
+
+/// cssdot class selector
+/// @param {string} $selector [''] selector prefix after cssdot prefix
+/// @return {string}
+@function dot-class_d($selector: null) {
+  @return unquote("#{"." + dot-query_d($selector)}");
+}
+
+/// cssdot id selector
+/// @param {string} $selector [''] selector prefix after cssdot prefix
+/// @return {string}
+/// @deprecated
+@function dot-id_d($selector: null) {
+  @return unquote("#{"#" + dot-query_d($selector)}");
+}
+
+/// query prefix
+$__dot-prefix: dot;
+@function dot-prefix($query: null){
+  @return if($query, unquote(#{$__dot-prefix+$query}), $__dot-prefix);
+}
+
+/// prefixed id query
+@function dot-id($query: null){
+  @return unquote("#{"#" + dot-prefix($query)}")
+}
+
+// prefixed class query
+@function dot-class($query: null){
+  @return unquote("#{"." + dot-prefix($query)}")
+}
+
+
+
+@function dot-is-min-layout-width($width) {
+  $value: to-number($width, true);
+  @debug inspect($value);
+  @if (str-length(inspect($value)) == 2) {
+    $width: dot-get-layout-width($width);
+  }
+  @return $dot-layout-min-width == $value;
+}
+
+@function dot-number-query($origin, $number) {
+  @if ($number > 0) {
+    @return $origin + '-' + $number;
+  }
+  @return $origin;
+}
+
+@function dot-get-layout-width($prefix) {
+  @each $layout-prefix, $layout-width in $dot-layout-widths {
+    @if ($layout-prefix == $prefix) {
+      @return $layout-width;
+    }
+  }
+  @warn 'can not found width from #{$prefix}';
+}
+
+@function -width-prefix($width-prefix, $selector) {
+  @if (str-slice($selector, 0, 1) eq '.') {
+    $selector: str-slice($selector, 1);
+  }
+
+  @if (not dot-is-min-width($width-prefix)) {
+    $selector: $dot-layout-width-prefix + $width-prefix + '-' + $selector;
+  }
+
+  @return #{'.'+$selector};
+}
+
+@function dot-rule-initiate($options, $sub-selector: null) {
+  @if not $options {
+    $options: ();
+  }
+
+  $parent-selector: map-get-if($options, parent-selector);
+  $sub-selector: map-get-if($options, sub-selector, $sub-selector);
+  $selector: map-get-if($options, selector);
+
+  @if ($selector) {
+    @if ($parent-selector) {
+      $selector: $parent-selector + $selector;
+    }
+  } @else {
+    @if ($sub-selector) {
+      @if ($parent-selector) {
+        $selector: $parent-selector + $sub-selector;
+      } @else {
+        $selector: dot-class_d($sub-selector);
+      }
+    } @else {
+      @if ($parent-selector) {
+        $selector: $parent-selector;
+      } @else {
+        $selector: dot-class_d();
+      }
+    }
+  }
+
+  @if (starts-with($selector, '.') or starts-with($selector, '#')) {
+    $options: map-set($options, selector-string, str-slice($selector, 2, str-length($selector)));
+  } @else {
+    $options: map-set($options, selector-string, $selector);
+    $selector: #{'.'+$selector};
+  }
+
+  @return map-set($options, selector, $selector);
+}
+
+/// not a dot object instance
+@function dot-type-error($object) {
+  @return 'is not a #{$object} type';
+}
+
+/// set a dot object
+@function dot-type($object, $map) {
+  // $map: map-set($map, '--dot-' + $object, true);
+  $map: map-set($map, '--dot-type', $object);
+  @return $map;
+}
+
+/// check the dot object instance
+@function dot-type-of($map, $objects: null) {
+  $instance: is-map($map) and map-get-if($map, '--dot-type', null);
+
+  @if ($objects) {
+    @if is-list($objects) {
+      @each $object in $objects {
+        @if ($instance == $object) {
+          @return true;
+        }
+      }
+      @return false;
+    }
+    @return $instance == $objects;
+  }
+  @return $instance;
+}
+
+/// check the dot object instance to required
+@function dot-type-required($map, $object) {
+  @if not dot-type-of($map, $object) {
+    @error dot-type-error($object);
+  }
+}
