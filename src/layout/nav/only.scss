@@ -31,7 +31,7 @@
     }
   }
 
-  @include mq-min($__layout-standard-width) {
+  @include mq-min($until-width) {
     position: inherit;
     > ul {
       overflow: visible;
@@ -50,6 +50,7 @@
   }
 }
 
+/// @access private
 @mixin -nav-depth-style($depth, $option, $next-options...) {
   $isRoot: $depth == 1;
 
@@ -166,10 +167,19 @@
   }
 }
 
+/// set navigation style
+/// @param {map} $option
+/// @example
+///    nav-style((
+///        'text',
+///        'padding',
+///        'react-field',
+///    ), ...);
 @mixin nav-style($option, $next-options...) {
   @include -nav-depth-style(1, $option, $next-options...);
 }
 
+/// @access private
 @mixin -nav-depth-rule($depth, $option, $next-options...) {
 
   $type: map-get-if($option, 'type', 'horizontal');
@@ -194,7 +204,9 @@
         position: absolute;
         left: 0;
         z-index: $DOT-NAV-Z-BEGIN + $depth;
-        min-width: 200px;
+        @if $isHorizontal {
+          min-width: 200px;
+        }
       }
 
       &:hover > ul {
@@ -249,7 +261,7 @@
 
 }
 
-/// @private
+/// @access private
 @mixin -nav-rule($option, $next-options...) {
   $option: dot-rule-initiate($option, nav);
   $selector: map-get($option, selector);
@@ -257,7 +269,7 @@
   @include _nav-depth-rule(1, $option, $next-options...);
 }
 
-// make navigation rule
+/// make navigation rule
 @mixin nav-rule($options...) {
   $fixed-options: ();
   @each $next-option in $options {
@@ -278,6 +290,26 @@
     $style: if($style == 'default', '', '-' + $style);
     .dot-nav#{$style} {
       @include nav-rule($options);
+
+      &_scroll {
+        @include nav_scroll;
+      }
+    }
+  }
+
+  .dot-nav-horizontal_right {
+    li {
+      ul {
+        left: inherit;
+        right: 0;
+      }
+
+      $side-fix: -3em;
+      @for $n from 2 through 10 {
+        &:nth-last-child(#{$n}) > ul {
+          right: $n * $side-fix;
+        }
+      }
     }
   }
 }

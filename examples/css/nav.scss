@@ -1,7 +1,7 @@
-@import '../../src/layout/nav/standalone';
+@import '../../src/scss';
+@import '../../src/layout/nav';
 
 .dot-nav {
-  @include nav-scroll;
   @include nav-style((
           'text': #333,
           'padding': 0.626em,

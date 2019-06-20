@@ -1,36 +1,5 @@
 .dot-nav {
-  position: relative;
   color: #333; }
-  .dot-nav > ul {
-    overflow: auto;
-    white-space: nowrap; }
-  .dot-nav li {
-    position: static; }
-    .dot-nav li ul {
-      right: 0;
-      max-height: 50vh;
-      overflow-y: auto; }
-      .dot-nav li ul ul {
-        overflow-y: visible;
-        height: auto;
-        position: static;
-        display: block;
-        top: 100%;
-        left: 0;
-        padding-left: 1.25em;
-        font-size: 0.875em; }
-  @media only screen and (min-width: 1000px) {
-    .dot-nav {
-      position: inherit; }
-      .dot-nav > ul {
-        overflow: visible;
-        white-space: inherit; }
-      .dot-nav li {
-        position: relative; }
-        .dot-nav li ul {
-          right: inherit;
-          max-height: inherit;
-          overflow-y: auto; } }
   .dot-nav a {
     color: #333;
     padding: 0.626em; }

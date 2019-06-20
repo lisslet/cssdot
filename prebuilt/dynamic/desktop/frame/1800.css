@@ -40,10 +40,10 @@
 .dot-width_right {
   margin: 0 0 auto 0; }
 
-#dothead-wrap, #dotfoot-wrap {
+#dot-head-wrap, #dot-foot-wrap {
   position: relative; }
 
-#dotmain {
+#dot-main {
   background-color: #fff;
   overflow-x: hidden; }
 
@@ -55,3 +55,11 @@
 
 .align_right {
   text-align: right; }
+
+#dots {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column; }
+
+#dot-main {
+  flex: 1; }

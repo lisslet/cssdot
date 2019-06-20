@@ -13,6 +13,7 @@
 
 $__layout-sticky-resize: true;
 
+
 /// generate layout frame rules
 @mixin layout-frame-rule($options: null) {
   $options: rule-arguments($options, max-width);
@@ -89,14 +90,14 @@ $__layout-sticky-resize: true;
   }
 
   @at-root #{$id-selector} {
-    &head,
-    &foot {
+    &-head,
+    &-foot {
       &-wrap {
         position: relative;
       }
     }
 
-    &main {
+    &-main {
       background-color: #fff;
       overflow-x: hidden;
     }
@@ -105,6 +106,8 @@ $__layout-sticky-resize: true;
   .align {
     @include align-prefix-rule();
   }
+
+  @include frame-stretch($id-selector+'s', $id-selector+'-main');
 }
 
 /// generate layout frame rules as child selector

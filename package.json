@@ -4,7 +4,7 @@
   "description": "SASS based CSS Framework",
   "main": "index.js",
   "scripts": {
-    "document": "sassdoc src/ --verbose"
+    "document": "sassdoc ./src --verbose --theme rest"
   },
   "repository": {
     "type": "git",
@@ -21,11 +21,12 @@
   },
   "homepage": "https://github.com/lisslet/cssdot#readme",
   "devDependencies": {
-    "gulp": "^4.0.0",
+    "gulp": "^4.0.2",
     "gulp-combine-mq": "^0.4.0",
-    "gulp-load-plugins": "^1.5.0",
-    "gulp-sass": "^4.0.1",
-    "sassdoc": "^2.5.1"
+    "gulp-load-plugins": "^1.6.0",
+    "gulp-sass": "^4.0.2",
+    "sassdoc": "^2.7.0",
+    "sassdoc-theme-rest": "^1.0.3"
   },
   "dependencies": {}
 }

@@ -306,3 +306,15 @@
 
 @import 'mixins/extenders';
 @import 'mixins/decorate';
+
+@mixin frame-stretch($parent, $content) {
+  #{$parent} {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  #{$content} {
+    flex: 1;
+  }
+}

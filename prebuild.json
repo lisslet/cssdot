@@ -48,7 +48,7 @@
     "scss": "layout/nav/standalone",
     "files": {
       "filename": "nav",
-      "content": "@include nav-rules"
+      "content": "@include nav-rules;"
     }
   },
   {
