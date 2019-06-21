@@ -1,22 +1,30 @@
 .dot-nav {
-  color: #333; }
-  .dot-nav a {
-    color: #333;
-    padding: 0.626em; }
-  .dot-nav a:hover,
-  .dot-nav li:hover > a {
-    background-color: blue; }
-  .dot-nav li ul {
-    color: #fff; }
-    .dot-nav li ul li {
-      background-color: blue; }
-    .dot-nav li ul a {
-      color: #fff; }
-    .dot-nav li ul li ul li {
-      background-color: navy; }
-
+  color: #333;
+}
+.dot-nav a {
+  color: #333;
+  padding: 0.626em;
+}
+.dot-nav a:hover,
+.dot-nav li:hover > a {
+  background-color: blue;
+}
+.dot-nav li ul {
+  color: #fff;
+}
+.dot-nav li ul li {
+  background-color: blue;
+}
+.dot-nav li ul a {
+  color: #fff;
+}
+.dot-nav li ul li ul li {
+  background-color: navy;
+}
 .example {
-  min-height: 10em; }
-  .example-scroll {
-    width: 320px;
-    border: solid; }
+  min-height: 10em;
+}
+.example-scroll {
+  width: 320px;
+  border: solid;
+}

@@ -38,12 +38,22 @@ module.exports = (() => {
 
 		const imports = [option.scss];
 
-		if (option.reference && !$referenced[option.reference]) {
-			$reference = Object.assign(
-				$reference,
-				sassVars.from('./src/' + option.reference + '.scss')
-			);
-			$referenced[option.reference] = true;
+		if (option.reference) {
+			$reference = (
+				Array.isArray(option.reference) ?
+					option.reference :
+					[option.reference]
+			).reduce((result, target) => {
+				if ($referenced[target]) {
+					return result;
+				}
+
+				$referenced[target] = true;
+				return {
+					...result,
+					...sassVars.from('./src/' + target + '.scss')
+				}
+			}, $reference);
 		}
 
 		if (!Array.isArray(option.files)) {
@@ -111,6 +121,7 @@ module.exports = (() => {
 	};
 
 	function getReference(option, property) {
+		property = property.replace(/-/g, '_');
 		if ($reference[property]) {
 			return $reference[property];
 		}

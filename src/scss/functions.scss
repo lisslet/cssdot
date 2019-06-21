@@ -294,11 +294,11 @@ $__args-shorten-index: query !default;
 /// @param {number} $size the string length
 /// @return {string}
 @function rand-string($size: 30) {
-  $result: rand($__alphabets);
+  $result: rand($DOT-ALPHABETS);
   $size: $size - 1;
-  $length: length($__chars);
+  $length: length($DOT-CHARS);
   @while ($size > 0) {
-    $result: $result + nth($__chars, random($length));
+    $result: $result + nth($DOT-CHARS, random($length));
     $size: $size - 1;
   }
   @return $result;

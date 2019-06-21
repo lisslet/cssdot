@@ -19,12 +19,12 @@
   },
   {
     "scss": "layout/frame/standalone",
-    "reference": "layout/vars",
+    "reference": ["scss/vars" ,"layout/vars"],
     "repeat": {
       "each": {
-        "iterator": "__layout_width_map",
+        "iterator": "DOT-LAYOUT-WIDTH-MAP",
         "condition": {
-          "gte": "__layout_standard_width"
+          "gte": "DOT-LAYOUT-DEFAULT-WIDTH"
         },
         "value": "width"
       }

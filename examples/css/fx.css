@@ -1,14 +1,17 @@
 #fx-elements {
   display: grid;
   grid-template-columns: repeat(auto-fill, 280px);
-  justify-content: center; }
+  justify-content: center;
+}
 
 #fx-elements div {
   height: 100px;
-  text-align: center; }
+  text-align: center;
+}
 
 #fx-elements h3 {
-  font-size: 1em; }
+  font-size: 1em;
+}
 
 #fx-elements span {
   display: block;
@@ -16,4 +19,5 @@
   width: 24px;
   height: 24px;
   background-color: #333;
-  animation-duration: 3s !important; }
+  animation-duration: 3s !important;
+}

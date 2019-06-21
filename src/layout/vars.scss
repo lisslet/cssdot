@@ -1,25 +1,6 @@
-$__layout-width-map: (
-        32: 320,
-        42: 425,
-        48: 480,
-        54: 540,
-        64: 640,
-        76: 768,
-        10: 1000,
-        12: 1200,
-        14: 1400,
-        16: 1600,
-        18: 1800
-) !default;
-
-/// last key of width-map
-$__layout-max-width-key: 18 !default;
-$__layout-max-width: 9999 !default;
-$__layout-min-width: 320 !default;
-$__layout-standard-width: 1000 !default;
-$__layout-standard-side: 22 !default;
-
-$__layout-widths: map-values($__layout-width-map) !default;
-$__layout-width-keys: map-keys($__layout-width-map) !default;
-
-$__layout-sticky-resize: true;
+$DOT-LAYOUT-MAX-WIDTH-KEY: 18 !default;
+$DOT-LAYOUT-MAX-WIDTH: 9999 !default;
+$DOT-LAYOUT-MIN-WIDTH: 320 !default;
+$DOT-LAYOUT-DEFAULT-WIDTH: 1000 !default;
+$DOT-LAYOUT-DEFAULT-SIDE: 22 !default;
+$DOT-LAYOUT-STICKY-RESIZE: true;

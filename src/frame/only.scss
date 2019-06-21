@@ -4,13 +4,13 @@
 @mixin frame-rule($options: null) {
   $options: rule-args($options, max-width);
 
-  $standard-width: map-get-if($options, standard-width, $__layout-standard-width);
+  $standard-width: map-get-if($options, standard-width, $DOT-LAYOUT-DEFAULT-WIDTH);
   $max-width: map-get-if($options, max-width, $standard-width);
-  $min-width: map-get-if($options, min-width, $__layout-min-width);
+  $min-width: map-get-if($options, min-width,$DOT-LAYOUT-MIN-WIDTH);
 
   $side-width: map-get-if($options, side-width);
 
-  $sticky-resize: map-get-if($options, sticky-resize, $__layout-sticky-resize);
+  $sticky-resize: map-get-if($options, sticky-resize, $DOT-LAYOUT-STICKY-RESIZE);
 
   $query: map-get($options, query);
   $parent-query: unquote("#{&}");
@@ -43,7 +43,7 @@
       }
 
       $last-sticky-width: null;
-      @each $width in $__layout-widths {
+      @each $width in $DOT-LAYOUT-WIDTHS {
         $main-width: $width - $side-width;
         // stick resizing width
         @if ($sticky-resize) {

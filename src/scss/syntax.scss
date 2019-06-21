@@ -60,7 +60,7 @@ $-props: (
         letter-spacing: (ls),
 
         direction: (d, dir)
-) !global;
+) !default;
 
 $-flipped-props: ();
 @each $property, $shortens in $-props {
@@ -95,26 +95,26 @@ $-flipped-props: ();
   @return -add($prefix, -get(color));
 }
 
-$-c: -c() !global;
+$-c: -c() !default;
 
 /// @return {list}
-@function -bg-c($prefix:null) {
+@function -bd($prefix:null) {
   @return -add($prefix, -get(border));
 }
 
 
-$-bg-c: -bg-c() !global;
+$-bd: -bd() !default;
 
 /// @return {list}
 @function -bg-c($prefix: null) {
   @return -add($prefix, -get(background-color));
 }
 
-$-bd-c: -bd-c() !global;
+$-bg-c: -bg-c() !default;
 
 /// @return {list}
 @function -ls($prefix: null){
   @return -add($prefix, -get(letter-spacing));
 }
 
-$-ls: -ls() !global;
+$-ls: -ls() !default;

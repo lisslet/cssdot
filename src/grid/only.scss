@@ -2,24 +2,24 @@
 @import 'vars';
 
 @function __layout-width-key($width) {
-  $index: index($__layout-width-keys, $width);
+  $index: index($DOT-LAYOUT-WIDTH-KEYS, $width);
 
   // width is width-key
   @if $index {
     @return $width;
   }
 
-  $index: index($width, $__layout-widths);
+  $index: index($width, $DOT-LAYOUT-WIDTHS);
 
   // width is width
   @if ($index) {
-    @return nth($__layout-width-keys, $index);
+    @return nth($DOT-LAYOUT-WIDTH-KEYS, $index);
   }
 
   // find similar width
   $last-width: 0;
   $last-key: null;
-  @each $layout-width-key, $layout-width in $__layout-width-map {
+  @each $layout-width-key, $layout-width in $DOT-LAYOUT-WIDTH-MAP {
 
     @if ($width <= $layout-width) {
       @if ($width != $layout-width) {
@@ -35,22 +35,22 @@
   }
 
   @warn '#{$width} replaced as supported width as maximum';
-  @return $__layout-max-width-key;
+  @return $DOT-LAYOUT-MAX-WIDTH-KEY;
 }
 
 @function is-layout-min-width($width) {
-  @return $width == $__layout-min-width;
+  @return $width == $DOT-LAYOUT-MIN-WIDTH;
 }
 
 @function __add-width-selector-suffix($query, $width) {
   $key: __layout-width-key($width);
 
-  $width: map-get($__layout-width-map, $key);
+  $width: map-get($DOT-LAYOUT-WIDTH-MAP, $key);
   @if (is-layout-min-width($width)) {
     @return $query;
   }
 
-  $prefix: $__width_selector_glue + __layout-width-key($width);
+  $prefix: $DOT-WIDTH-SELECTOR-GLUE + __layout-width-key($width);
   @return $query + $prefix;
 }
 
@@ -64,7 +64,7 @@
 
   @at-root #{$selector} {
 
-    @each $layout-width in $__layout-widths {
+    @each $layout-width in $DOT-LAYOUT-WIDTHS {
       @include mq-min($layout-width) {
 
         @at-root {

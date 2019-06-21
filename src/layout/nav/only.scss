@@ -1,17 +1,20 @@
 @import './variables';
 @import '../vars';
 
-@mixin nav-scroll($until-width: $__layout-standard-width) {
+// x scrollable
+@mixin nav_scroll($until-width: $DOT-LAYOUT-DEFAULT-WIDTH) {
 
   position: relative;
 
   > ul {
     overflow: auto;
     white-space: nowrap;
+    scroll-snap-type: x proximity;
   }
 
   li {
     position: static;
+    scroll-snap-align: center;
     // left:inherit;
     ul {
       right: 0;
@@ -48,6 +51,10 @@
       }
     }
   }
+}
+
+// fixed positions for right-lean menu
+@mixin nav_at-right(){
 }
 
 /// @access private

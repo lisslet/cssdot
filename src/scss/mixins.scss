@@ -164,7 +164,7 @@
 
 /// set margin like grid-gap
 /// just not set for to the last child.
-@mixin gap($gap: $__global_gap, $to: bottom, $property: margin) {
+@mixin gap($gap: $DOT-DEFAULT-GAP, $to: bottom, $property: margin) {
   $property: #{$property}-#{$to};
 
   @if $gap == false {
@@ -180,19 +180,19 @@
   }
 }
 
-@mixin top-gap($gap: $__global_gap) {
+@mixin top-gap($gap: $DOT-DEFAULT-GAP) {
   @include gap($gap, top);
 }
 
-@mixin right-gap($gap: $__global_gap) {
+@mixin right-gap($gap: $DOT-DEFAULT-GAP) {
   @include gap($gap, right);
 }
 
-@mixin bottom-gap($gap: $__global_gap) {
+@mixin bottom-gap($gap: $DOT-DEFAULT-GAP) {
   @include gap($gap, bottom);
 }
 
-@mixin left-gap($gap: $__global_gap) {
+@mixin left-gap($gap: $DOT-DEFAULT-GAP) {
   @include gap($gap, left);
 }
 
@@ -226,7 +226,7 @@
 /// @param $value [0.3s] the property value of animation
 /// @param $delay the property value of animation-delay
 /// @content keyframes
-@mixin animate($value: $__global_duration, $delay: null) {
+@mixin animate($value: $DOT-DEFAULT-DURATION, $delay: null) {
   $name: rand-string();
   animation: $name $value;
   @if ($delay) {
@@ -310,11 +310,21 @@
 @mixin frame-stretch($parent, $content) {
   #{$parent} {
     display: flex;
-    min-height: 100vh;
+    min-height: 100%;
     flex-direction: column;
   }
 
   #{$content} {
     flex: 1;
+  }
+}
+
+@mixin each-layout-widths {
+  @each $width in $DOT-LAYOUT-WIDTHS {
+    @include mq-min($width){
+      &#{$DOT-WIDTH-SELECTOR-GLUE}-#{$width} {
+        @content;
+      }
+    }
   }
 }

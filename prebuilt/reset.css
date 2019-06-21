@@ -1,16 +1,18 @@
 html,
 body {
-  min-height: 100%; }
+  min-height: 100%;
+}
 
 body {
   background-color: white;
-  line-height: 1; }
+  line-height: 1;
+}
 
 /*
-  article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section {
-    display: block;
-  }
-  */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section {
+  display: block;
+}
+*/
 a, abbr, acronym, address, article, aside, audio,
 b, big, blockquote, body,
 canvas, caption, cite, code,
@@ -34,41 +36,53 @@ u, ul,
 var, video {
   margin: 0;
   padding: 0;
-  border: 0; }
+  border: 0;
+}
 
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
-  font-size: 100%; }
+  font-size: 100%;
+}
 
 a {
-  text-decoration: none; }
+  text-decoration: none;
+}
 
 address, em {
-  font: inherit; }
+  font: inherit;
+}
 
 blockquote, q {
-  quotes: none; }
-  blockquote:before, blockquote:after, q:before, q:after {
-    content: ''; }
+  quotes: none;
+}
+blockquote:before, blockquote:after, q:before, q:after {
+  content: "";
+}
 
 ol, ul {
-  list-style-type: none; }
+  list-style-type: none;
+}
 
 table {
   border-collapse: collapse;
-  border-spacing: 0; }
+  border-spacing: 0;
+}
 
 th {
-  text-align: left; }
+  text-align: left;
+}
 
 button,
 input[type=submit],
 input[type=button],
 label {
-  cursor: pointer; }
+  cursor: pointer;
+}
 
 hr {
-  display: none; }
+  display: none;
+}
 
 code {
-  font-family: 'Courier New', sans-serif; }
+  font-family: "Courier New", sans-serif;
+}

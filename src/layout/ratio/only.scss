@@ -8,7 +8,7 @@
       height: 0;
     }
 
-    @each $key, $value in $__aspect-ratios {
+    @each $key, $value in $DOT-ASPECT-RATIOS {
       &#{$key} {
         @extend %ratio;
         padding-bottom: $value;

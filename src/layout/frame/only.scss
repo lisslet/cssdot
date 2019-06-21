@@ -20,8 +20,8 @@ $__layout-sticky-resize: true;
 
   $selector: map-get($options, selector);
 
-  $max-width: map-get-if($options, max-width, $__layout-standard-width);
-  $min-width: map-get-if($options, min-width, $__layout-min-width);
+  $max-width: map-get-if($options, max-width, $DOT-LAYOUT-DEFAULT-WIDTH);
+  $min-width: map-get-if($options, min-width, $DOT-LAYOUT-MIN-WIDTH);
 
   $sticky-resize: map-get-if($options, sticky-resize, $__layout-sticky-resize);
 
@@ -39,7 +39,7 @@ $__layout-sticky-resize: true;
   @at-root {
     #{$selector+'width'},
     #{$containers} {
-      min-width: px($__layout-min-width);
+      min-width: px($DOT-LAYOUT-MIN-WIDTH);
       max-width: px($max-width);
       margin: 0 auto;
 
@@ -47,9 +47,9 @@ $__layout-sticky-resize: true;
         width: $max-width;
       }
 
-      @each $width in $__layout-widths {
+      @each $width in $DOT-LAYOUT-WIDTHS {
         @if ($sticky-resize) {
-          @if ($width >= $__layout-standard-width and $width <= $max-width) {
+          @if ($width >= $DOT-LAYOUT-DEFAULT-WIDTH and $width <= $max-width) {
             @include mq-min($width) {
               max-width: px($width);
             }
