@@ -99,7 +99,6 @@ $__layout-sticky-resize: true;
 
     &-main {
       background-color: #fff;
-      overflow-x: hidden;
     }
   }
 
@@ -107,7 +106,7 @@ $__layout-sticky-resize: true;
     @include align-prefix-rule();
   }
 
-  @include frame-stretch($id-selector+'s', $id-selector+'-main');
+  @include frame-stretch($id-selector+'s', $id-selector+'-main', 100vh);
 }
 
 /// generate layout frame rules as child selector

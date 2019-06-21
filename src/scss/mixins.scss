@@ -132,10 +132,16 @@
   overflow: hidden;
 }
 
-@mixin middle() {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+@mixin middle($flag: true) {
+  @if $flag {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  } @else {
+    position: static;
+    top: inherit;
+    transform: inherit;
+  }
 }
 
 @mixin center() {
@@ -144,15 +150,22 @@
   transform: translateX(-50%);
 }
 
-@mixin center-middle() {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+@mixin center-middle($flag:true) {
+  @if $flag {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  } @else {
+    position: static;
+    top: inherit;
+    left: inherit;
+    transform: inherit;
+  }
 }
 
-@mixin middle-center {
-  @include center-middle();
+@mixin middle-center($flag:true) {
+  @include center-middle($flag);
 }
 
 @mixin respond-height($height:100%) {
@@ -248,7 +261,14 @@
 
 @mixin trans($properties, $duration: 0.3s) {
   transition-duration: $duration;
-  transition-property: zip($properties);
+  @if (is-map($properties)) {
+    @each $property, $value in $properties {
+      #{$property}: $value;
+    }
+    transition-property: zip(map-keys($properties));
+  } @else {
+    transition-property: zip($properties);
+  }
 }
 
 @mixin pseudo-cover() {
@@ -307,10 +327,10 @@
 @import 'mixins/extenders';
 @import 'mixins/decorate';
 
-@mixin frame-stretch($parent, $content) {
+@mixin frame-stretch($parent, $content, $height: 100%) {
   #{$parent} {
     display: flex;
-    min-height: 100%;
+    min-height: $height;
     flex-direction: column;
   }
 
@@ -321,7 +341,7 @@
 
 @mixin each-layout-widths {
   @each $width in $DOT-LAYOUT-WIDTHS {
-    @include mq-min($width){
+    @include mq-min($width) {
       &#{$DOT-WIDTH-SELECTOR-GLUE}-#{$width} {
         @content;
       }

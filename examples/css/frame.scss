@@ -1,11 +1,36 @@
 @import '../../src/scss';
-@import '../../src/frame/only';
 
-@include frame-rule((
-        max-width: 1600,
-        side-width: 150
-));
-
-table {
-  width: 100%;
+@mixin frame-main-dynamic() {
+  #dot-main-wrap{
+      max-width: inherit;
+  }
 }
+
+@include mq-min(2000){
+  .dot-fluid {
+    //max-width: 2560px;
+  }
+}
+
+
+#dot {
+  &-head {
+    background-color: #369;
+    z-index:1;
+  }
+}
+
+.sticky {
+  h1 {
+    position: sticky;
+    top: 0;
+    left: 0;
+  }
+
+  .content {
+    height: 500px;
+    background-color: #ccc;
+  }
+}
+
+@include frame-main-dynamic;

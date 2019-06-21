@@ -43,7 +43,6 @@
 }
 #dot-main {
   background-color: #fff;
-  overflow-x: hidden;
 }
 
 .align_left {
@@ -58,7 +57,7 @@
 
 #dots {
   display: flex;
-  min-height: 100%;
+  min-height: 100vh;
   flex-direction: column;
 }
 
