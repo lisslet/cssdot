@@ -32,8 +32,7 @@ $__layout-sticky-resize: true;
 
   $id-selector: '#' + map-get($options, selector-string);
 
-  $containers: #{$id-selector+'-head-wrap'},  #{$id-selector+'-main-wrap'},  #{$id-selector+'-foot-wrap'};
-
+  $containers: #{$id-selector+'-head-wrap'},  #{$id-selector+'-main-wrap'},  #{$id-selector+'-foot-wrap'}, #{$id-selector+'-head-area'}, #{$id-selector+'-main-area'}, #{$id-selector+'-foot-area'};
   // frame width
   @at-root {
     #{$selector+'width'},
