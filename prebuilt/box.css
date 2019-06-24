@@ -15,6 +15,9 @@
 .dot-box-pad {
   padding: 1.256rem;
 }
+.dot-box-head + .dot-box-main .dot-box-pad {
+  padding-top: 0;
+}
 .dot-box-media {
   position: relative;
 }

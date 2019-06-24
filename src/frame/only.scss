@@ -23,7 +23,7 @@
 
   $containers: #{$id-query + '-head'}, #{$id-query + '-main'}, #{$id-query + '-foot'};
 
-  $wrappers: #{$id-query+'-head-wrap'}, #{$id-query+'-main-wrap'}, #{$id-query+'-foot-wrap'};
+  $wrappers: #{$id-query+'-head-wrap'}, #{$id-query+'-main-wrap'}, #{$id-query+'-foot-wrap'}, #{$id-query+'-head-area'}, #{$id-query+'-main-area'}, #{$id-query+'-foot-area'};
 
   @at-root {
     #{$containers} {

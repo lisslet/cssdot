@@ -27,7 +27,11 @@
       padding: 1.256rem;
     }
 
-    &-head {
+    &-head + &-main,
+    &-main + &-foot {
+      #{$selector}-pad {
+        padding-top: 0;
+      }
     }
 
     &-media {
