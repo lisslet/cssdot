@@ -56,9 +56,7 @@ $dot-imported-mixins-hack: true !default;
 
 @mixin ie10() {
   @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-    & {
       @content;
-    }
   }
 }
 
