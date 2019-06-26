@@ -37,8 +37,15 @@
     &-media {
       @include ratio-child-rule((sub-prefix:null));
       position: relative;
+
       &-area {
         position: absolute;
+        overflow: hidden;
+      }
+
+      img {
+        @include center();
+        min-width: 100%;
       }
     }
 

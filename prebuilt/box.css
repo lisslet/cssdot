@@ -73,6 +73,13 @@
 
 .dot-box-media-area {
   position: absolute;
+  overflow: hidden;
+}
+.dot-box-media img {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 100%;
 }
 .dot-box {
   display: flex;
