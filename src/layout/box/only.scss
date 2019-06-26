@@ -36,7 +36,7 @@
 
     &-media {
       @include ratio-child-rule((sub-prefix:null)) {
-        & #{$selector}-wrap {
+        & #{$selector}-area {
           position: absolute;
         }
       }

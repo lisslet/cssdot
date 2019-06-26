@@ -6,30 +6,30 @@
 각 요소는 문서내 유일 하기에 `id` 선택자가 사용 됩니다.
 
 
-* `div#-wrap`: 전체를 감싸는 요소
+* `div#-area`: 전체를 감싸는 요소
     * `header#-head`
-        * `div#-head-wrap`
+        * `div#-head-area`
     * `main#-main`
-        * `div#-main-wrap`
+        * `div#-main-area`
     * `footer#-foot`
-        * `div#-foot-wrap`
+        * `div#-foot-area`
         
 * `*.-width`
 
 ```html
-<article id="dot-wrap">
+<article id="dot-area">
     <header id="dot-head">
-        <div id="dot-head-wrap">
+        <div id="dot-head-area">
         </div>
     </header>
         
     <main id="dot-main">
-        <div id="dot-main-wrap">
+        <div id="dot-main-area">
         </div>
     </main>
         
     <footer id="dot-head">
-        <div id="dot-foot-wrap">
+        <div id="dot-foot-area">
         </div>
     </header>        
 </article>

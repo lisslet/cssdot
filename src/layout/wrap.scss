@@ -8,7 +8,7 @@
   @return '';
 }
 
-@mixin wrap-rule($values:()) {
+@mixin area-rule($values:()) {
   @if (not is-map($values)) {
     $values: (width: $values);
   }
@@ -48,7 +48,7 @@
 
   #{$id-selector}head,
   #{$id-selector}foot {
-    &-wrap {
+    &-area {
       position: relative;
     }
   }

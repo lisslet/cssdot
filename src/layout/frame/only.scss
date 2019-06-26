@@ -15,6 +15,7 @@ $__layout-sticky-resize: true;
 
 
 /// generate layout frame rules
+/// @todo redefine resize
 @mixin layout-frame-rule($options: null) {
   $options: rule-arguments($options, max-width);
 
@@ -33,10 +34,11 @@ $__layout-sticky-resize: true;
 
   $id-selector: '#' + map-get($options, selector-string);
 
-  $containers: #{$id-selector+'-head-wrap'},  #{$id-selector+'-main-wrap'},  #{$id-selector+'-foot-wrap'}, #{$id-selector+'-head-area'}, #{$id-selector+'-main-area'}, #{$id-selector+'-foot-area'};
+  $containers: #{$id-selector+'-head-area'}, #{$id-selector+'-main-area'}, #{$id-selector+'-foot-area'};
+
   // frame width
   @at-root {
-    #{$selector+'width'},
+    #{$selector+'area'},
     #{$containers} {
       min-width: px($DOT-LAYOUT-MIN-WIDTH);
       max-width: px($max-width);
@@ -91,7 +93,7 @@ $__layout-sticky-resize: true;
   @at-root #{$id-selector} {
     &-head,
     &-foot {
-      &-wrap {
+      &-area {
         position: relative;
       }
     }

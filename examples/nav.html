@@ -4,28 +4,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" href="../prebuilt/reset.css">
-    <link rel="stylesheet" href="../prebuilt/dynamic/frame/1800.css">
+    <link rel="stylesheet" href="../prebuilt/dynamic/frame/1400.css">
     <link rel="stylesheet" href="../prebuilt/nav.css">
     <link rel="stylesheet" href="css/nav.css">
 </head>
 <body>
 <div id="dots">
 <header id="dot-head">
-    <div id="dot-head-wrap">
+    <div id="dot-head-area">
         <div id="dot-title">
             Nav with cssdot
         </div>
     </div>
 </header>
 <main id="dot-main">
-    <div id="dot-main-wrap">
+    <div id="dot-main-area">
         <h1>Dot Navigation</h1>
-        <p>Navigation Styles</p>
+        <p>dot-nav</p>
 
         <section class="example">
             <h3>Default Style</h3>
-            <div class="example-scroll">
-                <nav class="dot-nav dot-nav_scroll">
+                <nav class="dot-nav">
                     <ul>
                         <li>
                             <a href="#nav">Nav Item 1</a>
@@ -121,12 +120,11 @@
                         </li>
                     </ul>
                 </nav>
-            </div>
         </section>
         <hr>
         <section class="example">
-            <h3>Horizontal Style</h3>
-            <nav class="dot-nav-horizontal">
+            <h3>dot-nav-x</h3>
+            <nav class="dot-nav-x">
                 <ul>
                     <li>
                         <a href="#nav">Nav Item 1</a>
@@ -186,8 +184,72 @@
         </section>
         <hr>
         <section class="example">
-            <h3>Vertical Style</h3>
-            <nav class="dot-nav-vertical" style="width:200px">
+            <h3>dot-nav-y</h3>
+            <nav class="dot-nav-y" style="width:200px">
+                <ul>
+                    <li>
+                        <a href="#nav">Nav Item 1</a>
+                        <ul>
+                            <li>
+                                <a href="#nav">Nav Item 1-1</a>
+                                <ul>
+                                    <li>
+                                        <a href="#nav">Nav Item 1-1-1</a>
+                                    </li>
+                                    <li>
+                                        <a href="#nav">Nav Item 1-1-2</a>
+                                    </li>
+                                    <li>
+                                        <a href="#nav">Nav Item 1-1-2</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#nav">Nav Item 1-2</a>
+                                <ul>
+                                    <li>
+                                        <a href="#nav">Nav Item 1-2-1</a>
+                                    </li>
+                                    <li>
+                                        <a href="#nav">Nav Item 1-2-2</a>
+                                        <ul>
+                                            <li>
+                                                <a href="#nav">Nav Item 1-2-2-1</a>
+                                            </li>
+                                            <li>
+                                                <a href="#nav">Nav Item 1-2-2-2</a>
+                                            </li>
+                                            <li>
+                                                <a href="#nav">Nav Item 1-2-2-2</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#nav">Nav Item 1-2-2</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#nav">Nav Item 1-2</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#nav">Nav Item 2</a>
+                    </li>
+                    <li>
+                        <a href="#nav">Nav Item 3</a>
+                    </li>
+                    <li>
+                        <a href="#nav">Nav Item 4</a>
+                    </li>
+                </ul>
+            </nav>
+        </section>
+
+        <section class="example">
+            <h3>dot-nav-tree</h3>
+            <nav class="dot-nav-tree" style="width:200px">
                 <ul>
                     <li>
                         <a href="#nav">Nav Item 1</a>
@@ -251,7 +313,7 @@
     </div>
 </main>
     <footer id="dot-foot">
-        <div id="dot-foot-wrap">
+        <div id="dot-foot-area">
             License
         </div>
     </footer>

@@ -34,7 +34,7 @@
 	const elements = document.getElementById('fx-elements');
 	mixedFrames.forEach(mixedFrame => {
 		const type = '--dot-' + mixedFrame;
-		const wrap = document.createElement('div');
+		const area = document.createElement('div');
 		const title = document.createElement('h3');
 		title.innerHTML = type;
 
@@ -42,10 +42,10 @@
 		node.className = type;
 		node.style.animationIterationCount = 'infinite';
 
-		wrap.appendChild(title);
-		wrap.appendChild(node);
+		area.appendChild(title);
+		area.appendChild(node);
 
-		elements.appendChild(wrap);
+		elements.appendChild(area);
 	});
 </script>
 </body>

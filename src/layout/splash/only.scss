@@ -20,7 +20,7 @@
   @at-root #{$selector} {
     &-splash {
       @include position-fixed($z-index);
-      &-wrap {
+      &-area {
         @include align-states;
       }
       @content;

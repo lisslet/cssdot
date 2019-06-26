@@ -23,7 +23,7 @@
 
   $containers: #{$id-query + '-head'}, #{$id-query + '-main'}, #{$id-query + '-foot'};
 
-  $wrappers: #{$id-query+'-head-wrap'}, #{$id-query+'-main-wrap'}, #{$id-query+'-foot-wrap'}, #{$id-query+'-head-area'}, #{$id-query+'-main-area'}, #{$id-query+'-foot-area'};
+  $areapers: #{$id-query+'-head-area'}, #{$id-query+'-main-area'}, #{$id-query+'-foot-area'}, #{$id-query+'-head-area'}, #{$id-query+'-main-area'}, #{$id-query+'-foot-area'};
 
   @at-root {
     #{$containers} {
@@ -33,7 +33,7 @@
     }
 
     #{$query+'width'},
-    #{$wrappers} {
+    #{$areapers} {
       min-width: px($min-width);
       max-width: px($max-width);
       margin: 0 auto;
@@ -87,8 +87,8 @@
           padding-left: inherit;
         }
 
-        &#{$wrappers},
-        #{$wrappers} {
+        &#{$areapers},
+        #{$areapers} {
           @extend %width-resize;
           min-width: inherit;
         }

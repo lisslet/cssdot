@@ -15,7 +15,7 @@
 .dot-box-pad {
   padding: 1.256rem;
 }
-.dot-box-head + .dot-box-main .dot-box-pad {
+.dot-box-head + .dot-box-main .dot-box-pad, .dot-box-main + .dot-box-foot .dot-box-pad {
   padding-top: 0;
 }
 .dot-box-media {
@@ -32,45 +32,45 @@
   padding-bottom: 66.66%;
   position: relative;
 }
-.dot-box-media32 .ratio-wrap {
+.dot-box-media32 .ratio-area {
   position: absolute;
 }
 .dot-box-media43 {
   padding-bottom: 75%;
   position: relative;
 }
-.dot-box-media43 .ratio-wrap {
+.dot-box-media43 .ratio-area {
   position: absolute;
 }
 .dot-box-media85 {
   padding-bottom: 62.5%;
   position: relative;
 }
-.dot-box-media85 .ratio-wrap {
+.dot-box-media85 .ratio-area {
   position: absolute;
 }
 .dot-box-media169 {
   padding-bottom: 56.25%;
   position: relative;
 }
-.dot-box-media169 .ratio-wrap {
+.dot-box-media169 .ratio-area {
   position: absolute;
 }
 .dot-box-media1610 {
   padding-bottom: 62.5%;
   position: relative;
 }
-.dot-box-media1610 .ratio-wrap {
+.dot-box-media1610 .ratio-area {
   position: absolute;
 }
 .dot-box-media219 {
   padding-bottom: 42.85%;
   position: relative;
 }
-.dot-box-media219 .ratio-wrap {
+.dot-box-media219 .ratio-area {
   position: absolute;
 }
-.dot-box-media .dot-box-wrap {
+.dot-box-media .dot-box-area {
   position: absolute;
 }
 
