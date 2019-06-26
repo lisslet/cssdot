@@ -35,22 +35,22 @@
     }
 
     &-media {
-      @include ratio-child-rule((sub-prefix:null));
-      position: relative;
+      @include ratio-child-rule((sub-prefix:null)) {
+        position: relative;
 
+        &-area {
+          overflow: hidden;
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
 
-      &-area {
-        overflow: hidden;
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-      }
-
-      img {
-        @include center();
-        min-width: 100%;
+          img {
+            @include center();
+            min-width: 100%;
+          }
+        }
       }
     }
 

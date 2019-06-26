@@ -20,8 +20,6 @@
 }
 .dot-box-media {
   position: relative;
-}
-.dot-box-media {
   position: relative;
 }
 .dot-box-media .dot-box-media219, .dot-box-media .dot-box-media1610, .dot-box-media .dot-box-media169, .dot-box-media .dot-box-media85, .dot-box-media .dot-box-media43, .dot-box-media .dot-box-media32 {
@@ -70,7 +68,6 @@
 .dot-box-media219 .ratio-area {
   position: absolute;
 }
-
 .dot-box-media-area {
   overflow: hidden;
   position: absolute;
@@ -79,12 +76,13 @@
   right: 0;
   bottom: 0;
 }
-.dot-box-media img {
+.dot-box-media-area img {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
   min-width: 100%;
 }
+
 .dot-box {
   display: flex;
   min-height: 100%;
