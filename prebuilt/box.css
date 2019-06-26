@@ -20,7 +20,6 @@
 }
 .dot-box-media {
   position: relative;
-  overflow: hidden;
 }
 .dot-box-media {
   position: relative;
@@ -73,6 +72,7 @@
 }
 
 .dot-box-media-area {
+  overflow: hidden;
   position: absolute;
   top: 0;
   left: 0;
