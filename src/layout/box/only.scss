@@ -47,7 +47,7 @@
           bottom: 0;
 
           img {
-            @include center();
+            @include middle();
             min-width: 100%;
           }
         }
