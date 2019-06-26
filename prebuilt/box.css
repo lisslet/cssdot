@@ -70,10 +70,10 @@
 .dot-box-media219 .ratio-area {
   position: absolute;
 }
-.dot-box-media .dot-box-area {
+
+.dot-box-media-area {
   position: absolute;
 }
-
 .dot-box {
   display: flex;
   min-height: 100%;

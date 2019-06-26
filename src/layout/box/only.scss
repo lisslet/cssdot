@@ -35,12 +35,11 @@
     }
 
     &-media {
-      @include ratio-child-rule((sub-prefix:null)) {
-        & #{$selector}-area {
-          position: absolute;
-        }
-      }
+      @include ratio-child-rule((sub-prefix:null));
       position: relative;
+      &-area {
+        position: absolute;
+      }
     }
 
     &-main {
