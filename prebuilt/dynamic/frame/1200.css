@@ -6,12 +6,12 @@
 }
 .ie69 .dot-area,
 .ie69 #dot-head-area, .ie69 #dot-main-area, .ie69 #dot-foot-area {
-  width: 1200;
+  width: 1200px;
 }
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
   .dot-area,
 #dot-head-area, #dot-main-area, #dot-foot-area {
-    width: 1200;
+    width: 1200px;
   }
 }
 @media only screen and (min-width: 1000px) {
@@ -62,5 +62,5 @@
 }
 
 #dot-main {
-  flex: 1;
+  flex-grow: 1;
 }

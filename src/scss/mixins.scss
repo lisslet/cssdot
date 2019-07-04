@@ -335,14 +335,14 @@
   }
 
   #{$content} {
-    flex: 1;
+    flex-grow: 1;
   }
 }
 
 @mixin each-layout-widths {
   @each $width in $DOT-LAYOUT-WIDTHS {
     @include mq-min($width) {
-      &#{$DOT-WIDTH-SELECTOR-GLUE}-#{$width} {
+      &#{$dot-area-SELECTOR-GLUE}-#{$width} {
         @content;
       }
     }

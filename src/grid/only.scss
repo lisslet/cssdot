@@ -50,7 +50,7 @@
     @return $query;
   }
 
-  $prefix: $DOT-WIDTH-SELECTOR-GLUE + __layout-width-key($width);
+  $prefix: $dot-area-SELECTOR-GLUE + __layout-width-key($width);
   @return $query + $prefix;
 }
 

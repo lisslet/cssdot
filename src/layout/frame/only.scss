@@ -45,7 +45,7 @@ $__layout-sticky-resize: true;
       margin: 0 auto;
 
       @include ie610 {
-        width: $max-width;
+        width: px($max-width);
       }
 
       @each $width in $DOT-LAYOUT-WIDTHS {

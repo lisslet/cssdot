@@ -27,13 +27,6 @@
       padding: 1.256rem;
     }
 
-    &-head + &-main,
-    &-main + &-foot {
-      #{$selector}-pad {
-        padding-top: 0;
-      }
-    }
-
     &-media {
       @include ratio-child-rule((sub-prefix:null)) {
         position: relative;
@@ -46,7 +39,7 @@
           right: 0;
           bottom: 0;
 
-          img {
+            img {
             @include middle();
             min-width: 100%;
           }
