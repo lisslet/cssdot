@@ -54,12 +54,9 @@
   @return $query + $prefix;
 }
 
-@mixin grid-rule($options:()) {
-  $options: dot-rule-initiate($options, grid);
-
+@mixin grid-rule-by-grid($options) {
   $selector: map-get($options, selector);
   $selector-string: map-get($options, selector-string);
-
   $attribute-selector: #{'[class*='+$selector-string+']'};
 
   @at-root #{$selector} {
@@ -68,13 +65,13 @@
       @include mq-min($layout-width) {
 
         @at-root {
-          %display-grid#{$layout-width} {
+          %grid-area#{$layout-width} {
             display: grid;
           }
         }
 
         $gap: 0;
-        @while ($gap <= $dot-grid-gap-to) {
+        @while ($gap <= $DOT-GRID-GAP-TO) {
           $query: __add-width-selector-suffix(-gap#{$gap}, $layout-width);
 
           &#{$query + $attribute-selector},
@@ -88,7 +85,7 @@
         @for $column from 1 through $dot-grid-column-to {
           $grid-query: __add-width-selector-suffix($column, $layout-width);
           &#{$grid-query} {
-            @extend %display-grid#{$layout-width};
+            @extend %grid-area#{$layout-width};
             grid-template-columns: repeat($column, 1fr);
           }
         }
@@ -96,6 +93,67 @@
     }
   }
 }
+
+@mixin grid-rule-by-flex($options) {
+  $selector: map-get($options, selector);
+  $selector-string: map-get($options, selector-string);
+  $attribute-selector: #{'[class*='+$selector-string+']'};
+
+  @at-root #{$selector} {
+    @each $layout-width in $DOT-LAYOUT-WIDTHS {
+      @include mq-min($layout-width) {
+        @at-root {
+          %grid-area#{$layout-width} {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+          }
+
+          //%grid-last-line#{$layout-width} {
+          //  margin-bottom: 0;
+          //}
+        }
+
+        $gap: 0;
+        @while ($gap <= $DOT-GRID-GAP-TO) {
+          $query: __add-width-selector-suffix(-gap#{$gap}, $layout-width);
+
+          $margin: px($gap / 2);
+
+          &#{$query + $attribute-selector},
+          &#{$query + ' ' + $attribute-selector} {
+            > * {
+              margin: $margin;
+            }
+          }
+          $gap: $gap + $dot-grid-gap-increase;
+        }
+
+        @for $column from 1 through $dot-grid-column-to {
+          $grid-query: __add-width-selector-suffix($column, $layout-width);
+
+          $width: #{(100 / $column) + '%'};
+
+          &#{$grid-query} {
+            @extend %grid-area#{$layout-width};
+
+            > * {
+              box-sizing: border-box;
+              flex-basis: 33.3%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@mixin grid-rule($options:()) {
+  $options: dot-rule-initiate($options, grid);
+  // @include grid-rule-by-grid($options);
+  @include grid-rule-by-flex($options);
+}
+
 
 @mixin grid-child-rule($options: ()) {
   @include grid-rule(__optimize-parent-selector($options, unquote("#{&}")));
