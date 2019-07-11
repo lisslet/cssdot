@@ -79,13 +79,3 @@
   transform: translateY(-50%);
   min-width: 100%;
 }
-
-.dot-box {
-  display: flex;
-  min-height: 100%;
-  flex-direction: column;
-}
-
-.dot-box-main {
-  flex-grow: 1;
-}

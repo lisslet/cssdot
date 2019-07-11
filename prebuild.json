@@ -8,6 +8,10 @@
         "content": "@include grid-rule()"
       },
       {
+        "filename": "dynamic/grid/flex",
+        "content": "@include grid-rule(('type':'flex'))"
+      },
+      {
         "filename": "dynamic/desktop/grid",
         "content": "@include grid-rule()"
       },

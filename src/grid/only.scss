@@ -105,13 +105,8 @@
         @at-root {
           %grid-area#{$layout-width} {
             display: flex;
-            flex-direction: row;
             flex-wrap: wrap;
           }
-
-          //%grid-last-line#{$layout-width} {
-          //  margin-bottom: 0;
-          //}
         }
 
         $gap: 0;
@@ -120,12 +115,16 @@
 
           $margin: px($gap / 2);
 
-          &#{$query + $attribute-selector},
-          &#{$query + ' ' + $attribute-selector} {
-            > * {
-              margin: $margin;
+          &#{$query} {
+            margin: -$margin;
+
+            > *,
+            > .dot-grid {
+              box-sizing: border-box;
+              padding: $margin;
             }
           }
+
           $gap: $gap + $dot-grid-gap-increase;
         }
 
@@ -137,9 +136,10 @@
           &#{$grid-query} {
             @extend %grid-area#{$layout-width};
 
-            > * {
-              box-sizing: border-box;
-              flex-basis: 33.3%;
+            > *,
+            > .dot-grid {
+              flex: 0 0 #{$width};
+              max-width: $width;
             }
           }
         }
@@ -150,8 +150,13 @@
 
 @mixin grid-rule($options:()) {
   $options: dot-rule-initiate($options, grid);
-  // @include grid-rule-by-grid($options);
-  @include grid-rule-by-flex($options);
+
+  $type: map-get-if($options, 'type', 'grid');
+  @if ($type == 'grid') {
+    @include grid-rule-by-grid($options);
+  } @else {
+    @include grid-rule-by-flex($options);
+  }
 }
 
 

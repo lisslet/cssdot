@@ -54,8 +54,6 @@
     }
 
   }
-
-  @include frame-stretch($selector, $selector+'-main');
 }
 
 @mixin box-child-rule($options: null) {

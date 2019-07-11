@@ -5,46 +5,8 @@
     <title>grid of cssdot</title>
     <link rel="stylesheet" href="../prebuilt/reset.css">
     <link rel="stylesheet" href="../prebuilt/dynamic/frame/1400.css">
-    <!--link rel="stylesheet" href="../prebuilt/dynamic/grid.css"-->
+    <link rel="stylesheet" href="../prebuilt/dynamic/grid.css">
     <link rel="stylesheet" href="../prebuilt/box.css">
-
-    <style>
-        .dot-grid3 {
-            display: flex;
-            flex-wrap: wrap;
-            background-color: #ccc;
-        }
-
-        .dot-grid3 > * {
-            flex-basis: 33%;
-            flex-grow:1;
-        }
-
-        .dot-grid3.dot-grid-gap30 {
-        }
-
-        .dot-grid3.dot-grid-gap30 .dot-grid {
-            box-sizing: border-box;
-
-        }
-
-        .dot-grid3.dot-grid-gap30 .dot-box {
-            min-height: auto;
-        }
-
-        .dot-grid3.dot-grid-gap30 > * {
-        }
-
-        .dot-grid3 > *:nth-child(3n + 1) {
-        }
-
-        .dot-grid3 > *:nth-child(1n + 3) {
-
-        }
-
-        .dot-grid3 > *:nth-child(3n) {
-        }
-    </style>
 </head>
 <body>
 <div id="dots">
@@ -61,6 +23,17 @@
             <h1>Grid</h1>
 
             <h2>Grid 3</h2>
+
+            <div class="dot-grid3 dot-grid-gap30">
+                <div class="dot-box">1</div>
+                <div class="dot-box">1</div>
+                <div class="dot-box">1</div>
+                <div class="dot-box">1</div>
+                <div class="dot-box">1</div>
+                <div class="dot-box">1</div>
+                <div class="dot-box">1</div>
+                <div class="dot-box">1</div>
+            </div>
 
             <div class="dot-grid3 dot-grid-gap30">
                 <div class="dot-grid">
