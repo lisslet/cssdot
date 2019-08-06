@@ -1,18 +1,3 @@
-@mixin align-states {
-  &_middle-center,
-  &_center-middle {
-    @extend %center-middles;
-  }
-
-  &_center {
-    @extend %centers;
-  }
-
-  &_middle {
-    @extend %middles;
-  }
-}
-
 @mixin splash-rule($options: null) {
   $options: rule-arguments($options, z-index);
   $selector: map-get($options, selector);
@@ -20,8 +5,9 @@
   @at-root #{$selector} {
     &-splash {
       @include position-fixed($z-index);
+      text-align:center;
       &-area {
-        @include align-states;
+        @extend %center-middles;
       }
       @content;
     }

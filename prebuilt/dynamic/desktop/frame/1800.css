@@ -59,10 +59,6 @@
 #dot-head-area, #dot-foot-area {
   position: relative;
 }
-#dot-main {
-  background-color: #fff;
-}
-
 .align_left {
   text-align: right;
 }
