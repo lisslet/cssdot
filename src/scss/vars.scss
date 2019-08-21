@@ -20,7 +20,7 @@ $DOT-ASPECT-RATIOS: (
 ) !default;
 
 $DOT-QUERY-PREFIX: dot !default;
-$dot-area-SELECTOR-GLUE: -at- !default;
+$dot-area-SELECTOR-GLUE: '-at' !default;
 
 /// default duration of animation, transition
 $DOT-DEFAULT-DURATION: 0.3s !default;
