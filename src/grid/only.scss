@@ -79,10 +79,10 @@
             grid-column-gap: px($gap);
             grid-row-gap: px($gap);
           }
-          $gap: $gap + $dot-grid-gap-increase;
+          $gap: $gap + $DOT-GRID-GAP-INCREASE;
         }
 
-        @for $column from 1 through $dot-grid-column-to {
+        @for $column from 1 through $DOT-GRID-COLUMN-TO {
           $grid-query: __add-width-selector-suffix($column, $layout-width);
           &#{$grid-query} {
             @extend %grid-area#{$layout-width};
@@ -125,10 +125,10 @@
             }
           }
 
-          $gap: $gap + $dot-grid-gap-increase;
+          $gap: $gap + $DOT-GRID-GAP-INCREASE;
         }
 
-        @for $column from 1 through $dot-grid-column-to {
+        @for $column from 1 through $DOT-GRID-COLUMN-TO {
           $grid-query: __add-width-selector-suffix($column, $layout-width);
 
           $width: #{(100 / $column) + '%'};

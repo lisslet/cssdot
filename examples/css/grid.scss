@@ -1,0 +1,69 @@
+@import '../../src/scss/variables';
+@import '../../src/grid/variables';
+
+
+$multiples: ();
+@for $current from 2 through $DOT-GRID-COLUMN-TO {
+
+  $columns: ($current);
+  $max-column: $current;
+
+  $current: $current - 1;
+
+  @while ($current > 1) {
+
+    $remain: $max-column / $current;
+
+    @if ($remain == round($remain)) {
+      $columns: append($columns, $current);
+    }
+
+    $current: $current - 1;
+  }
+
+  $columns: append($columns, 1);
+
+  $multiples: append($multiples, $columns);
+}
+
+$DOT-GRID-PRESET-WIDTHS: (
+        100
+);
+
+
+
+@each $column-width in $DOT-GRID-PRESET-WIDTHS {
+
+  @each $columns in $multiples {
+
+
+    $responds: ();
+
+    @debug "==================";
+    @debug $columns;
+
+    $column-length: length($columns);
+    $column-index: 0;
+    $column: nth($columns, 1);
+
+    $last-column: 0;
+    @each $layout-width in $DOT-LAYOUT-WIDTHS {
+      @if ($column-index <= $column-length) {
+
+        $test: floor($layout-width / $column-width);
+        //@debug #{$layout-width}/#{$column-width}, $test;
+
+        @if ($test > 0 and index($columns, $test) and $last-column != $test) {
+          $last-column: $test;
+          $responds: append($responds, ($layout-width, $test));
+
+          $column-index: $column-index + 1;
+          @if ($column-index <= $column-length) {
+            $column: nth($columns, $column-index);
+          }
+        }
+      }
+    }
+    @debug $responds;
+  }
+}
