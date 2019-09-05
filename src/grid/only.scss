@@ -1,5 +1,5 @@
-@import '../layout/vars';
-@import 'vars';
+@import '../layout/variables';
+@import './variables';
 
 @function __layout-width-key($width) {
   $index: index($DOT-LAYOUT-WIDTH-KEYS, $width);

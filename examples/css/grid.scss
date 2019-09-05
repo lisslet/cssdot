@@ -31,15 +31,12 @@ $DOT-GRID-PRESET-WIDTHS: (
 );
 
 
-
 @each $column-width in $DOT-GRID-PRESET-WIDTHS {
 
   @each $columns in $multiples {
 
-
     $responds: ();
 
-    @debug "==================";
     @debug $columns;
 
     $column-length: length($columns);
@@ -65,5 +62,14 @@ $DOT-GRID-PRESET-WIDTHS: (
       }
     }
     @debug $responds;
+  }
+}
+
+@mixin grid-line-rule($options) {
+  $selector: map-get($options, 'selector');
+  @at-root #{$selector} {
+    &-line {
+      display: flex;
+    }
   }
 }

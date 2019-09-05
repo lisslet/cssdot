@@ -23,7 +23,7 @@
   },
   {
     "scss": "layout/frame/standalone",
-    "reference": ["scss/vars" ,"layout/vars"],
+    "reference": ["scss/variables" ,"layout/variables"],
     "repeat": {
       "each": {
         "iterator": "DOT-LAYOUT-WIDTH-MAP",
