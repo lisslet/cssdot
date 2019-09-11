@@ -24,6 +24,10 @@ $dot-imported-mixins-decorate: true !default;
   border-top: $size solid $color;
 }
 
+@mixin arrow-down-color($color){
+  border-top-color: $color;
+}
+
 @mixin arrow-left($size:0.5em, $color: #000) {
   width: 0;
   height: 0;
@@ -109,6 +113,36 @@ $dot-imported-mixins-decorate: true !default;
   $height: map-get-if($options, height, $size);
 
   ::-webkit-scrollbar {
+    // does not apply without width
+    width: $width;
+    height: $height;
+
+    &-track {
+      background-color: $track;
+    }
+
+    &-thumb {
+      background-color: $thumb;
+      @if ($react-thumb) {
+        &:hover {
+          background-color: $react-thumb;
+        }
+      }
+    }
+  }
+}
+
+@mixin child-scrollbar($options) {
+  $options: map-initiate($options, thumb, thumb);
+
+  $thumb: map-get($options, thumb);
+  $react-thumb: map-get-if($options, thumb-react thumb);
+  $track: map-get-if($options, track);
+  $size: map-get-if($options, height, 0.5em);
+  $width: map-get-if($options, width, $size);
+  $height: map-get-if($options, height, $size);
+
+  &::-webkit-scrollbar {
     // does not apply without width
     width: $width;
     height: $height;
