@@ -54,10 +54,23 @@
   @return $query + $prefix;
 }
 
+@mixin grid-x-rule($options) {
+  $selector: map-get($options, 'selector');
+
+  @at-root #{$selector} {
+
+  }
+}
+
+
 @mixin grid-rule-by-grid($options) {
   $selector: map-get($options, selector);
   $selector-string: map-get($options, selector-string);
   $attribute-selector: #{'[class*='+$selector-string+']'};
+
+  $x-attribute-query: #{'[class~='+$selector-string+'-x]'};
+
+  @include grid-x-rule($options);
 
   @at-root #{$selector} {
 
@@ -72,21 +85,54 @@
 
         $gap: 0;
         @while ($gap <= $DOT-GRID-GAP-TO) {
+          // -gap*-at*
           $query: __add-width-selector-suffix(-gap#{$gap}, $layout-width);
 
+          // gap*[class*=dot-grid]
+          // gap* [class*=dot-grid]
           &#{$query + $attribute-selector},
           &#{$query + ' ' + $attribute-selector} {
             grid-column-gap: px($gap);
             grid-row-gap: px($gap);
           }
+
+          // gap*[class~=dot-grid-x]
+          // gap* [class~=dot-grid-x]
+          $margin: px($gap / 2);
+          &#{$query + $x-attribute-query},
+          &#{$query + ' ' + $x-attribute-query} {
+            margin: -$margin;
+
+            > *,
+            > #{$selector} {
+              box-sizing: border-box;
+              margin: $margin;
+            }
+          }
           $gap: $gap + $DOT-GRID-GAP-INCREASE;
         }
 
         @for $column from 1 through $DOT-GRID-COLUMN-TO {
+          // *-at**
           $grid-query: __add-width-selector-suffix($column, $layout-width);
+
+
           &#{$grid-query} {
             @extend %grid-area#{$layout-width};
             grid-template-columns: repeat($column, 1fr);
+
+          }
+        }
+
+        // grid-x
+        $x-query-suffix: __add-width-selector-suffix('-x', $layout-width);
+        &#{$x-query-suffix} {
+          display: flex;
+          flex-wrap: nowrap;
+
+          > *,
+          > #{$selector} {
+            flex-grow: 1;
           }
         }
       }
@@ -121,6 +167,7 @@
             > *,
             > .dot-grid {
               box-sizing: border-box;
+              // i don't know why padding, maybe for ie?
               padding: $margin;
             }
           }

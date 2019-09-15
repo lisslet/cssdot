@@ -7,19 +7,6 @@
     <link rel="stylesheet" href="../prebuilt/dynamic/frame/1400.css">
     <link rel="stylesheet" href="../prebuilt/dynamic/grid.css">
     <link rel="stylesheet" href="../prebuilt/box.css">
-    <style>
-        .grid-line-test {
-            display: flex;
-            flex-direction:row;
-            flex-wrap:nowrap;
-        }
-
-        .grid-line-test > *,
-        .grid-line-test .dot-grid1{
-            box-shadow:0 0 3px black;
-            flex-grow: 1;
-        }
-    </style>
 </head>
 <body>
 
@@ -32,22 +19,6 @@
 
     <main id="dot-main">
         <div id="dot-main-area">
-
-
-            <div class="grid-line-test">
-                <div class="dot-grid1">1</div>
-            </div>
-
-            <div class="grid-line-test">
-                <div class="dot-grid1">1</div>
-                <div class="dot-grid1">2</div>
-            </div>
-
-            <div class="grid-line-test">
-                <div class="dot-grid1">1</div>
-                <div class="dot-grid1">2</div>
-                <div class="dot-grid1">3</div>
-            </div>
 
             <h1>Grid</h1>
             <h2>Grid 3</h2>
@@ -88,6 +59,23 @@
                 <div class="dot-grid">
                     <div class="dot-box">1</div>
                 </div>
+            </div>
+
+
+            <h2>Grid X</h2>
+            <div class="dot-grid-x dot-grid-gap10">
+                <div class="dot-grid dot-box">1</div>
+            </div>
+
+            <div class="dot-grid-x dot-grid-gap20">
+                <div class="dot-grid dot-box">1</div>
+                <div class="dot-grid dot-box">2</div>
+            </div>
+
+            <div class="dot-grid-x dot-grid-gap30">
+                <div class="dot-grid dot-box">1</div>
+                <div class="dot-grid dot-box">2</div>
+                <div class="dot-grid dot-box">3</div>
             </div>
         </div>
     </main>
