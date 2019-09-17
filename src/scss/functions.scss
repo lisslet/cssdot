@@ -303,3 +303,11 @@ $__args-shorten-index: query !default;
   }
   @return $result;
 }
+
+/// map as properties
+/// @param map $properties
+@mixin properties($properties) {
+  @each $property, $value in $properties {
+    #{$property}: #{$value};
+  }
+}

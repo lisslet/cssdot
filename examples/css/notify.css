@@ -1,0 +1,79 @@
+.dot-notify {
+  background-color: #fff;
+  min-width: 320px;
+  width: 20%;
+  margin-bottom: 20px;
+}
+.dot-notify-wrap_left-top {
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+.dot-notify-wrap_left-middle {
+  position: fixed;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.dot-notify-wrap_left-bottom {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+}
+.dot-notify-wrap_center-top {
+  position: fixed;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+}
+.dot-notify-wrap_center-middle {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.dot-notify-wrap_center-bottom {
+  position: fixed;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+}
+.dot-notify-wrap_right-top {
+  position: fixed;
+  right: 0;
+  top: 0;
+}
+.dot-notify-wrap_right-middle {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.dot-notify-wrap, .dot-notify-wrap_right-bottom {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+}
+.dot-notify-wrap h1 {
+  position: absolute;
+  top: 0;
+  width: 0;
+  opacity: 0;
+  display: none \9 ;
+}
+.dot-notify:last-child {
+  margin-bottom: 0;
+}
+.dot-notify-head-area, .dot-notify-main-area, .dot-notify-foot-area {
+  padding: 0.626em;
+}
+.dot-notify-head-area:empty, .dot-notify-main-area:empty, .dot-notify-foot-area:empty {
+  display: none;
+}
+.dot-notify_link-full .dot-notify-foot-area {
+  display: flex;
+  flex-wrap: nowrap;
+}
+.dot-notify_link-full .dot-notify-foot-area > button {
+  flex-grow: 1;
+}

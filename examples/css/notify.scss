@@ -1,0 +1,59 @@
+@import '../../src/scss';
+
+
+$DOT5: 0.313em;
+$DOT10: 0.626em;
+$DOT20: 1.252em;
+
+
+@mixin area-rule-with() {
+  &-head,
+  &-main,
+  &-foot {
+    // cannot hide &:empty with &-area:empty
+    &-area {
+      &:empty {
+        display: none;
+      }
+      padding: $DOT10;
+      @content;
+    }
+  }
+}
+
+@mixin area-rule() {
+  @include area-rule-with {
+  }
+}
+
+$selector: '.dot-notify';
+
+#{$selector} {
+  &-wrap {
+    @include _position-rule('right-bottom');
+
+    h1 {
+      @include hide;
+    }
+  }
+
+  background-color: #fff;
+  min-width: 320px;
+  width: 20%;
+  @include bottom-gap();
+  @include area-rule;
+
+
+  &_link-full {
+    #{$selector}-foot {
+      &-area {
+        display: flex;
+        flex-wrap: nowrap;
+
+        > button {
+          flex-grow: 1;
+        }
+      }
+    }
+  }
+}

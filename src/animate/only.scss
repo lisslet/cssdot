@@ -1,5 +1,14 @@
 @import './variables';
 
+
+$DOT-ANIMATE-DELAYS: (
+        0.05s,
+        0.1s,
+        0.2s,
+        0.4s
+        0.6s
+);
+
 /// todo: make global
 @mixin properties($map) {
   @each $property, $value in $map {
@@ -31,13 +40,6 @@
   @return $map1;
 }
 
-$DOT-ANIMATE-DELAYS: (
-  0.05s,
-  0.1s,
-  0.2s,
-  0.4s
-  0.6s
-);
 
 @mixin landing-delay-rule($options) {
   $options: dot-rule-initiate($options, null, 'delay');

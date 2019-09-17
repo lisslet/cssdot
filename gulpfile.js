@@ -1,4 +1,6 @@
 const gulp = require('gulp');
+const {src, dest, lastRun, task, watch, series, parallel} = gulp;
+
 const pump = require('pump');
 // const sass = require('gulp-sass');
 const sass = require('gulp-dart-sass');
@@ -7,19 +9,28 @@ const $sass = () => {
 	return sass().on('error', sass.logError);
 };
 
-const src  = './src/';
-const dest = './';
+
+const $src  = './src/';
+const $dest = './';
 
 const sassFiles = '**/*.scss';
 
 const prebuild = {
 	label: 'cssdot-prebuild',
-	src  : src + 'prebuild/',
-	dest : dest + 'prebuilt/',
+	src  : $src + 'prebuild/',
+	dest : $dest + 'prebuilt/',
 };
 
 
 const fs = require('fs');
+
+
+
+function since(task){
+	return {
+		since: lastRun(task)
+	}
+}
 
 function dirExists(file) {
 	try {
@@ -81,7 +92,7 @@ function getImportPath(file) {
 	return file.split('/').map(() => '').join('../') + file + '.scss';
 }
 
-gulp.task('cssdot-prebuild-templates', done => {
+task('cssdot-prebuild-templates', done => {
 	const templates = require('./prebuild')();
 	templates.map(template => {
 		fileWrite(template.filename, template.content);
@@ -89,28 +100,28 @@ gulp.task('cssdot-prebuild-templates', done => {
 	done();
 });
 
-gulp.task('cssdot-prebuild-compile', done => {
+task('cssdot-prebuild-compile', done => {
 	pump(
-		gulp.src(prebuild.src + sassFiles),
+		src(prebuild.src + sassFiles),
 		$sass(),
-		gulp.dest(prebuild.dest),
+		dest(prebuild.dest),
 		done
 	);
 });
 
-gulp.task('cssdot-prebuild-watch', done => {
+task('cssdot-prebuild-watch', done => {
 	gulp.watch(prebuild.src + sassFiles,
-		gulp.series('cssdot-prebuild-compile')
+		series('cssdot-prebuild-compile')
 	);
 
 	gulp.watch(prebuildJsonFile,
-		gulp.series('cssdot-prebuild-templates')
+		series('cssdot-prebuild-templates')
 	);
 	done();
 });
 
-gulp.task('cssdot-prebuild',
-	gulp.series(
+task('cssdot-prebuild',
+	series(
 		'cssdot-prebuild-templates',
 		'cssdot-prebuild-compile',
 		'cssdot-prebuild-watch'
@@ -118,16 +129,16 @@ gulp.task('cssdot-prebuild',
 );
 
 const compileTestTarget = [
-	src + sassFiles,
-	`!${src}*.scss`,
-	`!${src}layout/*.scss`,
-	`!${src}**/only.scss`,
-	`!${src}prebuild/**/*`
+	$src + sassFiles,
+	`!${$src}*.scss`,
+	`!${$src}layout/*.scss`,
+	`!${$src}**/only.scss`,
+	`!${$src}prebuild/**/*`
 ];
 
-gulp.task('cssdot-compile-test', done => {
+task('cssdot-compile-test', done => {
 	pump(
-		gulp.src(compileTestTarget),
+		src(compileTestTarget),
 		$sass(),
 		done
 	);
@@ -135,38 +146,44 @@ gulp.task('cssdot-compile-test', done => {
 
 const exampleTarget = './examples/**/*.scss';
 
-gulp.task('cssdot-examples', done => {
+task('cssdot-example-compile', done => {
 	pump(
-		gulp.src(exampleTarget),
+		src(exampleTarget, since('cssdot-example-compile')),
 		$sass(),
-		gulp.dest('./examples'),
+		dest('./examples'),
 		done
 	);
 });
 
-gulp.task('cssdot-watch', done => {
+task('cssdot-example-watch', () => {
+	return gulp.watch(
+		exampleTarget,
+		series('cssdot-example-compile')
+	);
+});
+
+task('cssdot-examples-only', parallel(
+	'cssdot-example-compile',
+	'cssdot-example-watch'
+));
+
+task('cssdot-watch', done => {
 	gulp.watch(
 		compileTestTarget,
-		// gulp.series('cssdot-compile-test')
-        gulp.series('cssdot-examples')
-	);
-
-
-	gulp.watch(
-		exampleTarget,
-		gulp.series('cssdot-examples')
+		// series('cssdot-compile-test')
+		series('cssdot-example-compile')
 	);
 
 	done();
 });
 
-gulp.task('cssdot-default', gulp.parallel(
+task('cssdot-default', parallel(
 	// 'cssdot-compile-test',
 	'cssdot-prebuild',
-	'cssdot-examples',
+	'cssdot-example-compile',
 	'cssdot-watch'
 ));
 
-gulp.task('default', gulp.parallel(
+task('default', parallel(
 	'cssdot-default'
 ));

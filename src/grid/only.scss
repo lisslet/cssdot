@@ -54,146 +54,20 @@
   @return $query + $prefix;
 }
 
-@mixin grid-x-rule($options) {
-  $selector: map-get($options, 'selector');
+@mixin grid-gap-child-rule($margin) {
+  margin: -$margin;
 
-  @at-root #{$selector} {
-
+  > *,
+  > .dot-grid {
+    box-sizing: border-box;
+    // used padding when flex mode.
+    margin: $margin;
   }
 }
 
+@import './grid-by-grid';
+@import './grid-by-flex';
 
-@mixin grid-rule-by-grid($options) {
-  $selector: map-get($options, selector);
-  $selector-string: map-get($options, selector-string);
-  $attribute-selector: #{'[class*='+$selector-string+']'};
-
-  $x-attribute-query: #{'[class~='+$selector-string+'-x]'};
-
-  @include grid-x-rule($options);
-
-  @at-root #{$selector} {
-
-    @each $layout-width in $DOT-LAYOUT-WIDTHS {
-      @include mq-min($layout-width) {
-
-        @at-root {
-          %grid-area#{$layout-width} {
-            display: grid;
-          }
-        }
-
-        $gap: 0;
-        @while ($gap <= $DOT-GRID-GAP-TO) {
-          // -gap*-at*
-          $query: __add-width-selector-suffix(-gap#{$gap}, $layout-width);
-
-          // gap*[class*=dot-grid]
-          // gap* [class*=dot-grid]
-          &#{$query + $attribute-selector},
-          &#{$query + ' ' + $attribute-selector} {
-            grid-column-gap: px($gap);
-            grid-row-gap: px($gap);
-          }
-
-          // gap*[class~=dot-grid-x]
-          // gap* [class~=dot-grid-x]
-          $margin: px($gap / 2);
-          &#{$query + $x-attribute-query},
-          &#{$query + ' ' + $x-attribute-query} {
-            margin: -$margin;
-
-            > *,
-            > #{$selector} {
-              box-sizing: border-box;
-              margin: $margin;
-            }
-          }
-          $gap: $gap + $DOT-GRID-GAP-INCREASE;
-        }
-
-        @for $column from 1 through $DOT-GRID-COLUMN-TO {
-          // *-at**
-          $grid-query: __add-width-selector-suffix($column, $layout-width);
-
-
-          &#{$grid-query} {
-            @extend %grid-area#{$layout-width};
-            grid-template-columns: repeat($column, 1fr);
-
-          }
-        }
-
-        // grid-x
-        $x-query-suffix: __add-width-selector-suffix('-x', $layout-width);
-        &#{$x-query-suffix} {
-          display: flex;
-          flex-wrap: nowrap;
-
-          > *,
-          > #{$selector} {
-            flex-grow: 1;
-          }
-        }
-      }
-    }
-  }
-}
-
-@mixin grid-rule-by-flex($options) {
-  $selector: map-get($options, selector);
-  $selector-string: map-get($options, selector-string);
-  $attribute-selector: #{'[class*='+$selector-string+']'};
-
-  @at-root #{$selector} {
-    @each $layout-width in $DOT-LAYOUT-WIDTHS {
-      @include mq-min($layout-width) {
-        @at-root {
-          %grid-area#{$layout-width} {
-            display: flex;
-            flex-wrap: wrap;
-          }
-        }
-
-        $gap: 0;
-        @while ($gap <= $DOT-GRID-GAP-TO) {
-          $query: __add-width-selector-suffix(-gap#{$gap}, $layout-width);
-
-          $margin: px($gap / 2);
-
-          &#{$query} {
-            margin: -$margin;
-
-            > *,
-            > .dot-grid {
-              box-sizing: border-box;
-              // i don't know why padding, maybe for ie?
-              padding: $margin;
-            }
-          }
-
-          $gap: $gap + $DOT-GRID-GAP-INCREASE;
-        }
-
-        @for $column from 1 through $DOT-GRID-COLUMN-TO {
-          $grid-query: __add-width-selector-suffix($column, $layout-width);
-
-          $width: #{(100 / $column) + '%'};
-
-          &#{$grid-query} {
-            @extend %grid-area#{$layout-width};
-
-            > *,
-            > .dot-grid {
-              flex: 0 0 #{$width};
-              max-width: $width;
-            }
-          }
-        }
-      }
-    }
-  }
-}
 
 @mixin grid-rule($options:()) {
   $options: dot-rule-initiate($options, grid);

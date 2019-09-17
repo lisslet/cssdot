@@ -3,13 +3,19 @@
 - grid preset
 - grid x
     - ~~grid x by grid~~ `2019-09-16`
-    - grid x by flex
+    - ~~grid x by flex~~ `2019-09-17`
 - theme
-  - box theme
-- box react
+  
+- box
+  - react
+  - theme
 - toast
-- notify  
 - fluid layout
 - link
+- notify
+  - theme
+  - float
+  - instant
+  - center 
 - repackage for npm
 - rearrange directory

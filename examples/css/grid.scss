@@ -37,7 +37,7 @@ $DOT-GRID-PRESET-WIDTHS: (
 
     $responds: ();
 
-    @debug $columns;
+    // @debug $columns;
 
     $column-length: length($columns);
     $column-index: 0;
@@ -61,7 +61,7 @@ $DOT-GRID-PRESET-WIDTHS: (
         }
       }
     }
-    @debug $responds;
+    // @debug $responds;
   }
 }
 
