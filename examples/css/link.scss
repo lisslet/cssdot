@@ -1,3 +1,6 @@
+@import '../../src/scss';
+
+
 $DOT-LINK-STYLES: (
         'default': (
         ),
@@ -6,3 +9,102 @@ $DOT-LINK-STYLES: (
         'underline': (
         )
 );
+
+
+@mixin fx-ripple-with() {
+  position: relative;
+  overflow: hidden;
+
+  &:before,
+  &:after {
+    position: absolute;
+    top: 50%;
+    left: -10%;
+    right: -10%;
+    width: 120%;
+    padding-top: 120%;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    content: '';
+    z-index: 1;
+    display: none;
+    @include animate(0.24s both) {
+      from {
+        left: 50%;
+        right: 50%;
+        width: 0;
+        padding-top: 0;
+      }
+    }
+    @content;
+  }
+
+  .dot-ripple,
+  &:hover {
+    &:before {
+      display: block;
+    }
+  }
+
+  &:focus,
+  &:active {
+    &:after {
+      display: block;
+    }
+  }
+}
+
+@mixin fx-ripple() {
+  @include fx-ripple-with {
+  }
+
+}
+
+@mixin link-rule($options: null) {
+  $options: rule-arguments($options, null, link);
+  $selector: map-get($options, 'selector');
+
+  $default-style: 'default';
+
+
+  $min-height: 36px;
+
+  @at-root {
+    a#{$selector} {
+      display: inline-block;
+    }
+
+    button#{$selector} {
+      border: none;
+      margin: 0;
+      padding: 0;
+      background-color: transparent;
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    #{$selector} {
+      font-family: sans-serif;
+      font-size: 1rem;
+      cursor: pointer;
+      vertical-align: middle;
+
+      > span,
+      &-area {
+        display: inline-block;
+        min-width: 48px;
+        line-height: $min-height;
+        text-align: center;
+        padding: 0 0.313em;
+      }
+
+      @include fx-ripple-with {
+        background-color: rgba(0, 0, 0, 0.12);
+      }
+    }
+  }
+}
+
+@include link-rule;
