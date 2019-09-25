@@ -1,9 +1,9 @@
 @import '../../src/scss';
 
 // color variables
-$primary: #E91E63;
-$accent: #448AFF; //#F50057;
-$warn: #00838F;
+$primary: #448AFF;
+$accent: #00838F; //#F50057;
+$warn: #E91E63;
 $border: null;
 $link: null;
 $react: null;
@@ -22,4 +22,32 @@ $palette: palette((
 
 $theme: theme(('palette': $palette));
 
-// @debug $theme;
+/// coloring class
+/// @param $theme the map as theme type
+@mixin theme-class-rule($theme){
+
+  $palette: palette($theme);
+
+
+  .dot {
+
+    @each $label, $color in $palette {
+      @if(not starts-with($label, '--dot-type')){
+        &-border_#{$label} {
+          border-color: $color;
+        }
+
+        &-field_#{$label} {
+          background-color: $color;
+        }
+
+        &-#{$label} {
+          color: $color;
+        }
+      }
+    }
+
+  }
+}
+
+@include theme-class-rule($theme);

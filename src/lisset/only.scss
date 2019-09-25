@@ -1,9 +1,20 @@
 @import './variables';
 
+@function is-theme($target){
+  @return dot-type-of($target, 'theme');
+}
+
+@function is-palette($target){
+  @return dot-type-of($target, 'palette');
+}
+
 @function pick($color, $labels: 'primary') {
+
+  // primary-text => primary, text as path
   $labels: if($labels, if(is-not-list($labels), str-split($labels, '-'), $labels), 'primary');
+
   $length: length($labels);
-  @if dot-type-of($color, 'theme') {
+  @if is-theme($color) {
     $color: map-get($color, 'palette')
   }
 
@@ -16,13 +27,29 @@
     }
 
     $color: map-get($color, $label);
-    // @debug 'Palette => ', $label, $labels, dot-type-of($color);
   }
 
   @return $color;
 }
 
+/// create theme palette
+
 @function palette($values) {
+  //////////////////////////////
+  // return palette
+
+  // from theme
+  @if(is-theme($values)){
+    @return map-get($values, 'palette');
+  }
+
+  // from itself
+  @if(is-palette($values)){
+    @return $values;
+  }
+
+  //////////////////////////////
+  // create palette
 
   @if is-color($values) {
     $values: (
@@ -30,7 +57,7 @@
     );
   }
 
-  @each $label, $fill in $PALETTE-AUTOFILL {
+  @each $label, $fill in $DOT-PALETTE-AUTOFILL {
     $value: map-get-if($values, $label, null);
     @if $value == null {
       @if is-color($fill) {
@@ -43,7 +70,7 @@
 
         $method: map-get($fill, 'method');
         @if $method == 'text' {
-          $value: if(is-safe-with-black($reference), black, white);
+          $value: if(is-safe-for-black($reference), black, white);
         } @else if $method == 'grayscale' {
           $value: grayscale($reference);
         } @else if $method == 'invert' {
@@ -74,7 +101,7 @@
     $values: palette($values);
   }
 
-  @if dot-type-of($values, 'palette') {
+  @if is-palette($values) {
     $values: ('palette': $values);
   }
 

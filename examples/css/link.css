@@ -39,10 +39,10 @@ button.dot-link:focus {
   content: "";
   z-index: 1;
   display: none;
-  animation: z5VkA3Fo939Nt37VIWrN9hegvQqBZv 0.24s both;
+  animation: z9NGUTluyXS1hm4Vtm3SWLBzo5OMTt 0.24s both;
   background-color: rgba(0, 0, 0, 0.12);
 }
-@keyframes z5VkA3Fo939Nt37VIWrN9hegvQqBZv {
+@keyframes z9NGUTluyXS1hm4Vtm3SWLBzo5OMTt {
   from {
     left: 50%;
     right: 50%;

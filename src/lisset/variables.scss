@@ -9,7 +9,7 @@ $PALETTE-LABELS: (
         'disable'
 ) !default;
 
-$PALETTE-AUTOFILL: ((
+$DOT-PALETTE-AUTOFILL: ((
         'accent' : ('method': 'contrast'),
         'warn': ('method': 'invert'),
         'field': #fff,

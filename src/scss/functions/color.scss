@@ -21,18 +21,18 @@ $black-relative-luminance: relative-luminance(black) !default;
 }
 
 
-@function is-safe-with-black($color) {
+@function is-safe-for-black($color) {
   $white: contrast-ratio($white-relative-luminance, relative-luminance($color));
   $black: contrast-ratio(relative-luminance($color), $black-relative-luminance);
   @return $white < $black;
 }
 
 @function safe-text($color){
-  @return if(is-safe-with-black($color), #000, #fff);
+  @return if(is-safe-for-black($color), #000, #fff);
 }
 
 @function is-safe-with-white($color) {
-  @return not is-safe-with-black($color);
+  @return not is-safe-for-black($color);
 }
 
 /// Slightly lighten a color

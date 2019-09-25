@@ -119,14 +119,14 @@ $__dot-prefix: dot;
   @return 'is not a #{$object} type';
 }
 
-/// set a dot object
+/// set a dot map as like class
 @function dot-type($object, $map) {
   // $map: map-set($map, '--dot-' + $object, true);
   $map: map-set($map, '--dot-type', $object);
   @return $map;
 }
 
-/// check the dot object instance
+/// get dot type match
 @function dot-type-of($map, $objects: null) {
   $instance: is-map($map) and map-get-if($map, '--dot-type', null);
 
