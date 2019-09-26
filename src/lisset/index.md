@@ -4,15 +4,19 @@
 
 ### color
 
+color is just color
+
 ```scss
 $primary: blue;
 $accent: skyblue;
 $warn: deeppink;
 ```
 
-> This makes it easy to use on global space
+> this is not required step, but this will makes it easy to use on global space
 
 ### palette
+
+palette is collection of color as map
 
 ```scss
 $palette: palette((
@@ -23,6 +27,8 @@ $palette: palette((
 ```
 
 ### theme
+
+theme is the collection of palette or color as map type
 
 ```scss
 $theme: theme((

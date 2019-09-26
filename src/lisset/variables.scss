@@ -1,4 +1,4 @@
-$PALETTE-LABELS: (
+$DOT-PALETTE-LABELS: (
         'primary',
         'accent',
         'warn',
@@ -9,7 +9,12 @@ $PALETTE-LABELS: (
         'disable'
 ) !default;
 
+$DOT-REQUIRED-PALETTE-COLORS: (
+        'primary'
+) !default;
+
 $DOT-PALETTE-AUTOFILL: ((
+  // 'palette',
         'accent' : ('method': 'contrast'),
         'warn': ('method': 'invert'),
         'field': #fff,

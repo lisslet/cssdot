@@ -34,7 +34,7 @@
 
 /// create theme palette
 
-@function palette($values) {
+@function palette($values, $required-colors:$DOT-REQUIRED-PALETTE-COLORS) {
   //////////////////////////////
   // return palette
 
@@ -55,6 +55,12 @@
     $values: (
             'primary': $values
     );
+  }
+
+  @each $required-color in $DOT-REQUIRED-PALETTE-COLORS {
+    @if(not map-has-key($values, $required-color)){
+      @error '#{$required-color} is required color';
+    }
   }
 
   @each $label, $fill in $DOT-PALETTE-AUTOFILL {

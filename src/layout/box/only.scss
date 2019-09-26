@@ -19,9 +19,6 @@
       box-shadow: $shadow;
     }
 
-    &_full {
-      height: 100%;
-    }
 
     &-pad {
       padding: 1.256rem;
@@ -51,6 +48,28 @@
     }
 
     &-foot {
+    }
+
+    //////////////////////////////
+    // state classes
+
+    &_full {
+      height: 100%;
+    }
+
+    &_thin {
+      #{$selector} {
+        &-head {
+          #{$selector}-pad {
+            padding-bottom:0;
+          }
+        }
+        &-foot {
+          #{$selector}-pad {
+            padding-top:0;
+          }
+        }
+      }
     }
 
   }

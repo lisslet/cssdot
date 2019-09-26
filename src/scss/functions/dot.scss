@@ -120,7 +120,11 @@ $__dot-prefix: dot;
 }
 
 /// set a dot map as like class
-@function dot-type($object, $map) {
+@function dot-type($object, $map: null) {
+  @if($map == null){
+    @return $object == '--dot-type';
+  }
+
   // $map: map-set($map, '--dot-' + $object, true);
   $map: map-set($map, '--dot-type', $object);
   @return $map;

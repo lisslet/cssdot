@@ -58,6 +58,10 @@ blockquote:before, blockquote:after, q:before, q:after {
   content: "";
 }
 
+button {
+  font-size: 1rem;
+}
+
 ol, ul {
   list-style-type: none;
 }

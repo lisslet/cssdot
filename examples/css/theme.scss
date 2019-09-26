@@ -22,9 +22,18 @@ $palette: palette((
 
 $theme: theme(('palette': $palette));
 
-/// coloring class
+/// get state suffix
+/// @description
+///   (a, b) => '_a;
+///   (a, a) => ''
+@function get-state-name($suffix, $skippable-target) {
+  @return if($suffix == $skippable-target, '', '_#{$suffix}');
+}
+
+/// makes the coloring class from palette label
+/// this make possible to theming without includes mixin.
 /// @param $theme the map as theme type
-@mixin theme-class-rule($theme){
+@mixin theme-class-rule($theme) {
 
   $palette: palette($theme);
 
@@ -32,17 +41,22 @@ $theme: theme(('palette': $palette));
   .dot {
 
     @each $label, $color in $palette {
-      @if(not starts-with($label, '--dot-type')){
-        &-border_#{$label} {
+      @if (not dot-type($label)) {
+        $border-suffix: get-state-name($label, 'border');
+        $field-suffix: get-state-name($label, 'field');
+
+        &-border#{$border-suffix} {
           border-color: $color;
         }
 
-        &-field_#{$label} {
-          background-color: $color;
-        }
+        @if ($label != 'border') {
+          &-field#{$field-suffix} {
+            background-color: $color;
+          }
 
-        &-#{$label} {
-          color: $color;
+          &-#{$label} {
+            color: $color;
+          }
         }
       }
     }
@@ -50,4 +64,37 @@ $theme: theme(('palette': $palette));
   }
 }
 
-@include theme-class-rule($theme);
+$DOT-BOX-THEME-MAP: (
+        'background-color': 'field',
+        'color': 'text'
+);
+
+@mixin box-theme($palette, $map: $DOT-BOX-THEME-MAP) {
+  $primary: -primary($palette);
+  $accent: -accent($palette);
+  $warn: -accent($palette);
+  $field: -field($palette);
+  $text: -field($palette);
+
+  $background-color: pick($map, map-get($map, 'background-color'));
+
+  .dot-box {
+    background-color: $background-color;
+    color: $text;
+  }
+}
+
+/// include default theme rules
+/// @description
+///   class-rule
+@mixin theme-rule($theme) {
+  @include theme-class-rule($theme);
+
+  @include box-theme($theme, ('background-color':'primary'));
+}
+
+@include theme-rule($theme);
+
+
+
+

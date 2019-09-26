@@ -9,9 +9,6 @@
 .dot-boxes .dot-box:last-child {
   margin-bottom: 0;
 }
-.dot-box_full {
-  height: 100%;
-}
 .dot-box-pad {
   padding: 1.256rem;
 }
@@ -78,4 +75,14 @@
   top: 50%;
   transform: translateY(-50%);
   min-width: 100%;
+}
+
+.dot-box_full {
+  height: 100%;
+}
+.dot-box_thin .dot-box-head .dot-box-pad {
+  padding-bottom: 0;
+}
+.dot-box_thin .dot-box-foot .dot-box-pad {
+  padding-top: 0;
 }

@@ -25,14 +25,8 @@
 .dot-warn {
   color: #E91E63;
 }
-.dot-border_border {
-  border-color: #448AFF;
-}
-.dot-field_border {
-  background-color: #448AFF;
-}
 .dot-border {
-  color: #448AFF;
+  border-color: #448AFF;
 }
 .dot-border_link {
   border-color: #bb7500;
@@ -64,7 +58,7 @@
 .dot-border_field {
   border-color: #fff;
 }
-.dot-field_field {
+.dot-field {
   background-color: #fff;
 }
 .dot-field {
@@ -96,4 +90,8 @@
 }
 .dot-disable {
   color: #a2a2a2;
+}
+
+.dot-box {
+  color: #fff;
 }

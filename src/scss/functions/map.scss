@@ -1,3 +1,4 @@
+/// @deprecated using `not map-has`
 @function map-has-not-key($map, $key) {
   @return map-has-key($map, $key) == false;
 }

@@ -1,4 +1,5 @@
-@mixin text-color($text, $link:null, $react:null, $active:null) {
+/// set color to text and anchor
+@mixin text-colors($text, $link:null, $react:null, $active:null) {
 
   @if not $link {
     $link: $text;
@@ -25,7 +26,7 @@
   }
 }
 
-@mixin global-rules($values: ()) {
+@mixin layout-base-rule($values: ()) {
   $color: map-get-if($values, color c, #000);
   $a-color: map-get-if($values, a-color ac, $color);
   $letter-spacing: map-get-if($values, letter-spacing ls);
