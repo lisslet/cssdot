@@ -65,22 +65,39 @@ $theme: theme(('palette': $palette));
 }
 
 $DOT-BOX-THEME-MAP: (
-        'background-color': 'field',
-        'color': 'text'
+        'field': 'field',
+        'text': 'text',
+        'react-field': 'react',
+        'disable-field': 'disable'
 );
 
-@mixin box-theme($palette, $map: $DOT-BOX-THEME-MAP) {
-  $primary: -primary($palette);
-  $accent: -accent($palette);
-  $warn: -accent($palette);
-  $field: -field($palette);
-  $text: -field($palette);
+@mixin box-theme($palette, $map: ()) {
+  $map: map-merge($DOT-BOX-THEME-MAP, $map);
 
-  $background-color: pick($map, map-get($map, 'background-color'));
+  @debug $map;
+
+  $field: pick($palette, $map, 'field');
+  $text: pick($palette, $map, 'text');
+  $react-field: pick($palette, $map, 'react-field');
+  $disable-field: pick($palette, $map, 'disable-field');
 
   .dot-box {
-    background-color: $background-color;
+    background-color: $field;
     color: $text;
+
+    &_link {
+      &:hover {
+        background-color: $react-field;
+        color: if(is-safe-for-black($react-field), black, white);
+      }
+    }
+
+    &_disable {
+      &, &:hover {
+        background-color: $disable-field;
+        color: if(is-safe-for-black($disable-field), black, white);
+      }
+    }
   }
 }
 
@@ -90,7 +107,7 @@ $DOT-BOX-THEME-MAP: (
 @mixin theme-rule($theme) {
   @include theme-class-rule($theme);
 
-  @include box-theme($theme, ('background-color':'primary'));
+  @include box-theme($theme);
 }
 
 @include theme-rule($theme);

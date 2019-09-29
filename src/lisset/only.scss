@@ -1,14 +1,33 @@
 @import './variables';
 
-@function is-theme($target){
+@function is-theme($target) {
   @return dot-type-of($target, 'theme');
 }
 
-@function is-palette($target){
+@function is-palette($target) {
   @return dot-type-of($target, 'palette');
 }
 
-@function pick($color, $labels: 'primary') {
+/// pick color from palette or theme
+@function pick($color, $map_or_labels: 'primary', $labels: null) {
+
+  @if ($labels) {
+    $map: $map_or_labels;
+
+    @if (not is-map($map)) {
+      @error map-type-error('map');
+    }
+
+    @if (not has-key($map, $labels)) {
+      @debug $map;
+      @error 'palette map has not #{$labels}';
+    }
+
+    $labels: map-get($map, $labels);
+
+  } @else {
+    $labels: $map_or_labels;
+  }
 
   // primary-text => primary, text as path
   $labels: if($labels, if(is-not-list($labels), str-split($labels, '-'), $labels), 'primary');
@@ -39,12 +58,12 @@
   // return palette
 
   // from theme
-  @if(is-theme($values)){
+  @if (is-theme($values)) {
     @return map-get($values, 'palette');
   }
 
   // from itself
-  @if(is-palette($values)){
+  @if (is-palette($values)) {
     @return $values;
   }
 
@@ -58,7 +77,7 @@
   }
 
   @each $required-color in $DOT-REQUIRED-PALETTE-COLORS {
-    @if(not map-has-key($values, $required-color)){
+    @if (not map-has-key($values, $required-color)) {
       @error '#{$required-color} is required color';
     }
   }
@@ -135,6 +154,6 @@
   @return pick($theme, 'text');
 }
 
-@function -link($theme){
+@function -link($theme) {
   @return pick($theme, 'link');
 }

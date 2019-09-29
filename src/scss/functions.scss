@@ -49,12 +49,6 @@
   @return $type == map or ($type == list and length($map) == 0);
 }
 
-/// is not type of map
-/// @return {boolean}
-@function is-not-map($map) {
-  @return not is-map($map);
-}
-
 @function is-empty($target) {
   @if $target == '' or $target == null or $target == false {
     @return true;
@@ -93,7 +87,7 @@ $__argments-shorten-index: selector !default;
   @warn 'arguments is deprecated';
 
   @if $merge {
-    @if is-not-map($merge) {
+    @if not is-map($merge) {
       @error map-type-error(merge);
     }
   } @else if is-map($shorten-index) {
@@ -106,7 +100,7 @@ $__argments-shorten-index: selector !default;
       @return $merge;
     }
     @return (--arguments--: false);
-  } @else if is-not-map($args) {
+  } @else if not is-map($args) {
     @if $shorten-index {
       $args: ($shorten-index: $args);
     } @else {
@@ -123,7 +117,7 @@ $__args-shorten-index: query !default;
 /// get arguments as can shorten mapping
 @function args($args, $shorten-index: null, $merge: null) {
   @if $merge {
-    @if is-not-map($merge) {
+    @if not is-map($merge) {
       @error map-type-error(merge);
     }
   } @else if is-map($shorten-index) {
@@ -136,7 +130,7 @@ $__args-shorten-index: query !default;
       @return $merge;
     }
     @return ();
-  } @else if is-not-map($args) {
+  } @else if not is-map($args) {
     @if $shorten-index {
       $args: ($shorten-index: $args);
     } @else {

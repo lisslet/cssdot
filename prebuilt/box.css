@@ -77,12 +77,18 @@
   min-width: 100%;
 }
 
-.dot-box_full {
+.dot-boxes_full .dot-box, .dot-box_full {
   height: 100%;
 }
-.dot-box_thin .dot-box-head .dot-box-pad {
+.dot-boxes_thin .dot-box .dot-box-head .dot-box-pad, .dot-box_thin .dot-box-head .dot-box-pad {
   padding-bottom: 0;
 }
-.dot-box_thin .dot-box-foot .dot-box-pad {
+.dot-boxes_thin .dot-box .dot-box-foot .dot-box-pad, .dot-box_thin .dot-box-foot .dot-box-pad {
   padding-top: 0;
+}
+.dot-boxes_link .dot-box, .dot-box_link {
+  cursor: pointer;
+}
+.dot-box_disable {
+  cursor: default;
 }

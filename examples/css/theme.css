@@ -93,5 +93,14 @@
 }
 
 .dot-box {
-  color: #fff;
+  background-color: #fff;
+  color: black;
+}
+.dot-box_link:hover {
+  background-color: #5796ff;
+  color: black;
+}
+.dot-box_disable, .dot-box_disable:hover {
+  background-color: #a2a2a2;
+  color: black;
 }

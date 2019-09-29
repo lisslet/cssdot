@@ -90,7 +90,7 @@
 /// @param {*} $index if $map is not a map, create new map that $index has $map
 /// @return {map}
 @function map-initiate($map, $required:null, $sugar-index: null) {
-  @if is-not-map($map) {
+  @if not is-map($map) {
     @if ($sugar-index) {
       @return ($sugar-index: $map);
     }
@@ -114,7 +114,7 @@
 }
 
 @function map-last($map) {
-  @if is-not-map($map) {
+  @if not is-map($map) {
     @error map-type-error();
   }
 
@@ -124,7 +124,7 @@
 }
 
 @function map-required($map, $keys) {
-  @if is-not-map($map) {
+  @if not is-map($map) {
     @error map-type-error();
   }
 

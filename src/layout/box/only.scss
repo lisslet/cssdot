@@ -53,10 +53,12 @@
     //////////////////////////////
     // state classes
 
+    .dot-boxes_full &,
     &_full {
       height: 100%;
     }
 
+    .dot-boxes_thin &,
     &_thin {
       #{$selector} {
         &-head {
@@ -72,6 +74,14 @@
       }
     }
 
+    .dot-boxes_link &,
+    &_link {
+      cursor:pointer;
+    }
+
+    &_disable {
+      cursor:default;
+    }
   }
 }
 
