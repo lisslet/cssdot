@@ -89,6 +89,6 @@
 .dot-boxes_link .dot-box, .dot-box_link {
   cursor: pointer;
 }
-.dot-box_disable {
+.dot-boxes_disable .dot-box, .dot-box_disable {
   cursor: default;
 }
