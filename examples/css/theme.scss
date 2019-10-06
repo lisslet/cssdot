@@ -74,8 +74,6 @@ $DOT-BOX-THEME-MAP: (
 @mixin box-theme($palette, $map: ()) {
   $map: map-merge($DOT-BOX-THEME-MAP, $map);
 
-  @debug $map;
-
   $field: pick($palette, $map, 'field');
   $text: pick($palette, $map, 'text');
   $react-field: pick($palette, $map, 'react-field');
@@ -112,6 +110,6 @@ $DOT-BOX-THEME-MAP: (
 
 @include theme-rule($theme);
 
-
-
-
+@debug "1234";
+//@debug -primary();
+//@debug -accent();

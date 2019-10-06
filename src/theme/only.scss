@@ -4,8 +4,44 @@
   @return dot-type-of($target, 'theme');
 }
 
+@function is-theme-name($name) {
+  @return map-has-key($DOT-THEME-STORE, $name);
+}
+
 @function is-palette($target) {
   @return dot-type-of($target, 'palette');
+}
+
+@function pick-theme($theme-name) {
+  @if (is-theme($theme)) {
+    @return $theme;
+  }
+  @if (is-string($theme-name)) {
+    @if (is-theme-name($theme-name)) {
+      @return map-get($DOT-THEME-STORE, $theme-name)
+    } @else {
+      @error dot-type-error('theme-name');
+    }
+  }
+  @error dot-type-error('theme');
+}
+
+@function pick-palette($theme_or_theme-name) {
+  $target: $theme_or_theme-namel;
+
+  @if (is-string($target)) {
+    $target: pick-theme($target);
+  }
+
+  @if (is-theme($target)) {
+    @return map-get($theme, 'palette');
+  }
+
+  @if (is-palette($target)) {
+    @return $target;
+  }
+
+  @error dot-type-error('palette');
 }
 
 /// pick color from palette or theme

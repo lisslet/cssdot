@@ -84,7 +84,7 @@ $__argments-shorten-index: selector !default;
 /// get arguments as can shorten mapping
 /// @deprecated
 @function arguments($args, $shorten-index: $__argments-shorten-index, $merge:null) {
-  @warn 'arguments is deprecated';
+  // @warn 'arguments is deprecated';
 
   @if $merge {
     @if not is-map($merge) {
@@ -183,7 +183,7 @@ $__args-shorten-index: query !default;
 // todo: why?, still used many places
 /// @deprecated
 @function rule-arguments($args, $shorten-index:null, $sub-selector:null) {
-  @warn 'rule-arguments is deprecated';
+  // @warn 'rule-arguments is deprecated';
   $args: arguments($args, $shorten-index);
 
   $selector: map-get($args, selector);
