@@ -10,7 +10,7 @@
   @include ng-mat-buttons-reset()
 }
 
-@function to-material-palette($color) {
+@function ng-to-mat-palette($color) {
   $black-87-opacity: rgba(0, 0, 0, 0.87);
   $white-87-opacity: rgba(0, 0, 0, 0.87);
 
@@ -49,11 +49,11 @@
   @return $colors;
 }
 
-@mixin set-material-theme($theme, $light: true) {
+@mixin ng-set-material-theme($theme, $light: true) {
 
-  $primary: pick($theme, primary);
-  $accent: pick($theme, accent);
-  $warn: pick($theme, warn);
+  $primary: -primary($theme);
+  $accent: -accent($them);
+  $warn: -warn($theme);
 
   $primary: to-material-palette($primary);
   $accent: to-material-palette($accent);
