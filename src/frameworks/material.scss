@@ -52,7 +52,7 @@
 @mixin ng-set-mat-theme($theme, $light: true) {
 
   $primary: -primary($theme);
-  $accent: -accent($them);
+  $accent: -accent($theme);
   $warn: -warn($theme);
 
   $primary: ng-to-mat-palette($primary);
