@@ -10,11 +10,11 @@
   @include ng-mat-buttons-reset()
 }
 
-@function ng-to-mat-palette($color) {
-  $black-87-opacity: rgba(0, 0, 0, 0.87);
-  $white-87-opacity: rgba(0, 0, 0, 0.87);
+@function ng-mat-color($color) {
+  $black-87: rgba(0, 0, 0, 0.87);
+  $white-87: rgba(0, 0, 0, 0.87);
 
-  $colors: (
+  @return (
           50: lighten($color, 25%),
           100: lighten($color, 20%),
           200: lighten($color, 15%),
@@ -30,23 +30,22 @@
           A400: darken(lighten($color, 20%), 10%),
           A700: darken(lighten($color, 10%), 10%),
           contrast: (
-                  50: $black-87-opacity,
-                  100: $black-87-opacity,
-                  200: $black-87-opacity,
-                  300: $black-87-opacity,
-                  400: $black-87-opacity,
+                  50: $black-87,
+                  100: $black-87,
+                  200: $black-87,
+                  300: $black-87,
+                  400: $black-87,
                   500: white,
                   600: white,
                   700: white,
-                  800: $white-87-opacity,
-                  900: $white-87-opacity,
-                  A100: $black-87-opacity,
+                  800: $white-87,
+                  900: $white-87,
+                  A100: $black-87,
                   A200: white,
                   A400: white,
                   A700: white,
           )
   );
-  @return $colors;
 }
 
 @mixin ng-set-mat-theme($theme, $light: true) {
@@ -55,14 +54,14 @@
   $accent: -accent($theme);
   $warn: -warn($theme);
 
-  $primary: ng-to-mat-palette($primary);
-  $accent: ng-to-mat-palette($accent);
-  $warn: ng-to-mat-palette($warn);
 
-  $mat-primary: mat-palette($primary);
-  $mat-accent: mat-palette($accent);
-  $mat-warn: mat-palette($warn);
+  $primary-color: ng-mat-color($primary);
+  $accent-color: ng-mat-color($accent);
+  $warn-color: ng-mat-color($warn);
 
+  $mat-primary: mat-palette($primary-color);
+  $mat-accent: mat-palette($accent-color);
+  $mat-warn: mat-palette($warn-color);
 
   $mat-theme: if($light, mat-light-theme($mat-primary, $mat-accent, $mat-warn), mat-dark-theme($mat-primary, $mat-accent, $mat-warn));
 
