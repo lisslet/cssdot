@@ -49,15 +49,15 @@
   @return $colors;
 }
 
-@mixin ng-set-material-theme($theme, $light: true) {
+@mixin ng-set-mat-theme($theme, $light: true) {
 
   $primary: -primary($theme);
   $accent: -accent($them);
   $warn: -warn($theme);
 
-  $primary: to-material-palette($primary);
-  $accent: to-material-palette($accent);
-  $warn: to-material-palette($warn);
+  $primary: ng-to-mat-palette($primary);
+  $accent: ng-to-mat-palette($accent);
+  $warn: ng-to-mat-palette($warn);
 
   $mat-primary: mat-palette($primary);
   $mat-accent: mat-palette($accent);
