@@ -100,11 +100,48 @@ $DOT-LINK-STYLES: (
         padding: 0 0.313em;
       }
 
+      /*
       @include fx-ripple-with {
         background-color: rgba(0, 0, 0, 0.12);
       }
+      */
+
+
     }
   }
 }
 
+@mixin link-theme($theme) {
+
+  $labels: ('primary', 'accent', 'warn');
+
+  @each $label in $labels {
+    $color: pick($theme, $label);
+
+
+    .dot-link {
+      @each $style, $properties in $DOT-LINK-STYLES {
+        $suffix: #{'_' + $label};
+
+        &#{$suffix} {
+          background-color: $color;
+        }
+      }
+    }
+
+  }
+
+}
+
+$primary: blue;
+$accent: green;
+$warn: red;
+
+$theme: theme(palette((
+        'primary': $primary,
+        'accent': $accent,
+        'warn': $warn
+)));
+
 @include link-rule;
+@include link-theme($theme);

@@ -17,8 +17,11 @@ button.dot-link:focus {
   font-size: 1rem;
   cursor: pointer;
   vertical-align: middle;
-  position: relative;
-  overflow: hidden;
+  /*
+  @include fx-ripple-with {
+    background-color: rgba(0, 0, 0, 0.12);
+  }
+  */
 }
 .dot-link > span, .dot-link-area {
   display: inline-block;
@@ -27,32 +30,33 @@ button.dot-link:focus {
   text-align: center;
   padding: 0 0.313em;
 }
-.dot-link:before, .dot-link:after {
-  position: absolute;
-  top: 50%;
-  left: -10%;
-  right: -10%;
-  width: 120%;
-  padding-top: 120%;
-  transform: translateY(-50%);
-  border-radius: 50%;
-  content: "";
-  z-index: 1;
-  display: none;
-  animation: zSR4Syervhe2eRuGncMUN2p1f9PYHp 0.24s both;
-  background-color: rgba(0, 0, 0, 0.12);
+
+.dot-link_primary {
+  background-color: blue;
 }
-@keyframes zSR4Syervhe2eRuGncMUN2p1f9PYHp {
-  from {
-    left: 50%;
-    right: 50%;
-    width: 0;
-    padding-top: 0;
-  }
+.dot-link_primary {
+  background-color: blue;
 }
-.dot-link .dot-ripple:before, .dot-link:hover:before {
-  display: block;
+.dot-link_primary {
+  background-color: blue;
 }
-.dot-link:focus:after, .dot-link:active:after {
-  display: block;
+
+.dot-link_accent {
+  background-color: green;
+}
+.dot-link_accent {
+  background-color: green;
+}
+.dot-link_accent {
+  background-color: green;
+}
+
+.dot-link_warn {
+  background-color: red;
+}
+.dot-link_warn {
+  background-color: red;
+}
+.dot-link_warn {
+  background-color: red;
 }
