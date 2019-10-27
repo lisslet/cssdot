@@ -1,0 +1,140 @@
+@import '../../src/scss';
+
+$primary: #369;
+$accent: #9C0;
+$warn: #900;
+
+$palette: palette((
+        'primary': $primary,
+        'accent': $accent,
+        'warn': $warn
+));
+
+$theme: theme($palette);
+
+// link styles
+// 'transparent,
+// 'fill',
+// 'ghost,
+
+
+$DOT-LINK-PROPERTIES: (
+        'ghost': (
+                border-style: solid,
+                border-width: 2px
+        ),
+        'underline': (
+                border-style: solid,
+                border-width: 0 0 2px 0
+        )
+);
+
+$DOT-LINK-STYLES: (
+        'transparent': (
+                color: 'color'
+        ),
+        'fill':(
+                background-color: 'color',
+                color: 'text'
+        ),
+        'ghost':(
+                border-color: 'color',
+                color: 'color'
+        ),
+        'underline': (
+                border-color: 'color',
+                color: 'color',
+                border-bottom-left-radius: 0,
+                border-bottom-right-radius: 0
+        )
+);
+
+$DOT-LINK-DEFAULT-LABEL: 'text';
+$DOT-LINK-DEFAULT-STYLE: 'transparent';
+
+
+$labels: ('text', 'primary', 'accent', 'warn');
+
+$selector: #{'.dot-link'};
+
+@function safe-color($color) {
+  @return if(is-safe-for-black($color), #000, #fff);
+}
+
+@function style-value($color, $value) {
+  @debug $color, $value;
+  @if ($value == 'color') {
+    @debug '  =color';
+    @return $color;
+  }
+  @if ($value == 'text') {
+    @debug '  =text';
+    @return safe-color($color);
+  }
+  @return $value;
+}
+
+$min-height: 36px;
+
+@mixin link-core() {
+  // a
+  display: inline-block;
+  // button
+  border: none;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+
+  // common
+  // font-family:sans-serif;
+  font-size: 1rem;
+  cursor: pointer;
+  // vertical-align: middle;
+  box-sizing: border-box;
+  border-radius: 3px;
+  text-transform: uppercase;
+  line-height: $min-height;
+
+  > span,
+  &-area {
+    display: inline-block;
+    min-width: 48px;
+
+    text-align: center;
+    padding: 0 0.313em;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  @each $style, $properties in $DOT-LINK-PROPERTIES {
+    $style-query: if($style == $DOT-LINK-DEFAULT-STYLE, '', '._' + $style);
+    &#{$style-query} {
+      @include properties($properties);
+    }
+  }
+}
+
+
+#{$selector} {
+  @include link-core();
+
+
+  @each $type, $map in $DOT-LINK-STYLES {
+    $type-query: if($type == $DOT-LINK-DEFAULT-STYLE, '', '._' + $type);
+    &#{$type-query} {
+      @each $label in $labels {
+
+        $color: pick($theme, $label);
+
+        &#{'._' + $label} {
+          @each $property, $value in $map {
+            $value: style-value($color, $value);
+            #{$property}: $value;
+          }
+        }
+      }
+    }
+  }
+}

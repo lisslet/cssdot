@@ -3,68 +3,82 @@
 <head>
     <link rel="stylesheet" href="../prebuilt/reset.css">
     <link rel="stylesheet" href="../prebuilt/dynamic/frame/1600.css">
-    <link rel="stylesheet" href="./css/link.css">
+    <link rel="stylesheet" href="./css/link2.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap" rel="stylesheet">
+    <style>
+        body, button {
+            font-family: 'Roboto Condensed';
+        }
+        section {
+            margin-bottom: 1.125em;
+        }
 
+        .links section {
+            float: left;
+        }
+
+        .links:after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+    </style>
 </head>
 <body>
 
 <main id="dot-main">
     <div id="dot-main-area">
-        <section>
-            <h3>Default Type</h3>
-            <a href="#" class="dot-link">
-                <span>Button</span>
-            </a>
-            <button type="submit" class="dot-link">
-                <span>Button</span>
-            </button>
-
-            <a href="#" class="dot-link dot-link_primary">
-                <span>Button</span>
-            </a>
-            <button type="submit" class="dot-link dot-link_primary">
-                <span>Button</span>
-            </button>
-
-            <a href="#" class="dot-link dot-link_accent">
-                <span>Button</span>
-            </a>
-            <button type="submit" class="dot-link dot-link_accent">
-                <span>Button</span>
-            </button>
-
-            <a href="#" class="dot-link dot-link_warn">
-                <span>Button</span>
-            </a>
-            <button type="submit" class="dot-link dot-link_warn">
-                <span>Button</span>
-            </button>
+        <section class="links">
+            <section class="anchor-links">
+                <a class="dot-link"><span>Default</span></a>
+                <a class="dot-link _fill"><span>Fill</span></a>
+                <a class="dot-link _ghost"><span>Ghost</span></a>
+                <a class="dot-link _underline"><span>Underline</span></a>
+            </section>
+            <section class="button-links">
+                <button class="dot-link"><span>Default</span></button>
+                <button class="dot-link _fill"><span>Fill</span></button>
+                <button class="dot-link _ghost"><span>Ghost</span></button>
+                <button class="dot-link _underline"><span>Underline</span></button>
+            </section>
         </section>
 
         <section>
-            <h3>Ghost Type</h3>
+            <section>
+                <a class="dot-link _primary"><span>Default</span></a>
+                <a class="dot-link _fill _primary"><span>Fill</span></a>
+                <a class="dot-link _ghost _primary"><span>Ghost</span></a>
+                <a class="dot-link _underline _primary"><span>Underline</span></a>
 
-            <a href="#" class="dot-link dot-link-ghost">
-                <span>Button</span>
-            </a>
+                <button class="dot-link _primary"><span>Default</span></button>
+                <button class="dot-link _fill _primary"><span>Fill</span></button>
+                <button class="dot-link _ghost _primary"><span>Ghost</span></button>
+                <button class="dot-link _underline _primary"><span>Underline</span></button>
+            </section>
 
+            <section>
+                <a class="dot-link _accent"><span>Default</span></a>
+                <a class="dot-link _fill _accent"><span>Fill</span></a>
+                <a class="dot-link _ghost _accent"><span>Ghost</span></a>
+                <a class="dot-link _underline _accent"><span>Underline</span></a>
 
-            <button type="submit" class="dot-link dot-link-ghost">
-                <span>Button</span>
-            </button>
-        </section>
+                <button class="dot-link _accent"><span>Default</span></button>
+                <button class="dot-link _fill _accent"><span>Fill</span></button>
+                <button class="dot-link _ghost _accent"><span>Ghost</span></button>
+                <button class="dot-link _underline _accent"><span>Underline</span></button>
+            </section>
 
-        <section>
-            <h3>Underline Type</h3>
+            <section>
+                <a class="dot-link _warn"><span>Default</span></a>
+                <a class="dot-link _fill _warn"><span>Fill</span></a>
+                <a class="dot-link _ghost _warn"><span>Ghost</span></a>
+                <a class="dot-link _underline _warn"><span>Underline</span></a>
 
-            <a href="#" class="dot-link dot-link-underline">
-                <span>Button</span>
-            </a>
-
-
-            <button type="submit" class="dot-link dot-link-underline">
-                <span>Button</span>
-            </button>
+                <button class="dot-link _warn"><span>Default</span></button>
+                <button class="dot-link _fill _warn"><span>Fill</span></button>
+                <button class="dot-link _ghost _warn"><span>Ghost</span></button>
+                <button class="dot-link _underline _warn"><span>Underline</span></button>
+            </section>
         </section>
     </div>
 </main>
