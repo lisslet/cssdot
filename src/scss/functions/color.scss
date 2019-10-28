@@ -27,13 +27,15 @@ $black-relative-luminance: relative-luminance(black) !default;
   @return $white < $black;
 }
 
-@function safe-text($color){
+@function is-safe-for-white($color) {
+  @return not is-safe-for-black($color);
+}
+
+/// get safe text color
+@function safe-color($color){
   @return if(is-safe-for-black($color), #000, #fff);
 }
 
-@function is-safe-with-white($color) {
-  @return not is-safe-for-black($color);
-}
 
 /// Slightly lighten a color
 @function tint($color, $amount) {

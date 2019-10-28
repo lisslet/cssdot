@@ -1,5 +1,25 @@
 @import '../../src/scss';
 
+/// Get style map that initializes properties used in other styles.
+@function get-initialize-styles($styles) {
+  $initialize-styles: ();
+  @each $style, $properties in $styles {
+    $initialize-style: ();
+
+    @each $other-style, $other-properties in $styles {
+      @each $property, $value in $other-properties {
+        @if not has-key($properties, $property) {
+          @if not has-key($initialize-style, $property) {
+            $initialize-style: map-set($initialize-style, $property, 'inherit');
+          }
+        }
+      }
+    }
+    $initialize-styles: map-set($initialize-styles, $style, $initialize-style);
+  }
+  @return $initialize-styles;
+}
+
 $primary: #369;
 $accent: #9C0;
 $warn: #900;
@@ -47,28 +67,48 @@ $DOT-LINK-STYLES: (
                 border-bottom-left-radius: 0,
                 border-bottom-right-radius: 0
         )
-);
+) !default;
 
-$DOT-LINK-DEFAULT-LABEL: 'text';
-$DOT-LINK-DEFAULT-STYLE: 'transparent';
+$DOT-LINK-INITIALIZE-STYLES: get-initialize-styles($DOT-LINK-STYLES) !default;
+
+$DOT-THEME-OPACITY: 11 30 72 86;
+
+$DOT-LINK-DEFAULT-LABEL: 'text' !default;
+$DOT-LINK-DEFAULT-STYLE: 'transparent' !default;
 
 
 $labels: ('text', 'primary', 'accent', 'warn');
 
 $selector: #{'.dot-link'};
 
-@function safe-color($color) {
-  @return if(is-safe-for-black($color), #000, #fff);
+
+@function style-filter($color, $filter, $amount: null){
+  @return $color;
 }
 
+// $color, opacity, +-100%;
+// $color, bright, +-100%;
+// $color, mixin, +-100%;
+// $color, invert
+
+@debug style-filter('#fff', 96%);
+
+
+
 @function style-value($color, $value) {
-  @debug $color, $value;
+
+  $color-ref: $value;
+  $color-filter: null;
+
+  @if is-list($value){
+    $color-ref: nth($value, 1);
+    $color-filter: nth($value, 2);
+  }
+
   @if ($value == 'color') {
-    @debug '  =color';
     @return $color;
   }
   @if ($value == 'text') {
-    @debug '  =text';
     @return safe-color($color);
   }
   @return $value;

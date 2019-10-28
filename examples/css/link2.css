@@ -22,11 +22,11 @@
 }
 .dot-link._ghost {
   border-style: solid;
-  border-width: 1px;
+  border-width: 2px;
 }
 .dot-link._underline {
   border-style: solid;
-  border-width: 0 0 1px 0;
+  border-width: 0 0 2px 0;
 }
 .dot-link._text {
   color: white;
