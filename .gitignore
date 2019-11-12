@@ -18,8 +18,11 @@ composer.lock
 # IDEA
 .idea/
 .ssh/
+.vscode/
 tests/
 test/
 **/*.css.map
 
 sassdoc/
+
+package/

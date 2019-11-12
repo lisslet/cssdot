@@ -1,5 +1,5 @@
-const gulp = require('gulp');
-const {src, dest, lastRun, task, watch, series, parallel} = gulp;
+const fs                                                  = require('fs');
+const {src, dest, lastRun, task, watch, series, parallel} = require('gulp');
 
 const pump = require('pump');
 // const sass = require('gulp-sass');
@@ -22,11 +22,7 @@ const prebuild = {
 };
 
 
-const fs = require('fs');
-
-
-
-function since(task){
+function since(task) {
 	return {
 		since: lastRun(task)
 	}
@@ -110,11 +106,11 @@ task('cssdot-prebuild-compile', done => {
 });
 
 task('cssdot-prebuild-watch', done => {
-	gulp.watch(prebuild.src + sassFiles,
+	watch(prebuild.src + sassFiles,
 		series('cssdot-prebuild-compile')
 	);
 
-	gulp.watch(prebuildJsonFile,
+	watch(prebuildJsonFile,
 		series('cssdot-prebuild-templates')
 	);
 	done();
@@ -156,7 +152,7 @@ task('cssdot-example-compile', done => {
 });
 
 task('cssdot-example-watch', () => {
-	return gulp.watch(
+	return watch(
 		exampleTarget,
 		series('cssdot-example-compile')
 	);
@@ -168,13 +164,11 @@ task('cssdot-examples-only', parallel(
 ));
 
 task('cssdot-watch', done => {
-	gulp.watch(
+	return watch(
 		compileTestTarget,
 		// series('cssdot-compile-test')
 		series('cssdot-example-compile')
 	);
-
-	done();
 });
 
 task('cssdot-default', parallel(
@@ -187,3 +181,132 @@ task('cssdot-default', parallel(
 task('default', parallel(
 	'cssdot-default'
 ));
+
+const packageRoot = './package';
+
+task('deploy:prebuild-copy-extra', done => {
+	pump(
+		src([
+			'./LICENSE',
+			'./*.md',
+			'!./TODO.md',
+		]),
+		dest(packageRoot),
+		done
+	)
+});
+
+task('deploy:prebuild-copy-css', done => {
+	pump(
+		src(prebuild.dest + '/**/*'),
+		dest(packageRoot),
+		done
+	)
+});
+
+
+task('deploy:prebuild-package-json', done => {
+	const packageJson = require('./package.json');
+	packageJson.name += '-prebuilt';
+	packageJson.description += ' Prebuilt Files';
+
+	delete packageJson.scripts;
+	delete packageJson.dependencies;
+	delete packageJson.devDependencies;
+
+	fs.writeFileSync(
+		packageRoot + '/package.json',
+		JSON.stringify(packageJson, null, 2)
+	);
+
+	done();
+});
+
+
+if (!dirExists(packageRoot)) {
+	mkdir(packageRoot);
+}
+
+const git = require('simple-git/promise')(packageRoot);
+
+
+function gitReady(git, url) {
+	return gitInit(git, url)
+		.then(() => {
+			console.log('git pull')
+			return git.pull('origin', 'master');
+		})
+}
+
+function gitInit(git, url) {
+	return new Promise(resolve => {
+		git.init()
+			.then(() => {
+				console.log('git remote add origin ' + url);
+				return git.addRemote('origin', url);
+			})
+			.then(() => {
+				resolve();
+			})
+			.catch(error => {
+				resolve();
+			});
+	});
+}
+
+function errorLog(error) {
+	console.warn(error);
+}
+
+task('deploy:prebuild-git-init', done => {
+	const packageJson   = require('./package');
+	const repositoryUrl = packageJson.repository.url
+		.replace(/\.git$/, '-prebuilt.git');
+
+	const git = require('simple-git/promise')(packageRoot);
+
+	gitReady(git, repositoryUrl)
+		.then(() => done())
+		.catch(errorLog);
+});
+
+task('deploy:prebuild-git-push', done => {
+	console.log('git add .');
+	git.add('./')
+		.then(() => {
+
+			const date      = new Date;
+			const timestamp = [
+				[
+					date.getFullYear(),
+					date.getMonth() + 1,
+					date.getDate()
+				].join('-'),
+				[
+					date.getHours(),
+					date.getMinutes(),
+					date.getSeconds()
+				].join(':')
+			].join('T');
+
+			console.log('git commit');
+			return git.commit(timestamp);
+		})
+		.then(() => {
+			console.log('git push origin master');
+			return git.push('origin', 'master');
+		})
+		.then(() => {
+			done();
+		})
+		.catch(errorLog);
+});
+
+
+task('deploy:prebuild', series([
+	'deploy:prebuild-git-init',
+	'deploy:prebuild-copy-extra',
+	'deploy:prebuild-copy-css',
+	'deploy:prebuild-package-json',
+	'deploy:prebuild-git-push'
+]));
