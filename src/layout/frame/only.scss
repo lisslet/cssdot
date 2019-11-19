@@ -11,7 +11,7 @@
   @return $options;
 }
 
-$__layout-sticky-resize: true;
+$DOT-LAYOUT-STICKY-RESIZE: true;
 
 
 /// generate layout frame rules
@@ -24,7 +24,7 @@ $__layout-sticky-resize: true;
   $max-width: map-get-if($options, max-width, $DOT-LAYOUT-DEFAULT-WIDTH);
   $min-width: map-get-if($options, min-width, $DOT-LAYOUT-MIN-WIDTH);
 
-  $sticky-resize: map-get-if($options, sticky-resize, $__layout-sticky-resize);
+  $sticky-resize: map-get-if($options, sticky-resize, $DOT-LAYOUT-STICKY-RESIZE);
 
   $parent-query: unquote("#{&}");
 

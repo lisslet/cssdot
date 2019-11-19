@@ -1,0 +1,75 @@
+@import '../../src/scss';
+
+@mixin dot-page-links-rule() {
+
+  .dot-page-link {
+    text-align: center;
+
+    ul {
+      position:relative;
+      display: flex;
+      justify-content: center;
+    }
+
+    li {
+      display: inline;
+    }
+
+    a {
+      display: block;
+      padding: 0.626em;
+
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.2);
+      }
+
+      &._active {
+        cursor: default;
+        background-color: rgba(0, 0, 0, 0.1);
+      }
+    }
+
+    &-control {
+      &._first {
+        position: absolute;
+        left:0;
+      }
+
+      &._end {
+        position: absolute;
+        right:0;
+      }
+    }
+  }
+}
+
+
+@include dot-page-links-rule;
+
+.dot-page-link {
+  &._circle {
+    li {
+      @include right-gap(0.313em);
+    }
+
+
+    a {
+      $size: 1.25em * 2;
+      $radius: $size / 2;
+
+      border-radius: $radius;
+      padding: 0;
+      text-align: center;
+      min-width: $size;
+      height: $size;
+      line-height: $size;
+
+      &:before,
+      &:after {
+        display: inline-block;
+        content: '';
+        width: 0.626em;
+      }
+    }
+  }
+}

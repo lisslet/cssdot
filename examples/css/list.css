@@ -1,0 +1,50 @@
+.dot-page-link {
+  text-align: center;
+}
+.dot-page-link ul {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+.dot-page-link li {
+  display: inline;
+}
+.dot-page-link a {
+  display: block;
+  padding: 0.626em;
+}
+.dot-page-link a:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.dot-page-link a._active {
+  cursor: default;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.dot-page-link-control._first {
+  position: absolute;
+  left: 0;
+}
+.dot-page-link-control._end {
+  position: absolute;
+  right: 0;
+}
+
+.dot-page-link._circle li {
+  margin-right: 0.313em;
+}
+.dot-page-link._circle li:last-child {
+  margin-right: 0;
+}
+.dot-page-link._circle a {
+  border-radius: 1.25em;
+  padding: 0;
+  text-align: center;
+  min-width: 2.5em;
+  height: 2.5em;
+  line-height: 2.5em;
+}
+.dot-page-link._circle a:before, .dot-page-link._circle a:after {
+  display: inline-block;
+  content: "";
+  width: 0.626em;
+}

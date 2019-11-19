@@ -1,0 +1,98 @@
+.dot-area,
+#dot-head-area, #dot-main-area, #dot-foot-area {
+  min-width: 320px;
+  max-width: 2400px;
+  margin: 0 auto;
+}
+.ie69 .dot-area,
+.ie69 #dot-head-area, .ie69 #dot-main-area, .ie69 #dot-foot-area {
+  width: 2400px;
+}
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .dot-area,
+#dot-head-area, #dot-main-area, #dot-foot-area {
+    width: 2400px;
+  }
+}
+@media only screen and (min-width: 1000px) {
+  .dot-area,
+#dot-head-area, #dot-main-area, #dot-foot-area {
+    max-width: 1000px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .dot-area,
+#dot-head-area, #dot-main-area, #dot-foot-area {
+    max-width: 1200px;
+  }
+}
+@media only screen and (min-width: 1400px) {
+  .dot-area,
+#dot-head-area, #dot-main-area, #dot-foot-area {
+    max-width: 1400px;
+  }
+}
+@media only screen and (min-width: 1600px) {
+  .dot-area,
+#dot-head-area, #dot-main-area, #dot-foot-area {
+    max-width: 1600px;
+  }
+}
+@media only screen and (min-width: 1800px) {
+  .dot-area,
+#dot-head-area, #dot-main-area, #dot-foot-area {
+    max-width: 1800px;
+  }
+}
+@media only screen and (min-width: 2000px) {
+  .dot-area,
+#dot-head-area, #dot-main-area, #dot-foot-area {
+    max-width: 2000px;
+  }
+}
+@media only screen and (min-width: 2200px) {
+  .dot-area,
+#dot-head-area, #dot-main-area, #dot-foot-area {
+    max-width: 2200px;
+  }
+}
+@media only screen and (min-width: 2400px) {
+  .dot-area,
+#dot-head-area, #dot-main-area, #dot-foot-area {
+    max-width: 2400px;
+  }
+}
+
+#dot-head-area.dot-resize, #dot-main-area.dot-resize, #dot-foot-area.dot-resize, .dot-resize #dot-head-area, .dot-resize #dot-main-area, .dot-resize #dot-foot-area {
+  max-width: inherit;
+}
+
+.dot-width_left {
+  margin: 0;
+}
+.dot-width_right {
+  margin: 0 0 auto 0;
+}
+
+#dot-head-area, #dot-foot-area {
+  position: relative;
+}
+.align_left {
+  text-align: right;
+}
+.align_center {
+  text-align: center;
+}
+.align_right {
+  text-align: right;
+}
+
+#dots {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+#dot-main {
+  flex-grow: 1;
+}
