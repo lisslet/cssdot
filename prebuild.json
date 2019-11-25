@@ -77,5 +77,12 @@
         "filename": "animate",
         "content": "@include animate-rule;"
       }
+  },
+  {
+    "scss": "notify/standalone",
+    "files": {
+      "filename": "notify",
+      "content": "@include notify-rule;"
+    }
   }
 ]

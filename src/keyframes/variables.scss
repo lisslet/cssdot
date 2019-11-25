@@ -1,0 +1,79 @@
+// MAKE THE SHORT NAME AS POSSIBLE
+//
+// style: (
+//   property: value
+// );
+
+/// opacity
+$DOT-KEYFRAME-STATE: (
+        'fade': (
+                'opacity': 0
+        )
+) !default;
+
+/// direction
+$DOT-KEYFRAME-TRANS: (
+        'top': (
+                'transform': translateY(-100%)
+        ),
+        'right': (
+                'transform': translateX(100%)
+        ),
+        'bottom': (
+                'transform': translateY(100%)
+        ),
+        'left': (
+                'transform': translateX(-100%)
+        ),
+        'top-left': (
+                'transform': translate(-100%, -100%)
+        ),
+        'top-right': (
+                'transform': translate(100%, -100%)
+        ),
+        'bottom-left': (
+                'transform': translate(-100%, 100%)
+        ),
+        'bottom-right': (
+                'transform': translate(100%, 100%)
+        ),
+) !default;
+
+/// size
+$DOT-KEYFRAME-SCALE: (
+        'up': (
+                'transform': scale(1.4)
+        ),
+        'down': (
+                'transform': scale(0.6)
+        )
+) !default;
+
+
+/// rotate
+$DOT-KEYFRAME-ROTATE: (
+        'flip': (
+                'transform': rotateY(0.5turn)
+        ),
+        'spin': (
+                'transform': rotate(-90deg)
+        )
+) !default;
+
+/// @description
+///   order use to the naming.
+///   fade-top-up-spin
+$DOT-KEYFRAMES: (
+        $DOT-KEYFRAME-STATE,
+        $DOT-KEYFRAME-TRANS,
+        $DOT-KEYFRAME-SCALE,
+        $DOT-KEYFRAME-ROTATE
+) !default;
+
+
+$DOT-KEYFRAME-DELAYS: (
+        0.05s,
+        0.1s,
+        0.2s,
+        0.4s 0.6s
+)

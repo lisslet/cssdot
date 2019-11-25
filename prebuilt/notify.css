@@ -1,0 +1,73 @@
+.dot-notify {
+  background-color: #fff;
+  min-width: 320px;
+  width: 20%;
+  margin-bottom: 20px;
+}
+.dot-notify-central_left-top {
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+.dot-notify-central_left-middle {
+  position: fixed;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.dot-notify-central_left-bottom {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+}
+.dot-notify-central_center-top {
+  position: fixed;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+}
+.dot-notify-central_center-middle {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.dot-notify-central_center-bottom {
+  position: fixed;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+}
+.dot-notify-central_right-top {
+  position: fixed;
+  right: 0;
+  top: 0;
+}
+.dot-notify-central_right-middle {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.dot-notify-central, .dot-notify-central_right-bottom {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+}
+.dot-notify-central h1 {
+  position: absolute;
+  top: 0;
+  width: 0;
+  opacity: 0;
+  display: none \9 ;
+}
+.dot-notify:last-child {
+  margin-bottom: 0;
+}
+.dot-notify_link-full .dot-notify-foot .dot-pad {
+  display: flex;
+  flex-wrap: nowrap;
+}
+.dot-notify_link-full .dot-notify-foot .dot-pad > button {
+  flex-grow: 1;
+}
