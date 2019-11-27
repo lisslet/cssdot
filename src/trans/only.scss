@@ -1,0 +1,58 @@
+@import './variables';
+
+@mixin trans-rule($keyframes: $DOT-TRANS-KEYFRAMES) {
+  $mixed-frames: ();
+
+  $frame-index: 0;
+
+  @each $keyframe in $keyframes {
+    $pre-frames: $mixed-frames;
+
+    @each $key, $properties in $keyframe {
+      @if $frame-index > 0 {
+        @each $pre-key, $pre-properties in $pre-frames {
+          $mix-key: $pre-key + '-' + $key;
+          $mix-properties: map-assign($pre-properties, $properties);
+          $mixed-frames: map-set($mixed-frames, $mix-key, $mix-properties);
+        }
+      }
+      $mixed-frames: map-set($mixed-frames, $key, $properties);
+    }
+
+    $frame-index: $frame-index + 1;
+  }
+
+  %delays {
+    @include animate-delays(0.025s, 48);
+  }
+
+  @each $key, $properties in $mixed-frames {
+    $from-name: '__dot-' + $key;
+    $to-name: 'dot-' + $key + '__';
+
+    //@debug $from-name;
+
+    #{'.' + $from-name} {
+      &,
+      &s > *:nth-child(1n) {
+        animation: unquote($from-name) 0.3s both;
+      }
+
+      &s > *{
+        @extend %delays;
+      }
+    }
+
+    @include frames($from-name) {
+      from {
+        @include properties($properties);
+      }
+    }
+
+    @include frames($to-name) {
+      to {
+        @include properties($properties);
+      }
+    }
+  }
+}

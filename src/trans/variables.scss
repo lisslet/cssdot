@@ -5,14 +5,14 @@
 // );
 
 /// opacity
-$DOT-KEYFRAME-STATE: (
+$DOT-TRANS-STATE: (
         'fade': (
                 'opacity': 0
         )
 ) !default;
 
 /// direction
-$DOT-KEYFRAME-TRANS: (
+$DOT-TRANS-MOVE: (
         'top': (
                 'transform': translateY(-100%)
         ),
@@ -40,7 +40,7 @@ $DOT-KEYFRAME-TRANS: (
 ) !default;
 
 /// size
-$DOT-KEYFRAME-SCALE: (
+$DOT-TRANS-SCALE: (
         'up': (
                 'transform': scale(1.4)
         ),
@@ -51,7 +51,7 @@ $DOT-KEYFRAME-SCALE: (
 
 
 /// rotate
-$DOT-KEYFRAME-ROTATE: (
+$DOT-TRANS-ROTATE: (
         'flip': (
                 'transform': rotateY(0.5turn)
         ),
@@ -63,11 +63,11 @@ $DOT-KEYFRAME-ROTATE: (
 /// @description
 ///   order use to the naming.
 ///   fade-top-up-spin
-$DOT-KEYFRAMES: (
-        $DOT-KEYFRAME-STATE,
-        $DOT-KEYFRAME-TRANS,
-        $DOT-KEYFRAME-SCALE,
-        $DOT-KEYFRAME-ROTATE
+$DOT-TRANS-KEYFRAMES: (
+        $DOT-TRANS-STATE,
+        $DOT-TRANS-MOVE,
+        $DOT-TRANS-SCALE,
+        $DOT-TRANS-ROTATE
 ) !default;
 
 

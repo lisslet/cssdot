@@ -35,6 +35,30 @@
   @return $values;
 }
 
+@function map-assign($map1, $map2) {
+  @each $key, $value in $map2 {
+    @if map-has-key($map1, $key) {
+      $origin: map-get-if($map1, $key);
+      @if $origin {
+        @if is-map($origin) {
+          $map1: map-set($map1, map-assign($origin, $value));
+        } @else if is-list($origin) {
+          $map1: map-set($map1, $key, append($origin, $value));
+        } @else {
+          $origin: append($origin, $value);
+          $map1: map-set($map1, $key, $origin);
+        }
+      } @else {
+        $map1: map-set($map1, $key, $value);
+      }
+    } @else {
+      $map1: map-set($map1, $key, $value);
+    }
+  }
+  @return $map1;
+}
+
+
 @function _map-get-if($map, $key, $defaults: null) {
   @return if(
                   has-key($map, $key),

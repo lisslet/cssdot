@@ -64,10 +64,13 @@
 .dot-notify:last-child {
   margin-bottom: 0;
 }
-.dot-notify_link-full .dot-notify-foot .dot-pad {
+.dot-notify .dot-pad {
+  padding: 0.626em;
+}
+.dot-notify._link-full .dot-notify-foot .dot-pad {
   display: flex;
   flex-wrap: nowrap;
 }
-.dot-notify_link-full .dot-notify-foot .dot-pad > button {
+.dot-notify._link-full .dot-notify-foot .dot-pad > button {
   flex-grow: 1;
 }

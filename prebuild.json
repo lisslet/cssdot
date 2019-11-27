@@ -72,10 +72,10 @@
       }
   },
   {
-    "scss":"animate/standalone",
+    "scss":"trans/standalone",
     "files": {
-        "filename": "animate",
-        "content": "@include animate-rule;"
+        "filename": "trans",
+        "content": "@include trans-rule;"
       }
   },
   {
