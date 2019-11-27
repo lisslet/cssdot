@@ -23,7 +23,7 @@
   }
 
   %delays {
-    @include animate-delays(0.025s, 48);
+    @include animate-delays(0.06s, 48);
   }
 
   @each $key, $properties in $mixed-frames {
@@ -34,7 +34,7 @@
 
     #{'.' + $from-name} {
       &,
-      &s > *:nth-child(1n) {
+      &s > * {
         animation: unquote($from-name) 0.3s both;
       }
 
