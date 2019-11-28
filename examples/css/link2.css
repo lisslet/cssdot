@@ -20,79 +20,79 @@
 .dot-link:focus {
   outline: none;
 }
-.dot-link._ghost {
+.dot-link._border {
   border-style: solid;
   border-width: 2px;
 }
-.dot-link._underline {
+.dot-link._line {
   border-style: solid;
   border-width: 0 0 2px 0;
 }
 .dot-link._text {
-  color: white;
+  color: black;
 }
 .dot-link._primary {
-  color: #369;
+  color: #1E88E5;
 }
 .dot-link._accent {
-  color: #9C0;
+  color: #00ACC1;
 }
 .dot-link._warn {
-  color: #900;
+  color: #E53935;
 }
 .dot-link._fill._text {
-  background-color: white;
-  color: #000;
-}
-.dot-link._fill._primary {
-  background-color: #369;
+  background-color: black;
   color: #fff;
 }
+.dot-link._fill._primary {
+  background-color: #1E88E5;
+  color: #000;
+}
 .dot-link._fill._accent {
-  background-color: #9C0;
+  background-color: #00ACC1;
   color: #000;
 }
 .dot-link._fill._warn {
-  background-color: #900;
+  background-color: #E53935;
   color: #fff;
 }
-.dot-link._ghost._text {
-  border-color: white;
-  color: white;
+.dot-link._border._text {
+  border-color: black;
+  color: black;
 }
-.dot-link._ghost._primary {
-  border-color: #369;
-  color: #369;
+.dot-link._border._primary {
+  border-color: #1E88E5;
+  color: #1E88E5;
 }
-.dot-link._ghost._accent {
-  border-color: #9C0;
-  color: #9C0;
+.dot-link._border._accent {
+  border-color: #00ACC1;
+  color: #00ACC1;
 }
-.dot-link._ghost._warn {
-  border-color: #900;
-  color: #900;
+.dot-link._border._warn {
+  border-color: #E53935;
+  color: #E53935;
 }
-.dot-link._underline._text {
-  border-color: white;
-  color: white;
+.dot-link._line._text {
+  border-color: black;
+  color: black;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
 }
-.dot-link._underline._primary {
-  border-color: #369;
-  color: #369;
+.dot-link._line._primary {
+  border-color: #1E88E5;
+  color: #1E88E5;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
 }
-.dot-link._underline._accent {
-  border-color: #9C0;
-  color: #9C0;
+.dot-link._line._accent {
+  border-color: #00ACC1;
+  color: #00ACC1;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
 }
-.dot-link._underline._warn {
-  border-color: #900;
-  color: #900;
+.dot-link._line._warn {
+  border-color: #E53935;
+  color: #E53935;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
 }

@@ -20,9 +20,41 @@
   @return $initialize-styles;
 }
 
-$primary: #369;
-$accent: #9C0;
-$warn: #900;
+@function style-filter($color, $filter, $amount: null) {
+  @return $color;
+}
+
+// $color, opacity, +-100%;
+// $color, bright, +-100%;
+// $color, mixin, +-100%;
+// $color, invert
+
+@debug style-filter('#fff', 96%);
+
+
+@function style-value($color, $value) {
+
+  $color-ref: $value;
+  $color-filter: null;
+
+  @if is-list($value) {
+    $color-ref: nth($value, 1);
+    $color-filter: nth($value, 2);
+  }
+
+  @if ($value == 'color') {
+    @return $color;
+  }
+  @if ($value == 'text') {
+    @return safe-color($color);
+  }
+  @return $value;
+}
+
+
+$primary: #1E88E5;
+$accent: #00ACC1;
+$warn: #E53935;
 
 $palette: palette((
         'primary': $primary,
@@ -37,31 +69,35 @@ $theme: theme($palette);
 // 'fill',
 // 'ghost,
 
+$DOT-THEME-OPACITY: 11 30 72 86;
+
+$DOT-LINK-DEFAULT-LABEL: 'text' !default;
+$DOT-LINK-DEFAULT-STYLE: 'lite' !default;
 
 $DOT-LINK-PROPERTIES: (
-        'ghost': (
+        'border': (
                 border-style: solid,
                 border-width: 2px
         ),
-        'underline': (
+        'line': (
                 border-style: solid,
                 border-width: 0 0 2px 0
         )
 );
 
 $DOT-LINK-STYLES: (
-        'transparent': (
+        'lite': (
                 color: 'color'
         ),
         'fill':(
                 background-color: 'color',
                 color: 'text'
         ),
-        'ghost':(
+        'border':(
                 border-color: 'color',
                 color: 'color'
         ),
-        'underline': (
+        'line': (
                 border-color: 'color',
                 color: 'color',
                 border-bottom-left-radius: 0,
@@ -69,50 +105,56 @@ $DOT-LINK-STYLES: (
         )
 ) !default;
 
+$DOT-LINK-STYLES2: (
+        'clean': (
+                'base': (
+                        color: 'color',
+                ),
+                'react': (
+                        color: ('color', 'bright')
+                )
+        ),
+        'fill': (
+                'base': (
+                        background-color: 'color',
+                        color: 'text'
+                ),
+                'react': (
+                        background-color: ('color', 'bright'),
+                        color: 'text'
+                )
+        ),
+        'border': (
+                'base': (
+                        border-color: 'color',
+                        color: 'color'
+                ),
+                'react': (
+                        border-color:  ('color', 'bright'),
+                        color: 'color'
+                )
+        ),
+        'line': (
+                'base': (
+                        border-color: 'color',
+                        color: 'color',
+                        border-bottom-left-radius: 0,
+                        border-bottom-right-radius: 0
+                ),
+                'react': (
+                        border-color:  ('color', 'bright'),
+                        color: 'color'
+                )
+        ),
+);
+
 $DOT-LINK-INITIALIZE-STYLES: get-initialize-styles($DOT-LINK-STYLES) !default;
-
-$DOT-THEME-OPACITY: 11 30 72 86;
-
-$DOT-LINK-DEFAULT-LABEL: 'text' !default;
-$DOT-LINK-DEFAULT-STYLE: 'transparent' !default;
 
 
 $labels: ('text', 'primary', 'accent', 'warn');
 
 $selector: #{'.dot-link'};
 
-
-@function style-filter($color, $filter, $amount: null){
-  @return $color;
-}
-
-// $color, opacity, +-100%;
-// $color, bright, +-100%;
-// $color, mixin, +-100%;
-// $color, invert
-
-@debug style-filter('#fff', 96%);
-
-
-
-@function style-value($color, $value) {
-
-  $color-ref: $value;
-  $color-filter: null;
-
-  @if is-list($value){
-    $color-ref: nth($value, 1);
-    $color-filter: nth($value, 2);
-  }
-
-  @if ($value == 'color') {
-    @return $color;
-  }
-  @if ($value == 'text') {
-    @return safe-color($color);
-  }
-  @return $value;
-}
 
 $min-height: 36px;
 
