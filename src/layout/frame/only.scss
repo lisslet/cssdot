@@ -38,6 +38,7 @@ $DOT-LAYOUT-STICKY-RESIZE: true;
 
   // frame width
   @at-root {
+
     #{$selector+'area'},
     #{$containers} {
       min-width: px($DOT-LAYOUT-MIN-WIDTH);

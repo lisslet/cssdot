@@ -23,14 +23,14 @@
   "devDependencies": {
     "gulp": "^4.0.2",
     "gulp-combine-mq": "^0.4.0",
+    "gulp-dart-sass": "^0.9.1",
+    "gulp-debug": "^4.0.0",
     "gulp-load-plugins": "^2.0.1",
     "gulp-sass": "^4.0.2",
     "ncp": "^2.0.0",
     "sassdoc": "^2.7.0",
     "sassdoc-theme-rest": "^1.0.3",
-    "simple-git": "^1.126.0",
-    "gulp-dart-sass": "^0.9.1"
+    "simple-git": "^1.126.0"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }

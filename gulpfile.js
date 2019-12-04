@@ -5,6 +5,8 @@ const pump = require('pump');
 // const sass = require('gulp-sass');
 const sass = require('gulp-dart-sass');
 
+const debug = require('gulp-debug');
+
 const $sass = () => {
 	return sass().on('error', sass.logError);
 };
@@ -99,6 +101,7 @@ task('cssdot-prebuild-templates', done => {
 task('cssdot-prebuild-compile', done => {
 	pump(
 		src(prebuild.src + sassFiles),
+		debug(),
 		$sass(),
 		dest(prebuild.dest),
 		done
@@ -145,6 +148,7 @@ const exampleTarget = './examples/**/*.scss';
 task('cssdot-example-compile', done => {
 	pump(
 		src(exampleTarget, since('cssdot-example-compile')),
+		debug(),
 		$sass(),
 		dest('./examples'),
 		done

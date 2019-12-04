@@ -1,0 +1,49 @@
+._left-top {
+  left: 0;
+  top: 0;
+}
+
+._left-middle {
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+._left-bottom {
+  left: 0;
+  bottom: 0;
+}
+
+._center-top {
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+}
+
+._center-middle {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+._center-bottom {
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+}
+
+._right-top {
+  right: 0;
+  top: 0;
+}
+
+._right-middle {
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+._right-bottom {
+  right: 0;
+  bottom: 0;
+}

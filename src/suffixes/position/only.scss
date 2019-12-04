@@ -1,0 +1,43 @@
+@import './variables';
+
+@function _position-validate-default-type($default-position){
+  @if ($default-position != '') {
+    @if (map-has-not-key($DOT-POSITIONS-TYPES, $default-position)) {
+      @warn #{$default-position +' is not position'};
+    }
+  }
+  @return null;
+}
+/// position suffix
+/// @param string $default-position the same effect without suffix
+@mixin _position-concat-rule($default-position: '') {
+  @if(_position-validate-default-type($default-position)){
+  }
+
+  @each $type, $properties in $DOT-POSITIONS-TYPES {
+    $query: #{'_'+$type};
+    @if ($type == $default-position) {
+      &,
+      &#{$query} {
+        position: fixed;
+        @include properties($properties);
+      }
+    } @else {
+      &#{$query} {
+        position: fixed;
+        @include properties($properties);
+      }
+    }
+  }
+}
+
+/// elements positioning suffix
+@mixin _position-rule($default-position: ''){
+  @if(_position-validate-default-type($default-position)){
+  }
+  @each $type, $properties in $DOT-POSITIONS-TYPES {
+    ._#{$type} {
+      @include properties($properties);
+    }
+  }
+}

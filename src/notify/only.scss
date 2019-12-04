@@ -3,7 +3,7 @@
 
   #{$selector} {
     &-central {
-      @include _position-rule('right-bottom');
+      @include _position-concat-rule('right-bottom');
 
       h1 {
         @include hide;

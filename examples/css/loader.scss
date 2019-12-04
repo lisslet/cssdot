@@ -14,6 +14,14 @@ $x5: $duration * 5;
 
 $perspective: 512px;
 
+$DOT-LOADER-TYPES: (
+  'circle',
+  'flip',
+  'flip9',
+  'bar'
+);
+
+
 .dot-loader {
   display: inline-block;
 

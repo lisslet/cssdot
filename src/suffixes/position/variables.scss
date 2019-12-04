@@ -1,4 +1,4 @@
-$DOT-FIXED-POSITIONS: (
+$DOT-POSITIONS-TYPES: (
         'left-top': (
                 'left': 0,
                 'top':0
@@ -40,32 +40,4 @@ $DOT-FIXED-POSITIONS: (
                 'right': 0,
                 'bottom': 0,
         ),
-);
-
-/// position suffix
-/// @param string $default-position the same effect without suffix
-@mixin _position-rule($default-position: '') {
-        @if ($default-position != '') {
-                @if (map-has-not-key($DOT-FIXED-POSITIONS, $default-position)) {
-                        @warn #{$default-position +' is not position'};
-                } @else {
-
-                }
-        }
-
-        @each $position, $properties in $DOT-FIXED-POSITIONS {
-                $query: #{'_'+$position};
-                @if ($position == $default-position) {
-                        &,
-                        &#{$query} {
-                                position: fixed;
-                                @include properties($properties);
-                        }
-                } @else {
-                        &#{$query} {
-                                position: fixed;
-                                @include properties($properties);
-                        }
-                }
-        }
-}
+) !default;
