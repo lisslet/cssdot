@@ -1,6 +1,11 @@
 @import '../layout/variables';
 @import './variables';
 
+/// @version 3.3.1
+/// 1 float
+/// 2 grid
+/// 3 grid, flex
+
 @function __layout-width-key($width) {
   $index: index($DOT-LAYOUT-WIDTH-KEYS, $width);
 
@@ -42,15 +47,26 @@
   @return $width == $DOT-LAYOUT-MIN-WIDTH;
 }
 
+@function add-layout-suffix($query, $width){
+  $key: __layout-width-key($width);
+  $width: map-get($DOT-LAYOUT-WIDTH-MAP, $key);
+  @if (is-layout-min-width($width)) {
+    @return $query;
+  }
+  $prefix: $DOT-WIDTH-QUERY-GLUE + __layout-width-key($width);
+  @return $query + $prefix;
+}
+
 @function __add-width-selector-suffix($query, $width) {
   $key: __layout-width-key($width);
 
+  $query: '-' + $query;
   $width: map-get($DOT-LAYOUT-WIDTH-MAP, $key);
   @if (is-layout-min-width($width)) {
     @return $query;
   }
 
-  $prefix: $dot-area-SELECTOR-GLUE + __layout-width-key($width);
+  $prefix: $DOT-WIDTH-QUERY-GLUE + __layout-width-key($width);
   @return $query + $prefix;
 }
 
@@ -60,8 +76,8 @@
   > *,
   > .dot-grid {
     box-sizing: border-box;
-    // used padding when flex mode.
-    margin: $margin;
+    // margin has bug on ie
+    padding: $margin;
   }
 }
 
@@ -83,4 +99,8 @@
 
 @mixin grid-child-rule($options: ()) {
   @include grid-rule(__optimize-parent-selector($options, unquote("#{&}")));
+}
+
+@function get-grid-gap-suffix($gap, $layout-width){
+  @return add-layout-suffix(#{'._gap-'+$gap}, $layout-width);
 }

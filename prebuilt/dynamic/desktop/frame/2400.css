@@ -4,16 +4,6 @@
   max-width: 2400px;
   margin: 0 auto;
 }
-.ie69 .dot-area,
-.ie69 #dot-head-area, .ie69 #dot-main-area, .ie69 #dot-foot-area {
-  width: 2400px;
-}
-@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .dot-area,
-#dot-head-area, #dot-main-area, #dot-foot-area {
-    width: 2400px;
-  }
-}
 @media only screen and (min-width: 1000px) {
   .dot-area,
 #dot-head-area, #dot-main-area, #dot-foot-area {

@@ -1,5 +1,6 @@
 # TODO
 
+- using module system
 - grid preset
 - grid x
     - ~~grid x by grid~~ `2019-09-16`
@@ -16,6 +17,6 @@
   - float
   - instant
   - center 
-- repackage for npm
+- ~~repackage for npm~~
 - rearrange directory
 - animate rename class name

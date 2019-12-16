@@ -342,7 +342,7 @@
 @mixin each-layout-widths {
   @each $width in $DOT-LAYOUT-WIDTHS {
     @include mq-min($width) {
-      &#{$dot-area-SELECTOR-GLUE}-#{$width} {
+      &#{$DOT-WIDTH-QUERY-GLUE}-#{$width} {
         @content;
       }
     }

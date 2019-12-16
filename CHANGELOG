@@ -3,3 +3,9 @@
 ## Deprecated
 
 * `animate` => `trans`
+
+## QUERY
+
+* `dot-grid*` => `dot-grid-*` for identify children of grid
+* `dot-grid-gap*` => `_gap-*` as suffix style for shorten
+* `-at*` => `-at-*` as common style
