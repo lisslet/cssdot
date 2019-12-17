@@ -1,5 +1,5 @@
 /// Get style map that initializes properties used in other styles.
-@function get-initialize-styles2($styles) {
+/*@function get-initialize-styles2($styles) {
   $initialize-styles: ();
   @each $style, $properties in $styles {
     $initialize-style: ();
@@ -30,26 +30,26 @@
 
         // @if $style != $other-style {
 
-          @each $other-state, $other-properties in $other-states {
-            $initial-state: ();
-            // @if $state == $other-state {
+        @each $other-state, $other-properties in $other-states {
+          $initial-state: ();
+          // @if $state == $other-state {
 
-              @each $property, $value in $other-properties {
+          @each $property, $value in $other-properties {
 
-                // @if not has-key($properties, $property) {
+            // @if not has-key($properties, $property) {
 
-                // @if not has-key($initial-state, $property) {
+            // @if not has-key($initial-state, $property) {
 
-                $initial-state: map-set($initial-state, $property, 'inherit');
-
-                // }
-                // }
-              }
-
+            $initial-state: map-set($initial-state, $property, 'inherit');
 
             // }
-            $initial-states: map-set($initial-states, $state, $initial-state);
+            // }
           }
+
+
+          // }
+          $initial-states: map-set($initial-states, $state, $initial-state);
+        }
 
         $initial-styles: map-set($initial-styles, $style, $initial-states);
         // }
@@ -60,12 +60,12 @@
 
   }
   @return $initial-styles;
-}
+}*/
 
 
-$DOT-LINK-STYLES: (
+$STYLES: (
         'clean': (
-                'base': (
+                'normal': (
                         color: 'color',
                 ),
                 'focus': (
@@ -76,7 +76,7 @@ $DOT-LINK-STYLES: (
                 )
         ),
         'fill': (
-                'base': (
+                'normal': (
                         background-color: 'color',
                         color: 'text'
                 ),
@@ -88,7 +88,7 @@ $DOT-LINK-STYLES: (
                 )
         ),
         'border': (
-                'base': (
+                'normal': (
                         border-color: 'color',
                         color: 'color'
                 ),
@@ -101,7 +101,7 @@ $DOT-LINK-STYLES: (
                 )
         ),
         'line': (
-                'base': (
+                'normal': (
                         border-color: 'color',
                         color: 'color',
                         border-bottom-left-radius: 0,
@@ -117,6 +117,41 @@ $DOT-LINK-STYLES: (
         ),
 );
 
-//$DOT-LINK-INITILIZED-STYLES: get-initialize-styles($DOT-LINK-STYLES);
+@function get-initialize-styles($styles) {
+  $initial-styles: ();
 
-//@debug $DOT-LINK-INITILIZED-STYLES;
+  @each $style, $states in $styles {
+    $initial-style: ();
+
+    @each $state, $properties in $states {
+
+      @each $other-style, $other-states in $styles {
+        @if $style != $other-style {
+
+          $initial-state: ();
+          @each $other-state, $other-properties in $other-states {
+            @if $state == $other-state {
+
+              @each $property, $value in $other-properties {
+                @if not map-has-key($properties, $property) {
+                  @if not map-has-key($initial-state, $property) {
+                    $initial-state: map-merge($initial-state, ($property: 'inherit'));
+                  }
+                }
+              }
+            }
+          }
+          $initial-style: map-merge($initial-style, ($state: $initial-state));
+        }
+      }
+
+      $initial-styles: map-merge($initial-styles, ($style: $initial-style));
+
+    }
+  }
+  @return $initial-styles;
+}
+
+$INITIALIZED-STYLES: get-initialize-styles($STYLES);
+
+@debug $INITIALIZED-STYLES;

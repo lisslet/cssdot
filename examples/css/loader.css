@@ -1,8 +1,8 @@
 .dot-loader {
   display: inline-block;
-  animation: zSoqmMoPZfXvAnoxFRuSTTamIShrDB 0.6s both;
+  animation: zMtt05V0e5Y9U2WH5ArCcGxxw0dIyo 0.6s both;
 }
-@keyframes zSoqmMoPZfXvAnoxFRuSTTamIShrDB {
+@keyframes zMtt05V0e5Y9U2WH5ArCcGxxw0dIyo {
   from {
     opacity: 0;
   }
@@ -20,9 +20,9 @@
   display: block;
 }
 .dot-loader._circle span {
-  animation: zIPbU21G0Vr9PeXT5TIxm0VbPaADbq 1.8s linear infinite;
+  animation: zFnHMSgKDGoj63oijPIDwvhhCfe6If 1.8s linear infinite;
 }
-@keyframes zIPbU21G0Vr9PeXT5TIxm0VbPaADbq {
+@keyframes zFnHMSgKDGoj63oijPIDwvhhCfe6If {
   to {
     transform: rotate(360deg);
   }
@@ -33,9 +33,9 @@
   border: solid gray 0.25em;
   border-radius: 50%;
   border-right-color: transparent;
-  animation: zWx9kLgjz3YHyXyfBZjN5WyVVZn2nz 1.2s infinite;
+  animation: zmdFe40E2fk5DG6RQ41hqV39lOM62q 1.2s infinite;
 }
-@keyframes zWx9kLgjz3YHyXyfBZjN5WyVVZn2nz {
+@keyframes zmdFe40E2fk5DG6RQ41hqV39lOM62q {
   to {
     transform: rotate(360deg);
   }
@@ -47,9 +47,9 @@
   width: 100%;
   height: 100%;
   perspective: 512px;
-  animation: zSgcZ4nSuPBsHTFJn87EeXZfPVQhur 1.2s linear infinite;
+  animation: zNT1wj5qDct4ceIEaN3IOvQVJr4l95 1.2s linear infinite;
 }
-@keyframes zSgcZ4nSuPBsHTFJn87EeXZfPVQhur {
+@keyframes zNT1wj5qDct4ceIEaN3IOvQVJr4l95 {
   50% {
     transform: rotateX(180deg);
   }
@@ -62,9 +62,9 @@
   height: 33.33%;
   background-color: gray;
   perspective: 512px;
-  animation: zpqqBYpxwtYUVAuPkREj6BlKnTTzjr 3s both infinite;
+  animation: zCGirXE0n2FkmnPhqIOnmGFncgCg5R 3s both infinite;
 }
-@keyframes zpqqBYpxwtYUVAuPkREj6BlKnTTzjr {
+@keyframes zCGirXE0n2FkmnPhqIOnmGFncgCg5R {
   0% {
     transform: scale(1);
   }
@@ -101,9 +101,9 @@
   height: 100%;
   background-color: gray;
   transform: scaleX(0.8) scaleY(0.5);
-  animation: z2s6ParUqQdmEVCSzQ5EaZiX7pT9tg 1.2s infinite;
+  animation: z8uXE2PtnZZvHgZKvS9jnAeSylHwMz 1.2s infinite;
 }
-@keyframes z2s6ParUqQdmEVCSzQ5EaZiX7pT9tg {
+@keyframes z8uXE2PtnZZvHgZKvS9jnAeSylHwMz {
   50% {
     transform: scaleX(0.96) scaleY(0.66);
   }

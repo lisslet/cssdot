@@ -1,0 +1,62 @@
+/*@function get-initialize-styles2($styles) {
+  $initialize-styles: ();
+  @each $style, $properties in $styles {
+    $initialize-style: ();
+
+    @each $other-style, $other-properties in $styles {
+      @each $property, $value in $other-properties {
+        @if not has-key($properties, $property) {
+          @if not has-key($initialize-style, $property) {
+            $initialize-style: map-set($initialize-style, $property, 'inherit');
+          }
+        }
+      }
+    }
+    $initialize-styles: map-set($initialize-styles, $style, $initialize-style);
+  }
+  @return $initialize-styles;
+}
+
+@function get-initialize-styles($styles) {
+  $initial-styles: ();
+
+  @each $style, $states in $styles {
+    $initial-style: ();
+
+    @each $state, $properties in $states {
+      $initial-states: ();
+      @each $other-style, $other-states in $styles {
+
+        // @if $style != $other-style {
+
+        @each $other-state, $other-properties in $other-states {
+          $initial-state: ();
+          // @if $state == $other-state {
+
+          @each $property, $value in $other-properties {
+
+            // @if not has-key($properties, $property) {
+
+            // @if not has-key($initial-state, $property) {
+
+            $initial-state: map-set($initial-state, $property, 'inherit');
+
+            // }
+            // }
+          }
+
+
+          // }
+          $initial-states: map-set($initial-states, $state, $initial-state);
+        }
+
+        $initial-styles: map-set($initial-styles, $style, $initial-states);
+        // }
+
+      }
+
+    }
+
+  }
+  @return $initial-styles;
+}*/
