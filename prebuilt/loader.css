@@ -1,8 +1,8 @@
 .dot-loader {
   display: inline-block;
-  animation: zMtt05V0e5Y9U2WH5ArCcGxxw0dIyo 0.6s both;
+  animation: zrqMNkvFH8aOkIo3owLVQcmPBgcmGm 0.48s both;
 }
-@keyframes zMtt05V0e5Y9U2WH5ArCcGxxw0dIyo {
+@keyframes zrqMNkvFH8aOkIo3owLVQcmPBgcmGm {
   from {
     opacity: 0;
   }
@@ -20,9 +20,9 @@
   display: block;
 }
 .dot-loader._circle span {
-  animation: zFnHMSgKDGoj63oijPIDwvhhCfe6If 1.8s linear infinite;
+  animation: zBnxaRwoqoECbflNOv4oFfvtRjKNJB 1.44s linear infinite;
 }
-@keyframes zFnHMSgKDGoj63oijPIDwvhhCfe6If {
+@keyframes zBnxaRwoqoECbflNOv4oFfvtRjKNJB {
   to {
     transform: rotate(360deg);
   }
@@ -33,9 +33,9 @@
   border: solid gray 0.25em;
   border-radius: 50%;
   border-right-color: transparent;
-  animation: zmdFe40E2fk5DG6RQ41hqV39lOM62q 1.2s infinite;
+  animation: zYKapyV45kbslJ851UNihyI3kLyKea 0.96s infinite;
 }
-@keyframes zmdFe40E2fk5DG6RQ41hqV39lOM62q {
+@keyframes zYKapyV45kbslJ851UNihyI3kLyKea {
   to {
     transform: rotate(360deg);
   }
@@ -47,9 +47,9 @@
   width: 100%;
   height: 100%;
   perspective: 512px;
-  animation: zNT1wj5qDct4ceIEaN3IOvQVJr4l95 1.2s linear infinite;
+  animation: zihke9tUi7ubCHFhSCQXCM6sZkRswJ 0.96s linear infinite;
 }
-@keyframes zNT1wj5qDct4ceIEaN3IOvQVJr4l95 {
+@keyframes zihke9tUi7ubCHFhSCQXCM6sZkRswJ {
   50% {
     transform: rotateX(180deg);
   }
@@ -62,9 +62,9 @@
   height: 33.33%;
   background-color: gray;
   perspective: 512px;
-  animation: zCGirXE0n2FkmnPhqIOnmGFncgCg5R 3s both infinite;
+  animation: zRVS5FpIcst0sFjJQv1nysY39dRSZt 2.4s both infinite;
 }
-@keyframes zCGirXE0n2FkmnPhqIOnmGFncgCg5R {
+@keyframes zRVS5FpIcst0sFjJQv1nysY39dRSZt {
   0% {
     transform: scale(1);
   }
@@ -85,38 +85,38 @@
   top: 66.66%;
 }
 .dot-loader._flip9 b:nth-child(6), .dot-loader._flip9 b:nth-child(8) {
-  animation-delay: 0.6s;
+  animation-delay: 0.48s;
 }
 .dot-loader._flip9 b:nth-child(3), .dot-loader._flip9 b:nth-child(5), .dot-loader._flip9 b:nth-child(7) {
-  animation-delay: 1.2s;
+  animation-delay: 0.96s;
 }
 .dot-loader._flip9 b:nth-child(2), .dot-loader._flip9 b:nth-child(4) {
-  animation-delay: 1.8s;
+  animation-delay: 1.44s;
 }
 .dot-loader._flip9 b:nth-child(1) {
-  animation-delay: 2.4s;
+  animation-delay: 1.92s;
 }
 .dot-loader._bar b:nth-child(1), .dot-loader._bar b:nth-child(2), .dot-loader._bar b:nth-child(3), .dot-loader._bar b:nth-child(4) {
   width: 25%;
   height: 100%;
   background-color: gray;
   transform: scaleX(0.8) scaleY(0.5);
-  animation: z8uXE2PtnZZvHgZKvS9jnAeSylHwMz 1.2s infinite;
+  animation: zfGxGysPCGLv8yAr1SwdyEYmEyubQU 0.96s infinite;
 }
-@keyframes z8uXE2PtnZZvHgZKvS9jnAeSylHwMz {
+@keyframes zfGxGysPCGLv8yAr1SwdyEYmEyubQU {
   50% {
     transform: scaleX(0.96) scaleY(0.66);
   }
 }
 .dot-loader._bar b:nth-child(2) {
   left: 25%;
-  animation-delay: 0.15s;
+  animation-delay: 0.12s;
 }
 .dot-loader._bar b:nth-child(3) {
   left: 50%;
-  animation-delay: 0.3s;
+  animation-delay: 0.24s;
 }
 .dot-loader._bar b:nth-child(4) {
   left: 75%;
-  animation-delay: 0.45s;
+  animation-delay: 0.36s;
 }

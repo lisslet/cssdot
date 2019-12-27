@@ -91,5 +91,12 @@
       "filename": "suffixes/position",
       "content": "@include _position-rule"
     }
+  },
+  {
+    "scss": "loader/standalone",
+    "files": {
+      "filename": "loader",
+      "content": "@include loader-rule;"
+    }
   }
 ]
