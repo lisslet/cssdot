@@ -3,8 +3,7 @@
   $selector: map-get($options, 'selector');
   $selector-string: map-get($options, 'selector-string');
   $attr-query: #{'[class*='+$selector-string+'-]'};
-
-  $x-attr-query: #{'[class~='+$selector-string+'x]'};
+  $x-attr-query: #{'[class~='+$selector-string+'-x]'};
 
   @at-root {
 

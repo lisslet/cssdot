@@ -1,8 +1,14 @@
 .dot-loader {
   display: inline-block;
+<<<<<<< HEAD:prebuilt/loader.css
   animation: zrqMNkvFH8aOkIo3owLVQcmPBgcmGm 0.48s both;
 }
 @keyframes zrqMNkvFH8aOkIo3owLVQcmPBgcmGm {
+=======
+  animation: zWUyBCz1yIDu7EsOmzB0BZiMoRMTT5 0.6s both;
+}
+@keyframes zWUyBCz1yIDu7EsOmzB0BZiMoRMTT5 {
+>>>>>>> 74183c9a8e84c849461da90cd07b6dfcbea023db:examples/css/loader.css
   from {
     opacity: 0;
   }
@@ -20,9 +26,15 @@
   display: block;
 }
 .dot-loader._circle span {
+<<<<<<< HEAD:prebuilt/loader.css
   animation: zBnxaRwoqoECbflNOv4oFfvtRjKNJB 1.44s linear infinite;
 }
 @keyframes zBnxaRwoqoECbflNOv4oFfvtRjKNJB {
+=======
+  animation: zn230IwapI1gA5Vty5CE5XPIPdfqrr 1.8s linear infinite;
+}
+@keyframes zn230IwapI1gA5Vty5CE5XPIPdfqrr {
+>>>>>>> 74183c9a8e84c849461da90cd07b6dfcbea023db:examples/css/loader.css
   to {
     transform: rotate(360deg);
   }
@@ -33,9 +45,15 @@
   border: solid gray 0.25em;
   border-radius: 50%;
   border-right-color: transparent;
+<<<<<<< HEAD:prebuilt/loader.css
   animation: zYKapyV45kbslJ851UNihyI3kLyKea 0.96s infinite;
 }
 @keyframes zYKapyV45kbslJ851UNihyI3kLyKea {
+=======
+  animation: znfuYbl5VuuHDz05B3CkDIDP4HaC8B 1.2s infinite;
+}
+@keyframes znfuYbl5VuuHDz05B3CkDIDP4HaC8B {
+>>>>>>> 74183c9a8e84c849461da90cd07b6dfcbea023db:examples/css/loader.css
   to {
     transform: rotate(360deg);
   }
@@ -47,9 +65,15 @@
   width: 100%;
   height: 100%;
   perspective: 512px;
+<<<<<<< HEAD:prebuilt/loader.css
   animation: zihke9tUi7ubCHFhSCQXCM6sZkRswJ 0.96s linear infinite;
 }
 @keyframes zihke9tUi7ubCHFhSCQXCM6sZkRswJ {
+=======
+  animation: z0GZ6W5uCEZkpn0yB5ZY25ggygxnrW 1.2s linear infinite;
+}
+@keyframes z0GZ6W5uCEZkpn0yB5ZY25ggygxnrW {
+>>>>>>> 74183c9a8e84c849461da90cd07b6dfcbea023db:examples/css/loader.css
   50% {
     transform: rotateX(180deg);
   }
@@ -62,9 +86,15 @@
   height: 33.33%;
   background-color: gray;
   perspective: 512px;
+<<<<<<< HEAD:prebuilt/loader.css
   animation: zRVS5FpIcst0sFjJQv1nysY39dRSZt 2.4s both infinite;
 }
 @keyframes zRVS5FpIcst0sFjJQv1nysY39dRSZt {
+=======
+  animation: zariOrl6B9l13OZyoR2mOXjnI4E1rd 3s both infinite;
+}
+@keyframes zariOrl6B9l13OZyoR2mOXjnI4E1rd {
+>>>>>>> 74183c9a8e84c849461da90cd07b6dfcbea023db:examples/css/loader.css
   0% {
     transform: scale(1);
   }
@@ -101,9 +131,15 @@
   height: 100%;
   background-color: gray;
   transform: scaleX(0.8) scaleY(0.5);
+<<<<<<< HEAD:prebuilt/loader.css
   animation: zfGxGysPCGLv8yAr1SwdyEYmEyubQU 0.96s infinite;
 }
 @keyframes zfGxGysPCGLv8yAr1SwdyEYmEyubQU {
+=======
+  animation: zzfrKO6pYrkJFN5tEZ6egrxSIb7nQI 1.2s infinite;
+}
+@keyframes zzfrKO6pYrkJFN5tEZ6egrxSIb7nQI {
+>>>>>>> 74183c9a8e84c849461da90cd07b6dfcbea023db:examples/css/loader.css
   50% {
     transform: scaleX(0.96) scaleY(0.66);
   }
