@@ -5,7 +5,7 @@
 }
 
 @function is-theme-name($name) {
-  @return map-has-key($DOT-THEME-STORE, $name);
+  @return map-has-key($THEME-STORE, $name);
 }
 
 @function is-palette($target) {
@@ -18,7 +18,7 @@
   }
   @if (is-string($theme-name)) {
     @if (is-theme-name($theme-name)) {
-      @return map-get($DOT-THEME-STORE, $theme-name)
+      @return map-get($THEME-STORE, $theme-name)
     } @else {
       @error dot-type-error('theme-name');
     }
@@ -88,8 +88,7 @@
 }
 
 /// create theme palette
-
-@function palette($values, $required-colors:$DOT-REQUIRED-PALETTE-COLORS) {
+@function palette($values, $required-labels:$THEME-REQUIRED-LABELS) {
   //////////////////////////////
   // return palette
 
@@ -112,13 +111,13 @@
     );
   }
 
-  @each $required-color in $DOT-REQUIRED-PALETTE-COLORS {
+  @each $required-color in $THEME-REQUIRED-LABELS {
     @if (not map-has-key($values, $required-color)) {
       @error '#{$required-color} is required color';
     }
   }
 
-  @each $label, $fill in $DOT-PALETTE-AUTOFILL {
+  @each $label, $fill in $THEME-AUTOFILL {
     $value: map-get-if($values, $label, null);
     @if $value == null {
       @if is-color($fill) {
@@ -170,26 +169,37 @@
   @return $values;
 }
 
+/// get primary color of theme
 @function -primary($theme) {
   @return pick($theme, 'primary')
 }
 
+/// get secondary color of theme
+@function -secondary($theme){
+  @return pick($theme, 'secondary');
+}
+
+/// get accent color of theme
 @function -accent($theme) {
   @return pick($theme, 'accent');
 }
 
+/// get warn color of theme
 @function -warn($theme) {
   @return pick($theme, 'warn');
 }
 
+/// get field color of theme
 @function -field($theme) {
   @return pick($theme, 'field');
 }
 
+/// get text color of theme
 @function -text($theme) {
   @return pick($theme, 'text');
 }
 
+/// get link color of theme
 @function -link($theme) {
   @return pick($theme, 'link');
 }

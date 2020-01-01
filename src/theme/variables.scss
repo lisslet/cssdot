@@ -1,9 +1,10 @@
-$DOT-DEFAULT-THEME-NAME: 'global' !default;
+$THEME-DEFAULT-NAME: 'global' !default;
 
-$DOT-THEME-STORE: () !default;
+$THEME-STORE: () !default;
 
-$DOT-PALETTE-LABELS: (
+$THEME-LABELS: (
         'primary',
+        'secondary',
         'accent',
         'warn',
         'text',
@@ -13,12 +14,19 @@ $DOT-PALETTE-LABELS: (
         'disable'
 ) !default;
 
-$DOT-REQUIRED-PALETTE-COLORS: (
+$THEME-MAIN-LABELS: (
+        'primary',
+        'secondary',
+        'accent',
+        'warn'
+);
+
+$THEME-REQUIRED-LABELS: (
         'primary'
 ) !default;
 
-$DOT-PALETTE-AUTOFILL: ((
-  // 'palette',
+$THEME-AUTOFILL: ((
+        'secondary': 'primary',
         'accent' : ('method': 'contrast'),
         'warn': ('method': 'invert'),
         'field': #fff,

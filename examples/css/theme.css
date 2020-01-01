@@ -55,6 +55,15 @@
 .dot-active {
   color: #3d7ce6;
 }
+.dot-border_secondary {
+  border-color: #448AFF;
+}
+.dot-field_secondary {
+  background-color: #448AFF;
+}
+.dot-secondary {
+  color: #448AFF;
+}
 .dot-border_field {
   border-color: #fff;
 }

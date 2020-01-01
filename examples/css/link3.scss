@@ -1,121 +1,117 @@
-/// Get style map that initializes properties used in other styles.
-/*@function get-initialize-styles2($styles) {
-  $initialize-styles: ();
-  @each $style, $properties in $styles {
-    $initialize-style: ();
-
-    @each $other-style, $other-properties in $styles {
-      @each $property, $value in $other-properties {
-        @if not has-key($properties, $property) {
-          @if not has-key($initialize-style, $property) {
-            $initialize-style: map-set($initialize-style, $property, 'inherit');
-          }
-        }
-      }
-    }
-    $initialize-styles: map-set($initialize-styles, $style, $initialize-style);
-  }
-  @return $initialize-styles;
-}
-
-@function get-initialize-styles($styles) {
-  $initial-styles: ();
-
-  @each $style, $states in $styles {
-    $initial-style: ();
-
-    @each $state, $properties in $states {
-      $initial-states: ();
-      @each $other-style, $other-states in $styles {
-
-        // @if $style != $other-style {
-
-        @each $other-state, $other-properties in $other-states {
-          $initial-state: ();
-          // @if $state == $other-state {
-
-          @each $property, $value in $other-properties {
-
-            // @if not has-key($properties, $property) {
-
-            // @if not has-key($initial-state, $property) {
-
-            $initial-state: map-set($initial-state, $property, 'inherit');
-
-            // }
-            // }
-          }
-
-
-          // }
-          $initial-states: map-set($initial-states, $state, $initial-state);
-        }
-
-        $initial-styles: map-set($initial-styles, $style, $initial-states);
-        // }
-
-      }
-
-    }
-
-  }
-  @return $initial-styles;
-}*/
-
+@import '../../src/scss';
 
 $STYLES: (
-        'clean': (
+        'clear': (
+                'core': (),
                 'normal': (
-                        color: 'color',
+                        color: '$color',
                 ),
                 'focus': (
-                        color: ('color', 0.1)
+                        color: ('$color', 0.12)
                 ),
                 'react': (
-                        color: ('color', 'bright')
+                        color: '$color'
+                ),
+                'active': (
+                        color: '$color',
+                        background-color: ('$color', '@opacity', 0.1)
                 )
         ),
-        'fill': (
+        'soft': (
+                'core': (),
                 'normal': (
-                        background-color: 'color',
-                        color: 'text'
+                        background-color: ('$color', '@opacity'),
+                        color: '$color'
                 ),
                 'focus': (
-                        background-color: ('color', 'bright', 0.1)
+
                 ),
                 'react': (
-                        background-color: ('color', 'bright', 0.2)
+                ),
+                'active': (
+                )
+        ),
+        'hard': (
+                'core': (),
+                'normal': (
+                        background-color: '$color',
+                        color: ('$color', '@text')
+                ),
+                'focus': (
+                        background-color: ('$color', '@bright', 0.12),
+                        color: ('$color', '@text')
+                ),
+                'react': (
+                        background-color: ('$color', '@bright', 0.24),
+                        color: ('$color', '@text')
+                ),
+                'active': (
+                        background-color: ('$color', '@opacity', 0.1),
+                        color: ('$color', '@text')
                 )
         ),
         'border': (
+                'core': (
+                        border-style:solid,
+                        border-width: 2px
+                ),
                 'normal': (
-                        border-color: 'color',
-                        color: 'color'
+                        border-color: '$color',
+                        color: '$color'
                 ),
                 'focus': (
-                        border-color: ('color', 'bright', 0.1),
+                        border-color: ('$color', '@bright', 0.12),
                 ),
                 'react': (
-                        border-color: ('color', 'bright', 0.2),
-                        color: 'color'
+                        border-color: ('$color', '@bright', 0.24),
+                        color: '$color'
+                ),
+                'active': (
+                        color: '$color',
+                        background-color: ('$color', '@opacity', 0.1)
                 )
         ),
         'line': (
-                'normal': (
-                        border-color: 'color',
-                        color: 'color',
+                'core': (
+                        border-style:solid,
+                        border-width: 0 0 2px 0,
                         border-bottom-left-radius: 0,
                         border-bottom-right-radius: 0
                 ),
+                'normal': (
+                        border-color: '$color',
+                        color: '$color',
+                ),
                 'focus': (
-                        border-color: ('color', 'bright', 0.1),
+                        border-color: ('$color', '@bright', 0.12),
                 ),
                 'react': (
-                        border-color: ('color', 'bright'),
-                        color: 'color'
+                        border-color: ('$color', '@bright', 0.24),
+                        color: '$color'
+                ),
+                'active': (
+                        color: '$color',
+                        background-color: ('$color', '@opacity', 0.1)
                 )
         ),
 );
+
+$DEFAULT-STYLE: 'clear';
+
+$primary: #1E88E5;
+$secondary: #00ACC1;
+$accent: orange;
+$warn: #E53935;
+
+$palette: palette((
+        'primary': $primary,
+        'secondary': $secondary,
+        'accent': $accent,
+        'warn': $warn
+));
+
+$theme: theme($palette);
+
 
 @function get-initialize-styles($styles) {
   $initial-styles: ();
@@ -154,4 +150,165 @@ $STYLES: (
 
 $INITIALIZED-STYLES: get-initialize-styles($STYLES);
 
-@debug $INITIALIZED-STYLES;
+@function stringify($target, $tap: '') {
+
+  $lines: '';
+  $type: type-of($target);
+  @if $type == 'map' {
+    $lines: #{$lines + $tap + '(\A'};
+    @each $key, $value in $target {
+      $lines: #{$lines + $tap + $key + ': ' + stringify($value, $tap + '  ') + '\A'};
+    }
+    $lines: #{$lines + $tap + ')\A'};
+  } @else if ($type == 'list') {
+    $lines: #{$lines + $tap + '(\A'};
+    @each $value in $target {
+      $lines: #{$lines + $tap + stringify($value, $tap +  '  ') + '\A'}
+    }
+    $lines: #{$lines + $tap + ')\A'};
+  } @else {
+    $lines: #{$lines + inspect($target) + '\A'};
+  }
+  @return $lines;
+}
+
+/// @private
+@function theme-replace-string($theme, $value, $default-label) {
+  @if starts-with($value, '$') {
+    $label: str-slice($value, 2);
+    @if ($label == 'color') {
+      $label: $default-label;
+    }
+
+    $color: pick($theme, $label);
+    @return $color;
+  }
+  @return $value;
+}
+
+/// @private
+@function theme-replace-list($theme, $value, $default-label) {
+  $length: length($value);
+  $color: nth($value, 1);
+  $color: theme-replace-string($theme, $color, $default-label);
+
+  $function: '@bright';
+  $amount: 0.1;
+  @if $length == 3 {
+    $function: nth($value, 2);
+    $amount: nth($value, 3);
+  } @else if $length == 2 {
+    $function-or-amount: nth($value, 2);
+    @if type-of($function-or-amount) == 'string' {
+      $function: $function-or-amount;
+    } @else {
+      $amount: $function-or-amount;
+    }
+  }
+
+  $function: str-slice($function, 2);
+
+  @if $amount < 2 {
+    $amount: $amount * 100%;
+  }
+
+  @debug $function, $amount;
+
+  @if $function == 'text' {
+    $color: safe-color($color);
+  } @else if $function == 'bright' {
+    $color: lighten($color, $amount);
+  } @else if $function == 'opacity' {
+    $color: rgba($color, $amount);
+  }
+
+  @return $color;
+}
+
+@function theme-value($theme, $value, $default-label) {
+  $type: type-of($value);
+  @if $type == 'list' {
+    @return theme-replace-list($theme, $value, $default-label);
+  } @else if $type == 'string' {
+    @return theme-replace-string($theme, $value, $default-label);
+  }
+
+  @return $value;
+}
+
+@mixin theme-properties($theme, $label, $properties) {
+  @each $property, $value in $properties {
+    $value: theme-value($theme, $value, $label);
+    #{$property}: $value;
+  }
+}
+
+// @debug stringify($INITIALIZED-STYLES);
+
+.dot-link {
+
+  // a, other
+  display: inline-block;
+
+  // button
+  background-color: transparent;
+  border: none;
+  margin: 0;
+  padding: 0;
+
+
+  font-size: 1rem;
+  cursor: pointer;
+  box-sizing: border-box;
+  border-radius: 3px;
+  line-height: 36px;
+
+  > span {
+    display: inline-block;
+    min-width: 48px;
+    text-align: center;
+    padding: 0 0.625em;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  @each $style, $states in $STYLES {
+    $style-query: if($style == $DEFAULT-STYLE, '', #{'._' + $style});
+
+    &#{$style-query} {
+      $core-properties: map-get($states, 'core');
+
+      $link-properties: map-get($states, 'normal');
+      $focus-properties: map-get($states, 'focus');
+      $hover-properties: map-get($states, 'react');
+      $active-properties: map-get($states, 'active');
+
+      // core properties
+      @include properties($core-properties);
+
+      // coloring properties
+      @each $theme-label in $THEME-MAIN-LABELS {
+
+        &#{'._'+$theme-label} {
+          @include theme-properties($theme, $theme-label, $link-properties);
+
+          &:focus {
+            @include theme-properties($theme, $theme-label, $focus-properties);
+          }
+
+          &:hover {
+            @include theme-properties($theme, $theme-label, $hover-properties);
+          }
+
+          &:active {
+            @include theme-properties($theme, $theme-label, $active-properties);
+          }
+        }
+      }
+    }
+  }
+}
+
+

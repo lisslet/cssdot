@@ -3,7 +3,8 @@
 <head>
     <link rel="stylesheet" href="../prebuilt/reset.css">
     <link rel="stylesheet" href="../prebuilt/dynamic/frame/1600.css">
-    <link rel="stylesheet" href="./css/link2.css">
+    <link rel="stylesheet" href="./css/link3.css">
+    <link rel="stylesheet" href="../prebuilt/lift.css"
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap" rel="stylesheet">
     <style>
         body, button {
@@ -16,6 +17,7 @@
 
         .links section {
             float: left;
+            width: 50%;
         }
 
         .links:after {
@@ -31,66 +33,102 @@
 <main id="dot-main">
     <div id="dot-main-area">
         <section class="links">
-            <h2>Default</h2>
+            <h2>Clear(Default)</h2>
             <section class="_anchors">
-                <a class="dot-link"><span>Default</span></a>
-                <a class="dot-link _fill"><span>Fill</span></a>
-                <a class="dot-link _border"><span>Ghost</span></a>
-                <a class="dot-link _line"><span>Underline</span></a>
+                <h3>Anchor</h3>
+                <a class="dot-link"><span>Clear</span></a>
+                <a class="dot-link _primary"><span>Primary Clear</span></a>
+                <a class="dot-link _secondary"><span>Secondary Clear</span></a>
+                <a class="dot-link _accent"><span>Accent Clear</span></a>
+                <a class="dot-link _warn"><span>Warn Clear</span></a>
             </section>
             <section class="_links">
-                <button class="dot-link"><span>Default</span></button>
-                <button class="dot-link _fill"><span>Fill</span></button>
-                <button class="dot-link _border"><span>Ghost</span></button>
-                <button class="dot-link _line"><span>Underline</span></button>
+                <h3>Button</h3>
+                <button class="dot-link"><span>Clear</span></button>
+                <button class="dot-link _primary"><span>Primary Clear</span></button>
+                <button class="dot-link _secondary"><span>Secondary Clear</span></button>
+                <button class="dot-link _accent"><span>Accent Clear</span></button>
+                <button class="dot-link _warn"><span>Warn Clear</span></button>
             </section>
         </section>
 
         <section class="links">
-            <h2>Primary</h2>
+            <h2>Soft with <code>dot-lift</code></h2>
             <section class="_anchors">
-                <a class="dot-link _primary"><span>Default</span></a>
-                <a class="dot-link _fill _primary"><span>Fill</span></a>
-                <a class="dot-link _border _primary"><span>Ghost</span></a>
-                <a class="dot-link _line _primary"><span>Underline</span></a>
+                <h3>Anchor</h3>
+                <a class="dot-link _soft dot-lift1"><span>Soft</span></a>
+                <a class="dot-link _soft _primary dot-lift1"><span>Primary Soft</span></a>
+                <a class="dot-link _soft _secondary dot-lift1"><span>Secondary Soft</span></a>
+                <a class="dot-link _soft _accent dot-lift1"><span>Accent Soft</span></a>
+                <a class="dot-link _soft _warn dot-lift1"><span>Warn Soft</span></a>
             </section>
-            <section class="_buttons">
-                <button class="dot-link _primary"><span>Default</span></button>
-                <button class="dot-link _fill _primary"><span>Fill</span></button>
-                <button class="dot-link _border _primary"><span>Ghost</span></button>
-                <button class="dot-link _line _primary"><span>Underline</span></button>
+            <section class="_links">
+                <h3>Button</h3>
+                <button class="dot-link _soft  dot-lift1"><span>Soft</span></button>
+                <button class="dot-link _soft _primary  dot-lift1"><span>Primary Soft</span></button>
+                <button class="dot-link _soft _secondary  dot-lift1"><span>Secondary Soft</span></button>
+                <button class="dot-link _soft _accent  dot-lift1"><span>Accent Soft</span></button>
+                <button class="dot-link _soft _warn dot-lift1"><span>Warn Soft</span></button>
             </section>
         </section>
 
         <section class="links">
-            <h2>Accent</h2>
+            <h2>Hard with <code>dot-lift</code></h2>
             <section class="_anchors">
-                <a class="dot-link _accent"><span>Default</span></a>
-                <a class="dot-link _fill _accent"><span>Fill</span></a>
-                <a class="dot-link _border _accent"><span>Ghost</span></a>
-                <a class="dot-link _line _accent"><span>Underline</span></a>
+                <h3>Anchor</h3>
+                <a class="dot-link _hard dot-lift1"><span>Hard</span></a>
+                <a class="dot-link _hard _primary dot-lift1"><span>Primary Hard</span></a>
+                <a class="dot-link _hard _secondary dot-lift1"><span>Secondary Hard</span></a>
+                <a class="dot-link _hard _accent dot-lift1"><span>Accent Hard</span></a>
+                <a class="dot-link _hard _warn dot-lift1"><span>Warn Hard</span></a>
             </section>
-            <section class="_buttons">
-                <button class="dot-link _accent"><span>Default</span></button>
-                <button class="dot-link _fill _accent"><span>Fill</span></button>
-                <button class="dot-link _border _accent"><span>Ghost</span></button>
-                <button class="dot-link _line _accent"><span>Underline</span></button>
+            <section class="_links">
+                <h3>Button</h3>
+                <button class="dot-link _hard dot-lift1"><span>Hard</span></button>
+                <button class="dot-link _hard _primary dot-lift1"><span>Primary Hard</span></button>
+                <button class="dot-link _hard _secondary dot-lift1"><span>Secondary Hard</span></button>
+                <button class="dot-link _hard _accent dot-lift1"><span>Accent Hard</span></button>
+                <button class="dot-link _hard _warn dot-lift1"><span>Warn Hard</span></button>
             </section>
         </section>
 
         <section class="links">
-            <h2>Warn</h2>
+            <h2>Border</h2>
             <section class="_anchors">
-                <a class="dot-link _warn"><span>Default</span></a>
-                <a class="dot-link _fill _warn"><span>Fill</span></a>
-                <a class="dot-link _border _warn"><span>Ghost</span></a>
-                <a class="dot-link _line _warn"><span>Underline</span></a>
+                <h3>Anchor</h3>
+                <a class="dot-link _border"><span>Border</span></a>
+                <a class="dot-link _border _primary"><span>Primary Border</span></a>
+                <a class="dot-link _border _secondary"><span>Secondary Border</span></a>
+                <a class="dot-link _border _accent"><span>Accent Border</span></a>
+                <a class="dot-link _border _warn"><span>Warn Border</span></a>
             </section>
-            <section class="_buttons">
-                <button class="dot-link _warn"><span>Default</span></button>
-                <button class="dot-link _fill _warn"><span>Fill</span></button>
-                <button class="dot-link _border _warn"><span>Ghost</span></button>
-                <button class="dot-link _line _warn"><span>Underline</span></button>
+            <section class="_links">
+                <h3>Button</h3>
+                <button class="dot-link _border"><span>Border</span></button>
+                <button class="dot-link _border _primary"><span>Primary Border</span></button>
+                <button class="dot-link _border _secondary"><span>Secondary Border</span></button>
+                <button class="dot-link _border _accent"><span>Accent Border</span></button>
+                <button class="dot-link _border _warn"><span>Warn Border</span></button>
+            </section>
+        </section>
+
+        <section class="links">
+            <h2>Line</h2>
+            <section class="_anchors">
+                <h3>Anchor</h3>
+                <a class="dot-link _line"><span>Line</span></a>
+                <a class="dot-link _line _primary"><span>Primary Line</span></a>
+                <a class="dot-link _line _secondary"><span>Secondary Line</span></a>
+                <a class="dot-link _line _accent"><span>Accent Line</span></a>
+                <a class="dot-link _line _warn"><span>Warn Line</span></a>
+            </section>
+            <section class="_links">
+                <h3>Button</h3>
+                <button class="dot-link _line"><span>Line</span></button>
+                <button class="dot-link _line _primary"><span>Primary Line</span></button>
+                <button class="dot-link _line _secondary"><span>Secondary Line</span></button>
+                <button class="dot-link _line _accent"><span>Accent Line</span></button>
+                <button class="dot-link _line _warn"><span>Warn Line</span></button>
             </section>
         </section>
     </div>
