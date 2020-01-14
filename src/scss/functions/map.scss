@@ -59,24 +59,20 @@
 }
 
 
-@function _map-get-if($map, $key, $defaults: null) {
-  @return if(
-                  has-key($map, $key),
-                  map-get($map, $key),
-                  $defaults
-  );
+@function -map-get-if($map, $key, $defaults: null) {
+  @return if(has-key($map, $key), map-get($map, $key), $defaults);
 }
 
 @function map-get-if($map, $key, $defaults: null) {
-  @if (is-list($key)) {
+  @if is-list($key) {
     $keys: $key;
     @each $key in $keys {
-      $defaults: _map-get-if($map, $key, $defaults);
+      $defaults: -map-get-if($map, $key, $defaults);
     }
     @return $defaults;
   }
 
-  @return _map-get-if($map, $key, $defaults);
+  @return -map-get-if($map, $key, $defaults);
 }
 
 @function map-get-if-has($map, $key, $defaults: null) {

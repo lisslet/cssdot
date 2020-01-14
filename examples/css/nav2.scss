@@ -1,0 +1,480 @@
+@import '../../src/scss';
+
+$NAV-Z-BEGIN: 900 !default;
+$NAV-A-HEIGHT: 3.125em !default;
+$NAV-TYPES: (
+        'xy': ('x', 'y'),
+  // 'xxy': ('x', 'x', 'y'),
+        'x': ('x'),
+        'y': ('y'),
+        'tree': ('t')
+) !default;
+$NAV-DEFAULT-TYPE: 'xy';
+$NAV-IGNORE-POSITION-FIX-INDEX: 3;
+
+@function last-child-with-sibling($sibling-length:1) {
+  @return #{':not(:nth-child(-n + '+$sibling-length+')):last-child'};
+}
+
+/// @access private
+@mixin -nav-core-rule($depth, $parent-options, $options-list...) {
+  $options: nth($options-list, 1);
+  $remained-options: shift($options-list);
+
+  $type: map-get($options, 'type');
+
+  $is-x: $type == 'x';
+  $is-y: $type == 'y';
+  $is-tree: in-list($type, 'tree' 't');
+  $is-root: $depth == 1;
+
+  @if $is-x {
+    font-size: 0;
+  }
+
+  @if $is-root {
+    li {
+      @if $is-x {
+      } @else {
+        display: block;
+      }
+
+      ul {
+        @if $is-tree {
+
+        } @else {
+          display: none;
+          position: absolute;
+          z-index: $NAV-Z-BEGIN + $depth;
+          @if $is-x {
+            min-width: 100%;
+            left: 0;
+          }
+
+          @if $is-y {
+            top: 0;
+            left: 100%;
+          }
+        }
+      }
+
+      @if not $is-tree {
+        // display sub nav
+        &:hover > ul,
+        a:hover + ul // does not meaningless at mouse move to sub nav
+        {
+          display: block;
+        }
+      }
+
+
+    }
+
+
+    a {
+      display: block;
+      white-space: nowrap;
+    }
+
+  } @else {
+    // is not root
+    li {
+      @if not $is-tree {
+        ul {
+          top: 0;
+          left: 100%;
+        }
+      }
+    }
+  }
+
+  // root li
+  li {
+    @if $is-x {
+      display: inline-block;
+      font-size: 1rem;
+      white-space: nowrap;
+    } @else if $is-y {
+      display: block;
+    }
+
+    // sub ul
+    ul {
+      @if length($remained-options) > 0 {
+        @include -nav-core-rule($depth + 1, $options, $remained-options...);
+      }
+    }
+  }
+}
+
+/// @access private
+@mixin -nav-type-rule($depth, $parent-options, $options-list...) {
+
+  $options: nth($options-list, 1);
+  $remained-options: shift($options-list);
+
+  $type: map-get($options, 'type');
+  $is-x: $type == 'x';
+  $is-y: $type == 'y';
+  $is-tree: in-list($type, 'tree' 't');
+  $is-root: $depth == 1;
+
+  $z-index: map-get-if($options, 'z-index', $NAV-Z-BEGIN);
+  $gap: map-get-if($options, 'gap');
+  $left-gap: map-get-if($options, 'left-gap');
+  $right-gap: map-get-if($options, 'right-gap');
+  $bottom-gap: map-get-if($options, 'bottom-gap');
+  $padding: map-get-if($options, 'padding', 0 0.626em);
+  $height: map-get-if($options, 'height', if($is-root, 0.626em * 3, null));
+
+  // theming variables
+  $text: map-get-if($options, 'text');
+  $field: map-get-if($options, 'field', if($is-root, null, #fff));
+
+  $react-field: map-get-if($options, 'react-field');
+  $react-text: map-get-if($options, 'react-text');
+  $active-field: map-get-if($options, 'active-field');
+  $active-text: map-get-if($options, 'active-text');
+
+  @if $text {
+    color: $text;
+  }
+
+  a {
+    @if $text {
+      color: $text;
+    }
+
+    @if $padding {
+      padding: $padding;
+    }
+
+    @if $height {
+      height: $height;
+      line-height: $height;
+    }
+  }
+
+  @if ($height) {
+    button {
+      height: $height;
+      line-height: $height;
+    }
+  }
+
+  @if $is-root {
+    @if $field {
+      background-color: $field;
+    }
+  } @else {
+    li {
+      @if $field {
+        background-color: $field;
+      }
+    }
+  }
+
+  a:hover,
+  li:hover > a {
+    @if $react-text {
+      color: $react-text;
+    }
+
+    @if $react-field {
+      color: $react-field;
+    }
+  }
+
+  a._active,
+  li._active > a {
+    @if $active-text {
+      color: $active-text;
+    }
+
+    @if $active-field {
+      background-color: $active-field;
+    }
+  }
+
+  li {
+    @if $is-x {
+      @if $left-gap {
+        @include left-gap($left-gap);
+        // reset child gap
+        li {
+          margin-left: 0;
+        }
+      }
+      @if $right-gap {
+        @include right-gap($right-gap);
+        // reset child gap
+        li {
+          margin-right: 0;
+        }
+      }
+    } @else if $is-y {
+      @if $bottom-gap {
+        @include bottom-gap($bottom-gap);
+        // reset child gap
+        li {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  ul {
+    @if length($remained-options) > 0 {
+      @include -nav-type-rule($depth + 1, $options, $remained-options...);
+    }
+  }
+}
+
+/// @access private
+@mixin nav-both-rule($options) {
+  @include -nav-core-rule(1, null, $options...);
+  @include -nav-type-rule(1, null, $options...);
+}
+
+/// @access private
+@mixin nav-scroll-suffix-rule($until-width: 1000) {
+  position: relative;
+
+  > ul {
+    overflow: auto;
+    white-space: nowrap;
+    scroll-snap-type: x proximity;
+  }
+
+  li {
+    position: static;
+    scroll-snap-align: center;
+    // left:inherit;
+    ul {
+      right: 0;
+      max-height: 50vh;
+      overflow-y: auto;
+
+      ul {
+        overflow-y: visible;
+        height: auto;
+        position: static;
+        display: block;
+        top: 100%;
+        left: 0;
+        padding-left: 1.25em;
+        font-size: 0.875em;
+      }
+    }
+  }
+
+  @include mq-min($until-width) {
+    position: inherit;
+
+    > ul {
+      overflow: visible;
+      white-space: inherit;
+      scroll-snap-type: none;
+    }
+
+    li {
+      position: relative;
+      scroll-snap-align: none;
+
+      ul {
+        position: absolute;
+        right: inherit;
+        max-height: inherit;
+        overflow-y: visible;
+        display: none;
+
+        ul {
+          overflow-y: inherit;
+          position: absolute;
+          display: none;
+          top: inherit;
+          left: inherit;
+          padding-left: inherit;
+          font-size: inherit;
+        }
+      }
+    }
+  }
+}
+
+/// @access private
+@function formalize-options-list($options-list) {
+  $parent-type: $NAV-DEFAULT-TYPE;
+  $index: 1;
+
+  @each $options in $options-list {
+    @if type-of($options) != 'map' {
+      $options: ('type': $options);
+    }
+
+    @if not has-key($options, 'type') {
+      $options: map-merge($options, ('type': $parent-type));
+    }
+
+    $parent-type: map-get($options, 'type');
+    $options-list: set-nth($options-list, $index, $options);
+    $index: $index + 1;
+  }
+
+  @return $options-list;
+}
+
+/// @access private
+@function formalize-type-options-list($type-options-list) {
+  @each $type, $options-list in $type-options-list {
+    $options-list: formalize-options-list($options-list);
+    $type-options-list: map-merge($type-options-list, ($type: $options-list));
+  }
+
+  @return $type-options-list;
+}
+
+/// @access private
+@mixin nav-core-rule() {
+  li,
+  a {
+    @include trans(background-color color);
+  }
+
+  li {
+    position: relative;
+  }
+
+  ul {
+    &._fold {
+      display: none;
+    }
+
+    &._unfold {
+      display: block;
+    }
+  }
+
+  %fix-last-position {
+    left: inherit;
+    right: 0;
+  }
+
+  //////////////////////////////
+  // Fix Sub List Position
+  //////////////////////////////
+  $fix-index: $NAV-IGNORE-POSITION-FIX-INDEX;
+  // $query: last-child-with-sibling($fix-index);
+  $query: #{':last-child'};
+
+  &._on-right {
+    &._xy {
+      > ul > li,
+      > li {
+        &#{$query} ul {
+          @extend %fix-last-position;
+
+          ul {
+            right: 100%;
+          }
+        }
+
+        ul ul {
+          left: inherit;
+          right: 100%;
+        }
+      }
+    }
+
+    &._x {
+      > ul > li,
+      > li {
+        &#{$query} ul {
+          @extend %fix-last-position;
+        }
+      }
+    }
+
+    &._y {
+      > ul > li,
+      > li {
+        ul {
+          left: inherit;
+          right: 100%;
+        }
+      }
+    }
+  }
+
+  //a + ul {
+  //  &:after {
+  //    position: absolute;
+  //    top: 0;
+  //    right: 0;
+  //    content: '\002B';
+  //    display: block;
+  //    width: 1em;
+  //    height: 1em;
+  //    text-align: center;
+  //    vertical-align: middle;
+  //  }
+  //}
+
+  button {
+    float: right;
+    background-color: transparent;
+    border: none;
+    width: 24px;
+    height: 24px;
+    overflow: hidden;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+@mixin nav-rule($options: (), $type-options-list...) {
+  @if length($type-options-list) < 1 {
+    $type-options-list: $NAV-TYPES;
+  }
+
+  $options: dot-rule-initiate($options, 'nav');
+  $selector: map-get($options, 'selector');
+
+  $type-options-list: formalize-type-options-list($type-options-list);
+
+
+  #{$selector} {
+    @include nav-core-rule;
+
+    @each $type, $type-options in $type-options-list {
+      $type-query: '._' + $type;
+      &#{$type-query} {
+        @include nav-both-rule($type-options);
+      }
+    }
+
+    //////////////////////////////
+    // suffixes
+    //////////////////////////////
+
+    &._scroll {
+      @include nav-scroll-suffix-rule;
+    }
+
+    &._toggle-on-left {
+      button {
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
+      a {
+        padding-left: 34px;
+      }
+    }
+  }
+}
+
+@include nav-rule();

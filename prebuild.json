@@ -49,13 +49,6 @@
     ]
   },
   {
-    "scss": "layout/nav/standalone",
-    "files": {
-      "filename": "nav",
-      "content": "@include nav-rules;"
-    }
-  },
-  {
     "scss": "layout/box/standalone",
     "files": [
       {
@@ -97,6 +90,13 @@
     "files": {
       "filename": "loader",
       "content": "@include loader-rule;"
+    }
+  },
+  {
+    "scss": "nav/standalone",
+    "files": {
+      "filename": "nav",
+      "content": "@include nav-rule;"
     }
   }
 ]

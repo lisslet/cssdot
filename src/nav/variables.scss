@@ -1,0 +1,16 @@
+/// sublist z-index start from
+$NAV-Z-BEGIN: 900 !default;
+/// anchor height
+$NAV-A-HEIGHT: 3.125em !default;
+/// navigation types
+$NAV-TYPES: (
+        'xy': ('x', 'y'),
+  // 'xxy': ('x', 'x', 'y'),
+        'x': ('x'),
+        'y': ('y'),
+        'tree': ('t')
+) !default;
+/// navigation default type
+$NAV-DEFAULT-TYPE: 'xy';
+/// modify sub list position from
+$NAV-IGNORE-POSITION-FIX-INDEX: 3;
