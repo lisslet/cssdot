@@ -1,0 +1,68 @@
+@import '../../src/scss';
+
+$VERTICAL-POSITIONS: (
+        'top': (
+                top: 0
+        ),
+        'middle': (
+                top:50%,
+                transform:translateY(-50%)
+        ),
+        'bottom': (
+                bottom:0
+        )
+);
+
+$HORIZONTAL-POSITIONS: (
+        'left': (
+                left:0
+        ),
+        'center': (
+                left:50%,
+                transform:translateX(-50%)
+        ),
+        'right': (
+                right:0
+        )
+);
+
+@mixin position-states-rule {
+  @each $vertical-type, $vertical-properties in $VERTICAL-POSITIONS {
+    @each $horizontal-type, $horizontal-properties in $HORIZONTAL-POSITIONS {
+      $state: $vertical-type + '-' + $horizontal-type;
+
+      &#{'._' + $state} {
+        @include properties($vertical-properties, $horizontal-properties);
+      }
+    }
+  }
+}
+
+/// add positioning state to parent selector
+@mixin position-states {
+  position: absolute;
+  @include position-states-rule;
+}
+
+/// add fixed positioning state to parent selector
+@mixin fixed-position-states {
+  position: fixed;
+  @include position-states-rule;
+}
+
+.dot-notify-toast {
+  @include bottom-gap;
+
+  display: block;
+  max-width: 300px;
+  cursor: pointer;
+  background-color: #fff;
+
+  &-pool {
+    @include fixed-position-states;
+  }
+
+  .dot-pad {
+    padding: 0.626em;
+  }
+}

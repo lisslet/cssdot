@@ -302,10 +302,107 @@ $__args-shorten-index: query !default;
   @return $result;
 }
 
-/// map as properties
-/// @param map $properties
-@mixin properties($properties) {
-  @each $property, $value in $properties {
-    #{$property}: #{$value};
+
+/// get empty map
+/// todo: move
+@function map() {
+  @return map-remove(('x': 'x'), 'x');
+}
+
+/// get list with single item
+/// todo: move dir
+@function list($value) {
+  @if type-of($value) == 'list' {
+    @return $value;
+  }
+  @return append((), $value);
+}
+
+/// get argument string from functional syntax
+@function get-argument($method-string) {
+  $start: str-index($method-string, '(');
+  $end: str-index($method-string, ')');
+  @if $start > 0 and $end > 0 {
+    @return str-slice($method-string, $start + 1, $end - 1);
+  }
+  @return $method-string;
+}
+
+/// merge properties for list as like transform
+@function merge-properties($property-groups...) {
+  @if length($property-groups) == 1 {
+    @return nth($property-groups, 1);
+  }
+
+  $merged-properties: map();
+  $transform: map();
+  $translate: ();
+
+  @each $properties in $property-groups {
+
+    @each $property, $value in $properties {
+      @if $property == 'transform' {
+        $value: list($value);
+        @each $method in $value {
+          @if starts-with($method, 'translateX') {
+            $amount: get-argument($method);
+            $translate: map-merge($translate, ('x': $amount));
+          } @else if starts-with($method, 'translateY') {
+            $amount: get-argument($method);
+            $translate: map-merge($translate, ('y': $amount));
+          } @else if starts-with($method, 'translate') {
+            $amounts: get-argument($method);
+            $amounts: str-split($amounts, ',');
+            $translate: map-merge($translate, (
+                    'x': nth($amounts, 1),
+                    'y': nth($amounts, 2)
+            ));
+          } @else {
+            $transform: append($transform, $value);
+          }
+        }
+        // $transform: map-merge($transform, ('transform': $value));
+      } @else {
+        $merged-properties: map-merge($merged-properties, ($property: $value));
+      }
+    }
+  }
+
+  @if $translate {
+    $x: map-get($translate, 'x');
+    $y: map-get($translate, 'y');
+    @if $x {
+      @if $y {
+        $transform: append($transform, #{'translate('+$x+', '+$y+')'})
+      } @else {
+        $transform: append($transform, #{'translateX('+$x+')'})
+      }
+    } @else if $y {
+      $transform: append($transform, #{'translateY('+$y+')'})
+    }
+  }
+
+  @if length($transform) > 0 {
+    $merged-properties: map-merge($merged-properties, ('transform': $transform));
+  }
+
+  @return $merged-properties;
+}
+
+/// Declare properties from map.
+/// @description
+///   Duplicate attributes use later values.
+@mixin properties($property-groups...) {
+  $property-groups: merge-properties($property-groups...);
+  @if type-of($property-groups) == 'map' {
+    @each $property, $value in $property-groups {
+      #{$property}: #{$value};
+    }
+  } @else {
+    @each $properties in $property-groups {
+      @each $property, $value in $properties {
+        #{$property}: #{$value};
+      }
+    }
   }
 }
