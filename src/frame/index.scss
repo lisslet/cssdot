@@ -1,0 +1,26 @@
+@mixin frame-rule($options){
+
+  $sticky-resize: map-get-if($options, 'sticky-resize');
+
+
+  #dot-head-area,
+  #dot-main-area,
+  #dot-foot-area,
+  .dot-area {
+    width: 100%;
+    min-width: 320px;
+    margin:0 auto;
+  }
+
+  #dot-head-area,
+  #dot-main-area,
+  #dot-foot-area {
+    position:relative;
+  }
+
+  .dot-resize {
+    max-width:inherit;
+  }
+
+
+}

@@ -50,19 +50,17 @@ $HORIZONTAL-POSITIONS: (
   @include position-states-rule;
 }
 
-.dot-notify-toast {
-  @include bottom-gap;
+@mixin toast-rule() {
+  .dot-toast {
+    @include bottom-gap;
 
-  display: block;
-  max-width: 300px;
-  cursor: pointer;
-  background-color: #fff;
+    display: block;
+    max-width: 300px;
+    cursor: pointer;
+    background-color: #fff;
 
-  &-pool {
-    @include fixed-position-states;
-  }
-
-  .dot-pad {
-    padding: 0.626em;
+    &-pool {
+      @include fixed-position-states;
+    }
   }
 }
