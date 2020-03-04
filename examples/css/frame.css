@@ -1,0 +1,129 @@
+#dot-head-area,
+#dot-main-area,
+#dot-foot-area {
+  position: relative;
+}
+
+.dot-resize {
+  max-width: inherit;
+}
+
+#dot-head-area,
+#dot-main-area,
+#dot-foot-area,
+.dot-area {
+  width: 100%;
+  min-width: 320px;
+  margin: 0 auto;
+}
+@media only screen and (min-width: 425px) {
+  #dot-head-area,
+#dot-main-area,
+#dot-foot-area,
+.dot-area {
+    width: 320px;
+    min-width: inherit;
+  }
+  ._425 #dot-head-area,
+._425 #dot-main-area,
+._425 #dot-foot-area,
+._425 .dot-area {
+    max-width: 425px;
+  }
+}
+@media only screen and (min-width: 480px) {
+  ._480 #dot-head-area,
+._480 #dot-main-area,
+._480 #dot-foot-area,
+._480 .dot-area {
+    max-width: 480px;
+  }
+}
+@media only screen and (min-width: 540px) {
+  ._540 #dot-head-area,
+._540 #dot-main-area,
+._540 #dot-foot-area,
+._540 .dot-area {
+    max-width: 540px;
+  }
+}
+@media only screen and (min-width: 640px) {
+  ._640 #dot-head-area,
+._640 #dot-main-area,
+._640 #dot-foot-area,
+._640 .dot-area {
+    max-width: 640px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  ._768 #dot-head-area,
+._768 #dot-main-area,
+._768 #dot-foot-area,
+._768 .dot-area {
+    max-width: 768px;
+  }
+}
+@media only screen and (min-width: 1000px) {
+  ._1000 #dot-head-area,
+._1000 #dot-main-area,
+._1000 #dot-foot-area,
+._1000 .dot-area {
+    max-width: 1000px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  ._1200 #dot-head-area,
+._1200 #dot-main-area,
+._1200 #dot-foot-area,
+._1200 .dot-area {
+    max-width: 1200px;
+  }
+}
+@media only screen and (min-width: 1400px) {
+  ._1400 #dot-head-area,
+._1400 #dot-main-area,
+._1400 #dot-foot-area,
+._1400 .dot-area {
+    max-width: 1400px;
+  }
+}
+@media only screen and (min-width: 1600px) {
+  ._1600 #dot-head-area,
+._1600 #dot-main-area,
+._1600 #dot-foot-area,
+._1600 .dot-area {
+    max-width: 1600px;
+  }
+}
+@media only screen and (min-width: 1800px) {
+  ._1800 #dot-head-area,
+._1800 #dot-main-area,
+._1800 #dot-foot-area,
+._1800 .dot-area {
+    max-width: 1800px;
+  }
+}
+@media only screen and (min-width: 2000px) {
+  ._2000 #dot-head-area,
+._2000 #dot-main-area,
+._2000 #dot-foot-area,
+._2000 .dot-area {
+    max-width: 2000px;
+  }
+}
+@media only screen and (min-width: 2200px) {
+  ._2200 #dot-head-area,
+._2200 #dot-main-area,
+._2200 #dot-foot-area,
+._2200 .dot-area {
+    max-width: 2200px;
+  }
+}
+@media only screen and (min-width: 2400px) {
+  ._2400 #dot-head-area,
+._2400 #dot-main-area,
+._2400 #dot-foot-area,
+._2400 .dot-area {
+    max-width: 2400px;
+  }
+}

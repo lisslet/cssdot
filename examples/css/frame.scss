@@ -1,0 +1,57 @@
+// @import '../../src/frame/index';
+
+@import '../../src/scss';
+@import '../../src/scss/variables';
+
+@mixin frame-rule($options: null) {
+
+  $sticky-resize: map-get-if($options, 'sticky-resize');
+
+
+
+  #dot-head-area,
+  #dot-main-area,
+  #dot-foot-area {
+    position: relative;
+  }
+
+  .dot-resize {
+    max-width: inherit;
+  }
+
+  #dot-head-area,
+  #dot-main-area,
+  #dot-foot-area,
+  .dot-area {
+    width: 100%;
+    min-width: 320px;
+    margin: 0 auto;
+
+
+    $min-width: 320;
+    $first: null;
+    @each $width in $DOT-LAYOUT-WIDTHS {
+      @if $width > $min-width {
+        @include mq-min($width) {
+
+
+            @if not $first {
+              width: px($min-width);
+              min-width: inherit;
+              $first: true;
+            }
+          #{'._'+$width} & {
+            max-width: px($width);
+          }
+        }
+      }
+    }
+
+  }
+
+
+
+}
+
+@include frame-rule();
+
