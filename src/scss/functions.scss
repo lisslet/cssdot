@@ -28,7 +28,7 @@
   @return is-number($value) or is-string($value);
 }
 
-@function is-color($value){
+@function is-color($value) {
   @return type-of($value) == 'color';
 }
 
@@ -316,6 +316,40 @@ $__args-shorten-index: query !default;
     @return $value;
   }
   @return append((), $value);
+}
+
+@function reverse($list) {
+  $result: ();
+
+  @for $i from length($list) * -1 through -1 {
+    $result: append($result, nth($list, abs($i)));
+  }
+
+  @return $result;
+}
+
+@function list-slice($list, $start: 1, $end: length($list)) {
+  $result: null;
+
+  @if type-of($start) != number or type-of($end) != number {
+    @warn "Either $start or $end are not a number for `slice`.";
+  } @else if $start > $end {
+    @warn "The start index has to be lesser than or equals to the end index for `slice`.";
+  } @else if $start < 1 or $end < 1 {
+    @warn "List indexes must be non-zero integers for `slice`.";
+  } @else if $start > length($list) {
+    @warn "List index is #{$start} but list is only #{length($list)} item long for `slice`.";
+  } @else if $end > length($list) {
+    @warn "List index is #{$end} but list is only #{length($list)} item long for `slice`.";
+  } @else {
+    $result: ();
+
+    @for $i from $start through $end {
+      $result: append($result, nth($list, $i));
+    }
+  }
+
+  @return $result;
 }
 
 /// get argument string from functional syntax

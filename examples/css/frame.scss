@@ -3,10 +3,18 @@
 @import '../../src/scss';
 @import '../../src/scss/variables';
 
+@mixin frames {
+  #dot-head-area,
+  #dot-main-area,
+  #dot-foot-area,
+  .dot-area {
+    @content;
+  }
+}
+
 @mixin frame-rule($options: null) {
 
   $sticky-resize: map-get-if($options, 'sticky-resize');
-
 
 
   #dot-head-area,
@@ -26,32 +34,49 @@
     width: 100%;
     min-width: 320px;
     margin: 0 auto;
+  }
 
+  $min-width: 320;
+  $first-resize: null;
 
-    $min-width: 320;
-    $first: null;
-    @each $width in $DOT-LAYOUT-WIDTHS {
-      @if $width > $min-width {
-        @include mq-min($width) {
+  $start-index: 1;
+  $length: length($DOT-LAYOUT-WIDTHS);
 
+  @each $width in $DOT-LAYOUT-WIDTHS {
+    @if $width > $min-width {
 
-            @if not $first {
-              width: px($min-width);
-              min-width: inherit;
-              $first: true;
+      $widths: list-slice($DOT-LAYOUT-WIDTHS, $start-index, $length);
+
+      @include mq-min($width) {
+
+        @if not $first-resize {
+          @include frames {
+            width: px($min-width);
+            min-width: inherit;
+            $first-resize: true;
+          }
+        }
+
+        %max-#{$width} {
+          max-width: px($width);
+        }
+
+        $width-queries: ();
+        @each $width-query in $widths {
+          #{'._'+$width-query} {
+            @include frames {
+              @extend %max-#{$width};
             }
-          #{'._'+$width} & {
-            max-width: px($width);
           }
         }
       }
-    }
 
+    }
+    $start-index: $start-index + 1;
   }
 
-
-
 }
+
 
 @include frame-rule();
 
