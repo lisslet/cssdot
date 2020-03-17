@@ -49,16 +49,16 @@
 
       @include mq-min($width) {
 
-        @if not $first-resize {
-          @include frames {
-            width: px($min-width);
-            min-width: inherit;
-            $first-resize: true;
-          }
-        }
+        //@if not $first-resize {
+        //  @include frames {
+        //    width: px($min-width);
+        //    min-width: inherit;
+        //    $first-resize: true;
+        //  }
+        //}
 
         %max-#{$width} {
-          max-width: px($width);
+          width: px($width);
         }
 
         $width-queries: ();
