@@ -23,29 +23,33 @@
     position: relative;
   }
 
-  .dot-resize {
-    max-width: inherit;
-  }
-
-  #dot-head-area,
-  #dot-main-area,
-  #dot-foot-area,
-  .dot-area {
+  @include frames {
     width: 100%;
     min-width: 320px;
     margin: 0 auto;
+    transition-property: width;
+    transition-duration: 0.24s;
+
+    &._resize {
+      width: 100%;
+    }
   }
 
   $min-width: 320;
   $first-resize: null;
 
-  $start-index: 1;
-  $length: length($DOT-LAYOUT-WIDTHS);
+  $width-map: $DOT-LAYOUT-WIDTH-MAP;
+  $width-keys: $DOT-LAYOUT-WIDTH-KEYS;
 
-  @each $width in $DOT-LAYOUT-WIDTHS {
+
+  $start-index: 1;
+  $length: length($width-keys);
+
+  @each $alias, $width in $width-map {
     @if $width > $min-width {
 
-      $widths: list-slice($DOT-LAYOUT-WIDTHS, $start-index, $length);
+      $widths: list-slice($width-keys, $start-index, $length);
+      $lower-widths: list-slice($width-keys, 1, $start-index);
 
       @include mq-min($width) {
 
@@ -63,11 +67,24 @@
 
         $width-queries: ();
         @each $width-query in $widths {
-          #{'._'+$width-query} {
-            @include frames {
+          @include frames {
+            &#{'._max-'+$width-query} {
               @extend %max-#{$width};
             }
           }
+
+          //#{'._max-'+$width-query} {
+          //  @include frames {
+          //    @extend %max-#{$width};
+          //  }
+          //
+          //  @each $width-query2 in $lower-widths {
+          //    #{'._max-'+$width-query2} {
+          //      @extend %max-#{$width};
+          //    }
+          //  }
+          //}
+
         }
       }
 

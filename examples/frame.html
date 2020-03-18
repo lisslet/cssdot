@@ -8,22 +8,62 @@
             background-color: #ccc;
         }
     </style>
+
+
 </head>
 <body>
-<div id="dots" class="_1400">
+<div id="dots" class="_max-14">
     <header id="dot-head">
         <div id="dot-head-area">
             Header
+            <form name="max">
+                <label>
+                    <input type="radio" name="max" value="10">
+                    1000
+                </label>
+                <label>
+                    <input type="radio" name="max" value="12">
+                    1200
+                </label>
+                <label>
+                    <input type="radio" name="max" value="14">
+                    1400
+                </label>
+                <label>
+                    <input type="radio" name="max" value="16">
+                    1600
+                </label>
+                <label>
+                    <input type="radio" name="max" value="18">
+                    1800
+                </label>
+                <label>
+                    <input type="radio" name="max" value="20">
+                    2000
+                </label>
+                <label>
+                    <input type="radio" name="max" value="22">
+                    2200
+                </label>
+                <label>
+                    <input type="radio" name="max" value="24">
+                    2400
+                </label>
+            </form>
         </div>
     </header>
     <main id="dot-main">
         <div id="dot-main-area">
 
-            <div class="_1000">
-                <div class="dot-area">
-                <h1>1000</h1>
-                </div>
+
+            <div class="dot-area _max-10">
+                1000
             </div>
+
+            <div class="dot-area _max-76">
+                768
+            </div>
+
         </div>
     </main>
     <footer id="dot-foot">
@@ -31,5 +71,18 @@
             Footer
         </div>
     </footer>
+
+    <script>
+		Array.from(document.forms.max.querySelectorAll('input'))
+			.forEach(input => {
+				input.onclick = changeMaxSize;
+			});
+
+		const dots = document.getElementById('dots');
+
+		function changeMaxSize() {
+			dots.className = '_max-' + this.value;
+		}
+    </script>
 </body>
 </html>
