@@ -8,6 +8,7 @@ const sass = require('gulp-dart-sass');
 const debug = require('gulp-debug');
 
 const $sass = () => {
+
 	return sass().on('error', sass.logError);
 };
 

@@ -22,340 +22,1055 @@
 }
 
 @media only screen and (min-width: 425px) {
-  #dot-head-area._max-24,
-#dot-main-area._max-24,
-#dot-foot-area._max-24,
-.dot-area._max-24, #dot-head-area._max-22,
-#dot-main-area._max-22,
-#dot-foot-area._max-22,
-.dot-area._max-22, #dot-head-area._max-20,
-#dot-main-area._max-20,
-#dot-foot-area._max-20,
-.dot-area._max-20, #dot-head-area._max-18,
-#dot-main-area._max-18,
-#dot-foot-area._max-18,
-.dot-area._max-18, #dot-head-area._max-16,
-#dot-main-area._max-16,
-#dot-foot-area._max-16,
-.dot-area._max-16, #dot-head-area._max-14,
-#dot-main-area._max-14,
-#dot-foot-area._max-14,
-.dot-area._max-14, #dot-head-area._max-12,
-#dot-main-area._max-12,
-#dot-foot-area._max-12,
-.dot-area._max-12, #dot-head-area._max-10,
-#dot-main-area._max-10,
-#dot-foot-area._max-10,
-.dot-area._max-10, #dot-head-area._max-76,
-#dot-main-area._max-76,
-#dot-foot-area._max-76,
-.dot-area._max-76, #dot-head-area._max-64,
-#dot-main-area._max-64,
-#dot-foot-area._max-64,
-.dot-area._max-64, #dot-head-area._max-54,
-#dot-main-area._max-54,
-#dot-foot-area._max-54,
-.dot-area._max-54, #dot-head-area._max-48,
-#dot-main-area._max-48,
-#dot-foot-area._max-48,
-.dot-area._max-48, #dot-head-area._max-42,
-#dot-main-area._max-42,
-#dot-foot-area._max-42,
-.dot-area._max-42 {
+  ._width-24, ._width-24 #dot-head-area, #dot-head-area._width-24,
+._width-24 #dot-main-area,
+#dot-main-area._width-24,
+._width-24 #dot-foot-area,
+#dot-foot-area._width-24,
+._width-24 .dot-area,
+.dot-area._width-24, ._width-22, ._width-22 #dot-head-area, #dot-head-area._width-22,
+._width-22 #dot-main-area,
+#dot-main-area._width-22,
+._width-22 #dot-foot-area,
+#dot-foot-area._width-22,
+._width-22 .dot-area,
+.dot-area._width-22, ._width-20, ._width-20 #dot-head-area, #dot-head-area._width-20,
+._width-20 #dot-main-area,
+#dot-main-area._width-20,
+._width-20 #dot-foot-area,
+#dot-foot-area._width-20,
+._width-20 .dot-area,
+.dot-area._width-20, ._width-18, ._width-18 #dot-head-area, #dot-head-area._width-18,
+._width-18 #dot-main-area,
+#dot-main-area._width-18,
+._width-18 #dot-foot-area,
+#dot-foot-area._width-18,
+._width-18 .dot-area,
+.dot-area._width-18, ._width-16, ._width-16 #dot-head-area, #dot-head-area._width-16,
+._width-16 #dot-main-area,
+#dot-main-area._width-16,
+._width-16 #dot-foot-area,
+#dot-foot-area._width-16,
+._width-16 .dot-area,
+.dot-area._width-16, ._width-14, ._width-14 #dot-head-area, #dot-head-area._width-14,
+._width-14 #dot-main-area,
+#dot-main-area._width-14,
+._width-14 #dot-foot-area,
+#dot-foot-area._width-14,
+._width-14 .dot-area,
+.dot-area._width-14, ._width-12, ._width-12 #dot-head-area, #dot-head-area._width-12,
+._width-12 #dot-main-area,
+#dot-main-area._width-12,
+._width-12 #dot-foot-area,
+#dot-foot-area._width-12,
+._width-12 .dot-area,
+.dot-area._width-12, ._width-10, ._width-10 #dot-head-area, #dot-head-area._width-10,
+._width-10 #dot-main-area,
+#dot-main-area._width-10,
+._width-10 #dot-foot-area,
+#dot-foot-area._width-10,
+._width-10 .dot-area,
+.dot-area._width-10, ._width-76, ._width-76 #dot-head-area, #dot-head-area._width-76,
+._width-76 #dot-main-area,
+#dot-main-area._width-76,
+._width-76 #dot-foot-area,
+#dot-foot-area._width-76,
+._width-76 .dot-area,
+.dot-area._width-76, ._width-64, ._width-64 #dot-head-area, #dot-head-area._width-64,
+._width-64 #dot-main-area,
+#dot-main-area._width-64,
+._width-64 #dot-foot-area,
+#dot-foot-area._width-64,
+._width-64 .dot-area,
+.dot-area._width-64, ._width-54, ._width-54 #dot-head-area, #dot-head-area._width-54,
+._width-54 #dot-main-area,
+#dot-main-area._width-54,
+._width-54 #dot-foot-area,
+#dot-foot-area._width-54,
+._width-54 .dot-area,
+.dot-area._width-54, ._width-48, ._width-48 #dot-head-area, #dot-head-area._width-48,
+._width-48 #dot-main-area,
+#dot-main-area._width-48,
+._width-48 #dot-foot-area,
+#dot-foot-area._width-48,
+._width-48 .dot-area,
+.dot-area._width-48, ._width-42, ._width-42 #dot-head-area, #dot-head-area._width-42,
+._width-42 #dot-main-area,
+#dot-main-area._width-42,
+._width-42 #dot-foot-area,
+#dot-foot-area._width-42,
+._width-42 .dot-area,
+.dot-area._width-42, ._width-32, ._width-32 #dot-head-area, #dot-head-area._width-32,
+._width-32 #dot-main-area,
+#dot-main-area._width-32,
+._width-32 #dot-foot-area,
+#dot-foot-area._width-32,
+._width-32 .dot-area,
+.dot-area._width-32 {
     width: 425px;
+  }
+
+  ._width-24 ._width-32, ._width-22 ._width-32, ._width-20 ._width-32, ._width-18 ._width-32, ._width-16 ._width-32, ._width-14 ._width-32, ._width-12 ._width-32, ._width-10 ._width-32, ._width-76 ._width-32, ._width-64 ._width-32, ._width-54 ._width-32, ._width-48 ._width-32, ._width-42 ._width-32 {
+    width: 320px;
   }
 }
 @media only screen and (min-width: 480px) {
-  #dot-head-area._max-24,
-#dot-main-area._max-24,
-#dot-foot-area._max-24,
-.dot-area._max-24, #dot-head-area._max-22,
-#dot-main-area._max-22,
-#dot-foot-area._max-22,
-.dot-area._max-22, #dot-head-area._max-20,
-#dot-main-area._max-20,
-#dot-foot-area._max-20,
-.dot-area._max-20, #dot-head-area._max-18,
-#dot-main-area._max-18,
-#dot-foot-area._max-18,
-.dot-area._max-18, #dot-head-area._max-16,
-#dot-main-area._max-16,
-#dot-foot-area._max-16,
-.dot-area._max-16, #dot-head-area._max-14,
-#dot-main-area._max-14,
-#dot-foot-area._max-14,
-.dot-area._max-14, #dot-head-area._max-12,
-#dot-main-area._max-12,
-#dot-foot-area._max-12,
-.dot-area._max-12, #dot-head-area._max-10,
-#dot-main-area._max-10,
-#dot-foot-area._max-10,
-.dot-area._max-10, #dot-head-area._max-76,
-#dot-main-area._max-76,
-#dot-foot-area._max-76,
-.dot-area._max-76, #dot-head-area._max-64,
-#dot-main-area._max-64,
-#dot-foot-area._max-64,
-.dot-area._max-64, #dot-head-area._max-54,
-#dot-main-area._max-54,
-#dot-foot-area._max-54,
-.dot-area._max-54, #dot-head-area._max-48,
-#dot-main-area._max-48,
-#dot-foot-area._max-48,
-.dot-area._max-48 {
+  ._width-24, ._width-24 #dot-head-area, #dot-head-area._width-24,
+._width-24 #dot-main-area,
+#dot-main-area._width-24,
+._width-24 #dot-foot-area,
+#dot-foot-area._width-24,
+._width-24 .dot-area,
+.dot-area._width-24, ._width-22, ._width-22 #dot-head-area, #dot-head-area._width-22,
+._width-22 #dot-main-area,
+#dot-main-area._width-22,
+._width-22 #dot-foot-area,
+#dot-foot-area._width-22,
+._width-22 .dot-area,
+.dot-area._width-22, ._width-20, ._width-20 #dot-head-area, #dot-head-area._width-20,
+._width-20 #dot-main-area,
+#dot-main-area._width-20,
+._width-20 #dot-foot-area,
+#dot-foot-area._width-20,
+._width-20 .dot-area,
+.dot-area._width-20, ._width-18, ._width-18 #dot-head-area, #dot-head-area._width-18,
+._width-18 #dot-main-area,
+#dot-main-area._width-18,
+._width-18 #dot-foot-area,
+#dot-foot-area._width-18,
+._width-18 .dot-area,
+.dot-area._width-18, ._width-16, ._width-16 #dot-head-area, #dot-head-area._width-16,
+._width-16 #dot-main-area,
+#dot-main-area._width-16,
+._width-16 #dot-foot-area,
+#dot-foot-area._width-16,
+._width-16 .dot-area,
+.dot-area._width-16, ._width-14, ._width-14 #dot-head-area, #dot-head-area._width-14,
+._width-14 #dot-main-area,
+#dot-main-area._width-14,
+._width-14 #dot-foot-area,
+#dot-foot-area._width-14,
+._width-14 .dot-area,
+.dot-area._width-14, ._width-12, ._width-12 #dot-head-area, #dot-head-area._width-12,
+._width-12 #dot-main-area,
+#dot-main-area._width-12,
+._width-12 #dot-foot-area,
+#dot-foot-area._width-12,
+._width-12 .dot-area,
+.dot-area._width-12, ._width-10, ._width-10 #dot-head-area, #dot-head-area._width-10,
+._width-10 #dot-main-area,
+#dot-main-area._width-10,
+._width-10 #dot-foot-area,
+#dot-foot-area._width-10,
+._width-10 .dot-area,
+.dot-area._width-10, ._width-76, ._width-76 #dot-head-area, #dot-head-area._width-76,
+._width-76 #dot-main-area,
+#dot-main-area._width-76,
+._width-76 #dot-foot-area,
+#dot-foot-area._width-76,
+._width-76 .dot-area,
+.dot-area._width-76, ._width-64, ._width-64 #dot-head-area, #dot-head-area._width-64,
+._width-64 #dot-main-area,
+#dot-main-area._width-64,
+._width-64 #dot-foot-area,
+#dot-foot-area._width-64,
+._width-64 .dot-area,
+.dot-area._width-64, ._width-54, ._width-54 #dot-head-area, #dot-head-area._width-54,
+._width-54 #dot-main-area,
+#dot-main-area._width-54,
+._width-54 #dot-foot-area,
+#dot-foot-area._width-54,
+._width-54 .dot-area,
+.dot-area._width-54, ._width-48, ._width-48 #dot-head-area, #dot-head-area._width-48,
+._width-48 #dot-main-area,
+#dot-main-area._width-48,
+._width-48 #dot-foot-area,
+#dot-foot-area._width-48,
+._width-48 .dot-area,
+.dot-area._width-48, ._width-42, ._width-42 #dot-head-area, #dot-head-area._width-42,
+._width-42 #dot-main-area,
+#dot-main-area._width-42,
+._width-42 #dot-foot-area,
+#dot-foot-area._width-42,
+._width-42 .dot-area,
+.dot-area._width-42 {
     width: 480px;
+  }
+
+  ._width-24 ._width-32, ._width-22 ._width-32, ._width-20 ._width-32, ._width-18 ._width-32, ._width-16 ._width-32, ._width-14 ._width-32, ._width-12 ._width-32, ._width-10 ._width-32, ._width-76 ._width-32, ._width-64 ._width-32, ._width-54 ._width-32, ._width-48 ._width-32, ._width-42 ._width-32 {
+    width: 320px;
+  }
+
+  ._width-24 ._width-42, ._width-22 ._width-42, ._width-20 ._width-42, ._width-18 ._width-42, ._width-16 ._width-42, ._width-14 ._width-42, ._width-12 ._width-42, ._width-10 ._width-42, ._width-76 ._width-42, ._width-64 ._width-42, ._width-54 ._width-42, ._width-48 ._width-42 {
+    width: 425px;
   }
 }
 @media only screen and (min-width: 540px) {
-  #dot-head-area._max-24,
-#dot-main-area._max-24,
-#dot-foot-area._max-24,
-.dot-area._max-24, #dot-head-area._max-22,
-#dot-main-area._max-22,
-#dot-foot-area._max-22,
-.dot-area._max-22, #dot-head-area._max-20,
-#dot-main-area._max-20,
-#dot-foot-area._max-20,
-.dot-area._max-20, #dot-head-area._max-18,
-#dot-main-area._max-18,
-#dot-foot-area._max-18,
-.dot-area._max-18, #dot-head-area._max-16,
-#dot-main-area._max-16,
-#dot-foot-area._max-16,
-.dot-area._max-16, #dot-head-area._max-14,
-#dot-main-area._max-14,
-#dot-foot-area._max-14,
-.dot-area._max-14, #dot-head-area._max-12,
-#dot-main-area._max-12,
-#dot-foot-area._max-12,
-.dot-area._max-12, #dot-head-area._max-10,
-#dot-main-area._max-10,
-#dot-foot-area._max-10,
-.dot-area._max-10, #dot-head-area._max-76,
-#dot-main-area._max-76,
-#dot-foot-area._max-76,
-.dot-area._max-76, #dot-head-area._max-64,
-#dot-main-area._max-64,
-#dot-foot-area._max-64,
-.dot-area._max-64, #dot-head-area._max-54,
-#dot-main-area._max-54,
-#dot-foot-area._max-54,
-.dot-area._max-54 {
+  ._width-24, ._width-24 #dot-head-area, #dot-head-area._width-24,
+._width-24 #dot-main-area,
+#dot-main-area._width-24,
+._width-24 #dot-foot-area,
+#dot-foot-area._width-24,
+._width-24 .dot-area,
+.dot-area._width-24, ._width-22, ._width-22 #dot-head-area, #dot-head-area._width-22,
+._width-22 #dot-main-area,
+#dot-main-area._width-22,
+._width-22 #dot-foot-area,
+#dot-foot-area._width-22,
+._width-22 .dot-area,
+.dot-area._width-22, ._width-20, ._width-20 #dot-head-area, #dot-head-area._width-20,
+._width-20 #dot-main-area,
+#dot-main-area._width-20,
+._width-20 #dot-foot-area,
+#dot-foot-area._width-20,
+._width-20 .dot-area,
+.dot-area._width-20, ._width-18, ._width-18 #dot-head-area, #dot-head-area._width-18,
+._width-18 #dot-main-area,
+#dot-main-area._width-18,
+._width-18 #dot-foot-area,
+#dot-foot-area._width-18,
+._width-18 .dot-area,
+.dot-area._width-18, ._width-16, ._width-16 #dot-head-area, #dot-head-area._width-16,
+._width-16 #dot-main-area,
+#dot-main-area._width-16,
+._width-16 #dot-foot-area,
+#dot-foot-area._width-16,
+._width-16 .dot-area,
+.dot-area._width-16, ._width-14, ._width-14 #dot-head-area, #dot-head-area._width-14,
+._width-14 #dot-main-area,
+#dot-main-area._width-14,
+._width-14 #dot-foot-area,
+#dot-foot-area._width-14,
+._width-14 .dot-area,
+.dot-area._width-14, ._width-12, ._width-12 #dot-head-area, #dot-head-area._width-12,
+._width-12 #dot-main-area,
+#dot-main-area._width-12,
+._width-12 #dot-foot-area,
+#dot-foot-area._width-12,
+._width-12 .dot-area,
+.dot-area._width-12, ._width-10, ._width-10 #dot-head-area, #dot-head-area._width-10,
+._width-10 #dot-main-area,
+#dot-main-area._width-10,
+._width-10 #dot-foot-area,
+#dot-foot-area._width-10,
+._width-10 .dot-area,
+.dot-area._width-10, ._width-76, ._width-76 #dot-head-area, #dot-head-area._width-76,
+._width-76 #dot-main-area,
+#dot-main-area._width-76,
+._width-76 #dot-foot-area,
+#dot-foot-area._width-76,
+._width-76 .dot-area,
+.dot-area._width-76, ._width-64, ._width-64 #dot-head-area, #dot-head-area._width-64,
+._width-64 #dot-main-area,
+#dot-main-area._width-64,
+._width-64 #dot-foot-area,
+#dot-foot-area._width-64,
+._width-64 .dot-area,
+.dot-area._width-64, ._width-54, ._width-54 #dot-head-area, #dot-head-area._width-54,
+._width-54 #dot-main-area,
+#dot-main-area._width-54,
+._width-54 #dot-foot-area,
+#dot-foot-area._width-54,
+._width-54 .dot-area,
+.dot-area._width-54, ._width-48, ._width-48 #dot-head-area, #dot-head-area._width-48,
+._width-48 #dot-main-area,
+#dot-main-area._width-48,
+._width-48 #dot-foot-area,
+#dot-foot-area._width-48,
+._width-48 .dot-area,
+.dot-area._width-48 {
     width: 540px;
+  }
+
+  ._width-24 ._width-32, ._width-22 ._width-32, ._width-20 ._width-32, ._width-18 ._width-32, ._width-16 ._width-32, ._width-14 ._width-32, ._width-12 ._width-32, ._width-10 ._width-32, ._width-76 ._width-32, ._width-64 ._width-32, ._width-54 ._width-32, ._width-48 ._width-32 {
+    width: 320px;
+  }
+
+  ._width-24 ._width-42, ._width-22 ._width-42, ._width-20 ._width-42, ._width-18 ._width-42, ._width-16 ._width-42, ._width-14 ._width-42, ._width-12 ._width-42, ._width-10 ._width-42, ._width-76 ._width-42, ._width-64 ._width-42, ._width-54 ._width-42, ._width-48 ._width-42 {
+    width: 425px;
+  }
+
+  ._width-24 ._width-48, ._width-22 ._width-48, ._width-20 ._width-48, ._width-18 ._width-48, ._width-16 ._width-48, ._width-14 ._width-48, ._width-12 ._width-48, ._width-10 ._width-48, ._width-76 ._width-48, ._width-64 ._width-48, ._width-54 ._width-48 {
+    width: 480px;
   }
 }
 @media only screen and (min-width: 640px) {
-  #dot-head-area._max-24,
-#dot-main-area._max-24,
-#dot-foot-area._max-24,
-.dot-area._max-24, #dot-head-area._max-22,
-#dot-main-area._max-22,
-#dot-foot-area._max-22,
-.dot-area._max-22, #dot-head-area._max-20,
-#dot-main-area._max-20,
-#dot-foot-area._max-20,
-.dot-area._max-20, #dot-head-area._max-18,
-#dot-main-area._max-18,
-#dot-foot-area._max-18,
-.dot-area._max-18, #dot-head-area._max-16,
-#dot-main-area._max-16,
-#dot-foot-area._max-16,
-.dot-area._max-16, #dot-head-area._max-14,
-#dot-main-area._max-14,
-#dot-foot-area._max-14,
-.dot-area._max-14, #dot-head-area._max-12,
-#dot-main-area._max-12,
-#dot-foot-area._max-12,
-.dot-area._max-12, #dot-head-area._max-10,
-#dot-main-area._max-10,
-#dot-foot-area._max-10,
-.dot-area._max-10, #dot-head-area._max-76,
-#dot-main-area._max-76,
-#dot-foot-area._max-76,
-.dot-area._max-76, #dot-head-area._max-64,
-#dot-main-area._max-64,
-#dot-foot-area._max-64,
-.dot-area._max-64 {
+  ._width-24, ._width-24 #dot-head-area, #dot-head-area._width-24,
+._width-24 #dot-main-area,
+#dot-main-area._width-24,
+._width-24 #dot-foot-area,
+#dot-foot-area._width-24,
+._width-24 .dot-area,
+.dot-area._width-24, ._width-22, ._width-22 #dot-head-area, #dot-head-area._width-22,
+._width-22 #dot-main-area,
+#dot-main-area._width-22,
+._width-22 #dot-foot-area,
+#dot-foot-area._width-22,
+._width-22 .dot-area,
+.dot-area._width-22, ._width-20, ._width-20 #dot-head-area, #dot-head-area._width-20,
+._width-20 #dot-main-area,
+#dot-main-area._width-20,
+._width-20 #dot-foot-area,
+#dot-foot-area._width-20,
+._width-20 .dot-area,
+.dot-area._width-20, ._width-18, ._width-18 #dot-head-area, #dot-head-area._width-18,
+._width-18 #dot-main-area,
+#dot-main-area._width-18,
+._width-18 #dot-foot-area,
+#dot-foot-area._width-18,
+._width-18 .dot-area,
+.dot-area._width-18, ._width-16, ._width-16 #dot-head-area, #dot-head-area._width-16,
+._width-16 #dot-main-area,
+#dot-main-area._width-16,
+._width-16 #dot-foot-area,
+#dot-foot-area._width-16,
+._width-16 .dot-area,
+.dot-area._width-16, ._width-14, ._width-14 #dot-head-area, #dot-head-area._width-14,
+._width-14 #dot-main-area,
+#dot-main-area._width-14,
+._width-14 #dot-foot-area,
+#dot-foot-area._width-14,
+._width-14 .dot-area,
+.dot-area._width-14, ._width-12, ._width-12 #dot-head-area, #dot-head-area._width-12,
+._width-12 #dot-main-area,
+#dot-main-area._width-12,
+._width-12 #dot-foot-area,
+#dot-foot-area._width-12,
+._width-12 .dot-area,
+.dot-area._width-12, ._width-10, ._width-10 #dot-head-area, #dot-head-area._width-10,
+._width-10 #dot-main-area,
+#dot-main-area._width-10,
+._width-10 #dot-foot-area,
+#dot-foot-area._width-10,
+._width-10 .dot-area,
+.dot-area._width-10, ._width-76, ._width-76 #dot-head-area, #dot-head-area._width-76,
+._width-76 #dot-main-area,
+#dot-main-area._width-76,
+._width-76 #dot-foot-area,
+#dot-foot-area._width-76,
+._width-76 .dot-area,
+.dot-area._width-76, ._width-64, ._width-64 #dot-head-area, #dot-head-area._width-64,
+._width-64 #dot-main-area,
+#dot-main-area._width-64,
+._width-64 #dot-foot-area,
+#dot-foot-area._width-64,
+._width-64 .dot-area,
+.dot-area._width-64, ._width-54, ._width-54 #dot-head-area, #dot-head-area._width-54,
+._width-54 #dot-main-area,
+#dot-main-area._width-54,
+._width-54 #dot-foot-area,
+#dot-foot-area._width-54,
+._width-54 .dot-area,
+.dot-area._width-54 {
     width: 640px;
+  }
+
+  ._width-24 ._width-32, ._width-22 ._width-32, ._width-20 ._width-32, ._width-18 ._width-32, ._width-16 ._width-32, ._width-14 ._width-32, ._width-12 ._width-32, ._width-10 ._width-32, ._width-76 ._width-32, ._width-64 ._width-32, ._width-54 ._width-32 {
+    width: 320px;
+  }
+
+  ._width-24 ._width-42, ._width-22 ._width-42, ._width-20 ._width-42, ._width-18 ._width-42, ._width-16 ._width-42, ._width-14 ._width-42, ._width-12 ._width-42, ._width-10 ._width-42, ._width-76 ._width-42, ._width-64 ._width-42, ._width-54 ._width-42 {
+    width: 425px;
+  }
+
+  ._width-24 ._width-48, ._width-22 ._width-48, ._width-20 ._width-48, ._width-18 ._width-48, ._width-16 ._width-48, ._width-14 ._width-48, ._width-12 ._width-48, ._width-10 ._width-48, ._width-76 ._width-48, ._width-64 ._width-48, ._width-54 ._width-48 {
+    width: 480px;
+  }
+
+  ._width-24 ._width-54, ._width-22 ._width-54, ._width-20 ._width-54, ._width-18 ._width-54, ._width-16 ._width-54, ._width-14 ._width-54, ._width-12 ._width-54, ._width-10 ._width-54, ._width-76 ._width-54, ._width-64 ._width-54 {
+    width: 540px;
   }
 }
 @media only screen and (min-width: 768px) {
-  #dot-head-area._max-24,
-#dot-main-area._max-24,
-#dot-foot-area._max-24,
-.dot-area._max-24, #dot-head-area._max-22,
-#dot-main-area._max-22,
-#dot-foot-area._max-22,
-.dot-area._max-22, #dot-head-area._max-20,
-#dot-main-area._max-20,
-#dot-foot-area._max-20,
-.dot-area._max-20, #dot-head-area._max-18,
-#dot-main-area._max-18,
-#dot-foot-area._max-18,
-.dot-area._max-18, #dot-head-area._max-16,
-#dot-main-area._max-16,
-#dot-foot-area._max-16,
-.dot-area._max-16, #dot-head-area._max-14,
-#dot-main-area._max-14,
-#dot-foot-area._max-14,
-.dot-area._max-14, #dot-head-area._max-12,
-#dot-main-area._max-12,
-#dot-foot-area._max-12,
-.dot-area._max-12, #dot-head-area._max-10,
-#dot-main-area._max-10,
-#dot-foot-area._max-10,
-.dot-area._max-10, #dot-head-area._max-76,
-#dot-main-area._max-76,
-#dot-foot-area._max-76,
-.dot-area._max-76 {
+  ._width-24, ._width-24 #dot-head-area, #dot-head-area._width-24,
+._width-24 #dot-main-area,
+#dot-main-area._width-24,
+._width-24 #dot-foot-area,
+#dot-foot-area._width-24,
+._width-24 .dot-area,
+.dot-area._width-24, ._width-22, ._width-22 #dot-head-area, #dot-head-area._width-22,
+._width-22 #dot-main-area,
+#dot-main-area._width-22,
+._width-22 #dot-foot-area,
+#dot-foot-area._width-22,
+._width-22 .dot-area,
+.dot-area._width-22, ._width-20, ._width-20 #dot-head-area, #dot-head-area._width-20,
+._width-20 #dot-main-area,
+#dot-main-area._width-20,
+._width-20 #dot-foot-area,
+#dot-foot-area._width-20,
+._width-20 .dot-area,
+.dot-area._width-20, ._width-18, ._width-18 #dot-head-area, #dot-head-area._width-18,
+._width-18 #dot-main-area,
+#dot-main-area._width-18,
+._width-18 #dot-foot-area,
+#dot-foot-area._width-18,
+._width-18 .dot-area,
+.dot-area._width-18, ._width-16, ._width-16 #dot-head-area, #dot-head-area._width-16,
+._width-16 #dot-main-area,
+#dot-main-area._width-16,
+._width-16 #dot-foot-area,
+#dot-foot-area._width-16,
+._width-16 .dot-area,
+.dot-area._width-16, ._width-14, ._width-14 #dot-head-area, #dot-head-area._width-14,
+._width-14 #dot-main-area,
+#dot-main-area._width-14,
+._width-14 #dot-foot-area,
+#dot-foot-area._width-14,
+._width-14 .dot-area,
+.dot-area._width-14, ._width-12, ._width-12 #dot-head-area, #dot-head-area._width-12,
+._width-12 #dot-main-area,
+#dot-main-area._width-12,
+._width-12 #dot-foot-area,
+#dot-foot-area._width-12,
+._width-12 .dot-area,
+.dot-area._width-12, ._width-10, ._width-10 #dot-head-area, #dot-head-area._width-10,
+._width-10 #dot-main-area,
+#dot-main-area._width-10,
+._width-10 #dot-foot-area,
+#dot-foot-area._width-10,
+._width-10 .dot-area,
+.dot-area._width-10, ._width-76, ._width-76 #dot-head-area, #dot-head-area._width-76,
+._width-76 #dot-main-area,
+#dot-main-area._width-76,
+._width-76 #dot-foot-area,
+#dot-foot-area._width-76,
+._width-76 .dot-area,
+.dot-area._width-76, ._width-64, ._width-64 #dot-head-area, #dot-head-area._width-64,
+._width-64 #dot-main-area,
+#dot-main-area._width-64,
+._width-64 #dot-foot-area,
+#dot-foot-area._width-64,
+._width-64 .dot-area,
+.dot-area._width-64 {
     width: 768px;
+  }
+
+  ._width-24 ._width-32, ._width-22 ._width-32, ._width-20 ._width-32, ._width-18 ._width-32, ._width-16 ._width-32, ._width-14 ._width-32, ._width-12 ._width-32, ._width-10 ._width-32, ._width-76 ._width-32, ._width-64 ._width-32 {
+    width: 320px;
+  }
+
+  ._width-24 ._width-42, ._width-22 ._width-42, ._width-20 ._width-42, ._width-18 ._width-42, ._width-16 ._width-42, ._width-14 ._width-42, ._width-12 ._width-42, ._width-10 ._width-42, ._width-76 ._width-42, ._width-64 ._width-42 {
+    width: 425px;
+  }
+
+  ._width-24 ._width-48, ._width-22 ._width-48, ._width-20 ._width-48, ._width-18 ._width-48, ._width-16 ._width-48, ._width-14 ._width-48, ._width-12 ._width-48, ._width-10 ._width-48, ._width-76 ._width-48, ._width-64 ._width-48 {
+    width: 480px;
+  }
+
+  ._width-24 ._width-54, ._width-22 ._width-54, ._width-20 ._width-54, ._width-18 ._width-54, ._width-16 ._width-54, ._width-14 ._width-54, ._width-12 ._width-54, ._width-10 ._width-54, ._width-76 ._width-54, ._width-64 ._width-54 {
+    width: 540px;
+  }
+
+  ._width-24 ._width-64, ._width-22 ._width-64, ._width-20 ._width-64, ._width-18 ._width-64, ._width-16 ._width-64, ._width-14 ._width-64, ._width-12 ._width-64, ._width-10 ._width-64, ._width-76 ._width-64 {
+    width: 640px;
   }
 }
 @media only screen and (min-width: 1000px) {
-  #dot-head-area._max-24,
-#dot-main-area._max-24,
-#dot-foot-area._max-24,
-.dot-area._max-24, #dot-head-area._max-22,
-#dot-main-area._max-22,
-#dot-foot-area._max-22,
-.dot-area._max-22, #dot-head-area._max-20,
-#dot-main-area._max-20,
-#dot-foot-area._max-20,
-.dot-area._max-20, #dot-head-area._max-18,
-#dot-main-area._max-18,
-#dot-foot-area._max-18,
-.dot-area._max-18, #dot-head-area._max-16,
-#dot-main-area._max-16,
-#dot-foot-area._max-16,
-.dot-area._max-16, #dot-head-area._max-14,
-#dot-main-area._max-14,
-#dot-foot-area._max-14,
-.dot-area._max-14, #dot-head-area._max-12,
-#dot-main-area._max-12,
-#dot-foot-area._max-12,
-.dot-area._max-12, #dot-head-area._max-10,
-#dot-main-area._max-10,
-#dot-foot-area._max-10,
-.dot-area._max-10 {
+  ._width-24, ._width-24 #dot-head-area, #dot-head-area._width-24,
+._width-24 #dot-main-area,
+#dot-main-area._width-24,
+._width-24 #dot-foot-area,
+#dot-foot-area._width-24,
+._width-24 .dot-area,
+.dot-area._width-24, ._width-22, ._width-22 #dot-head-area, #dot-head-area._width-22,
+._width-22 #dot-main-area,
+#dot-main-area._width-22,
+._width-22 #dot-foot-area,
+#dot-foot-area._width-22,
+._width-22 .dot-area,
+.dot-area._width-22, ._width-20, ._width-20 #dot-head-area, #dot-head-area._width-20,
+._width-20 #dot-main-area,
+#dot-main-area._width-20,
+._width-20 #dot-foot-area,
+#dot-foot-area._width-20,
+._width-20 .dot-area,
+.dot-area._width-20, ._width-18, ._width-18 #dot-head-area, #dot-head-area._width-18,
+._width-18 #dot-main-area,
+#dot-main-area._width-18,
+._width-18 #dot-foot-area,
+#dot-foot-area._width-18,
+._width-18 .dot-area,
+.dot-area._width-18, ._width-16, ._width-16 #dot-head-area, #dot-head-area._width-16,
+._width-16 #dot-main-area,
+#dot-main-area._width-16,
+._width-16 #dot-foot-area,
+#dot-foot-area._width-16,
+._width-16 .dot-area,
+.dot-area._width-16, ._width-14, ._width-14 #dot-head-area, #dot-head-area._width-14,
+._width-14 #dot-main-area,
+#dot-main-area._width-14,
+._width-14 #dot-foot-area,
+#dot-foot-area._width-14,
+._width-14 .dot-area,
+.dot-area._width-14, ._width-12, ._width-12 #dot-head-area, #dot-head-area._width-12,
+._width-12 #dot-main-area,
+#dot-main-area._width-12,
+._width-12 #dot-foot-area,
+#dot-foot-area._width-12,
+._width-12 .dot-area,
+.dot-area._width-12, ._width-10, ._width-10 #dot-head-area, #dot-head-area._width-10,
+._width-10 #dot-main-area,
+#dot-main-area._width-10,
+._width-10 #dot-foot-area,
+#dot-foot-area._width-10,
+._width-10 .dot-area,
+.dot-area._width-10, ._width-76, ._width-76 #dot-head-area, #dot-head-area._width-76,
+._width-76 #dot-main-area,
+#dot-main-area._width-76,
+._width-76 #dot-foot-area,
+#dot-foot-area._width-76,
+._width-76 .dot-area,
+.dot-area._width-76 {
     width: 1000px;
+  }
+
+  ._width-24 ._width-32, ._width-22 ._width-32, ._width-20 ._width-32, ._width-18 ._width-32, ._width-16 ._width-32, ._width-14 ._width-32, ._width-12 ._width-32, ._width-10 ._width-32, ._width-76 ._width-32 {
+    width: 320px;
+  }
+
+  ._width-24 ._width-42, ._width-22 ._width-42, ._width-20 ._width-42, ._width-18 ._width-42, ._width-16 ._width-42, ._width-14 ._width-42, ._width-12 ._width-42, ._width-10 ._width-42, ._width-76 ._width-42 {
+    width: 425px;
+  }
+
+  ._width-24 ._width-48, ._width-22 ._width-48, ._width-20 ._width-48, ._width-18 ._width-48, ._width-16 ._width-48, ._width-14 ._width-48, ._width-12 ._width-48, ._width-10 ._width-48, ._width-76 ._width-48 {
+    width: 480px;
+  }
+
+  ._width-24 ._width-54, ._width-22 ._width-54, ._width-20 ._width-54, ._width-18 ._width-54, ._width-16 ._width-54, ._width-14 ._width-54, ._width-12 ._width-54, ._width-10 ._width-54, ._width-76 ._width-54 {
+    width: 540px;
+  }
+
+  ._width-24 ._width-64, ._width-22 ._width-64, ._width-20 ._width-64, ._width-18 ._width-64, ._width-16 ._width-64, ._width-14 ._width-64, ._width-12 ._width-64, ._width-10 ._width-64, ._width-76 ._width-64 {
+    width: 640px;
+  }
+
+  ._width-24 ._width-76, ._width-22 ._width-76, ._width-20 ._width-76, ._width-18 ._width-76, ._width-16 ._width-76, ._width-14 ._width-76, ._width-12 ._width-76, ._width-10 ._width-76 {
+    width: 768px;
   }
 }
 @media only screen and (min-width: 1200px) {
-  #dot-head-area._max-24,
-#dot-main-area._max-24,
-#dot-foot-area._max-24,
-.dot-area._max-24, #dot-head-area._max-22,
-#dot-main-area._max-22,
-#dot-foot-area._max-22,
-.dot-area._max-22, #dot-head-area._max-20,
-#dot-main-area._max-20,
-#dot-foot-area._max-20,
-.dot-area._max-20, #dot-head-area._max-18,
-#dot-main-area._max-18,
-#dot-foot-area._max-18,
-.dot-area._max-18, #dot-head-area._max-16,
-#dot-main-area._max-16,
-#dot-foot-area._max-16,
-.dot-area._max-16, #dot-head-area._max-14,
-#dot-main-area._max-14,
-#dot-foot-area._max-14,
-.dot-area._max-14, #dot-head-area._max-12,
-#dot-main-area._max-12,
-#dot-foot-area._max-12,
-.dot-area._max-12 {
+  ._width-24, ._width-24 #dot-head-area, #dot-head-area._width-24,
+._width-24 #dot-main-area,
+#dot-main-area._width-24,
+._width-24 #dot-foot-area,
+#dot-foot-area._width-24,
+._width-24 .dot-area,
+.dot-area._width-24, ._width-22, ._width-22 #dot-head-area, #dot-head-area._width-22,
+._width-22 #dot-main-area,
+#dot-main-area._width-22,
+._width-22 #dot-foot-area,
+#dot-foot-area._width-22,
+._width-22 .dot-area,
+.dot-area._width-22, ._width-20, ._width-20 #dot-head-area, #dot-head-area._width-20,
+._width-20 #dot-main-area,
+#dot-main-area._width-20,
+._width-20 #dot-foot-area,
+#dot-foot-area._width-20,
+._width-20 .dot-area,
+.dot-area._width-20, ._width-18, ._width-18 #dot-head-area, #dot-head-area._width-18,
+._width-18 #dot-main-area,
+#dot-main-area._width-18,
+._width-18 #dot-foot-area,
+#dot-foot-area._width-18,
+._width-18 .dot-area,
+.dot-area._width-18, ._width-16, ._width-16 #dot-head-area, #dot-head-area._width-16,
+._width-16 #dot-main-area,
+#dot-main-area._width-16,
+._width-16 #dot-foot-area,
+#dot-foot-area._width-16,
+._width-16 .dot-area,
+.dot-area._width-16, ._width-14, ._width-14 #dot-head-area, #dot-head-area._width-14,
+._width-14 #dot-main-area,
+#dot-main-area._width-14,
+._width-14 #dot-foot-area,
+#dot-foot-area._width-14,
+._width-14 .dot-area,
+.dot-area._width-14, ._width-12, ._width-12 #dot-head-area, #dot-head-area._width-12,
+._width-12 #dot-main-area,
+#dot-main-area._width-12,
+._width-12 #dot-foot-area,
+#dot-foot-area._width-12,
+._width-12 .dot-area,
+.dot-area._width-12, ._width-10, ._width-10 #dot-head-area, #dot-head-area._width-10,
+._width-10 #dot-main-area,
+#dot-main-area._width-10,
+._width-10 #dot-foot-area,
+#dot-foot-area._width-10,
+._width-10 .dot-area,
+.dot-area._width-10 {
     width: 1200px;
+  }
+
+  ._width-24 ._width-32, ._width-22 ._width-32, ._width-20 ._width-32, ._width-18 ._width-32, ._width-16 ._width-32, ._width-14 ._width-32, ._width-12 ._width-32, ._width-10 ._width-32 {
+    width: 320px;
+  }
+
+  ._width-24 ._width-42, ._width-22 ._width-42, ._width-20 ._width-42, ._width-18 ._width-42, ._width-16 ._width-42, ._width-14 ._width-42, ._width-12 ._width-42, ._width-10 ._width-42 {
+    width: 425px;
+  }
+
+  ._width-24 ._width-48, ._width-22 ._width-48, ._width-20 ._width-48, ._width-18 ._width-48, ._width-16 ._width-48, ._width-14 ._width-48, ._width-12 ._width-48, ._width-10 ._width-48 {
+    width: 480px;
+  }
+
+  ._width-24 ._width-54, ._width-22 ._width-54, ._width-20 ._width-54, ._width-18 ._width-54, ._width-16 ._width-54, ._width-14 ._width-54, ._width-12 ._width-54, ._width-10 ._width-54 {
+    width: 540px;
+  }
+
+  ._width-24 ._width-64, ._width-22 ._width-64, ._width-20 ._width-64, ._width-18 ._width-64, ._width-16 ._width-64, ._width-14 ._width-64, ._width-12 ._width-64, ._width-10 ._width-64 {
+    width: 640px;
+  }
+
+  ._width-24 ._width-76, ._width-22 ._width-76, ._width-20 ._width-76, ._width-18 ._width-76, ._width-16 ._width-76, ._width-14 ._width-76, ._width-12 ._width-76, ._width-10 ._width-76 {
+    width: 768px;
+  }
+
+  ._width-24 ._width-10, ._width-22 ._width-10, ._width-20 ._width-10, ._width-18 ._width-10, ._width-16 ._width-10, ._width-14 ._width-10, ._width-12 ._width-10 {
+    width: 1000px;
   }
 }
 @media only screen and (min-width: 1400px) {
-  #dot-head-area._max-24,
-#dot-main-area._max-24,
-#dot-foot-area._max-24,
-.dot-area._max-24, #dot-head-area._max-22,
-#dot-main-area._max-22,
-#dot-foot-area._max-22,
-.dot-area._max-22, #dot-head-area._max-20,
-#dot-main-area._max-20,
-#dot-foot-area._max-20,
-.dot-area._max-20, #dot-head-area._max-18,
-#dot-main-area._max-18,
-#dot-foot-area._max-18,
-.dot-area._max-18, #dot-head-area._max-16,
-#dot-main-area._max-16,
-#dot-foot-area._max-16,
-.dot-area._max-16, #dot-head-area._max-14,
-#dot-main-area._max-14,
-#dot-foot-area._max-14,
-.dot-area._max-14 {
+  ._width-24, ._width-24 #dot-head-area, #dot-head-area._width-24,
+._width-24 #dot-main-area,
+#dot-main-area._width-24,
+._width-24 #dot-foot-area,
+#dot-foot-area._width-24,
+._width-24 .dot-area,
+.dot-area._width-24, ._width-22, ._width-22 #dot-head-area, #dot-head-area._width-22,
+._width-22 #dot-main-area,
+#dot-main-area._width-22,
+._width-22 #dot-foot-area,
+#dot-foot-area._width-22,
+._width-22 .dot-area,
+.dot-area._width-22, ._width-20, ._width-20 #dot-head-area, #dot-head-area._width-20,
+._width-20 #dot-main-area,
+#dot-main-area._width-20,
+._width-20 #dot-foot-area,
+#dot-foot-area._width-20,
+._width-20 .dot-area,
+.dot-area._width-20, ._width-18, ._width-18 #dot-head-area, #dot-head-area._width-18,
+._width-18 #dot-main-area,
+#dot-main-area._width-18,
+._width-18 #dot-foot-area,
+#dot-foot-area._width-18,
+._width-18 .dot-area,
+.dot-area._width-18, ._width-16, ._width-16 #dot-head-area, #dot-head-area._width-16,
+._width-16 #dot-main-area,
+#dot-main-area._width-16,
+._width-16 #dot-foot-area,
+#dot-foot-area._width-16,
+._width-16 .dot-area,
+.dot-area._width-16, ._width-14, ._width-14 #dot-head-area, #dot-head-area._width-14,
+._width-14 #dot-main-area,
+#dot-main-area._width-14,
+._width-14 #dot-foot-area,
+#dot-foot-area._width-14,
+._width-14 .dot-area,
+.dot-area._width-14, ._width-12, ._width-12 #dot-head-area, #dot-head-area._width-12,
+._width-12 #dot-main-area,
+#dot-main-area._width-12,
+._width-12 #dot-foot-area,
+#dot-foot-area._width-12,
+._width-12 .dot-area,
+.dot-area._width-12 {
     width: 1400px;
+  }
+
+  ._width-24 ._width-32, ._width-22 ._width-32, ._width-20 ._width-32, ._width-18 ._width-32, ._width-16 ._width-32, ._width-14 ._width-32, ._width-12 ._width-32 {
+    width: 320px;
+  }
+
+  ._width-24 ._width-42, ._width-22 ._width-42, ._width-20 ._width-42, ._width-18 ._width-42, ._width-16 ._width-42, ._width-14 ._width-42, ._width-12 ._width-42 {
+    width: 425px;
+  }
+
+  ._width-24 ._width-48, ._width-22 ._width-48, ._width-20 ._width-48, ._width-18 ._width-48, ._width-16 ._width-48, ._width-14 ._width-48, ._width-12 ._width-48 {
+    width: 480px;
+  }
+
+  ._width-24 ._width-54, ._width-22 ._width-54, ._width-20 ._width-54, ._width-18 ._width-54, ._width-16 ._width-54, ._width-14 ._width-54, ._width-12 ._width-54 {
+    width: 540px;
+  }
+
+  ._width-24 ._width-64, ._width-22 ._width-64, ._width-20 ._width-64, ._width-18 ._width-64, ._width-16 ._width-64, ._width-14 ._width-64, ._width-12 ._width-64 {
+    width: 640px;
+  }
+
+  ._width-24 ._width-76, ._width-22 ._width-76, ._width-20 ._width-76, ._width-18 ._width-76, ._width-16 ._width-76, ._width-14 ._width-76, ._width-12 ._width-76 {
+    width: 768px;
+  }
+
+  ._width-24 ._width-10, ._width-22 ._width-10, ._width-20 ._width-10, ._width-18 ._width-10, ._width-16 ._width-10, ._width-14 ._width-10, ._width-12 ._width-10 {
+    width: 1000px;
+  }
+
+  ._width-24 ._width-12, ._width-22 ._width-12, ._width-20 ._width-12, ._width-18 ._width-12, ._width-16 ._width-12, ._width-14 ._width-12 {
+    width: 1200px;
   }
 }
 @media only screen and (min-width: 1600px) {
-  #dot-head-area._max-24,
-#dot-main-area._max-24,
-#dot-foot-area._max-24,
-.dot-area._max-24, #dot-head-area._max-22,
-#dot-main-area._max-22,
-#dot-foot-area._max-22,
-.dot-area._max-22, #dot-head-area._max-20,
-#dot-main-area._max-20,
-#dot-foot-area._max-20,
-.dot-area._max-20, #dot-head-area._max-18,
-#dot-main-area._max-18,
-#dot-foot-area._max-18,
-.dot-area._max-18, #dot-head-area._max-16,
-#dot-main-area._max-16,
-#dot-foot-area._max-16,
-.dot-area._max-16 {
+  ._width-24, ._width-24 #dot-head-area, #dot-head-area._width-24,
+._width-24 #dot-main-area,
+#dot-main-area._width-24,
+._width-24 #dot-foot-area,
+#dot-foot-area._width-24,
+._width-24 .dot-area,
+.dot-area._width-24, ._width-22, ._width-22 #dot-head-area, #dot-head-area._width-22,
+._width-22 #dot-main-area,
+#dot-main-area._width-22,
+._width-22 #dot-foot-area,
+#dot-foot-area._width-22,
+._width-22 .dot-area,
+.dot-area._width-22, ._width-20, ._width-20 #dot-head-area, #dot-head-area._width-20,
+._width-20 #dot-main-area,
+#dot-main-area._width-20,
+._width-20 #dot-foot-area,
+#dot-foot-area._width-20,
+._width-20 .dot-area,
+.dot-area._width-20, ._width-18, ._width-18 #dot-head-area, #dot-head-area._width-18,
+._width-18 #dot-main-area,
+#dot-main-area._width-18,
+._width-18 #dot-foot-area,
+#dot-foot-area._width-18,
+._width-18 .dot-area,
+.dot-area._width-18, ._width-16, ._width-16 #dot-head-area, #dot-head-area._width-16,
+._width-16 #dot-main-area,
+#dot-main-area._width-16,
+._width-16 #dot-foot-area,
+#dot-foot-area._width-16,
+._width-16 .dot-area,
+.dot-area._width-16, ._width-14, ._width-14 #dot-head-area, #dot-head-area._width-14,
+._width-14 #dot-main-area,
+#dot-main-area._width-14,
+._width-14 #dot-foot-area,
+#dot-foot-area._width-14,
+._width-14 .dot-area,
+.dot-area._width-14 {
     width: 1600px;
+  }
+
+  ._width-24 ._width-32, ._width-22 ._width-32, ._width-20 ._width-32, ._width-18 ._width-32, ._width-16 ._width-32, ._width-14 ._width-32 {
+    width: 320px;
+  }
+
+  ._width-24 ._width-42, ._width-22 ._width-42, ._width-20 ._width-42, ._width-18 ._width-42, ._width-16 ._width-42, ._width-14 ._width-42 {
+    width: 425px;
+  }
+
+  ._width-24 ._width-48, ._width-22 ._width-48, ._width-20 ._width-48, ._width-18 ._width-48, ._width-16 ._width-48, ._width-14 ._width-48 {
+    width: 480px;
+  }
+
+  ._width-24 ._width-54, ._width-22 ._width-54, ._width-20 ._width-54, ._width-18 ._width-54, ._width-16 ._width-54, ._width-14 ._width-54 {
+    width: 540px;
+  }
+
+  ._width-24 ._width-64, ._width-22 ._width-64, ._width-20 ._width-64, ._width-18 ._width-64, ._width-16 ._width-64, ._width-14 ._width-64 {
+    width: 640px;
+  }
+
+  ._width-24 ._width-76, ._width-22 ._width-76, ._width-20 ._width-76, ._width-18 ._width-76, ._width-16 ._width-76, ._width-14 ._width-76 {
+    width: 768px;
+  }
+
+  ._width-24 ._width-10, ._width-22 ._width-10, ._width-20 ._width-10, ._width-18 ._width-10, ._width-16 ._width-10, ._width-14 ._width-10 {
+    width: 1000px;
+  }
+
+  ._width-24 ._width-12, ._width-22 ._width-12, ._width-20 ._width-12, ._width-18 ._width-12, ._width-16 ._width-12, ._width-14 ._width-12 {
+    width: 1200px;
+  }
+
+  ._width-24 ._width-14, ._width-22 ._width-14, ._width-20 ._width-14, ._width-18 ._width-14, ._width-16 ._width-14 {
+    width: 1400px;
   }
 }
 @media only screen and (min-width: 1800px) {
-  #dot-head-area._max-24,
-#dot-main-area._max-24,
-#dot-foot-area._max-24,
-.dot-area._max-24, #dot-head-area._max-22,
-#dot-main-area._max-22,
-#dot-foot-area._max-22,
-.dot-area._max-22, #dot-head-area._max-20,
-#dot-main-area._max-20,
-#dot-foot-area._max-20,
-.dot-area._max-20, #dot-head-area._max-18,
-#dot-main-area._max-18,
-#dot-foot-area._max-18,
-.dot-area._max-18 {
+  ._width-24, ._width-24 #dot-head-area, #dot-head-area._width-24,
+._width-24 #dot-main-area,
+#dot-main-area._width-24,
+._width-24 #dot-foot-area,
+#dot-foot-area._width-24,
+._width-24 .dot-area,
+.dot-area._width-24, ._width-22, ._width-22 #dot-head-area, #dot-head-area._width-22,
+._width-22 #dot-main-area,
+#dot-main-area._width-22,
+._width-22 #dot-foot-area,
+#dot-foot-area._width-22,
+._width-22 .dot-area,
+.dot-area._width-22, ._width-20, ._width-20 #dot-head-area, #dot-head-area._width-20,
+._width-20 #dot-main-area,
+#dot-main-area._width-20,
+._width-20 #dot-foot-area,
+#dot-foot-area._width-20,
+._width-20 .dot-area,
+.dot-area._width-20, ._width-18, ._width-18 #dot-head-area, #dot-head-area._width-18,
+._width-18 #dot-main-area,
+#dot-main-area._width-18,
+._width-18 #dot-foot-area,
+#dot-foot-area._width-18,
+._width-18 .dot-area,
+.dot-area._width-18, ._width-16, ._width-16 #dot-head-area, #dot-head-area._width-16,
+._width-16 #dot-main-area,
+#dot-main-area._width-16,
+._width-16 #dot-foot-area,
+#dot-foot-area._width-16,
+._width-16 .dot-area,
+.dot-area._width-16 {
     width: 1800px;
+  }
+
+  ._width-24 ._width-32, ._width-22 ._width-32, ._width-20 ._width-32, ._width-18 ._width-32, ._width-16 ._width-32 {
+    width: 320px;
+  }
+
+  ._width-24 ._width-42, ._width-22 ._width-42, ._width-20 ._width-42, ._width-18 ._width-42, ._width-16 ._width-42 {
+    width: 425px;
+  }
+
+  ._width-24 ._width-48, ._width-22 ._width-48, ._width-20 ._width-48, ._width-18 ._width-48, ._width-16 ._width-48 {
+    width: 480px;
+  }
+
+  ._width-24 ._width-54, ._width-22 ._width-54, ._width-20 ._width-54, ._width-18 ._width-54, ._width-16 ._width-54 {
+    width: 540px;
+  }
+
+  ._width-24 ._width-64, ._width-22 ._width-64, ._width-20 ._width-64, ._width-18 ._width-64, ._width-16 ._width-64 {
+    width: 640px;
+  }
+
+  ._width-24 ._width-76, ._width-22 ._width-76, ._width-20 ._width-76, ._width-18 ._width-76, ._width-16 ._width-76 {
+    width: 768px;
+  }
+
+  ._width-24 ._width-10, ._width-22 ._width-10, ._width-20 ._width-10, ._width-18 ._width-10, ._width-16 ._width-10 {
+    width: 1000px;
+  }
+
+  ._width-24 ._width-12, ._width-22 ._width-12, ._width-20 ._width-12, ._width-18 ._width-12, ._width-16 ._width-12 {
+    width: 1200px;
+  }
+
+  ._width-24 ._width-14, ._width-22 ._width-14, ._width-20 ._width-14, ._width-18 ._width-14, ._width-16 ._width-14 {
+    width: 1400px;
+  }
+
+  ._width-24 ._width-16, ._width-22 ._width-16, ._width-20 ._width-16, ._width-18 ._width-16 {
+    width: 1600px;
   }
 }
 @media only screen and (min-width: 2000px) {
-  #dot-head-area._max-24,
-#dot-main-area._max-24,
-#dot-foot-area._max-24,
-.dot-area._max-24, #dot-head-area._max-22,
-#dot-main-area._max-22,
-#dot-foot-area._max-22,
-.dot-area._max-22, #dot-head-area._max-20,
-#dot-main-area._max-20,
-#dot-foot-area._max-20,
-.dot-area._max-20 {
+  ._width-24, ._width-24 #dot-head-area, #dot-head-area._width-24,
+._width-24 #dot-main-area,
+#dot-main-area._width-24,
+._width-24 #dot-foot-area,
+#dot-foot-area._width-24,
+._width-24 .dot-area,
+.dot-area._width-24, ._width-22, ._width-22 #dot-head-area, #dot-head-area._width-22,
+._width-22 #dot-main-area,
+#dot-main-area._width-22,
+._width-22 #dot-foot-area,
+#dot-foot-area._width-22,
+._width-22 .dot-area,
+.dot-area._width-22, ._width-20, ._width-20 #dot-head-area, #dot-head-area._width-20,
+._width-20 #dot-main-area,
+#dot-main-area._width-20,
+._width-20 #dot-foot-area,
+#dot-foot-area._width-20,
+._width-20 .dot-area,
+.dot-area._width-20, ._width-18, ._width-18 #dot-head-area, #dot-head-area._width-18,
+._width-18 #dot-main-area,
+#dot-main-area._width-18,
+._width-18 #dot-foot-area,
+#dot-foot-area._width-18,
+._width-18 .dot-area,
+.dot-area._width-18 {
     width: 2000px;
+  }
+
+  ._width-24 ._width-32, ._width-22 ._width-32, ._width-20 ._width-32, ._width-18 ._width-32 {
+    width: 320px;
+  }
+
+  ._width-24 ._width-42, ._width-22 ._width-42, ._width-20 ._width-42, ._width-18 ._width-42 {
+    width: 425px;
+  }
+
+  ._width-24 ._width-48, ._width-22 ._width-48, ._width-20 ._width-48, ._width-18 ._width-48 {
+    width: 480px;
+  }
+
+  ._width-24 ._width-54, ._width-22 ._width-54, ._width-20 ._width-54, ._width-18 ._width-54 {
+    width: 540px;
+  }
+
+  ._width-24 ._width-64, ._width-22 ._width-64, ._width-20 ._width-64, ._width-18 ._width-64 {
+    width: 640px;
+  }
+
+  ._width-24 ._width-76, ._width-22 ._width-76, ._width-20 ._width-76, ._width-18 ._width-76 {
+    width: 768px;
+  }
+
+  ._width-24 ._width-10, ._width-22 ._width-10, ._width-20 ._width-10, ._width-18 ._width-10 {
+    width: 1000px;
+  }
+
+  ._width-24 ._width-12, ._width-22 ._width-12, ._width-20 ._width-12, ._width-18 ._width-12 {
+    width: 1200px;
+  }
+
+  ._width-24 ._width-14, ._width-22 ._width-14, ._width-20 ._width-14, ._width-18 ._width-14 {
+    width: 1400px;
+  }
+
+  ._width-24 ._width-16, ._width-22 ._width-16, ._width-20 ._width-16, ._width-18 ._width-16 {
+    width: 1600px;
+  }
+
+  ._width-24 ._width-18, ._width-22 ._width-18, ._width-20 ._width-18 {
+    width: 1800px;
   }
 }
 @media only screen and (min-width: 2200px) {
-  #dot-head-area._max-24,
-#dot-main-area._max-24,
-#dot-foot-area._max-24,
-.dot-area._max-24, #dot-head-area._max-22,
-#dot-main-area._max-22,
-#dot-foot-area._max-22,
-.dot-area._max-22 {
+  ._width-24, ._width-24 #dot-head-area, #dot-head-area._width-24,
+._width-24 #dot-main-area,
+#dot-main-area._width-24,
+._width-24 #dot-foot-area,
+#dot-foot-area._width-24,
+._width-24 .dot-area,
+.dot-area._width-24, ._width-22, ._width-22 #dot-head-area, #dot-head-area._width-22,
+._width-22 #dot-main-area,
+#dot-main-area._width-22,
+._width-22 #dot-foot-area,
+#dot-foot-area._width-22,
+._width-22 .dot-area,
+.dot-area._width-22, ._width-20, ._width-20 #dot-head-area, #dot-head-area._width-20,
+._width-20 #dot-main-area,
+#dot-main-area._width-20,
+._width-20 #dot-foot-area,
+#dot-foot-area._width-20,
+._width-20 .dot-area,
+.dot-area._width-20 {
     width: 2200px;
+  }
+
+  ._width-24 ._width-32, ._width-22 ._width-32, ._width-20 ._width-32 {
+    width: 320px;
+  }
+
+  ._width-24 ._width-42, ._width-22 ._width-42, ._width-20 ._width-42 {
+    width: 425px;
+  }
+
+  ._width-24 ._width-48, ._width-22 ._width-48, ._width-20 ._width-48 {
+    width: 480px;
+  }
+
+  ._width-24 ._width-54, ._width-22 ._width-54, ._width-20 ._width-54 {
+    width: 540px;
+  }
+
+  ._width-24 ._width-64, ._width-22 ._width-64, ._width-20 ._width-64 {
+    width: 640px;
+  }
+
+  ._width-24 ._width-76, ._width-22 ._width-76, ._width-20 ._width-76 {
+    width: 768px;
+  }
+
+  ._width-24 ._width-10, ._width-22 ._width-10, ._width-20 ._width-10 {
+    width: 1000px;
+  }
+
+  ._width-24 ._width-12, ._width-22 ._width-12, ._width-20 ._width-12 {
+    width: 1200px;
+  }
+
+  ._width-24 ._width-14, ._width-22 ._width-14, ._width-20 ._width-14 {
+    width: 1400px;
+  }
+
+  ._width-24 ._width-16, ._width-22 ._width-16, ._width-20 ._width-16 {
+    width: 1600px;
+  }
+
+  ._width-24 ._width-18, ._width-22 ._width-18, ._width-20 ._width-18 {
+    width: 1800px;
+  }
+
+  ._width-24 ._width-20, ._width-22 ._width-20 {
+    width: 2000px;
   }
 }
 @media only screen and (min-width: 2400px) {
-  #dot-head-area._max-24,
-#dot-main-area._max-24,
-#dot-foot-area._max-24,
-.dot-area._max-24 {
+  ._width-24, ._width-24 #dot-head-area, #dot-head-area._width-24,
+._width-24 #dot-main-area,
+#dot-main-area._width-24,
+._width-24 #dot-foot-area,
+#dot-foot-area._width-24,
+._width-24 .dot-area,
+.dot-area._width-24, ._width-22, ._width-22 #dot-head-area, #dot-head-area._width-22,
+._width-22 #dot-main-area,
+#dot-main-area._width-22,
+._width-22 #dot-foot-area,
+#dot-foot-area._width-22,
+._width-22 .dot-area,
+.dot-area._width-22 {
     width: 2400px;
+  }
+
+  ._width-24 ._width-32, ._width-22 ._width-32 {
+    width: 320px;
+  }
+
+  ._width-24 ._width-42, ._width-22 ._width-42 {
+    width: 425px;
+  }
+
+  ._width-24 ._width-48, ._width-22 ._width-48 {
+    width: 480px;
+  }
+
+  ._width-24 ._width-54, ._width-22 ._width-54 {
+    width: 540px;
+  }
+
+  ._width-24 ._width-64, ._width-22 ._width-64 {
+    width: 640px;
+  }
+
+  ._width-24 ._width-76, ._width-22 ._width-76 {
+    width: 768px;
+  }
+
+  ._width-24 ._width-10, ._width-22 ._width-10 {
+    width: 1000px;
+  }
+
+  ._width-24 ._width-12, ._width-22 ._width-12 {
+    width: 1200px;
+  }
+
+  ._width-24 ._width-14, ._width-22 ._width-14 {
+    width: 1400px;
+  }
+
+  ._width-24 ._width-16, ._width-22 ._width-16 {
+    width: 1600px;
+  }
+
+  ._width-24 ._width-18, ._width-22 ._width-18 {
+    width: 1800px;
+  }
+
+  ._width-24 ._width-20, ._width-22 ._width-20 {
+    width: 2000px;
+  }
+
+  ._width-24 ._width-22 {
+    width: 2200px;
   }
 }

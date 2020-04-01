@@ -12,9 +12,15 @@
   }
 }
 
+
 @mixin frame-rule($options: null) {
 
   $sticky-resize: map-get-if($options, 'sticky-resize');
+  $width-query-prefix: '._width-';
+
+  $min-width: 320;
+  $width-map: $DOT-LAYOUT-WIDTH-MAP;
+  $width-keys: $DOT-LAYOUT-WIDTH-KEYS;
 
 
   #dot-head-area,
@@ -25,7 +31,7 @@
 
   @include frames {
     width: 100%;
-    min-width: 320px;
+    min-width: px($min-width);
     margin: 0 auto;
     transition-property: width;
     transition-duration: 0.24s;
@@ -35,11 +41,8 @@
     }
   }
 
-  $min-width: 320;
-  $first-resize: null;
 
-  $width-map: $DOT-LAYOUT-WIDTH-MAP;
-  $width-keys: $DOT-LAYOUT-WIDTH-KEYS;
+
 
 
   $start-index: 1;
@@ -48,48 +51,59 @@
   @each $alias, $width in $width-map {
     @if $width > $min-width {
 
-      $widths: list-slice($width-keys, $start-index, $length);
+      // get upper width then target
+      //   1200 => 1400, 1600, 1800
+      $upper-widths: list-slice($width-keys, $start-index, $length);
+
+      // get lower width then target
+      //   1200 => 1000, 768, 640
       $lower-widths: list-slice($width-keys, 1, $start-index);
+      $start-index: $start-index + 1;
+
 
       @include mq-min($width) {
 
-        //@if not $first-resize {
-        //  @include frames {
-        //    width: px($min-width);
-        //    min-width: inherit;
-        //    $first-resize: true;
-        //  }
-        //}
-
-        %max-#{$width} {
+        %frame-rule-width-#{$width} {
           width: px($width);
         }
 
-        $width-queries: ();
-        @each $width-query in $widths {
+        @each $child-width-key in $lower-widths {
+          %frame-rule-width-#{$width}-#{$child-width-key} {
+            width: px(map-get($width-map, $child-width-key));
+          }
+        }
+
+        @each $width-key in $upper-widths {
+          $width-query: $width-query-prefix + $width-key;
+
+          // set width for default dot element
           @include frames {
-            &#{'._max-'+$width-query} {
-              @extend %max-#{$width};
+            #{$width-query} &,
+            &#{$width-query} {
+              @extend %frame-rule-width-#{$width};
             }
           }
 
-          //#{'._max-'+$width-query} {
-          //  @include frames {
-          //    @extend %max-#{$width};
-          //  }
-          //
-          //  @each $width-query2 in $lower-widths {
-          //    #{'._max-'+$width-query2} {
-          //      @extend %max-#{$width};
-          //    }
-          //  }
-          //}
+          // set width for suffixes
+          #{$width-query} {
+            @extend %frame-rule-width-#{$width};
 
+            // set width for lower suffixes as child
+            @each $lower-width-key in $lower-widths {
+              @if $width-key != $lower-width-key {
+                #{$width-query-prefix + $lower-width-key} {
+                  @extend %frame-rule-width-#{$width}-#{$lower-width-key};
+                }
+              }
+            }
+          }
         }
+
       }
 
     }
-    $start-index: $start-index + 1;
+
+
   }
 
 }

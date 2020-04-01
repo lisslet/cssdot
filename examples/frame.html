@@ -7,12 +7,17 @@
         #dot-main-area {
             background-color: #ccc;
         }
+
+        #dot-main-area .dot-area {
+            background-color: #999;
+            outline:solid 1px red;
+        }
     </style>
 
 
 </head>
 <body>
-<div id="dots" class="_max-14">
+<div id="dots" class="_width-14">
     <header id="dot-head">
         <div id="dot-head-area">
             Header
@@ -56,14 +61,15 @@
         <div id="dot-main-area">
 
 
-            <div class="dot-area _max-10">
+            <div class="_width-10">
                 1000
+                <div class="_width-76">
+                    768
+                    <div class="_width-48">
+                        48
+                    </div>
+                </div>
             </div>
-
-            <div class="dot-area _max-76">
-                768
-            </div>
-
         </div>
     </main>
     <footer id="dot-foot">
@@ -81,7 +87,7 @@
 		const dots = document.getElementById('dots');
 
 		function changeMaxSize() {
-			dots.className = '_max-' + this.value;
+			dots.className = '_width-' + this.value;
 		}
     </script>
 </body>
