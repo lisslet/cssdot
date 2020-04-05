@@ -8,1069 +8,495 @@
 #dot-main-area,
 #dot-foot-area,
 .dot-area {
-  width: 100%;
-  min-width: 320px;
-  margin: 0 auto;
-  transition-property: width;
   transition-duration: 0.24s;
+  transition-property: width;
+  min-width: 320px;
+  width: 100%;
+  margin: 0 auto;
 }
 #dot-head-area._resize,
 #dot-main-area._resize,
 #dot-foot-area._resize,
 .dot-area._resize {
+  min-width: inherit;
   width: 100%;
 }
 
-@media only screen and (min-width: 425px) {
-  ._width-24, ._width-24 #dot-head-area, #dot-head-area._width-24,
-._width-24 #dot-main-area,
-#dot-main-area._width-24,
-._width-24 #dot-foot-area,
-#dot-foot-area._width-24,
-._width-24 .dot-area,
-.dot-area._width-24, ._width-22, ._width-22 #dot-head-area, #dot-head-area._width-22,
-._width-22 #dot-main-area,
-#dot-main-area._width-22,
-._width-22 #dot-foot-area,
-#dot-foot-area._width-22,
-._width-22 .dot-area,
-.dot-area._width-22, ._width-20, ._width-20 #dot-head-area, #dot-head-area._width-20,
-._width-20 #dot-main-area,
-#dot-main-area._width-20,
-._width-20 #dot-foot-area,
-#dot-foot-area._width-20,
-._width-20 .dot-area,
-.dot-area._width-20, ._width-18, ._width-18 #dot-head-area, #dot-head-area._width-18,
-._width-18 #dot-main-area,
-#dot-main-area._width-18,
-._width-18 #dot-foot-area,
-#dot-foot-area._width-18,
-._width-18 .dot-area,
-.dot-area._width-18, ._width-16, ._width-16 #dot-head-area, #dot-head-area._width-16,
-._width-16 #dot-main-area,
-#dot-main-area._width-16,
-._width-16 #dot-foot-area,
-#dot-foot-area._width-16,
-._width-16 .dot-area,
-.dot-area._width-16, ._width-14, ._width-14 #dot-head-area, #dot-head-area._width-14,
-._width-14 #dot-main-area,
-#dot-main-area._width-14,
-._width-14 #dot-foot-area,
-#dot-foot-area._width-14,
-._width-14 .dot-area,
-.dot-area._width-14, ._width-12, ._width-12 #dot-head-area, #dot-head-area._width-12,
-._width-12 #dot-main-area,
-#dot-main-area._width-12,
-._width-12 #dot-foot-area,
-#dot-foot-area._width-12,
-._width-12 .dot-area,
-.dot-area._width-12, ._width-10, ._width-10 #dot-head-area, #dot-head-area._width-10,
-._width-10 #dot-main-area,
-#dot-main-area._width-10,
-._width-10 #dot-foot-area,
-#dot-foot-area._width-10,
-._width-10 .dot-area,
-.dot-area._width-10, ._width-76, ._width-76 #dot-head-area, #dot-head-area._width-76,
-._width-76 #dot-main-area,
-#dot-main-area._width-76,
-._width-76 #dot-foot-area,
-#dot-foot-area._width-76,
-._width-76 .dot-area,
-.dot-area._width-76, ._width-64, ._width-64 #dot-head-area, #dot-head-area._width-64,
-._width-64 #dot-main-area,
-#dot-main-area._width-64,
-._width-64 #dot-foot-area,
-#dot-foot-area._width-64,
-._width-64 .dot-area,
-.dot-area._width-64, ._width-54, ._width-54 #dot-head-area, #dot-head-area._width-54,
-._width-54 #dot-main-area,
-#dot-main-area._width-54,
-._width-54 #dot-foot-area,
-#dot-foot-area._width-54,
-._width-54 .dot-area,
-.dot-area._width-54, ._width-48, ._width-48 #dot-head-area, #dot-head-area._width-48,
-._width-48 #dot-main-area,
-#dot-main-area._width-48,
-._width-48 #dot-foot-area,
-#dot-foot-area._width-48,
-._width-48 .dot-area,
-.dot-area._width-48, ._width-42, ._width-42 #dot-head-area, #dot-head-area._width-42,
-._width-42 #dot-main-area,
-#dot-main-area._width-42,
-._width-42 #dot-foot-area,
-#dot-foot-area._width-42,
-._width-42 .dot-area,
-.dot-area._width-42, ._width-32, ._width-32 #dot-head-area, #dot-head-area._width-32,
-._width-32 #dot-main-area,
-#dot-main-area._width-32,
-._width-32 #dot-foot-area,
-#dot-foot-area._width-32,
-._width-32 .dot-area,
-.dot-area._width-32 {
-    width: 425px;
-  }
-
-  ._width-24 ._width-32, ._width-22 ._width-32, ._width-20 ._width-32, ._width-18 ._width-32, ._width-16 ._width-32, ._width-14 ._width-32, ._width-12 ._width-32, ._width-10 ._width-32, ._width-76 ._width-32, ._width-64 ._width-32, ._width-54 ._width-32, ._width-48 ._width-32, ._width-42 ._width-32 {
-    width: 320px;
-  }
+._mn42 #dot-head-area,
+._mn42 #dot-main-area,
+._mn42 #dot-foot-area,
+._mn42 .dot-area {
+  min-width: 425px;
 }
-@media only screen and (min-width: 480px) {
-  ._width-24, ._width-24 #dot-head-area, #dot-head-area._width-24,
-._width-24 #dot-main-area,
-#dot-main-area._width-24,
-._width-24 #dot-foot-area,
-#dot-foot-area._width-24,
-._width-24 .dot-area,
-.dot-area._width-24, ._width-22, ._width-22 #dot-head-area, #dot-head-area._width-22,
-._width-22 #dot-main-area,
-#dot-main-area._width-22,
-._width-22 #dot-foot-area,
-#dot-foot-area._width-22,
-._width-22 .dot-area,
-.dot-area._width-22, ._width-20, ._width-20 #dot-head-area, #dot-head-area._width-20,
-._width-20 #dot-main-area,
-#dot-main-area._width-20,
-._width-20 #dot-foot-area,
-#dot-foot-area._width-20,
-._width-20 .dot-area,
-.dot-area._width-20, ._width-18, ._width-18 #dot-head-area, #dot-head-area._width-18,
-._width-18 #dot-main-area,
-#dot-main-area._width-18,
-._width-18 #dot-foot-area,
-#dot-foot-area._width-18,
-._width-18 .dot-area,
-.dot-area._width-18, ._width-16, ._width-16 #dot-head-area, #dot-head-area._width-16,
-._width-16 #dot-main-area,
-#dot-main-area._width-16,
-._width-16 #dot-foot-area,
-#dot-foot-area._width-16,
-._width-16 .dot-area,
-.dot-area._width-16, ._width-14, ._width-14 #dot-head-area, #dot-head-area._width-14,
-._width-14 #dot-main-area,
-#dot-main-area._width-14,
-._width-14 #dot-foot-area,
-#dot-foot-area._width-14,
-._width-14 .dot-area,
-.dot-area._width-14, ._width-12, ._width-12 #dot-head-area, #dot-head-area._width-12,
-._width-12 #dot-main-area,
-#dot-main-area._width-12,
-._width-12 #dot-foot-area,
-#dot-foot-area._width-12,
-._width-12 .dot-area,
-.dot-area._width-12, ._width-10, ._width-10 #dot-head-area, #dot-head-area._width-10,
-._width-10 #dot-main-area,
-#dot-main-area._width-10,
-._width-10 #dot-foot-area,
-#dot-foot-area._width-10,
-._width-10 .dot-area,
-.dot-area._width-10, ._width-76, ._width-76 #dot-head-area, #dot-head-area._width-76,
-._width-76 #dot-main-area,
-#dot-main-area._width-76,
-._width-76 #dot-foot-area,
-#dot-foot-area._width-76,
-._width-76 .dot-area,
-.dot-area._width-76, ._width-64, ._width-64 #dot-head-area, #dot-head-area._width-64,
-._width-64 #dot-main-area,
-#dot-main-area._width-64,
-._width-64 #dot-foot-area,
-#dot-foot-area._width-64,
-._width-64 .dot-area,
-.dot-area._width-64, ._width-54, ._width-54 #dot-head-area, #dot-head-area._width-54,
-._width-54 #dot-main-area,
-#dot-main-area._width-54,
-._width-54 #dot-foot-area,
-#dot-foot-area._width-54,
-._width-54 .dot-area,
-.dot-area._width-54, ._width-48, ._width-48 #dot-head-area, #dot-head-area._width-48,
-._width-48 #dot-main-area,
-#dot-main-area._width-48,
-._width-48 #dot-foot-area,
-#dot-foot-area._width-48,
-._width-48 .dot-area,
-.dot-area._width-48, ._width-42, ._width-42 #dot-head-area, #dot-head-area._width-42,
-._width-42 #dot-main-area,
-#dot-main-area._width-42,
-._width-42 #dot-foot-area,
-#dot-foot-area._width-42,
-._width-42 .dot-area,
-.dot-area._width-42 {
-    width: 480px;
-  }
 
-  ._width-24 ._width-32, ._width-22 ._width-32, ._width-20 ._width-32, ._width-18 ._width-32, ._width-16 ._width-32, ._width-14 ._width-32, ._width-12 ._width-32, ._width-10 ._width-32, ._width-76 ._width-32, ._width-64 ._width-32, ._width-54 ._width-32, ._width-48 ._width-32, ._width-42 ._width-32 {
-    width: 320px;
-  }
-
-  ._width-24 ._width-42, ._width-22 ._width-42, ._width-20 ._width-42, ._width-18 ._width-42, ._width-16 ._width-42, ._width-14 ._width-42, ._width-12 ._width-42, ._width-10 ._width-42, ._width-76 ._width-42, ._width-64 ._width-42, ._width-54 ._width-42, ._width-48 ._width-42 {
-    width: 425px;
-  }
+._mn48 #dot-head-area,
+._mn48 #dot-main-area,
+._mn48 #dot-foot-area,
+._mn48 .dot-area {
+  min-width: 480px;
 }
-@media only screen and (min-width: 540px) {
-  ._width-24, ._width-24 #dot-head-area, #dot-head-area._width-24,
-._width-24 #dot-main-area,
-#dot-main-area._width-24,
-._width-24 #dot-foot-area,
-#dot-foot-area._width-24,
-._width-24 .dot-area,
-.dot-area._width-24, ._width-22, ._width-22 #dot-head-area, #dot-head-area._width-22,
-._width-22 #dot-main-area,
-#dot-main-area._width-22,
-._width-22 #dot-foot-area,
-#dot-foot-area._width-22,
-._width-22 .dot-area,
-.dot-area._width-22, ._width-20, ._width-20 #dot-head-area, #dot-head-area._width-20,
-._width-20 #dot-main-area,
-#dot-main-area._width-20,
-._width-20 #dot-foot-area,
-#dot-foot-area._width-20,
-._width-20 .dot-area,
-.dot-area._width-20, ._width-18, ._width-18 #dot-head-area, #dot-head-area._width-18,
-._width-18 #dot-main-area,
-#dot-main-area._width-18,
-._width-18 #dot-foot-area,
-#dot-foot-area._width-18,
-._width-18 .dot-area,
-.dot-area._width-18, ._width-16, ._width-16 #dot-head-area, #dot-head-area._width-16,
-._width-16 #dot-main-area,
-#dot-main-area._width-16,
-._width-16 #dot-foot-area,
-#dot-foot-area._width-16,
-._width-16 .dot-area,
-.dot-area._width-16, ._width-14, ._width-14 #dot-head-area, #dot-head-area._width-14,
-._width-14 #dot-main-area,
-#dot-main-area._width-14,
-._width-14 #dot-foot-area,
-#dot-foot-area._width-14,
-._width-14 .dot-area,
-.dot-area._width-14, ._width-12, ._width-12 #dot-head-area, #dot-head-area._width-12,
-._width-12 #dot-main-area,
-#dot-main-area._width-12,
-._width-12 #dot-foot-area,
-#dot-foot-area._width-12,
-._width-12 .dot-area,
-.dot-area._width-12, ._width-10, ._width-10 #dot-head-area, #dot-head-area._width-10,
-._width-10 #dot-main-area,
-#dot-main-area._width-10,
-._width-10 #dot-foot-area,
-#dot-foot-area._width-10,
-._width-10 .dot-area,
-.dot-area._width-10, ._width-76, ._width-76 #dot-head-area, #dot-head-area._width-76,
-._width-76 #dot-main-area,
-#dot-main-area._width-76,
-._width-76 #dot-foot-area,
-#dot-foot-area._width-76,
-._width-76 .dot-area,
-.dot-area._width-76, ._width-64, ._width-64 #dot-head-area, #dot-head-area._width-64,
-._width-64 #dot-main-area,
-#dot-main-area._width-64,
-._width-64 #dot-foot-area,
-#dot-foot-area._width-64,
-._width-64 .dot-area,
-.dot-area._width-64, ._width-54, ._width-54 #dot-head-area, #dot-head-area._width-54,
-._width-54 #dot-main-area,
-#dot-main-area._width-54,
-._width-54 #dot-foot-area,
-#dot-foot-area._width-54,
-._width-54 .dot-area,
-.dot-area._width-54, ._width-48, ._width-48 #dot-head-area, #dot-head-area._width-48,
-._width-48 #dot-main-area,
-#dot-main-area._width-48,
-._width-48 #dot-foot-area,
-#dot-foot-area._width-48,
-._width-48 .dot-area,
-.dot-area._width-48 {
-    width: 540px;
-  }
 
-  ._width-24 ._width-32, ._width-22 ._width-32, ._width-20 ._width-32, ._width-18 ._width-32, ._width-16 ._width-32, ._width-14 ._width-32, ._width-12 ._width-32, ._width-10 ._width-32, ._width-76 ._width-32, ._width-64 ._width-32, ._width-54 ._width-32, ._width-48 ._width-32 {
-    width: 320px;
-  }
-
-  ._width-24 ._width-42, ._width-22 ._width-42, ._width-20 ._width-42, ._width-18 ._width-42, ._width-16 ._width-42, ._width-14 ._width-42, ._width-12 ._width-42, ._width-10 ._width-42, ._width-76 ._width-42, ._width-64 ._width-42, ._width-54 ._width-42, ._width-48 ._width-42 {
-    width: 425px;
-  }
-
-  ._width-24 ._width-48, ._width-22 ._width-48, ._width-20 ._width-48, ._width-18 ._width-48, ._width-16 ._width-48, ._width-14 ._width-48, ._width-12 ._width-48, ._width-10 ._width-48, ._width-76 ._width-48, ._width-64 ._width-48, ._width-54 ._width-48 {
-    width: 480px;
-  }
+._mn54 #dot-head-area,
+._mn54 #dot-main-area,
+._mn54 #dot-foot-area,
+._mn54 .dot-area {
+  min-width: 540px;
 }
-@media only screen and (min-width: 640px) {
-  ._width-24, ._width-24 #dot-head-area, #dot-head-area._width-24,
-._width-24 #dot-main-area,
-#dot-main-area._width-24,
-._width-24 #dot-foot-area,
-#dot-foot-area._width-24,
-._width-24 .dot-area,
-.dot-area._width-24, ._width-22, ._width-22 #dot-head-area, #dot-head-area._width-22,
-._width-22 #dot-main-area,
-#dot-main-area._width-22,
-._width-22 #dot-foot-area,
-#dot-foot-area._width-22,
-._width-22 .dot-area,
-.dot-area._width-22, ._width-20, ._width-20 #dot-head-area, #dot-head-area._width-20,
-._width-20 #dot-main-area,
-#dot-main-area._width-20,
-._width-20 #dot-foot-area,
-#dot-foot-area._width-20,
-._width-20 .dot-area,
-.dot-area._width-20, ._width-18, ._width-18 #dot-head-area, #dot-head-area._width-18,
-._width-18 #dot-main-area,
-#dot-main-area._width-18,
-._width-18 #dot-foot-area,
-#dot-foot-area._width-18,
-._width-18 .dot-area,
-.dot-area._width-18, ._width-16, ._width-16 #dot-head-area, #dot-head-area._width-16,
-._width-16 #dot-main-area,
-#dot-main-area._width-16,
-._width-16 #dot-foot-area,
-#dot-foot-area._width-16,
-._width-16 .dot-area,
-.dot-area._width-16, ._width-14, ._width-14 #dot-head-area, #dot-head-area._width-14,
-._width-14 #dot-main-area,
-#dot-main-area._width-14,
-._width-14 #dot-foot-area,
-#dot-foot-area._width-14,
-._width-14 .dot-area,
-.dot-area._width-14, ._width-12, ._width-12 #dot-head-area, #dot-head-area._width-12,
-._width-12 #dot-main-area,
-#dot-main-area._width-12,
-._width-12 #dot-foot-area,
-#dot-foot-area._width-12,
-._width-12 .dot-area,
-.dot-area._width-12, ._width-10, ._width-10 #dot-head-area, #dot-head-area._width-10,
-._width-10 #dot-main-area,
-#dot-main-area._width-10,
-._width-10 #dot-foot-area,
-#dot-foot-area._width-10,
-._width-10 .dot-area,
-.dot-area._width-10, ._width-76, ._width-76 #dot-head-area, #dot-head-area._width-76,
-._width-76 #dot-main-area,
-#dot-main-area._width-76,
-._width-76 #dot-foot-area,
-#dot-foot-area._width-76,
-._width-76 .dot-area,
-.dot-area._width-76, ._width-64, ._width-64 #dot-head-area, #dot-head-area._width-64,
-._width-64 #dot-main-area,
-#dot-main-area._width-64,
-._width-64 #dot-foot-area,
-#dot-foot-area._width-64,
-._width-64 .dot-area,
-.dot-area._width-64, ._width-54, ._width-54 #dot-head-area, #dot-head-area._width-54,
-._width-54 #dot-main-area,
-#dot-main-area._width-54,
-._width-54 #dot-foot-area,
-#dot-foot-area._width-54,
-._width-54 .dot-area,
-.dot-area._width-54 {
-    width: 640px;
-  }
 
-  ._width-24 ._width-32, ._width-22 ._width-32, ._width-20 ._width-32, ._width-18 ._width-32, ._width-16 ._width-32, ._width-14 ._width-32, ._width-12 ._width-32, ._width-10 ._width-32, ._width-76 ._width-32, ._width-64 ._width-32, ._width-54 ._width-32 {
-    width: 320px;
-  }
-
-  ._width-24 ._width-42, ._width-22 ._width-42, ._width-20 ._width-42, ._width-18 ._width-42, ._width-16 ._width-42, ._width-14 ._width-42, ._width-12 ._width-42, ._width-10 ._width-42, ._width-76 ._width-42, ._width-64 ._width-42, ._width-54 ._width-42 {
-    width: 425px;
-  }
-
-  ._width-24 ._width-48, ._width-22 ._width-48, ._width-20 ._width-48, ._width-18 ._width-48, ._width-16 ._width-48, ._width-14 ._width-48, ._width-12 ._width-48, ._width-10 ._width-48, ._width-76 ._width-48, ._width-64 ._width-48, ._width-54 ._width-48 {
-    width: 480px;
-  }
-
-  ._width-24 ._width-54, ._width-22 ._width-54, ._width-20 ._width-54, ._width-18 ._width-54, ._width-16 ._width-54, ._width-14 ._width-54, ._width-12 ._width-54, ._width-10 ._width-54, ._width-76 ._width-54, ._width-64 ._width-54 {
-    width: 540px;
-  }
+._mn64 #dot-head-area,
+._mn64 #dot-main-area,
+._mn64 #dot-foot-area,
+._mn64 .dot-area {
+  min-width: 640px;
 }
-@media only screen and (min-width: 768px) {
-  ._width-24, ._width-24 #dot-head-area, #dot-head-area._width-24,
-._width-24 #dot-main-area,
-#dot-main-area._width-24,
-._width-24 #dot-foot-area,
-#dot-foot-area._width-24,
-._width-24 .dot-area,
-.dot-area._width-24, ._width-22, ._width-22 #dot-head-area, #dot-head-area._width-22,
-._width-22 #dot-main-area,
-#dot-main-area._width-22,
-._width-22 #dot-foot-area,
-#dot-foot-area._width-22,
-._width-22 .dot-area,
-.dot-area._width-22, ._width-20, ._width-20 #dot-head-area, #dot-head-area._width-20,
-._width-20 #dot-main-area,
-#dot-main-area._width-20,
-._width-20 #dot-foot-area,
-#dot-foot-area._width-20,
-._width-20 .dot-area,
-.dot-area._width-20, ._width-18, ._width-18 #dot-head-area, #dot-head-area._width-18,
-._width-18 #dot-main-area,
-#dot-main-area._width-18,
-._width-18 #dot-foot-area,
-#dot-foot-area._width-18,
-._width-18 .dot-area,
-.dot-area._width-18, ._width-16, ._width-16 #dot-head-area, #dot-head-area._width-16,
-._width-16 #dot-main-area,
-#dot-main-area._width-16,
-._width-16 #dot-foot-area,
-#dot-foot-area._width-16,
-._width-16 .dot-area,
-.dot-area._width-16, ._width-14, ._width-14 #dot-head-area, #dot-head-area._width-14,
-._width-14 #dot-main-area,
-#dot-main-area._width-14,
-._width-14 #dot-foot-area,
-#dot-foot-area._width-14,
-._width-14 .dot-area,
-.dot-area._width-14, ._width-12, ._width-12 #dot-head-area, #dot-head-area._width-12,
-._width-12 #dot-main-area,
-#dot-main-area._width-12,
-._width-12 #dot-foot-area,
-#dot-foot-area._width-12,
-._width-12 .dot-area,
-.dot-area._width-12, ._width-10, ._width-10 #dot-head-area, #dot-head-area._width-10,
-._width-10 #dot-main-area,
-#dot-main-area._width-10,
-._width-10 #dot-foot-area,
-#dot-foot-area._width-10,
-._width-10 .dot-area,
-.dot-area._width-10, ._width-76, ._width-76 #dot-head-area, #dot-head-area._width-76,
-._width-76 #dot-main-area,
-#dot-main-area._width-76,
-._width-76 #dot-foot-area,
-#dot-foot-area._width-76,
-._width-76 .dot-area,
-.dot-area._width-76, ._width-64, ._width-64 #dot-head-area, #dot-head-area._width-64,
-._width-64 #dot-main-area,
-#dot-main-area._width-64,
-._width-64 #dot-foot-area,
-#dot-foot-area._width-64,
-._width-64 .dot-area,
-.dot-area._width-64 {
-    width: 768px;
-  }
 
-  ._width-24 ._width-32, ._width-22 ._width-32, ._width-20 ._width-32, ._width-18 ._width-32, ._width-16 ._width-32, ._width-14 ._width-32, ._width-12 ._width-32, ._width-10 ._width-32, ._width-76 ._width-32, ._width-64 ._width-32 {
-    width: 320px;
-  }
-
-  ._width-24 ._width-42, ._width-22 ._width-42, ._width-20 ._width-42, ._width-18 ._width-42, ._width-16 ._width-42, ._width-14 ._width-42, ._width-12 ._width-42, ._width-10 ._width-42, ._width-76 ._width-42, ._width-64 ._width-42 {
-    width: 425px;
-  }
-
-  ._width-24 ._width-48, ._width-22 ._width-48, ._width-20 ._width-48, ._width-18 ._width-48, ._width-16 ._width-48, ._width-14 ._width-48, ._width-12 ._width-48, ._width-10 ._width-48, ._width-76 ._width-48, ._width-64 ._width-48 {
-    width: 480px;
-  }
-
-  ._width-24 ._width-54, ._width-22 ._width-54, ._width-20 ._width-54, ._width-18 ._width-54, ._width-16 ._width-54, ._width-14 ._width-54, ._width-12 ._width-54, ._width-10 ._width-54, ._width-76 ._width-54, ._width-64 ._width-54 {
-    width: 540px;
-  }
-
-  ._width-24 ._width-64, ._width-22 ._width-64, ._width-20 ._width-64, ._width-18 ._width-64, ._width-16 ._width-64, ._width-14 ._width-64, ._width-12 ._width-64, ._width-10 ._width-64, ._width-76 ._width-64 {
-    width: 640px;
-  }
+._mn76 #dot-head-area,
+._mn76 #dot-main-area,
+._mn76 #dot-foot-area,
+._mn76 .dot-area {
+  min-width: 768px;
 }
+
+._mn10 #dot-head-area,
+._mn10 #dot-main-area,
+._mn10 #dot-foot-area,
+._mn10 .dot-area {
+  min-width: 1000px;
+}
+
 @media only screen and (min-width: 1000px) {
-  ._width-24, ._width-24 #dot-head-area, #dot-head-area._width-24,
-._width-24 #dot-main-area,
-#dot-main-area._width-24,
-._width-24 #dot-foot-area,
-#dot-foot-area._width-24,
-._width-24 .dot-area,
-.dot-area._width-24, ._width-22, ._width-22 #dot-head-area, #dot-head-area._width-22,
-._width-22 #dot-main-area,
-#dot-main-area._width-22,
-._width-22 #dot-foot-area,
-#dot-foot-area._width-22,
-._width-22 .dot-area,
-.dot-area._width-22, ._width-20, ._width-20 #dot-head-area, #dot-head-area._width-20,
-._width-20 #dot-main-area,
-#dot-main-area._width-20,
-._width-20 #dot-foot-area,
-#dot-foot-area._width-20,
-._width-20 .dot-area,
-.dot-area._width-20, ._width-18, ._width-18 #dot-head-area, #dot-head-area._width-18,
-._width-18 #dot-main-area,
-#dot-main-area._width-18,
-._width-18 #dot-foot-area,
-#dot-foot-area._width-18,
-._width-18 .dot-area,
-.dot-area._width-18, ._width-16, ._width-16 #dot-head-area, #dot-head-area._width-16,
-._width-16 #dot-main-area,
-#dot-main-area._width-16,
-._width-16 #dot-foot-area,
-#dot-foot-area._width-16,
-._width-16 .dot-area,
-.dot-area._width-16, ._width-14, ._width-14 #dot-head-area, #dot-head-area._width-14,
-._width-14 #dot-main-area,
-#dot-main-area._width-14,
-._width-14 #dot-foot-area,
-#dot-foot-area._width-14,
-._width-14 .dot-area,
-.dot-area._width-14, ._width-12, ._width-12 #dot-head-area, #dot-head-area._width-12,
-._width-12 #dot-main-area,
-#dot-main-area._width-12,
-._width-12 #dot-foot-area,
-#dot-foot-area._width-12,
-._width-12 .dot-area,
-.dot-area._width-12, ._width-10, ._width-10 #dot-head-area, #dot-head-area._width-10,
-._width-10 #dot-main-area,
-#dot-main-area._width-10,
-._width-10 #dot-foot-area,
-#dot-foot-area._width-10,
-._width-10 .dot-area,
-.dot-area._width-10, ._width-76, ._width-76 #dot-head-area, #dot-head-area._width-76,
-._width-76 #dot-main-area,
-#dot-main-area._width-76,
-._width-76 #dot-foot-area,
-#dot-foot-area._width-76,
-._width-76 .dot-area,
-.dot-area._width-76 {
+  ._mx24, ._mx24 #dot-head-area,
+._mx24 #dot-main-area,
+._mx24 #dot-foot-area,
+._mx24 .dot-area, ._mx22, ._mx22 #dot-head-area,
+._mx22 #dot-main-area,
+._mx22 #dot-foot-area,
+._mx22 .dot-area, ._mx20, ._mx20 #dot-head-area,
+._mx20 #dot-main-area,
+._mx20 #dot-foot-area,
+._mx20 .dot-area, ._mx18, ._mx18 #dot-head-area,
+._mx18 #dot-main-area,
+._mx18 #dot-foot-area,
+._mx18 .dot-area, ._mx16, ._mx16 #dot-head-area,
+._mx16 #dot-main-area,
+._mx16 #dot-foot-area,
+._mx16 .dot-area, ._mx14, ._mx14 #dot-head-area,
+._mx14 #dot-main-area,
+._mx14 #dot-foot-area,
+._mx14 .dot-area, ._mx12, ._mx12 #dot-head-area,
+._mx12 #dot-main-area,
+._mx12 #dot-foot-area,
+._mx12 .dot-area, ._mx10, ._mx10 #dot-head-area,
+._mx10 #dot-main-area,
+._mx10 #dot-foot-area,
+._mx10 .dot-area, ._mx76, ._mx76 #dot-head-area,
+._mx76 #dot-main-area,
+._mx76 #dot-foot-area,
+._mx76 .dot-area, ._mx64, ._mx64 #dot-head-area,
+._mx64 #dot-main-area,
+._mx64 #dot-foot-area,
+._mx64 .dot-area, ._mx54, ._mx54 #dot-head-area,
+._mx54 #dot-main-area,
+._mx54 #dot-foot-area,
+._mx54 .dot-area, ._mx48, ._mx48 #dot-head-area,
+._mx48 #dot-main-area,
+._mx48 #dot-foot-area,
+._mx48 .dot-area, ._mx42, ._mx42 #dot-head-area,
+._mx42 #dot-main-area,
+._mx42 #dot-foot-area,
+._mx42 .dot-area, ._mx32, ._mx32 #dot-head-area,
+._mx32 #dot-main-area,
+._mx32 #dot-foot-area,
+._mx32 .dot-area {
     width: 1000px;
   }
 
-  ._width-24 ._width-32, ._width-22 ._width-32, ._width-20 ._width-32, ._width-18 ._width-32, ._width-16 ._width-32, ._width-14 ._width-32, ._width-12 ._width-32, ._width-10 ._width-32, ._width-76 ._width-32 {
+  ._mx24 ._mx32, ._mx22 ._mx32, ._mx20 ._mx32, ._mx18 ._mx32, ._mx16 ._mx32, ._mx14 ._mx32, ._mx12 ._mx32, ._mx10 ._mx32, ._mx76 ._mx32, ._mx64 ._mx32, ._mx54 ._mx32, ._mx48 ._mx32, ._mx42 ._mx32 {
     width: 320px;
-  }
-
-  ._width-24 ._width-42, ._width-22 ._width-42, ._width-20 ._width-42, ._width-18 ._width-42, ._width-16 ._width-42, ._width-14 ._width-42, ._width-12 ._width-42, ._width-10 ._width-42, ._width-76 ._width-42 {
-    width: 425px;
-  }
-
-  ._width-24 ._width-48, ._width-22 ._width-48, ._width-20 ._width-48, ._width-18 ._width-48, ._width-16 ._width-48, ._width-14 ._width-48, ._width-12 ._width-48, ._width-10 ._width-48, ._width-76 ._width-48 {
-    width: 480px;
-  }
-
-  ._width-24 ._width-54, ._width-22 ._width-54, ._width-20 ._width-54, ._width-18 ._width-54, ._width-16 ._width-54, ._width-14 ._width-54, ._width-12 ._width-54, ._width-10 ._width-54, ._width-76 ._width-54 {
-    width: 540px;
-  }
-
-  ._width-24 ._width-64, ._width-22 ._width-64, ._width-20 ._width-64, ._width-18 ._width-64, ._width-16 ._width-64, ._width-14 ._width-64, ._width-12 ._width-64, ._width-10 ._width-64, ._width-76 ._width-64 {
-    width: 640px;
-  }
-
-  ._width-24 ._width-76, ._width-22 ._width-76, ._width-20 ._width-76, ._width-18 ._width-76, ._width-16 ._width-76, ._width-14 ._width-76, ._width-12 ._width-76, ._width-10 ._width-76 {
-    width: 768px;
   }
 }
 @media only screen and (min-width: 1200px) {
-  ._width-24, ._width-24 #dot-head-area, #dot-head-area._width-24,
-._width-24 #dot-main-area,
-#dot-main-area._width-24,
-._width-24 #dot-foot-area,
-#dot-foot-area._width-24,
-._width-24 .dot-area,
-.dot-area._width-24, ._width-22, ._width-22 #dot-head-area, #dot-head-area._width-22,
-._width-22 #dot-main-area,
-#dot-main-area._width-22,
-._width-22 #dot-foot-area,
-#dot-foot-area._width-22,
-._width-22 .dot-area,
-.dot-area._width-22, ._width-20, ._width-20 #dot-head-area, #dot-head-area._width-20,
-._width-20 #dot-main-area,
-#dot-main-area._width-20,
-._width-20 #dot-foot-area,
-#dot-foot-area._width-20,
-._width-20 .dot-area,
-.dot-area._width-20, ._width-18, ._width-18 #dot-head-area, #dot-head-area._width-18,
-._width-18 #dot-main-area,
-#dot-main-area._width-18,
-._width-18 #dot-foot-area,
-#dot-foot-area._width-18,
-._width-18 .dot-area,
-.dot-area._width-18, ._width-16, ._width-16 #dot-head-area, #dot-head-area._width-16,
-._width-16 #dot-main-area,
-#dot-main-area._width-16,
-._width-16 #dot-foot-area,
-#dot-foot-area._width-16,
-._width-16 .dot-area,
-.dot-area._width-16, ._width-14, ._width-14 #dot-head-area, #dot-head-area._width-14,
-._width-14 #dot-main-area,
-#dot-main-area._width-14,
-._width-14 #dot-foot-area,
-#dot-foot-area._width-14,
-._width-14 .dot-area,
-.dot-area._width-14, ._width-12, ._width-12 #dot-head-area, #dot-head-area._width-12,
-._width-12 #dot-main-area,
-#dot-main-area._width-12,
-._width-12 #dot-foot-area,
-#dot-foot-area._width-12,
-._width-12 .dot-area,
-.dot-area._width-12, ._width-10, ._width-10 #dot-head-area, #dot-head-area._width-10,
-._width-10 #dot-main-area,
-#dot-main-area._width-10,
-._width-10 #dot-foot-area,
-#dot-foot-area._width-10,
-._width-10 .dot-area,
-.dot-area._width-10 {
+  ._mx24, ._mx24 #dot-head-area,
+._mx24 #dot-main-area,
+._mx24 #dot-foot-area,
+._mx24 .dot-area, ._mx22, ._mx22 #dot-head-area,
+._mx22 #dot-main-area,
+._mx22 #dot-foot-area,
+._mx22 .dot-area, ._mx20, ._mx20 #dot-head-area,
+._mx20 #dot-main-area,
+._mx20 #dot-foot-area,
+._mx20 .dot-area, ._mx18, ._mx18 #dot-head-area,
+._mx18 #dot-main-area,
+._mx18 #dot-foot-area,
+._mx18 .dot-area, ._mx16, ._mx16 #dot-head-area,
+._mx16 #dot-main-area,
+._mx16 #dot-foot-area,
+._mx16 .dot-area, ._mx14, ._mx14 #dot-head-area,
+._mx14 #dot-main-area,
+._mx14 #dot-foot-area,
+._mx14 .dot-area, ._mx12, ._mx12 #dot-head-area,
+._mx12 #dot-main-area,
+._mx12 #dot-foot-area,
+._mx12 .dot-area, ._mx10, ._mx10 #dot-head-area,
+._mx10 #dot-main-area,
+._mx10 #dot-foot-area,
+._mx10 .dot-area, ._mx76, ._mx76 #dot-head-area,
+._mx76 #dot-main-area,
+._mx76 #dot-foot-area,
+._mx76 .dot-area, ._mx64, ._mx64 #dot-head-area,
+._mx64 #dot-main-area,
+._mx64 #dot-foot-area,
+._mx64 .dot-area, ._mx54, ._mx54 #dot-head-area,
+._mx54 #dot-main-area,
+._mx54 #dot-foot-area,
+._mx54 .dot-area, ._mx48, ._mx48 #dot-head-area,
+._mx48 #dot-main-area,
+._mx48 #dot-foot-area,
+._mx48 .dot-area, ._mx42, ._mx42 #dot-head-area,
+._mx42 #dot-main-area,
+._mx42 #dot-foot-area,
+._mx42 .dot-area {
     width: 1200px;
   }
 
-  ._width-24 ._width-32, ._width-22 ._width-32, ._width-20 ._width-32, ._width-18 ._width-32, ._width-16 ._width-32, ._width-14 ._width-32, ._width-12 ._width-32, ._width-10 ._width-32 {
+  ._mx24 ._mx32, ._mx22 ._mx32, ._mx20 ._mx32, ._mx18 ._mx32, ._mx16 ._mx32, ._mx14 ._mx32, ._mx12 ._mx32, ._mx10 ._mx32, ._mx76 ._mx32, ._mx64 ._mx32, ._mx54 ._mx32, ._mx48 ._mx32, ._mx42 ._mx32 {
     width: 320px;
   }
 
-  ._width-24 ._width-42, ._width-22 ._width-42, ._width-20 ._width-42, ._width-18 ._width-42, ._width-16 ._width-42, ._width-14 ._width-42, ._width-12 ._width-42, ._width-10 ._width-42 {
+  ._mx24 ._mx42, ._mx22 ._mx42, ._mx20 ._mx42, ._mx18 ._mx42, ._mx16 ._mx42, ._mx14 ._mx42, ._mx12 ._mx42, ._mx10 ._mx42, ._mx76 ._mx42, ._mx64 ._mx42, ._mx54 ._mx42, ._mx48 ._mx42 {
     width: 425px;
-  }
-
-  ._width-24 ._width-48, ._width-22 ._width-48, ._width-20 ._width-48, ._width-18 ._width-48, ._width-16 ._width-48, ._width-14 ._width-48, ._width-12 ._width-48, ._width-10 ._width-48 {
-    width: 480px;
-  }
-
-  ._width-24 ._width-54, ._width-22 ._width-54, ._width-20 ._width-54, ._width-18 ._width-54, ._width-16 ._width-54, ._width-14 ._width-54, ._width-12 ._width-54, ._width-10 ._width-54 {
-    width: 540px;
-  }
-
-  ._width-24 ._width-64, ._width-22 ._width-64, ._width-20 ._width-64, ._width-18 ._width-64, ._width-16 ._width-64, ._width-14 ._width-64, ._width-12 ._width-64, ._width-10 ._width-64 {
-    width: 640px;
-  }
-
-  ._width-24 ._width-76, ._width-22 ._width-76, ._width-20 ._width-76, ._width-18 ._width-76, ._width-16 ._width-76, ._width-14 ._width-76, ._width-12 ._width-76, ._width-10 ._width-76 {
-    width: 768px;
-  }
-
-  ._width-24 ._width-10, ._width-22 ._width-10, ._width-20 ._width-10, ._width-18 ._width-10, ._width-16 ._width-10, ._width-14 ._width-10, ._width-12 ._width-10 {
-    width: 1000px;
   }
 }
 @media only screen and (min-width: 1400px) {
-  ._width-24, ._width-24 #dot-head-area, #dot-head-area._width-24,
-._width-24 #dot-main-area,
-#dot-main-area._width-24,
-._width-24 #dot-foot-area,
-#dot-foot-area._width-24,
-._width-24 .dot-area,
-.dot-area._width-24, ._width-22, ._width-22 #dot-head-area, #dot-head-area._width-22,
-._width-22 #dot-main-area,
-#dot-main-area._width-22,
-._width-22 #dot-foot-area,
-#dot-foot-area._width-22,
-._width-22 .dot-area,
-.dot-area._width-22, ._width-20, ._width-20 #dot-head-area, #dot-head-area._width-20,
-._width-20 #dot-main-area,
-#dot-main-area._width-20,
-._width-20 #dot-foot-area,
-#dot-foot-area._width-20,
-._width-20 .dot-area,
-.dot-area._width-20, ._width-18, ._width-18 #dot-head-area, #dot-head-area._width-18,
-._width-18 #dot-main-area,
-#dot-main-area._width-18,
-._width-18 #dot-foot-area,
-#dot-foot-area._width-18,
-._width-18 .dot-area,
-.dot-area._width-18, ._width-16, ._width-16 #dot-head-area, #dot-head-area._width-16,
-._width-16 #dot-main-area,
-#dot-main-area._width-16,
-._width-16 #dot-foot-area,
-#dot-foot-area._width-16,
-._width-16 .dot-area,
-.dot-area._width-16, ._width-14, ._width-14 #dot-head-area, #dot-head-area._width-14,
-._width-14 #dot-main-area,
-#dot-main-area._width-14,
-._width-14 #dot-foot-area,
-#dot-foot-area._width-14,
-._width-14 .dot-area,
-.dot-area._width-14, ._width-12, ._width-12 #dot-head-area, #dot-head-area._width-12,
-._width-12 #dot-main-area,
-#dot-main-area._width-12,
-._width-12 #dot-foot-area,
-#dot-foot-area._width-12,
-._width-12 .dot-area,
-.dot-area._width-12 {
+  ._mx24, ._mx24 #dot-head-area,
+._mx24 #dot-main-area,
+._mx24 #dot-foot-area,
+._mx24 .dot-area, ._mx22, ._mx22 #dot-head-area,
+._mx22 #dot-main-area,
+._mx22 #dot-foot-area,
+._mx22 .dot-area, ._mx20, ._mx20 #dot-head-area,
+._mx20 #dot-main-area,
+._mx20 #dot-foot-area,
+._mx20 .dot-area, ._mx18, ._mx18 #dot-head-area,
+._mx18 #dot-main-area,
+._mx18 #dot-foot-area,
+._mx18 .dot-area, ._mx16, ._mx16 #dot-head-area,
+._mx16 #dot-main-area,
+._mx16 #dot-foot-area,
+._mx16 .dot-area, ._mx14, ._mx14 #dot-head-area,
+._mx14 #dot-main-area,
+._mx14 #dot-foot-area,
+._mx14 .dot-area, ._mx12, ._mx12 #dot-head-area,
+._mx12 #dot-main-area,
+._mx12 #dot-foot-area,
+._mx12 .dot-area, ._mx10, ._mx10 #dot-head-area,
+._mx10 #dot-main-area,
+._mx10 #dot-foot-area,
+._mx10 .dot-area, ._mx76, ._mx76 #dot-head-area,
+._mx76 #dot-main-area,
+._mx76 #dot-foot-area,
+._mx76 .dot-area, ._mx64, ._mx64 #dot-head-area,
+._mx64 #dot-main-area,
+._mx64 #dot-foot-area,
+._mx64 .dot-area, ._mx54, ._mx54 #dot-head-area,
+._mx54 #dot-main-area,
+._mx54 #dot-foot-area,
+._mx54 .dot-area, ._mx48, ._mx48 #dot-head-area,
+._mx48 #dot-main-area,
+._mx48 #dot-foot-area,
+._mx48 .dot-area {
     width: 1400px;
   }
 
-  ._width-24 ._width-32, ._width-22 ._width-32, ._width-20 ._width-32, ._width-18 ._width-32, ._width-16 ._width-32, ._width-14 ._width-32, ._width-12 ._width-32 {
+  ._mx24 ._mx32, ._mx22 ._mx32, ._mx20 ._mx32, ._mx18 ._mx32, ._mx16 ._mx32, ._mx14 ._mx32, ._mx12 ._mx32, ._mx10 ._mx32, ._mx76 ._mx32, ._mx64 ._mx32, ._mx54 ._mx32, ._mx48 ._mx32 {
     width: 320px;
   }
 
-  ._width-24 ._width-42, ._width-22 ._width-42, ._width-20 ._width-42, ._width-18 ._width-42, ._width-16 ._width-42, ._width-14 ._width-42, ._width-12 ._width-42 {
+  ._mx24 ._mx42, ._mx22 ._mx42, ._mx20 ._mx42, ._mx18 ._mx42, ._mx16 ._mx42, ._mx14 ._mx42, ._mx12 ._mx42, ._mx10 ._mx42, ._mx76 ._mx42, ._mx64 ._mx42, ._mx54 ._mx42, ._mx48 ._mx42 {
     width: 425px;
   }
 
-  ._width-24 ._width-48, ._width-22 ._width-48, ._width-20 ._width-48, ._width-18 ._width-48, ._width-16 ._width-48, ._width-14 ._width-48, ._width-12 ._width-48 {
+  ._mx24 ._mx48, ._mx22 ._mx48, ._mx20 ._mx48, ._mx18 ._mx48, ._mx16 ._mx48, ._mx14 ._mx48, ._mx12 ._mx48, ._mx10 ._mx48, ._mx76 ._mx48, ._mx64 ._mx48, ._mx54 ._mx48 {
     width: 480px;
-  }
-
-  ._width-24 ._width-54, ._width-22 ._width-54, ._width-20 ._width-54, ._width-18 ._width-54, ._width-16 ._width-54, ._width-14 ._width-54, ._width-12 ._width-54 {
-    width: 540px;
-  }
-
-  ._width-24 ._width-64, ._width-22 ._width-64, ._width-20 ._width-64, ._width-18 ._width-64, ._width-16 ._width-64, ._width-14 ._width-64, ._width-12 ._width-64 {
-    width: 640px;
-  }
-
-  ._width-24 ._width-76, ._width-22 ._width-76, ._width-20 ._width-76, ._width-18 ._width-76, ._width-16 ._width-76, ._width-14 ._width-76, ._width-12 ._width-76 {
-    width: 768px;
-  }
-
-  ._width-24 ._width-10, ._width-22 ._width-10, ._width-20 ._width-10, ._width-18 ._width-10, ._width-16 ._width-10, ._width-14 ._width-10, ._width-12 ._width-10 {
-    width: 1000px;
-  }
-
-  ._width-24 ._width-12, ._width-22 ._width-12, ._width-20 ._width-12, ._width-18 ._width-12, ._width-16 ._width-12, ._width-14 ._width-12 {
-    width: 1200px;
   }
 }
 @media only screen and (min-width: 1600px) {
-  ._width-24, ._width-24 #dot-head-area, #dot-head-area._width-24,
-._width-24 #dot-main-area,
-#dot-main-area._width-24,
-._width-24 #dot-foot-area,
-#dot-foot-area._width-24,
-._width-24 .dot-area,
-.dot-area._width-24, ._width-22, ._width-22 #dot-head-area, #dot-head-area._width-22,
-._width-22 #dot-main-area,
-#dot-main-area._width-22,
-._width-22 #dot-foot-area,
-#dot-foot-area._width-22,
-._width-22 .dot-area,
-.dot-area._width-22, ._width-20, ._width-20 #dot-head-area, #dot-head-area._width-20,
-._width-20 #dot-main-area,
-#dot-main-area._width-20,
-._width-20 #dot-foot-area,
-#dot-foot-area._width-20,
-._width-20 .dot-area,
-.dot-area._width-20, ._width-18, ._width-18 #dot-head-area, #dot-head-area._width-18,
-._width-18 #dot-main-area,
-#dot-main-area._width-18,
-._width-18 #dot-foot-area,
-#dot-foot-area._width-18,
-._width-18 .dot-area,
-.dot-area._width-18, ._width-16, ._width-16 #dot-head-area, #dot-head-area._width-16,
-._width-16 #dot-main-area,
-#dot-main-area._width-16,
-._width-16 #dot-foot-area,
-#dot-foot-area._width-16,
-._width-16 .dot-area,
-.dot-area._width-16, ._width-14, ._width-14 #dot-head-area, #dot-head-area._width-14,
-._width-14 #dot-main-area,
-#dot-main-area._width-14,
-._width-14 #dot-foot-area,
-#dot-foot-area._width-14,
-._width-14 .dot-area,
-.dot-area._width-14 {
+  ._mx24, ._mx24 #dot-head-area,
+._mx24 #dot-main-area,
+._mx24 #dot-foot-area,
+._mx24 .dot-area, ._mx22, ._mx22 #dot-head-area,
+._mx22 #dot-main-area,
+._mx22 #dot-foot-area,
+._mx22 .dot-area, ._mx20, ._mx20 #dot-head-area,
+._mx20 #dot-main-area,
+._mx20 #dot-foot-area,
+._mx20 .dot-area, ._mx18, ._mx18 #dot-head-area,
+._mx18 #dot-main-area,
+._mx18 #dot-foot-area,
+._mx18 .dot-area, ._mx16, ._mx16 #dot-head-area,
+._mx16 #dot-main-area,
+._mx16 #dot-foot-area,
+._mx16 .dot-area, ._mx14, ._mx14 #dot-head-area,
+._mx14 #dot-main-area,
+._mx14 #dot-foot-area,
+._mx14 .dot-area, ._mx12, ._mx12 #dot-head-area,
+._mx12 #dot-main-area,
+._mx12 #dot-foot-area,
+._mx12 .dot-area, ._mx10, ._mx10 #dot-head-area,
+._mx10 #dot-main-area,
+._mx10 #dot-foot-area,
+._mx10 .dot-area, ._mx76, ._mx76 #dot-head-area,
+._mx76 #dot-main-area,
+._mx76 #dot-foot-area,
+._mx76 .dot-area, ._mx64, ._mx64 #dot-head-area,
+._mx64 #dot-main-area,
+._mx64 #dot-foot-area,
+._mx64 .dot-area, ._mx54, ._mx54 #dot-head-area,
+._mx54 #dot-main-area,
+._mx54 #dot-foot-area,
+._mx54 .dot-area {
     width: 1600px;
   }
 
-  ._width-24 ._width-32, ._width-22 ._width-32, ._width-20 ._width-32, ._width-18 ._width-32, ._width-16 ._width-32, ._width-14 ._width-32 {
+  ._mx24 ._mx32, ._mx22 ._mx32, ._mx20 ._mx32, ._mx18 ._mx32, ._mx16 ._mx32, ._mx14 ._mx32, ._mx12 ._mx32, ._mx10 ._mx32, ._mx76 ._mx32, ._mx64 ._mx32, ._mx54 ._mx32 {
     width: 320px;
   }
 
-  ._width-24 ._width-42, ._width-22 ._width-42, ._width-20 ._width-42, ._width-18 ._width-42, ._width-16 ._width-42, ._width-14 ._width-42 {
+  ._mx24 ._mx42, ._mx22 ._mx42, ._mx20 ._mx42, ._mx18 ._mx42, ._mx16 ._mx42, ._mx14 ._mx42, ._mx12 ._mx42, ._mx10 ._mx42, ._mx76 ._mx42, ._mx64 ._mx42, ._mx54 ._mx42 {
     width: 425px;
   }
 
-  ._width-24 ._width-48, ._width-22 ._width-48, ._width-20 ._width-48, ._width-18 ._width-48, ._width-16 ._width-48, ._width-14 ._width-48 {
+  ._mx24 ._mx48, ._mx22 ._mx48, ._mx20 ._mx48, ._mx18 ._mx48, ._mx16 ._mx48, ._mx14 ._mx48, ._mx12 ._mx48, ._mx10 ._mx48, ._mx76 ._mx48, ._mx64 ._mx48, ._mx54 ._mx48 {
     width: 480px;
   }
 
-  ._width-24 ._width-54, ._width-22 ._width-54, ._width-20 ._width-54, ._width-18 ._width-54, ._width-16 ._width-54, ._width-14 ._width-54 {
+  ._mx24 ._mx54, ._mx22 ._mx54, ._mx20 ._mx54, ._mx18 ._mx54, ._mx16 ._mx54, ._mx14 ._mx54, ._mx12 ._mx54, ._mx10 ._mx54, ._mx76 ._mx54, ._mx64 ._mx54 {
     width: 540px;
-  }
-
-  ._width-24 ._width-64, ._width-22 ._width-64, ._width-20 ._width-64, ._width-18 ._width-64, ._width-16 ._width-64, ._width-14 ._width-64 {
-    width: 640px;
-  }
-
-  ._width-24 ._width-76, ._width-22 ._width-76, ._width-20 ._width-76, ._width-18 ._width-76, ._width-16 ._width-76, ._width-14 ._width-76 {
-    width: 768px;
-  }
-
-  ._width-24 ._width-10, ._width-22 ._width-10, ._width-20 ._width-10, ._width-18 ._width-10, ._width-16 ._width-10, ._width-14 ._width-10 {
-    width: 1000px;
-  }
-
-  ._width-24 ._width-12, ._width-22 ._width-12, ._width-20 ._width-12, ._width-18 ._width-12, ._width-16 ._width-12, ._width-14 ._width-12 {
-    width: 1200px;
-  }
-
-  ._width-24 ._width-14, ._width-22 ._width-14, ._width-20 ._width-14, ._width-18 ._width-14, ._width-16 ._width-14 {
-    width: 1400px;
   }
 }
 @media only screen and (min-width: 1800px) {
-  ._width-24, ._width-24 #dot-head-area, #dot-head-area._width-24,
-._width-24 #dot-main-area,
-#dot-main-area._width-24,
-._width-24 #dot-foot-area,
-#dot-foot-area._width-24,
-._width-24 .dot-area,
-.dot-area._width-24, ._width-22, ._width-22 #dot-head-area, #dot-head-area._width-22,
-._width-22 #dot-main-area,
-#dot-main-area._width-22,
-._width-22 #dot-foot-area,
-#dot-foot-area._width-22,
-._width-22 .dot-area,
-.dot-area._width-22, ._width-20, ._width-20 #dot-head-area, #dot-head-area._width-20,
-._width-20 #dot-main-area,
-#dot-main-area._width-20,
-._width-20 #dot-foot-area,
-#dot-foot-area._width-20,
-._width-20 .dot-area,
-.dot-area._width-20, ._width-18, ._width-18 #dot-head-area, #dot-head-area._width-18,
-._width-18 #dot-main-area,
-#dot-main-area._width-18,
-._width-18 #dot-foot-area,
-#dot-foot-area._width-18,
-._width-18 .dot-area,
-.dot-area._width-18, ._width-16, ._width-16 #dot-head-area, #dot-head-area._width-16,
-._width-16 #dot-main-area,
-#dot-main-area._width-16,
-._width-16 #dot-foot-area,
-#dot-foot-area._width-16,
-._width-16 .dot-area,
-.dot-area._width-16 {
+  ._mx24, ._mx24 #dot-head-area,
+._mx24 #dot-main-area,
+._mx24 #dot-foot-area,
+._mx24 .dot-area, ._mx22, ._mx22 #dot-head-area,
+._mx22 #dot-main-area,
+._mx22 #dot-foot-area,
+._mx22 .dot-area, ._mx20, ._mx20 #dot-head-area,
+._mx20 #dot-main-area,
+._mx20 #dot-foot-area,
+._mx20 .dot-area, ._mx18, ._mx18 #dot-head-area,
+._mx18 #dot-main-area,
+._mx18 #dot-foot-area,
+._mx18 .dot-area, ._mx16, ._mx16 #dot-head-area,
+._mx16 #dot-main-area,
+._mx16 #dot-foot-area,
+._mx16 .dot-area, ._mx14, ._mx14 #dot-head-area,
+._mx14 #dot-main-area,
+._mx14 #dot-foot-area,
+._mx14 .dot-area, ._mx12, ._mx12 #dot-head-area,
+._mx12 #dot-main-area,
+._mx12 #dot-foot-area,
+._mx12 .dot-area, ._mx10, ._mx10 #dot-head-area,
+._mx10 #dot-main-area,
+._mx10 #dot-foot-area,
+._mx10 .dot-area, ._mx76, ._mx76 #dot-head-area,
+._mx76 #dot-main-area,
+._mx76 #dot-foot-area,
+._mx76 .dot-area, ._mx64, ._mx64 #dot-head-area,
+._mx64 #dot-main-area,
+._mx64 #dot-foot-area,
+._mx64 .dot-area {
     width: 1800px;
   }
 
-  ._width-24 ._width-32, ._width-22 ._width-32, ._width-20 ._width-32, ._width-18 ._width-32, ._width-16 ._width-32 {
+  ._mx24 ._mx32, ._mx22 ._mx32, ._mx20 ._mx32, ._mx18 ._mx32, ._mx16 ._mx32, ._mx14 ._mx32, ._mx12 ._mx32, ._mx10 ._mx32, ._mx76 ._mx32, ._mx64 ._mx32 {
     width: 320px;
   }
 
-  ._width-24 ._width-42, ._width-22 ._width-42, ._width-20 ._width-42, ._width-18 ._width-42, ._width-16 ._width-42 {
+  ._mx24 ._mx42, ._mx22 ._mx42, ._mx20 ._mx42, ._mx18 ._mx42, ._mx16 ._mx42, ._mx14 ._mx42, ._mx12 ._mx42, ._mx10 ._mx42, ._mx76 ._mx42, ._mx64 ._mx42 {
     width: 425px;
   }
 
-  ._width-24 ._width-48, ._width-22 ._width-48, ._width-20 ._width-48, ._width-18 ._width-48, ._width-16 ._width-48 {
+  ._mx24 ._mx48, ._mx22 ._mx48, ._mx20 ._mx48, ._mx18 ._mx48, ._mx16 ._mx48, ._mx14 ._mx48, ._mx12 ._mx48, ._mx10 ._mx48, ._mx76 ._mx48, ._mx64 ._mx48 {
     width: 480px;
   }
 
-  ._width-24 ._width-54, ._width-22 ._width-54, ._width-20 ._width-54, ._width-18 ._width-54, ._width-16 ._width-54 {
+  ._mx24 ._mx54, ._mx22 ._mx54, ._mx20 ._mx54, ._mx18 ._mx54, ._mx16 ._mx54, ._mx14 ._mx54, ._mx12 ._mx54, ._mx10 ._mx54, ._mx76 ._mx54, ._mx64 ._mx54 {
     width: 540px;
   }
 
-  ._width-24 ._width-64, ._width-22 ._width-64, ._width-20 ._width-64, ._width-18 ._width-64, ._width-16 ._width-64 {
+  ._mx24 ._mx64, ._mx22 ._mx64, ._mx20 ._mx64, ._mx18 ._mx64, ._mx16 ._mx64, ._mx14 ._mx64, ._mx12 ._mx64, ._mx10 ._mx64, ._mx76 ._mx64 {
     width: 640px;
-  }
-
-  ._width-24 ._width-76, ._width-22 ._width-76, ._width-20 ._width-76, ._width-18 ._width-76, ._width-16 ._width-76 {
-    width: 768px;
-  }
-
-  ._width-24 ._width-10, ._width-22 ._width-10, ._width-20 ._width-10, ._width-18 ._width-10, ._width-16 ._width-10 {
-    width: 1000px;
-  }
-
-  ._width-24 ._width-12, ._width-22 ._width-12, ._width-20 ._width-12, ._width-18 ._width-12, ._width-16 ._width-12 {
-    width: 1200px;
-  }
-
-  ._width-24 ._width-14, ._width-22 ._width-14, ._width-20 ._width-14, ._width-18 ._width-14, ._width-16 ._width-14 {
-    width: 1400px;
-  }
-
-  ._width-24 ._width-16, ._width-22 ._width-16, ._width-20 ._width-16, ._width-18 ._width-16 {
-    width: 1600px;
   }
 }
 @media only screen and (min-width: 2000px) {
-  ._width-24, ._width-24 #dot-head-area, #dot-head-area._width-24,
-._width-24 #dot-main-area,
-#dot-main-area._width-24,
-._width-24 #dot-foot-area,
-#dot-foot-area._width-24,
-._width-24 .dot-area,
-.dot-area._width-24, ._width-22, ._width-22 #dot-head-area, #dot-head-area._width-22,
-._width-22 #dot-main-area,
-#dot-main-area._width-22,
-._width-22 #dot-foot-area,
-#dot-foot-area._width-22,
-._width-22 .dot-area,
-.dot-area._width-22, ._width-20, ._width-20 #dot-head-area, #dot-head-area._width-20,
-._width-20 #dot-main-area,
-#dot-main-area._width-20,
-._width-20 #dot-foot-area,
-#dot-foot-area._width-20,
-._width-20 .dot-area,
-.dot-area._width-20, ._width-18, ._width-18 #dot-head-area, #dot-head-area._width-18,
-._width-18 #dot-main-area,
-#dot-main-area._width-18,
-._width-18 #dot-foot-area,
-#dot-foot-area._width-18,
-._width-18 .dot-area,
-.dot-area._width-18 {
+  ._mx24, ._mx24 #dot-head-area,
+._mx24 #dot-main-area,
+._mx24 #dot-foot-area,
+._mx24 .dot-area, ._mx22, ._mx22 #dot-head-area,
+._mx22 #dot-main-area,
+._mx22 #dot-foot-area,
+._mx22 .dot-area, ._mx20, ._mx20 #dot-head-area,
+._mx20 #dot-main-area,
+._mx20 #dot-foot-area,
+._mx20 .dot-area, ._mx18, ._mx18 #dot-head-area,
+._mx18 #dot-main-area,
+._mx18 #dot-foot-area,
+._mx18 .dot-area, ._mx16, ._mx16 #dot-head-area,
+._mx16 #dot-main-area,
+._mx16 #dot-foot-area,
+._mx16 .dot-area, ._mx14, ._mx14 #dot-head-area,
+._mx14 #dot-main-area,
+._mx14 #dot-foot-area,
+._mx14 .dot-area, ._mx12, ._mx12 #dot-head-area,
+._mx12 #dot-main-area,
+._mx12 #dot-foot-area,
+._mx12 .dot-area, ._mx10, ._mx10 #dot-head-area,
+._mx10 #dot-main-area,
+._mx10 #dot-foot-area,
+._mx10 .dot-area, ._mx76, ._mx76 #dot-head-area,
+._mx76 #dot-main-area,
+._mx76 #dot-foot-area,
+._mx76 .dot-area {
     width: 2000px;
   }
 
-  ._width-24 ._width-32, ._width-22 ._width-32, ._width-20 ._width-32, ._width-18 ._width-32 {
+  ._mx24 ._mx32, ._mx22 ._mx32, ._mx20 ._mx32, ._mx18 ._mx32, ._mx16 ._mx32, ._mx14 ._mx32, ._mx12 ._mx32, ._mx10 ._mx32, ._mx76 ._mx32 {
     width: 320px;
   }
 
-  ._width-24 ._width-42, ._width-22 ._width-42, ._width-20 ._width-42, ._width-18 ._width-42 {
+  ._mx24 ._mx42, ._mx22 ._mx42, ._mx20 ._mx42, ._mx18 ._mx42, ._mx16 ._mx42, ._mx14 ._mx42, ._mx12 ._mx42, ._mx10 ._mx42, ._mx76 ._mx42 {
     width: 425px;
   }
 
-  ._width-24 ._width-48, ._width-22 ._width-48, ._width-20 ._width-48, ._width-18 ._width-48 {
+  ._mx24 ._mx48, ._mx22 ._mx48, ._mx20 ._mx48, ._mx18 ._mx48, ._mx16 ._mx48, ._mx14 ._mx48, ._mx12 ._mx48, ._mx10 ._mx48, ._mx76 ._mx48 {
     width: 480px;
   }
 
-  ._width-24 ._width-54, ._width-22 ._width-54, ._width-20 ._width-54, ._width-18 ._width-54 {
+  ._mx24 ._mx54, ._mx22 ._mx54, ._mx20 ._mx54, ._mx18 ._mx54, ._mx16 ._mx54, ._mx14 ._mx54, ._mx12 ._mx54, ._mx10 ._mx54, ._mx76 ._mx54 {
     width: 540px;
   }
 
-  ._width-24 ._width-64, ._width-22 ._width-64, ._width-20 ._width-64, ._width-18 ._width-64 {
+  ._mx24 ._mx64, ._mx22 ._mx64, ._mx20 ._mx64, ._mx18 ._mx64, ._mx16 ._mx64, ._mx14 ._mx64, ._mx12 ._mx64, ._mx10 ._mx64, ._mx76 ._mx64 {
     width: 640px;
   }
 
-  ._width-24 ._width-76, ._width-22 ._width-76, ._width-20 ._width-76, ._width-18 ._width-76 {
+  ._mx24 ._mx76, ._mx22 ._mx76, ._mx20 ._mx76, ._mx18 ._mx76, ._mx16 ._mx76, ._mx14 ._mx76, ._mx12 ._mx76, ._mx10 ._mx76 {
     width: 768px;
-  }
-
-  ._width-24 ._width-10, ._width-22 ._width-10, ._width-20 ._width-10, ._width-18 ._width-10 {
-    width: 1000px;
-  }
-
-  ._width-24 ._width-12, ._width-22 ._width-12, ._width-20 ._width-12, ._width-18 ._width-12 {
-    width: 1200px;
-  }
-
-  ._width-24 ._width-14, ._width-22 ._width-14, ._width-20 ._width-14, ._width-18 ._width-14 {
-    width: 1400px;
-  }
-
-  ._width-24 ._width-16, ._width-22 ._width-16, ._width-20 ._width-16, ._width-18 ._width-16 {
-    width: 1600px;
-  }
-
-  ._width-24 ._width-18, ._width-22 ._width-18, ._width-20 ._width-18 {
-    width: 1800px;
   }
 }
 @media only screen and (min-width: 2200px) {
-  ._width-24, ._width-24 #dot-head-area, #dot-head-area._width-24,
-._width-24 #dot-main-area,
-#dot-main-area._width-24,
-._width-24 #dot-foot-area,
-#dot-foot-area._width-24,
-._width-24 .dot-area,
-.dot-area._width-24, ._width-22, ._width-22 #dot-head-area, #dot-head-area._width-22,
-._width-22 #dot-main-area,
-#dot-main-area._width-22,
-._width-22 #dot-foot-area,
-#dot-foot-area._width-22,
-._width-22 .dot-area,
-.dot-area._width-22, ._width-20, ._width-20 #dot-head-area, #dot-head-area._width-20,
-._width-20 #dot-main-area,
-#dot-main-area._width-20,
-._width-20 #dot-foot-area,
-#dot-foot-area._width-20,
-._width-20 .dot-area,
-.dot-area._width-20 {
+  ._mx24, ._mx24 #dot-head-area,
+._mx24 #dot-main-area,
+._mx24 #dot-foot-area,
+._mx24 .dot-area, ._mx22, ._mx22 #dot-head-area,
+._mx22 #dot-main-area,
+._mx22 #dot-foot-area,
+._mx22 .dot-area, ._mx20, ._mx20 #dot-head-area,
+._mx20 #dot-main-area,
+._mx20 #dot-foot-area,
+._mx20 .dot-area, ._mx18, ._mx18 #dot-head-area,
+._mx18 #dot-main-area,
+._mx18 #dot-foot-area,
+._mx18 .dot-area, ._mx16, ._mx16 #dot-head-area,
+._mx16 #dot-main-area,
+._mx16 #dot-foot-area,
+._mx16 .dot-area, ._mx14, ._mx14 #dot-head-area,
+._mx14 #dot-main-area,
+._mx14 #dot-foot-area,
+._mx14 .dot-area, ._mx12, ._mx12 #dot-head-area,
+._mx12 #dot-main-area,
+._mx12 #dot-foot-area,
+._mx12 .dot-area, ._mx10, ._mx10 #dot-head-area,
+._mx10 #dot-main-area,
+._mx10 #dot-foot-area,
+._mx10 .dot-area {
     width: 2200px;
   }
 
-  ._width-24 ._width-32, ._width-22 ._width-32, ._width-20 ._width-32 {
+  ._mx24 ._mx32, ._mx22 ._mx32, ._mx20 ._mx32, ._mx18 ._mx32, ._mx16 ._mx32, ._mx14 ._mx32, ._mx12 ._mx32, ._mx10 ._mx32 {
     width: 320px;
   }
 
-  ._width-24 ._width-42, ._width-22 ._width-42, ._width-20 ._width-42 {
+  ._mx24 ._mx42, ._mx22 ._mx42, ._mx20 ._mx42, ._mx18 ._mx42, ._mx16 ._mx42, ._mx14 ._mx42, ._mx12 ._mx42, ._mx10 ._mx42 {
     width: 425px;
   }
 
-  ._width-24 ._width-48, ._width-22 ._width-48, ._width-20 ._width-48 {
+  ._mx24 ._mx48, ._mx22 ._mx48, ._mx20 ._mx48, ._mx18 ._mx48, ._mx16 ._mx48, ._mx14 ._mx48, ._mx12 ._mx48, ._mx10 ._mx48 {
     width: 480px;
   }
 
-  ._width-24 ._width-54, ._width-22 ._width-54, ._width-20 ._width-54 {
+  ._mx24 ._mx54, ._mx22 ._mx54, ._mx20 ._mx54, ._mx18 ._mx54, ._mx16 ._mx54, ._mx14 ._mx54, ._mx12 ._mx54, ._mx10 ._mx54 {
     width: 540px;
   }
 
-  ._width-24 ._width-64, ._width-22 ._width-64, ._width-20 ._width-64 {
+  ._mx24 ._mx64, ._mx22 ._mx64, ._mx20 ._mx64, ._mx18 ._mx64, ._mx16 ._mx64, ._mx14 ._mx64, ._mx12 ._mx64, ._mx10 ._mx64 {
     width: 640px;
   }
 
-  ._width-24 ._width-76, ._width-22 ._width-76, ._width-20 ._width-76 {
+  ._mx24 ._mx76, ._mx22 ._mx76, ._mx20 ._mx76, ._mx18 ._mx76, ._mx16 ._mx76, ._mx14 ._mx76, ._mx12 ._mx76, ._mx10 ._mx76 {
     width: 768px;
   }
 
-  ._width-24 ._width-10, ._width-22 ._width-10, ._width-20 ._width-10 {
+  ._mx24 ._mx10, ._mx22 ._mx10, ._mx20 ._mx10, ._mx18 ._mx10, ._mx16 ._mx10, ._mx14 ._mx10, ._mx12 ._mx10 {
     width: 1000px;
-  }
-
-  ._width-24 ._width-12, ._width-22 ._width-12, ._width-20 ._width-12 {
-    width: 1200px;
-  }
-
-  ._width-24 ._width-14, ._width-22 ._width-14, ._width-20 ._width-14 {
-    width: 1400px;
-  }
-
-  ._width-24 ._width-16, ._width-22 ._width-16, ._width-20 ._width-16 {
-    width: 1600px;
-  }
-
-  ._width-24 ._width-18, ._width-22 ._width-18, ._width-20 ._width-18 {
-    width: 1800px;
-  }
-
-  ._width-24 ._width-20, ._width-22 ._width-20 {
-    width: 2000px;
   }
 }
 @media only screen and (min-width: 2400px) {
-  ._width-24, ._width-24 #dot-head-area, #dot-head-area._width-24,
-._width-24 #dot-main-area,
-#dot-main-area._width-24,
-._width-24 #dot-foot-area,
-#dot-foot-area._width-24,
-._width-24 .dot-area,
-.dot-area._width-24, ._width-22, ._width-22 #dot-head-area, #dot-head-area._width-22,
-._width-22 #dot-main-area,
-#dot-main-area._width-22,
-._width-22 #dot-foot-area,
-#dot-foot-area._width-22,
-._width-22 .dot-area,
-.dot-area._width-22 {
+  ._mx24, ._mx24 #dot-head-area,
+._mx24 #dot-main-area,
+._mx24 #dot-foot-area,
+._mx24 .dot-area, ._mx22, ._mx22 #dot-head-area,
+._mx22 #dot-main-area,
+._mx22 #dot-foot-area,
+._mx22 .dot-area, ._mx20, ._mx20 #dot-head-area,
+._mx20 #dot-main-area,
+._mx20 #dot-foot-area,
+._mx20 .dot-area, ._mx18, ._mx18 #dot-head-area,
+._mx18 #dot-main-area,
+._mx18 #dot-foot-area,
+._mx18 .dot-area, ._mx16, ._mx16 #dot-head-area,
+._mx16 #dot-main-area,
+._mx16 #dot-foot-area,
+._mx16 .dot-area, ._mx14, ._mx14 #dot-head-area,
+._mx14 #dot-main-area,
+._mx14 #dot-foot-area,
+._mx14 .dot-area, ._mx12, ._mx12 #dot-head-area,
+._mx12 #dot-main-area,
+._mx12 #dot-foot-area,
+._mx12 .dot-area {
     width: 2400px;
   }
 
-  ._width-24 ._width-32, ._width-22 ._width-32 {
+  ._mx24 ._mx32, ._mx22 ._mx32, ._mx20 ._mx32, ._mx18 ._mx32, ._mx16 ._mx32, ._mx14 ._mx32, ._mx12 ._mx32 {
     width: 320px;
   }
 
-  ._width-24 ._width-42, ._width-22 ._width-42 {
+  ._mx24 ._mx42, ._mx22 ._mx42, ._mx20 ._mx42, ._mx18 ._mx42, ._mx16 ._mx42, ._mx14 ._mx42, ._mx12 ._mx42 {
     width: 425px;
   }
 
-  ._width-24 ._width-48, ._width-22 ._width-48 {
+  ._mx24 ._mx48, ._mx22 ._mx48, ._mx20 ._mx48, ._mx18 ._mx48, ._mx16 ._mx48, ._mx14 ._mx48, ._mx12 ._mx48 {
     width: 480px;
   }
 
-  ._width-24 ._width-54, ._width-22 ._width-54 {
+  ._mx24 ._mx54, ._mx22 ._mx54, ._mx20 ._mx54, ._mx18 ._mx54, ._mx16 ._mx54, ._mx14 ._mx54, ._mx12 ._mx54 {
     width: 540px;
   }
 
-  ._width-24 ._width-64, ._width-22 ._width-64 {
+  ._mx24 ._mx64, ._mx22 ._mx64, ._mx20 ._mx64, ._mx18 ._mx64, ._mx16 ._mx64, ._mx14 ._mx64, ._mx12 ._mx64 {
     width: 640px;
   }
 
-  ._width-24 ._width-76, ._width-22 ._width-76 {
+  ._mx24 ._mx76, ._mx22 ._mx76, ._mx20 ._mx76, ._mx18 ._mx76, ._mx16 ._mx76, ._mx14 ._mx76, ._mx12 ._mx76 {
     width: 768px;
   }
 
-  ._width-24 ._width-10, ._width-22 ._width-10 {
+  ._mx24 ._mx10, ._mx22 ._mx10, ._mx20 ._mx10, ._mx18 ._mx10, ._mx16 ._mx10, ._mx14 ._mx10, ._mx12 ._mx10 {
     width: 1000px;
   }
 
-  ._width-24 ._width-12, ._width-22 ._width-12 {
+  ._mx24 ._mx12, ._mx22 ._mx12, ._mx20 ._mx12, ._mx18 ._mx12, ._mx16 ._mx12, ._mx14 ._mx12 {
     width: 1200px;
-  }
-
-  ._width-24 ._width-14, ._width-22 ._width-14 {
-    width: 1400px;
-  }
-
-  ._width-24 ._width-16, ._width-22 ._width-16 {
-    width: 1600px;
-  }
-
-  ._width-24 ._width-18, ._width-22 ._width-18 {
-    width: 1800px;
-  }
-
-  ._width-24 ._width-20, ._width-22 ._width-20 {
-    width: 2000px;
-  }
-
-  ._width-24 ._width-22 {
-    width: 2200px;
   }
 }
