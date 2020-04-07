@@ -21,10 +21,9 @@
   }
 }
 
-$MIN-CLASS-PREFIX: '_mn';
-$MAX-CLASS-PREFIX: '_mx';
 
-
+$MIN-CLASS-PREFIX: '_min';
+$MAX-CLASS-PREFIX: '_max';
 
 @mixin frame-rule($options: null) {
 
