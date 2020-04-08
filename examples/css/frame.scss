@@ -21,14 +21,15 @@
   }
 }
 
-
+$MINS-CLASS-PREFIX: '_mins';
 $MIN-CLASS-PREFIX: '_min';
+$MAXS-CLASS-PREFIX: '_maxs';
 $MAX-CLASS-PREFIX: '_max';
 
 @mixin frame-rule($options: null) {
 
   $sticky-resize: map-get-if($options, 'sticky-resize');
-  $width-query-prefix: '.' + $MAX-CLASS-PREFIX;
+  $width-query-prefix: '.' + $MAXS-CLASS-PREFIX;
 
 
   $width-map: $DOT-LAYOUT-WIDTH-MAP;
@@ -37,9 +38,9 @@ $MAX-CLASS-PREFIX: '_max';
 
   $standard-width: 1000;
 
-
   @include frame-ids {
     position: relative;
+
   }
 
   @include frames {
@@ -54,81 +55,105 @@ $MAX-CLASS-PREFIX: '_max';
   }
 
 
-  $start-index: 1;
+  $start-index: 0;
   $length: length($width-keys);
 
   @each $alias, $width in $width-map {
 
-    @if $width > $min-width and $width <= $standard-width {
+    $start-index: $start-index + 1;
+
+    //////////////////////////////
+    // MIN WIDTH
+    //////////////////////////////
+    @if $width > $min-width {
+      %frame-rule-min-width#{$width} {
+        min-width: px($width);
+      }
+
+      #{'.' + $MIN-CLASS-PREFIX + $alias} {
+        @extend %frame-rule-min-width#{$width};
+      }
+
       @include frames {
-        #{'.' + $MIN-CLASS-PREFIX + $alias} &,
-        // &#{'._mn' + $alias} {
+        #{'.' + $MINS-CLASS-PREFIX + $alias} &,
+          // &#{'._mn' + $alias} {
         {
-          min-width: px($width);
+          @extend %frame-rule-min-width#{$width};
         }
       }
     }
 
-    @if $width > $min-width and $width >= $standard-width {
 
-      // get upper width then target
-      //   1200 => 1400, 1600, 1800
-      $upper-widths: list-slice($width-keys, $start-index, $length);
+    //////////////////////////////
+    // MAX WIDTH
+    //////////////////////////////
 
-      // get lower width then target
-      //   1200 => 1000, 768, 640
-      $lower-widths: list-slice($width-keys, 1, $start-index);
-      $start-index: $start-index + 1;
+    // get upper width then target
+    //   1200 => 1400, 1600, 1800
+    $upper-widths: list-slice($width-keys, $start-index, $length);
 
-      @include mq-min($width) {
+    // get lower width then target
+    //   1200 => 1000, 768, 640
+    //$lower-widths: list-slice($width-keys, 1, $start-index);
 
-        %frame-rule-width-#{$width} {
-          width: px($width);
-        }
+    @include mq-min($width) {
+      %frame-rule-width-#{$width} {
+        width: px($width);
+      }
 
-        @each $child-width-key in $lower-widths {
-          %frame-rule-width-#{$width}-#{$child-width-key} {
-            width: px(map-get($width-map, $child-width-key));
+      @if $width > $min-width {
+        @if $width >= $standard-width {
+
+          //@each $child-width-key in $lower-widths {
+          //  %frame-rule-width-#{$width}-#{$child-width-key} {
+          //    width: px(map-get($width-map, $child-width-key));
+          //  }
+          //}
+
+          @each $width-key in $upper-widths {
+            $width-query: '.' + $MAXS-CLASS-PREFIX + $width-key;
+
+
+            #{'.' + $MAX-CLASS-PREFIX + $width-key} {
+              @extend %frame-rule-width-#{$width};
+            }
+
+            // set width for default dot element
+            @include frames {
+              #{$width-query} &,
+                // &#{$width-query} {
+              {
+                @extend %frame-rule-width-#{$width};
+              }
+            }
+
+            //// set width for suffixes
+            //#{$width-query} {
+            //  // set width for lower suffixes as child
+            //  @each $lower-width-key in $lower-widths {
+            //    @if $width-key != $lower-width-key {
+            //      $lower-width: map-get($width-map, $lower-width-key);
+            //      //@if $lower-width >= $standard-width {
+            //      #{$width-query-prefix + $lower-width-key} {
+            //        @extend %frame-rule-width-#{$width}-#{$lower-width-key};
+            //      }
+            //      //}
+            //    }
+            //  }
+            //}
           }
-        }
 
-        @each $width-key in $upper-widths {
-          $width-query: $width-query-prefix + $width-key;
-
-          // set width for default dot element
-          @include frames {
-            #{$width-query} &,
-            // &#{$width-query} {
-            {
+        } @else {
+          @each $width-key in $upper-widths {
+            #{'.' + $MAX-CLASS-PREFIX + $width-key} {
               @extend %frame-rule-width-#{$width};
             }
           }
-
-          // set width for suffixes
-          #{$width-query} {
-            @extend %frame-rule-width-#{$width};
-
-            // set width for lower suffixes as child
-            @each $lower-width-key in $lower-widths {
-              @if $width-key != $lower-width-key {
-                $lower-width: map-get($width-map, $lower-width-key);
-                //@if $lower-width >= $standard-width {
-                #{$width-query-prefix + $lower-width-key} {
-                  @extend %frame-rule-width-#{$width}-#{$lower-width-key};
-                }
-                //}
-              }
-            }
-          }
         }
-
       }
 
     }
-
-
   }
-
 }
 
 

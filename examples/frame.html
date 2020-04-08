@@ -4,68 +4,104 @@
     <link rel="stylesheet" href="../prebuilt/reset.css">
     <link rel="stylesheet" href="./css/frame.css">
     <style>
+
+        #dot-head,
+        #dot-main,
+        #dot-foot {
+            background-color: #f0f0f0;
+        }
+
         #dot-main-area {
             background-color: #ccc;
         }
 
-        #dot-main-area .dot-area {
+        #dot-main-area .resize {
             background-color: #999;
-            outline:solid 1px red;
+            outline: solid 1px red;
         }
     </style>
 
 
 </head>
 <body>
-<div id="dots" class="_width-14">
+<div id="dots" class="_maxs14">
     <header id="dot-head">
         <div id="dot-head-area">
             Header
-            <form name="max">
-                <label>
-                    <input type="radio" name="max" value="10">
-                    1000
-                </label>
-                <label>
-                    <input type="radio" name="max" value="12">
-                    1200
-                </label>
-                <label>
-                    <input type="radio" name="max" value="14">
-                    1400
-                </label>
-                <label>
-                    <input type="radio" name="max" value="16">
-                    1600
-                </label>
-                <label>
-                    <input type="radio" name="max" value="18">
-                    1800
-                </label>
-                <label>
-                    <input type="radio" name="max" value="20">
-                    2000
-                </label>
-                <label>
-                    <input type="radio" name="max" value="22">
-                    2200
-                </label>
-                <label>
-                    <input type="radio" name="max" value="24">
-                    2400
-                </label>
+            <form name="size">
+                <div>
+                    <h3>Min Size</h3>
+                    <label>
+                        <input type="radio" name="mins" value="32" checked>
+                        320
+                    </label>
+                    <label>
+                        <input type="radio" name="mins" value="42">
+                        425
+                    </label>
+                    <label>
+                        <input type="radio" name="mins" value="48">
+                        480
+                    </label>
+                    <label>
+                        <input type="radio" name="mins" value="54">
+                        540
+                    </label>
+                    <label>
+                        <input type="radio" name="mins" value="64">
+                        640
+                    </label>
+                    <label>
+                        <input type="radio" name="mins" value="76">
+                        768
+                    </label>
+                </div>
+
+                <div>
+                    <h3>Max Size</h3>
+                    <label>
+                        <input type="radio" name="maxs" value="10">
+                        1000
+                    </label>
+                    <label>
+                        <input type="radio" name="maxs" value="12">
+                        1200
+                    </label>
+                    <label>
+                        <input type="radio" name="maxs" value="14" checked>
+                        1400
+                    </label>
+                    <label>
+                        <input type="radio" name="maxs" value="16">
+                        1600
+                    </label>
+                    <label>
+                        <input type="radio" name="maxs" value="18">
+                        1800
+                    </label>
+                    <label>
+                        <input type="radio" name="maxs" value="20">
+                        2000
+                    </label>
+                    <label>
+                        <input type="radio" name="maxs" value="22">
+                        2200
+                    </label>
+                    <label>
+                        <input type="radio" name="maxs" value="24">
+                        2400
+                    </label>
+                </div>
             </form>
         </div>
     </header>
     <main id="dot-main">
         <div id="dot-main-area">
-
-
-            <div class="_width-10">
+            <div class="resize _max10">
                 1000
-                <div class="_width-76">
+                <div class="resize  _max76">
                     768
-                    <div class="_width-48">
+                    <div class="resize _max48">
                         48
                     </div>
                 </div>
@@ -79,15 +115,19 @@
     </footer>
 
     <script>
-		Array.from(document.forms.max.querySelectorAll('input'))
+		Array.from(document.forms.size.querySelectorAll('input'))
 			.forEach(input => {
-				input.onclick = changeMaxSize;
+				input.onclick = changeSize;
 			});
+
 
 		const dots = document.getElementById('dots');
 
-		function changeMaxSize() {
-			dots.className = '_width-' + this.value;
+		function changeSize() {
+
+			dots.className = dots.className
+								 .replace(new RegExp('_'+this.name+'\\d+\s*'), '')
+							 + ' _' + this.name + this.value;
 		}
     </script>
 </body>
