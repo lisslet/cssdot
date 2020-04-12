@@ -1,3 +1,12 @@
+#dots {
+  display: flex;
+  min-height: 100%;
+  flex-direction: column;
+}
+#dot-main {
+  flex-grow: 1;
+}
+
 #dot-head-area,
 #dot-main-area,
 #dot-foot-area {

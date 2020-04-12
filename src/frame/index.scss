@@ -36,6 +36,19 @@ $MAX-CLASS-PREFIX: '_max';
 
   $standard-width: 1000;
 
+  #dot {
+    &s {
+      display: flex;
+      min-height: 100%;
+      flex-direction: column;
+    }
+
+    &-main {
+      flex-grow: 1;
+    }
+  }
+
+
   @include frame-ids {
     position: relative;
 
