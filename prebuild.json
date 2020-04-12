@@ -22,29 +22,11 @@
     ]
   },
   {
-    "scss": "layout/frame/standalone",
-    "reference": ["scss/variables" ,"layout/variables"],
-    "repeat": {
-      "each": {
-        "iterator": "DOT-LAYOUT-WIDTH-MAP",
-        "condition": {
-          "gte": "DOT-LAYOUT-DEFAULT-WIDTH"
-        },
-        "value": "width"
-      }
-    },
+    "scss": "frame/index",
     "files": [
       {
-        "filename": "dynamic/frame/$width",
-        "content": "@include layout-frame-rule($width);"
-      },
-      {
-        "filename": "dynamic/desktop/frame/$width",
-        "content": "@include layout-frame-rule((max-width:$width, desktop-first: true));"
-      },
-      {
-        "filename": "static/frame/$width",
-        "content": "@include layout-frame-rule((max-width: $width, response: false));"
+        "filename": "frame",
+        "content": "@include frame-rule"
       }
     ]
   },
