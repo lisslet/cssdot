@@ -6,3 +6,16 @@
 ## More Dots
 * [jsdot](#jsdot)
 * [phpdot](#phpdot)
+
+## Manual
+
+### Prebuilt
+* Frame
+* Grid
+* Life
+* Nav
+* Trans
+* Loader
+* Box
+* Global Suffixes
+    * _text

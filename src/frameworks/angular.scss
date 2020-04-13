@@ -1,5 +1,14 @@
 @import 'material';
 
+@mixin ng-core {
+  app-root {
+    &,
+    & > ng-component {
+      min-height: 100%;
+    }
+  }
+}
+
 @mixin ng-parse-date-core() {
   .timestamp {
     i {

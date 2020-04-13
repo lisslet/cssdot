@@ -20,7 +20,7 @@
   transition-duration: 0.24s;
   transition-property: width;
   min-width: 320px;
-  width: 100%;
+  width: auto;
   margin: 0 auto;
 }
 #dot-head-area._resize,
@@ -28,7 +28,7 @@
 #dot-foot-area._resize,
 .dot-area._resize {
   min-width: inherit;
-  width: 100%;
+  width: auto;
 }
 
 ._mins42 #dot-head-area,

@@ -1,6 +1,17 @@
 @import '../scss';
 @import '../scss/variables';
 
+$DIRECTIONS: ('left', 'center', 'right');
+$TEXT-DIRECTIONS: append($DIRECTIONS, 'justify');
+
+@mixin text-direction-suffix-rule {
+  @each $direction in $TEXT-DIRECTIONS {
+    #{'._text-'+$direction} {
+      text-align: $direction;
+    }
+  }
+}
+
 
 @mixin frame-ids {
   #dot-head-area,
@@ -57,11 +68,12 @@ $MAX-CLASS-PREFIX: '_max';
   @include frames {
     @include trans(width, 0.24s);
     min-width: px($min-width);
-    width: 100%;
+    width: auto;
     margin: 0 auto;
+
     &._resize {
       min-width: inherit;
-      width: 100%;
+      width: auto;
     }
   }
 
@@ -164,5 +176,14 @@ $MAX-CLASS-PREFIX: '_max';
       }
 
     }
+  }
+}
+
+@mixin frame-theming($theme){
+
+  $field: -field($theme);
+
+  #dot-main {
+    background-color: $theme;
   }
 }
