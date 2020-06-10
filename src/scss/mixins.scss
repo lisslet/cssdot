@@ -40,12 +40,45 @@
   }
 }
 
+@mixin mq-min-width($width) {
+  @include mq-width('min', $width) {
+    @content;
+  }
+}
+
+@mixin mq-max-width($width) {
+  @include mq-width('max', $width) {
+    @content;
+  }
+}
+
+@mixin mq-height($type, $height) {
+  $height: px($height);
+  @media only screen and (#{$type}-height: $height) {
+    @content;
+  }
+}
+
+@mixin mq-min-height($height) {
+  @include mq-height('min', $height) {
+    @content;
+  }
+}
+
+@mixin mq-max-height($height) {
+  @include mq-height('max', $height) {
+    @content;
+  }
+}
+
+/// @deprecated using mq-min-width
 @mixin mq-min($width) {
   @include mq-width('min', $width) {
     @content;
   }
 }
 
+/// @deprecated using mq-min-height
 @mixin mq-max($width) {
   @include mq-width('max', $width) {
     @content;
