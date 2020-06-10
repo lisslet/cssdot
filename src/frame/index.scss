@@ -43,7 +43,8 @@ $MAX-CLASS-PREFIX: '_max';
 
   $width-map: $DOT-LAYOUT-WIDTH-MAP;
   $width-keys: $DOT-LAYOUT-WIDTH-KEYS;
-  $min-width: $DOT-LAYOUT-MIN-WIDTH;
+  $min-width-key: nth($width-keys, 1);
+  $min-width: map-get($width-map, $min-width-key);
 
   $standard-width: 1000;
 
@@ -80,6 +81,25 @@ $MAX-CLASS-PREFIX: '_max';
 
   $start-index: 0;
   $length: length($width-keys);
+
+
+  // min width
+
+  %frame-max-as-min-width {
+    width: width($min-width);
+  }
+
+  #{'.' + $MAX-CLASS-PREFIX + $min-width-key} {
+    @extend %frame-max-as-min-width;
+  }
+
+  $width-query: '.' + $MAXS-CLASS-PREFIX + $min-width-key;
+  #{$width-query} {
+    @include frames {
+      @extend %frame-max-as-min-width;
+    }
+  }
+
 
   @each $alias, $width in $width-map {
 
@@ -124,62 +144,65 @@ $MAX-CLASS-PREFIX: '_max';
         width: px($width);
       }
 
-      @if $width > $min-width {
-        @if $width >= $standard-width {
 
-          //@each $child-width-key in $lower-widths {
-          //  %frame-rule-width-#{$width}-#{$child-width-key} {
-          //    width: px(map-get($width-map, $child-width-key));
+      @if $width > $min-width {
+        // many times need to less 1000px widths
+        //@if $width >= $standard-width {
+
+        //@each $child-width-key in $lower-widths {
+        //  %frame-rule-width-#{$width}-#{$child-width-key} {
+        //    width: px(map-get($width-map, $child-width-key));
+        //  }
+        //}
+
+        @each $width-key in $upper-widths {
+          $width-query: '.' + $MAXS-CLASS-PREFIX + $width-key;
+
+
+          #{'.' + $MAX-CLASS-PREFIX + $width-key} {
+            @extend %frame-rule-width-#{$width};
+          }
+
+          // set width for default dot element
+          @include frames {
+            #{$width-query} &,
+              // &#{$width-query} {
+            {
+              @extend %frame-rule-width-#{$width};
+            }
+          }
+
+          //// set width for suffixes
+          //#{$width-query} {
+          //  // set width for lower suffixes as child
+          //  @each $lower-width-key in $lower-widths {
+          //    @if $width-key != $lower-width-key {
+          //      $lower-width: map-get($width-map, $lower-width-key);
+          //      //@if $lower-width >= $standard-width {
+          //      #{$width-query-prefix + $lower-width-key} {
+          //        @extend %frame-rule-width-#{$width}-#{$lower-width-key};
+          //      }
+          //      //}
+          //    }
           //  }
           //}
-
-          @each $width-key in $upper-widths {
-            $width-query: '.' + $MAXS-CLASS-PREFIX + $width-key;
-
-
-            #{'.' + $MAX-CLASS-PREFIX + $width-key} {
-              @extend %frame-rule-width-#{$width};
-            }
-
-            // set width for default dot element
-            @include frames {
-              #{$width-query} &,
-                // &#{$width-query} {
-              {
-                @extend %frame-rule-width-#{$width};
-              }
-            }
-
-            //// set width for suffixes
-            //#{$width-query} {
-            //  // set width for lower suffixes as child
-            //  @each $lower-width-key in $lower-widths {
-            //    @if $width-key != $lower-width-key {
-            //      $lower-width: map-get($width-map, $lower-width-key);
-            //      //@if $lower-width >= $standard-width {
-            //      #{$width-query-prefix + $lower-width-key} {
-            //        @extend %frame-rule-width-#{$width}-#{$lower-width-key};
-            //      }
-            //      //}
-            //    }
-            //  }
-            //}
-          }
-
-        } @else {
-          @each $width-key in $upper-widths {
-            #{'.' + $MAX-CLASS-PREFIX + $width-key} {
-              @extend %frame-rule-width-#{$width};
-            }
-          }
         }
+
+        //} @else {
+        //  @each $width-key in $upper-widths {
+        //    #{'.' + $MAX-CLASS-PREFIX + $width-key} {
+        //      @extend %frame-rule-width-#{$width};
+        //    }
+        //  }
+        //} // ignore $standard-width
       }
+      // ignore $min-width
 
     }
   }
 }
 
-@mixin frame-theming($theme){
+@mixin frame-theming($theme) {
 
   $field: -field($theme);
 
