@@ -114,7 +114,7 @@
   $right-gap: map-get-if($options, 'right-gap');
   $bottom-gap: map-get-if($options, 'bottom-gap');
   $padding: map-get-if($options, 'padding', 0 0.626em);
-  $height: map-get-if($options, 'height', if($is-root, 0.626em * 3, null));
+  $height: map-get-if($options, 'height');
 
   // theming variables
   $text: map-get-if($options, 'text');

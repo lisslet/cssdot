@@ -117,7 +117,7 @@
     }
   }
 
-  @each $label, $fill in $THEME-AUTOFILL {
+  @each $label, $fill in $THEME-AUTOFILL-MAP {
     $value: map-get-if($values, $label, null);
     @if $value == null {
       @if is-color($fill) {

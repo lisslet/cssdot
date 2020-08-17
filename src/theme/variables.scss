@@ -5,6 +5,7 @@ $THEME-STORE: () !default;
 $THEME-LABELS: (
         'primary',
         'secondary',
+        'tertiary',
         'accent',
         'warn',
         'text',
@@ -14,9 +15,10 @@ $THEME-LABELS: (
         'disable'
 ) !default;
 
-$THEME-MAIN-LABELS: (
+$THEME-THEMING-LABELS: (
         'primary',
         'secondary',
+        'tertiary',
         'accent',
         'warn'
 );
@@ -25,8 +27,9 @@ $THEME-REQUIRED-LABELS: (
         'primary'
 ) !default;
 
-$THEME-AUTOFILL: ((
+$THEME-AUTOFILL-MAP: ((
         'secondary': 'primary',
+        'tertiary': 'primary',
         'accent' : ('method': 'contrast'),
         'warn': ('method': 'invert'),
         'field': #fff,

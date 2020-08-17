@@ -2,33 +2,42 @@
 <html>
 <head>
     <link rel="stylesheet" href="../prebuilt/reset.css">
-    <link rel="stylesheet" href="../prebuilt/dynamic/frame/1600.css">
+    <link rel="stylesheet" href="../prebuilt/frame.css">
     <link rel="stylesheet" href="./css/link3.css">
     <link rel="stylesheet" href="../prebuilt/lift.css"
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap" rel="stylesheet">
     <style>
-        body, button {
-            font-family: 'Roboto Condensed';
-        }
+		h2 {
+			font-size: 3em;
+		}
 
-        section {
-            margin-bottom: 1.125em;
-        }
+		body, button {
+			font-family: 'Roboto Condensed';
+		}
 
-        .links section {
-            float: left;
-            width: 50%;
-        }
+		section {
+			margin-bottom: 1.125em;
+		}
 
-        .links:after {
-            content: '';
-            display: block;
-            clear: both;
-        }
+		.links > section {
+			float: left;
+			width: 50%;
+		}
+
+		.links:after {
+			content: '';
+			display: block;
+			clear: both;
+		}
+
+		.dot-link {
+			min-width: 120px;
+			text-align: center;
+		}
 
     </style>
 </head>
-<body>
+<body class="_maxs16">
 
 <main id="dot-main">
     <div id="dot-main-area">
@@ -36,44 +45,108 @@
             <h2>Clear(Default)</h2>
             <section class="_anchors">
                 <h3>Anchor</h3>
-                <a class="dot-link"><span>Clear</span></a>
-                <a class="dot-link _primary"><span>Primary Clear</span></a>
-                <a class="dot-link _secondary"><span>Secondary Clear</span></a>
-                <a class="dot-link _accent"><span>Accent Clear</span></a>
-                <a class="dot-link _warn"><span>Warn Clear</span></a>
+                <section>
+                    <a class="dot-link"><span>Clear</span></a>
+                    <a class="dot-link _primary"><span>Primary Clear</span></a>
+                    <a class="dot-link _secondary"><span>Secondary Clear</span></a>
+                    <a class="dot-link _accent"><span>Accent Clear</span></a>
+                    <a class="dot-link _warn"><span>Warn Clear</span></a>
+                </section>
+                <section>
+                    <a class="dot-link _hover"><span>Clear</span></a>
+                    <a class="dot-link _primary _hover"><span>Primary Clear</span></a>
+                    <a class="dot-link _secondary _hover"><span>Secondary Clear</span></a>
+                    <a class="dot-link _accent _hover"><span>Accent Clear</span></a>
+                    <a class="dot-link _warn _hover"><span>Warn Clear</span></a>
+                </section>
+                <section>
+                    <a class="dot-link _active"><span>Clear</span></a>
+                    <a class="dot-link _primary _active"><span>Primary Clear</span></a>
+                    <a class="dot-link _secondary _active"><span>Secondary Clear</span></a>
+                    <a class="dot-link _accent _active"><span>Accent Clear</span></a>
+                    <a class="dot-link _warn _active"><span>Warn Clear</span></a>
+                </section>
             </section>
             <section class="_links">
                 <h3>Button</h3>
+                <section>
                 <button class="dot-link"><span>Clear</span></button>
                 <button class="dot-link _primary"><span>Primary Clear</span></button>
                 <button class="dot-link _secondary"><span>Secondary Clear</span></button>
                 <button class="dot-link _accent"><span>Accent Clear</span></button>
                 <button class="dot-link _warn"><span>Warn Clear</span></button>
+                </section>
+                <section>
+                    <button class="dot-link _hover"><span>Clear</span></button>
+                    <button class="dot-link _primary _hover"><span>Primary Clear</span></button>
+                    <button class="dot-link _secondary _hover"><span>Secondary Clear</span></button>
+                    <button class="dot-link _accent _hover"><span>Accent Clear</span></button>
+                    <button class="dot-link _warn _hover"><span>Warn Clear</span></button>
+                </section>
+                <section>
+                    <button class="dot-link _active"><span>Clear</span></button>
+                    <button class="dot-link _primary _active"><span>Primary Clear</span></button>
+                    <button class="dot-link _secondary _active"><span>Secondary Clear</span></button>
+                    <button class="dot-link _accent _active"><span>Accent Clear</span></button>
+                    <button class="dot-link _warn _active"><span>Warn Clear</span></button>
+                </section>
             </section>
         </section>
 
         <section class="links">
-            <h2>Soft with <code>dot-lift</code></h2>
+            <h2>Soft with <code>lift</code></h2>
             <section class="_anchors">
                 <h3>Anchor</h3>
-                <a class="dot-link _soft dot-lift1"><span>Soft</span></a>
-                <a class="dot-link _soft _primary dot-lift1"><span>Primary Soft</span></a>
-                <a class="dot-link _soft _secondary dot-lift1"><span>Secondary Soft</span></a>
-                <a class="dot-link _soft _accent dot-lift1"><span>Accent Soft</span></a>
-                <a class="dot-link _soft _warn dot-lift1"><span>Warn Soft</span></a>
+                <section>
+                    <a class="dot-link _soft"><span>Clear</span></a>
+                    <a class="dot-link _soft _primary"><span>Primary Clear</span></a>
+                    <a class="dot-link _soft _secondary"><span>Secondary Clear</span></a>
+                    <a class="dot-link _soft _accent"><span>Accent Clear</span></a>
+                    <a class="dot-link _soft _warn"><span>Warn Clear</span></a>
+                </section>
+                <section>
+                    <a class="dot-link _soft _hover"><span>Clear</span></a>
+                    <a class="dot-link _soft _primary _hover"><span>Primary Clear</span></a>
+                    <a class="dot-link _soft _secondary _hover"><span>Secondary Clear</span></a>
+                    <a class="dot-link _soft _accent _hover"><span>Accent Clear</span></a>
+                    <a class="dot-link _soft _warn _hover"><span>Warn Clear</span></a>
+                </section>
+                <section>
+                    <a class="dot-link _soft _active"><span>Clear</span></a>
+                    <a class="dot-link _soft _primary _active"><span>Primary Clear</span></a>
+                    <a class="dot-link _soft _secondary _active"><span>Secondary Clear</span></a>
+                    <a class="dot-link _soft _accent _active"><span>Accent Clear</span></a>
+                    <a class="dot-link _soft _warn _active"><span>Warn Clear</span></a>
+                </section>
             </section>
             <section class="_links">
                 <h3>Button</h3>
-                <button class="dot-link _soft  dot-lift1"><span>Soft</span></button>
-                <button class="dot-link _soft _primary  dot-lift1"><span>Primary Soft</span></button>
-                <button class="dot-link _soft _secondary  dot-lift1"><span>Secondary Soft</span></button>
-                <button class="dot-link _soft _accent  dot-lift1"><span>Accent Soft</span></button>
-                <button class="dot-link _soft _warn dot-lift1"><span>Warn Soft</span></button>
+                <section>
+                    <button class="dot-link _soft"><span>Clear</span></button>
+                    <button class="dot-link _soft _primary"><span>Primary Clear</span></button>
+                    <button class="dot-link _soft _secondary"><span>Secondary Clear</span></button>
+                    <button class="dot-link _soft _accent"><span>Accent Clear</span></button>
+                    <button class="dot-link _soft _warn"><span>Warn Clear</span></button>
+                </section>
+                <section>
+                    <button class="dot-link _soft _hover"><span>Clear</span></button>
+                    <button class="dot-link _soft _primary _hover"><span>Primary Clear</span></button>
+                    <button class="dot-link _soft _secondary _hover"><span>Secondary Clear</span></button>
+                    <button class="dot-link _soft _accent _hover"><span>Accent Clear</span></button>
+                    <button class="dot-link _soft _warn _hover"><span>Warn Clear</span></button>
+                </section>
+                <section>
+                    <button class="dot-link _soft _active"><span>Clear</span></button>
+                    <button class="dot-link _soft _primary _active"><span>Primary Clear</span></button>
+                    <button class="dot-link _soft _secondary _active"><span>Secondary Clear</span></button>
+                    <button class="dot-link _soft _accent _active"><span>Accent Clear</span></button>
+                    <button class="dot-link _soft _warn _active"><span>Warn Clear</span></button>
+                </section>
             </section>
         </section>
 
         <section class="links">
-            <h2>Hard with <code>dot-lift</code></h2>
+            <h2>Hard with <code>lift</code></h2>
             <section class="_anchors">
                 <h3>Anchor</h3>
                 <a class="dot-link _hard dot-lift1"><span>Hard</span></a>

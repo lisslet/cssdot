@@ -1,5 +1,6 @@
 @import '../../src/scss';
 
+/// Link Styles
 $STYLES: (
         'clear': (
                 'core': (),
@@ -24,9 +25,10 @@ $STYLES: (
                         color: '$color'
                 ),
                 'focus': (
-
                 ),
                 'react': (
+                        color: ('$color', '@text'),
+                        background-color: ('$color', '@opacity', 0.64)
                 ),
                 'active': (
                 )
@@ -73,7 +75,7 @@ $STYLES: (
         ),
         'line': (
                 'core': (
-                        border-style:solid,
+                        border-style: solid,
                         border-width: 0 0 2px 0,
                         border-bottom-left-radius: 0,
                         border-bottom-right-radius: 0
@@ -86,8 +88,8 @@ $STYLES: (
                         border-color: ('$color', '@bright', 0.12),
                 ),
                 'react': (
-                        border-color: ('$color', '@bright', 0.24),
-                        color: '$color'
+                        color: '$color',
+                        border-color: ('$color', '@bright', 0.24)
                 ),
                 'active': (
                         color: '$color',
@@ -151,7 +153,7 @@ $theme: theme($palette);
 $INITIALIZED-STYLES: get-initialize-styles($STYLES);
 
 @function stringify($target, $tap: '') {
-
+  // \A is Line breaker
   $lines: '';
   $type: type-of($target);
   @if $type == 'map' {
@@ -172,6 +174,7 @@ $INITIALIZED-STYLES: get-initialize-styles($STYLES);
   @return $lines;
 }
 
+/// String to palette color
 /// @private
 @function theme-replace-string($theme, $value, $default-label) {
   @if starts-with($value, '$') {
@@ -186,33 +189,51 @@ $INITIALIZED-STYLES: get-initialize-styles($STYLES);
   @return $value;
 }
 
+/// Create new color based on pallet
+/// @description
+///   : Method starts with `@`
+///   text - safe color of palette color
+///   bright - lighten color of palette color
+///   opacity - transparency applied color of palette color
 /// @private
 @function theme-replace-list($theme, $value, $default-label) {
+
+  // @debug $value, $default-label;
+
   $length: length($value);
   $color: nth($value, 1);
   $color: theme-replace-string($theme, $color, $default-label);
 
   $function: '@bright';
   $amount: 0.1;
+  // $color, $method, $amount
   @if $length == 3 {
     $function: nth($value, 2);
     $amount: nth($value, 3);
+
+  // $color, $function
+  // OR
+  // $color, $amount
   } @else if $length == 2 {
     $function-or-amount: nth($value, 2);
+    // $color, (@bright), $amount
     @if type-of($function-or-amount) == 'string' {
       $function: $function-or-amount;
+    // $color, $method, (0.1)
     } @else {
       $amount: $function-or-amount;
     }
   }
 
+  // remove @
   $function: str-slice($function, 2);
 
+  // convert amount to percent unit
   @if $amount < 2 {
     $amount: $amount * 100%;
   }
 
-  @debug $function, $amount;
+  // @debug $color, $function, $amount;
 
   @if $function == 'text' {
     $color: safe-color($color);
@@ -225,6 +246,7 @@ $INITIALIZED-STYLES: get-initialize-styles($STYLES);
   @return $color;
 }
 
+/// Get theme value
 @function theme-value($theme, $value, $default-label) {
   $type: type-of($value);
   @if $type == 'list' {
@@ -236,6 +258,7 @@ $INITIALIZED-STYLES: get-initialize-styles($STYLES);
   @return $value;
 }
 
+/// Set theme related property
 @mixin theme-properties($theme, $label, $properties) {
   @each $property, $value in $properties {
     $value: theme-value($theme, $value, $label);
@@ -243,7 +266,8 @@ $INITIALIZED-STYLES: get-initialize-styles($STYLES);
   }
 }
 
-// @debug stringify($INITIALIZED-STYLES);
+@debug "INITIALIZED-STYLES";
+@debug stringify($INITIALIZED-STYLES);
 
 .dot-link {
 
@@ -289,19 +313,22 @@ $INITIALIZED-STYLES: get-initialize-styles($STYLES);
       @include properties($core-properties);
 
       // coloring properties
-      @each $theme-label in $THEME-MAIN-LABELS {
+      @each $theme-label in $THEME-THEMING-LABELS {
 
         &#{'._'+$theme-label} {
           @include theme-properties($theme, $theme-label, $link-properties);
 
+          &._focus,
           &:focus {
             @include theme-properties($theme, $theme-label, $focus-properties);
           }
 
+          &._hover,
           &:hover {
             @include theme-properties($theme, $theme-label, $hover-properties);
           }
 
+          &._active,
           &:active {
             @include theme-properties($theme, $theme-label, $active-properties);
           }
