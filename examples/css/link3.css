@@ -20,69 +20,74 @@
   outline: none;
 }
 .dot-link._primary {
-  color: #1E88E5;
+  color: rgba(30, 136, 229, 0.6);
 }
 .dot-link._primary._focus, .dot-link._primary:focus {
-  color: #55a5eb;
+  background-color: rgba(30, 136, 229, 0.24);
 }
 .dot-link._primary._hover, .dot-link._primary:hover {
+  background-color: rgba(30, 136, 229, 0.24);
   color: #1E88E5;
 }
 .dot-link._primary._active, .dot-link._primary:active {
   color: #1E88E5;
-  background-color: rgba(30, 136, 229, 0.1);
+  background-color: rgba(30, 136, 229, 0.12);
 }
 .dot-link._secondary {
-  color: #00ACC1;
+  color: rgba(0, 172, 193, 0.6);
 }
 .dot-link._secondary._focus, .dot-link._secondary:focus {
-  color: #00e3fe;
+  background-color: rgba(0, 172, 193, 0.24);
 }
 .dot-link._secondary._hover, .dot-link._secondary:hover {
+  background-color: rgba(0, 172, 193, 0.24);
   color: #00ACC1;
 }
 .dot-link._secondary._active, .dot-link._secondary:active {
   color: #00ACC1;
-  background-color: rgba(0, 172, 193, 0.1);
+  background-color: rgba(0, 172, 193, 0.12);
 }
 .dot-link._tertiary {
-  color: #1E88E5;
+  color: rgba(30, 136, 229, 0.6);
 }
 .dot-link._tertiary._focus, .dot-link._tertiary:focus {
-  color: #55a5eb;
+  background-color: rgba(30, 136, 229, 0.24);
 }
 .dot-link._tertiary._hover, .dot-link._tertiary:hover {
+  background-color: rgba(30, 136, 229, 0.24);
   color: #1E88E5;
 }
 .dot-link._tertiary._active, .dot-link._tertiary:active {
   color: #1E88E5;
-  background-color: rgba(30, 136, 229, 0.1);
+  background-color: rgba(30, 136, 229, 0.12);
 }
 .dot-link._accent {
-  color: orange;
+  color: rgba(255, 165, 0, 0.6);
 }
 .dot-link._accent._focus, .dot-link._accent:focus {
-  color: #ffbb3d;
+  background-color: rgba(255, 165, 0, 0.24);
 }
 .dot-link._accent._hover, .dot-link._accent:hover {
+  background-color: rgba(255, 165, 0, 0.24);
   color: orange;
 }
 .dot-link._accent._active, .dot-link._accent:active {
   color: orange;
-  background-color: rgba(255, 165, 0, 0.1);
+  background-color: rgba(255, 165, 0, 0.12);
 }
 .dot-link._warn {
-  color: #E53935;
+  color: rgba(229, 57, 53, 0.6);
 }
 .dot-link._warn._focus, .dot-link._warn:focus {
-  color: #ec6e6b;
+  background-color: rgba(229, 57, 53, 0.24);
 }
 .dot-link._warn._hover, .dot-link._warn:hover {
+  background-color: rgba(229, 57, 53, 0.24);
   color: #E53935;
 }
 .dot-link._warn._active, .dot-link._warn:active {
   color: #E53935;
-  background-color: rgba(229, 57, 53, 0.1);
+  background-color: rgba(229, 57, 53, 0.12);
 }
 .dot-link._soft._primary {
   background-color: rgba(30, 136, 229, 0.1);

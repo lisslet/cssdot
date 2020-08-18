@@ -15,14 +15,6 @@ $THEME-LABELS: (
         'disable'
 ) !default;
 
-$THEME-THEMING-LABELS: (
-        'primary',
-        'secondary',
-        'tertiary',
-        'accent',
-        'warn'
-);
-
 $THEME-REQUIRED-LABELS: (
         'primary'
 ) !default;
@@ -33,11 +25,20 @@ $THEME-AUTOFILL-MAP: ((
         'accent' : ('method': 'contrast'),
         'warn': ('method': 'invert'),
         'field': #fff,
+        'field-text': ('reference': 'field', 'method': 'text'),
         'border': 'primary',
         'text': ('reference': 'primary', 'method': 'text'),
-        'field-text': ('reference': 'field', 'method': 'text'),
         'link': ('method': 'invert', 'amount': 50%),
         'react': ('method': 'tint'),
         'active': ('method': 'shade'),
         'disable': ('method': 'grayscale')
 )) !default;
+
+
+$THEME-THEMING-LABELS: (
+        'primary',
+        'secondary',
+        'tertiary',
+        'accent',
+        'warn'
+);
