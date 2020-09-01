@@ -100,7 +100,6 @@ $MAX-CLASS-PREFIX: '_max';
     }
   }
 
-
   @each $alias, $width in $width-map {
 
     $start-index: $start-index + 1;

@@ -1,0 +1,19 @@
+.dot-row hr,
+.dot-row .dot-space, .dot-column hr,
+.dot-column .dot-space {
+  display: block;
+  flex-grow: 1;
+  border: none;
+}
+.dot-row {
+  display: flex;
+  flex-direction: row;
+}
+.dot-row .dot-bullet {
+  margin-right: 0.625em;
+}
+.dot-column {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}

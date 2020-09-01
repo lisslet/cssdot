@@ -179,6 +179,11 @@
   @return pick($theme, 'secondary');
 }
 
+/// get secondary color of theme
+@function -tertiary($theme){
+  @return pick($theme, 'tertiary');
+}
+
 /// get accent color of theme
 @function -accent($theme) {
   @return pick($theme, 'accent');

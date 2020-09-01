@@ -1,0 +1,26 @@
+.dot {
+  &-row,
+  &-column {
+    hr,
+    .dot-space {
+      display: block;
+      flex-grow: 1;
+      border: none;
+    }
+  }
+
+  &-row {
+    display: flex;
+    flex-direction: row;
+
+    .dot-bullet {
+      margin-right: 0.625em;
+    }
+  }
+
+  &-column {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+}

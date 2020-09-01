@@ -31,6 +31,14 @@
     ]
   },
   {
+    "scss": "pose/index",
+    "files": [
+      {
+        "filename": "pose"
+      }
+    ]
+  },
+  {
     "scss": "layout/box/standalone",
     "files": [
       {

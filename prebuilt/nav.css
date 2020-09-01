@@ -75,12 +75,6 @@
 }
 .dot-nav._xy a {
   padding: 0 0.626em;
-  height: 1.878em;
-  line-height: 1.878em;
-}
-.dot-nav._xy button {
-  height: 1.878em;
-  line-height: 1.878em;
 }
 .dot-nav._xy ul a {
   padding: 0 0.626em;
@@ -113,12 +107,6 @@
 }
 .dot-nav._x a {
   padding: 0 0.626em;
-  height: 1.878em;
-  line-height: 1.878em;
-}
-.dot-nav._x button {
-  height: 1.878em;
-  line-height: 1.878em;
 }
 .dot-nav._y li {
   display: block;
@@ -143,12 +131,6 @@
 }
 .dot-nav._y a {
   padding: 0 0.626em;
-  height: 1.878em;
-  line-height: 1.878em;
-}
-.dot-nav._y button {
-  height: 1.878em;
-  line-height: 1.878em;
 }
 .dot-nav._tree li {
   display: block;
@@ -159,12 +141,6 @@
 }
 .dot-nav._tree a {
   padding: 0 0.626em;
-  height: 1.878em;
-  line-height: 1.878em;
-}
-.dot-nav._tree button {
-  height: 1.878em;
-  line-height: 1.878em;
 }
 .dot-nav._scroll {
   position: relative;
