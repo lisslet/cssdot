@@ -47,7 +47,9 @@ a {
   text-decoration: none;
 }
 
-address, em {
+address,
+em,
+time var {
   font: inherit;
 }
 
