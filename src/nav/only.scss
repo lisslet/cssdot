@@ -113,7 +113,7 @@
   $left-gap: map-get-if($options, 'left-gap');
   $right-gap: map-get-if($options, 'right-gap');
   $bottom-gap: map-get-if($options, 'bottom-gap');
-  $padding: map-get-if($options, 'padding', 0 0.626em);
+  $padding: map-get-if($options, 'padding');
   $height: map-get-if($options, 'height');
 
   // theming variables

@@ -73,12 +73,6 @@
 .dot-nav._xy li ul li {
   display: block;
 }
-.dot-nav._xy a {
-  padding: 0 0.626em;
-}
-.dot-nav._xy ul a {
-  padding: 0 0.626em;
-}
 .dot-nav._xy ul li {
   background-color: #fff;
 }
@@ -105,9 +99,6 @@
   font-size: 1rem;
   white-space: nowrap;
 }
-.dot-nav._x a {
-  padding: 0 0.626em;
-}
 .dot-nav._y li {
   display: block;
 }
@@ -129,18 +120,12 @@
 .dot-nav._y li {
   display: block;
 }
-.dot-nav._y a {
-  padding: 0 0.626em;
-}
 .dot-nav._tree li {
   display: block;
 }
 .dot-nav._tree a {
   display: block;
   white-space: nowrap;
-}
-.dot-nav._tree a {
-  padding: 0 0.626em;
 }
 .dot-nav._scroll {
   position: relative;

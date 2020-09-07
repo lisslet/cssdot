@@ -156,7 +156,27 @@
   @return $values;
 }
 
-@function theme($values) {
+@function theme($name, $values: null) {
+
+  // Using Default Name
+  @if $values == null {
+    $values: $name;
+    @if map-has-key($THEME-STORE, 'primary') {
+
+      @if map-has-key($THEME-STORE, 'secondary') {
+        @if map-has-key($THEME-STORE, 'tertiary') {
+          @error "Default names were used all, #{$name} is required";
+        } @else {
+          $name: 'tertiary';
+        }
+      } @else {
+        $name: 'secondary';
+      }
+    } @else {
+      $name: 'primary';
+    }
+  }
+  
   @if is-color($values) {
     $values: palette($values);
   }
@@ -166,45 +186,48 @@
   }
 
   $values: dot-type('theme', $values);
+  
+  $THEME-LABELS: map-set($THEME-STORE, $name, $values);
+  
   @return $values;
 }
 
 /// get primary color of theme
-@function -primary($theme) {
-  @return pick($theme, 'primary')
+@function -primary($name-or-theme: 'primary') {
+  @return pick($name-or-theme, 'primary')
 }
 
 /// get secondary color of theme
-@function -secondary($theme){
-  @return pick($theme, 'secondary');
+@function -secondary($name-or-theme: 'primary') {
+  @return pick($name-or-theme, 'secondary');
 }
 
 /// get secondary color of theme
-@function -tertiary($theme){
-  @return pick($theme, 'tertiary');
+@function -tertiary($name-or-theme: 'primary') {
+  @return pick($name-or-theme, 'tertiary');
 }
 
 /// get accent color of theme
-@function -accent($theme) {
-  @return pick($theme, 'accent');
+@function -accent($name-or-theme: 'primary') {
+  @return pick($name-or-theme, 'accent');
 }
 
 /// get warn color of theme
-@function -warn($theme) {
-  @return pick($theme, 'warn');
+@function -warn($name-or-theme: 'primary') {
+  @return pick($name-or-theme, 'warn');
 }
 
 /// get field color of theme
-@function -field($theme) {
-  @return pick($theme, 'field');
+@function -field($name-or-theme: 'primary') {
+  @return pick($name-or-theme, 'field');
 }
 
 /// get text color of theme
-@function -text($theme) {
-  @return pick($theme, 'text');
+@function -text($name-or-theme: 'primary') {
+  @return pick($name-or-theme, 'text');
 }
 
 /// get link color of theme
-@function -link($theme) {
-  @return pick($theme, 'link');
+@function -link($name-or-theme: 'primary') {
+  @return pick($name-or-theme, 'link');
 }
