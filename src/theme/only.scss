@@ -186,8 +186,8 @@
   }
 
   $values: dot-type('theme', $values);
-  
-  $THEME-LABELS: map-set($THEME-STORE, $name, $values);
+
+  $THEME-LABELS: map-merge($THEME-STORE, ($name: $values));
   
   @return $values;
 }

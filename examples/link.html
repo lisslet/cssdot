@@ -50,20 +50,11 @@
 <body class="_maxs16">
 
 <main id="dot-main">
-    <div class="dot-link_softs">
-        <button class="dot-link _primary"><span>Hell</span></button>
-        <a class="dot-link _accent"><span>Hell</span></a>
-        <a class="dot-link _warn"><span>Hell</span></a>
-        <div class="dot-link_hards">
-            <button class="dot-link _primary"><span>Hell</span></button>
-            <a class="dot-link _accent"><span>Hell</span></a>
-            <a class="dot-link _warn"><span>Hell</span></a>
-        </div>
-    </div>
     <div id="dot-main-area">
         <example-links
                 heading="Clear(Default)"
         ></example-links>
+
         <example-links
                 heading="Soft"
                 linkStyle="_soft"
@@ -76,10 +67,10 @@
                 heading="border"
                 linkStyle="_border"
         ></example-links>
-        <example-links
-                heading="line"
-                linkStyle="_line"
-        ></example-links>
+<!--        <example-links-->
+<!--                heading="line"-->
+<!--                linkStyle="_line"-->
+<!--        ></example-links>-->
 
 
     </div>
@@ -100,30 +91,7 @@
 		}
 	}
 
-    customElements.define(
-    	'example-link-anchor-items',
-        class extends ExampleLinkItemsBase {
-    		constructor() {
-    			super();
-
-    			const {heading, classNames} = this;
-
-
-    			this.innerHTML = `
-<div>
-    <h4>${heading}</h4>
-    <a class="${classNames}"><span>Normal</span></a>
-    <a class="${classNames} _primary"><span>Primary</span></a>
-    <a class="${classNames} _secondary"><span>Secondary</span></a>
-    <a class="${classNames} _accent"><span>Accent</span></a>
-    <a class="${classNames} _warn"><span>Warn</span></a>
-</div>
-    			`;
-    		}
-        }
-    );
-
-	customElements.define(
+  	customElements.define(
 		'example-link-button-items',
 		class extends ExampleLinkItemsBase {
 			constructor() {
@@ -135,10 +103,10 @@
 <div>
     <h4>${heading}</h4>
     <button class="${classNames}"><span>Normal</span></button>
-    <button class="${classNames} _primary"><span>Primary</span></button>
-    <button class="${classNames} _secondary"><span>Secondary</span></button>
-    <button class="${classNames} _accent"><span>Accent</span></button>
-    <button class="${classNames} _warn"><span>Warn</span></button>
+    <a href="#" class="${classNames} _primary dot-fx-ripple"><span>Primary</span></a>
+    <button class="${classNames} _secondary  dot-fx-ripple"><span>Secondary</span></button>
+    <a href="#" class="${classNames} _accent  dot-fx-ripple"><span>Accent</span></a>
+    <button class="${classNames} _warn  dot-fx-ripple"><span>Warn</span></button>
 </div>
     			`;
 			}
@@ -156,18 +124,10 @@
 
 				this.innerHTML = `
 <h2>${heading}</h2>
-<div class="_anchors">
-    <h3>Anchor</h3>
-    <example-link-anchor-items heading="Normal State" linkStyle="${linkStyle}"></example-link-anchor-items>
-    <example-link-anchor-items heading="Hover State" linkStyle="${linkStyle} _hover"></example-link-anchor-items>
-    <example-link-anchor-items heading="Active State" linkStyle="${linkStyle} _active"></example-link-anchor-items>
-</div>
-<div class="_links">
     <h3>Button</h3>
     <example-link-button-items heading="Normal State" linkStyle="${linkStyle}"></example-link-button-items>
     <example-link-button-items heading="Hover State" linkStyle="${linkStyle} _hover"></example-link-button-items>
     <example-link-button-items heading="Active State" linkStyle="${linkStyle} _active"></example-link-button-items>
-</div>
         			`;
 			}
 		}

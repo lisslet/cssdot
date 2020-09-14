@@ -2,36 +2,88 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" href="../prebuilt/reset.css">
+    <link rel="stylesheet" href="../prebuilt/lift.css">
     <link rel="stylesheet" href="./css/notify.css">
     <title>Notify of cssdot</title>
     <style>
-        body {
-            background-color: #999;
-        }
+		body {
+			background-color: #999;
+		}
     </style>
 </head>
 <body>
+<example-toast-pool position="top-left" shape="border"></example-toast-pool>
+<example-toast-pool position="bottom-left" shape="soft"></example-toast-pool>
+<example-toast-pool position="bottom-center" shape="hard"></example-toast-pool>
+<example-toast-pool position="bottom-right" shape="vivid"></example-toast-pool>
 
-<div class="dot-notify-central">
-    <h1>Dot Notifies</h1>
-    <article class="dot-notify _link-full">
-            <header class="dot-notify-head">
-                <div class="dot-pad">
-                    <h2>Notify Title</h2>
-                    <p></p>
-                </div>
-            </header>
-            <main class="dot-notify-main">
-                <div class="dot-pad">
-                    Notify Message
-                </div>
-            </main>
-            <footer class="dot-notify-foot">
-                <div class="dot-pad">
-                    <button>Confirm</button>
-                </div>
-            </footer>
-    </article>
+<script>
+	customElements.define(
+		'example-toast',
+		class extends HTMLElement {
+			constructor() {
+				super();
+
+				const color  = this.getAttribute('color');
+				const _color = color ? '_' + color : '';
+
+				let end = Math.round(Math.random() * 10) + 1;
+				let message = [];
+				while(end-->0){
+					message.push('Message');
+                }
+                message = message.join(' ');
+
+				this.innerHTML = `
+<div class="dot-notify-toast dot-lift2 ${_color}">
+        <div class="dot-pad">
+            <p class="dot-notify-toast-body">
+                ${message}
+            </p>
+            <div class="buttons">
+                <button class="dot-notify-toast-link">Confirm
+                </button>
+            </div>
+        </div>
+    </div>
+				`
+			}
+		}
+	);
+	customElements.define(
+		'example-toasts',
+		class extends HTMLElement {
+			constructor() {
+				super();
+				this.innerHTML = `
+				<example-toast color="primary"></example-toast>
+				<example-toast color="accent"></example-toast>
+				<example-toast color="warn"></example-toast>
+				<example-toast></example-toast>
+				`;
+			}
+		}
+	)
+
+	customElements.define(
+		'example-toast-pool',
+		class extends HTMLElement {
+			constructor() {
+				super();
+
+				const position = this.getAttribute('position');
+				const shape = this.getAttribute('shape');
+				const _shape = shape ? '_' + shape : '';
+				const _position = position ? '_' + position : '';
+
+				this.innerHTML = `
+<div class="dot-notify-pool _toast ${_position} ${_shape}">
+    <example-toasts></example-toasts>
 </div>
+    			`;
+			}
+		}
+	)
+</script>
 </body>
 </html>

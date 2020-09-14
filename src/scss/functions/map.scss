@@ -3,6 +3,7 @@
   @return map-has-key($map, $key) == false;
 }
 
+/// @deprecated using `map-merge`
 @function map-set($map, $index, $value) {
   @return map-merge($map, ($index: $value));
 }
