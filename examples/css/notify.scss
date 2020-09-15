@@ -35,165 +35,189 @@ $HORIZONTAL-POSITIONS: (
         )
 );
 
-@mixin position-states-rule($default-position: bottom center) {
-
-  $default-vertical-type: nth($default-position, 1);
-  $default-horizontal-type: nth($default-position, 2);
+$TOAST-SHAPES: ('soft', 'hard', 'vivid', 'border');
 
 
-  @each $vertical-type, $vertical-properties in $VERTICAL-POSITIONS {
-    @each $horizontal-type, $horizontal-properties in $HORIZONTAL-POSITIONS {
-      $state: $vertical-type + '-' + $horizontal-type;
+@mixin toast-rule() {
+  .dot-toast {
 
 
-      @if $vertical-type == $default-vertical-type and $horizontal-type == $default-horizontal-type {
-        &,
-        &#{'._' + $state} {
-          @include properties($vertical-properties, $horizontal-properties);
-        }
-      } @else {
-        &#{'._' + $state} {
+    // @include fixed-position-states('.dot-toast-pool');
+
+    @each $vertical-type, $vertical-properties in $VERTICAL-POSITIONS {
+      @each $horizontal-type, $horizontal-properties in $HORIZONTAL-POSITIONS {
+        $state: $vertical-type + '-' + $horizontal-type;
+
+        &#{'_'+$state} &-pool,
+        &-pool.dot-toast_#{$state} {
           @include properties($vertical-properties, $horizontal-properties);
         }
       }
-
     }
-  }
-}
 
-/// add positioning state to parent selector
-@mixin position-states($default-position: bottom center) {
-  position: absolute;
-  @include position-states-rule;
-}
-
-/// add fixed positioning state to parent selector
-@mixin fixed-position-states($default-position: bottom center) {
-  position: fixed;
-  @include position-states-rule($default-position);
-}
-
-@mixin toast-rule() {
-  .dot-notify {
 
     &-pool {
-      @include fixed-position-states(bottom center);
-
+      position: fixed;
       max-width: 640px;
       z-index: 10000;
     }
 
-    &-toast {
-      @include float;
-      margin: 1.25em auto 0 auto;
-      width: auto;
-      min-width: 320px;
-      background-color: #fff;
+    @include float;
+    margin: 1.25em auto 0 auto;
+    width: auto;
+    min-width: 320px;
+    background-color: #fff;
 
-      .dot-pad {
-        padding: 1.25em;
+    .dot-pad {
+      padding: 1.25em;
 
-        display: flex;
-      }
+      display: flex;
+    }
 
-      p,
-      button {
-        line-height: 1.6em;
-      }
-
-
-      p {
-        float: left;
-        line-height: 1.6em;
-        flex-grow: 1;
-      }
-
-      .buttons {
-        text-align: right;
-      }
+    p,
+    button {
+      line-height: 1.6em;
+    }
 
 
-      button {
-        vertical-align: middle;
-        background-color: transparent;
-        border: none;
-        font-weight: bold;
-      }
+    p {
+      float: left;
+      line-height: 1.6em;
+      flex-grow: 1;
+    }
+
+    .buttons {
+      text-align: right;
+    }
+
+
+    button {
+      vertical-align: middle;
+      background-color: transparent;
+      border: none;
+      font-weight: bold;
     }
   }
 }
 
 @include toast-rule;
 
-@mixin toast-theming($theme) {
+@mixin toast-soft-theming($theme) {
   $primary: -primary($theme);
   $accent: -accent($theme);
   $warn: -warn($theme);
+  $color: $warn;
+  $labels: primary accent warn;
 
+
+  .dot-toast {
+    @each $label in $labels {
+      $color: pick($theme, $label);
+      $label-suffix-query: #{'._'+$label};
+
+      &#{$label-suffix-query} {
+
+
+        background-color: tint($color, 86%);
+        color: shade($color, 68%);
+
+        &:hover {
+          background-color: tint($color, 79%);
+        }
+
+        button {
+          color: $color;
+        }
+      }
+    }
+
+  }
+}
+
+@mixin toast-hard-theming($theme) {
+  $primary: -primary($theme);
+  $accent: -accent($theme);
+  $warn: -warn($theme);
+  $color: $warn;
+  $labels: primary accent warn;
+
+  .dot-toast {
+    @each $label in $labels {
+      $color: pick($theme, $label);
+      $label-suffix-query: #{'._'+$label};
+
+      &#{$label-suffix-query} {
+        background-color: $color;
+        color: safe-color($color);
+      }
+    }
+  }
+
+}
+
+@mixin toast-border-theming($theme) {
+  $primary: -primary($theme);
+  $accent: -accent($theme);
+  $warn: -warn($theme);
   $color: $warn;
 
   $labels: primary accent warn;
 
 
-  ._border {
-    .dot-notify-toast {
-      background-color: $field;
-      color: safe-color($field);
-    }
-  }
+  .dot-toast {
+    background-color: $field;
+    color: safe-color($field);
 
-  @each $label in $labels {
-    $color: pick($theme, $label);
-    $label-suffix-query: #{'._'+$label};
-    ._soft {
-      .dot-notify-toast {
-        &#{$label-suffix-query} {
+    @each $label in $labels {
+      $color: pick($theme, $label);
+      $label-suffix-query: #{'._'+$label};
 
-
-          background-color: tint($color, 86%);
-          color: shade($color, 68%);
-
-          &:hover {
-            background-color: tint($color, 79%);
-          }
-
-          button {
-            color: $color;
-          }
-        }
-      }
-    }
-
-    ._hard {
-      .dot-notify-toast {
-        &#{$label-suffix-query} {
-          background-color: $color;
-          color: safe-color($color);
-        }
-      }
-    }
-
-    ._border {
-      .dot-notify-toast {
-        &#{$label-suffix-query} {
-          border: solid 2px $color;
-          background-color: shade($color, 67%);
-          color: tint($color, 20%);
-        }
-      }
-    }
-
-    ._vivid {
-      .dot-notify-toast {
-        &#{$label-suffix-query} {
-          background: linear-gradient(to right, $color, adjust-hue($color, 67deg));
-          color: safe-color($color);
-        }
+      &#{$label-suffix-query} {
+        border: solid 2px $color;
+        background-color: shade($color, 67%);
+        color: tint($color, 20%);
       }
     }
   }
+
 }
 
+@mixin toast-vivid-theming($theme) {
+  $primary: -primary($theme);
+  $accent: -accent($theme);
+  $warn: -warn($theme);
+  $color: $warn;
+  $labels: primary accent warn;
+
+  .dot-toast {
+    @each $label in $labels {
+      $color: pick($theme, $label);
+      $label-suffix-query: #{'._'+$label};
+
+      &#{$label-suffix-query} {
+        background: linear-gradient(to right, $color, adjust-hue($color, 67deg));
+        color: safe-color($color);
+      }
+    }
+  }
+
+}
+
+@mixin toast-theming($theme) {
+
+  .dot-toast_soft {
+    @include toast-soft-theming($theme);
+  }
+  .dot-toast_hard {
+    @include toast-hard-theming($theme);
+  }
+  .dot-toast_vivid {
+    @include toast-vivid-theming($theme);
+  }
+  .dot-toast_border {
+    @include toast-border-theming($theme);
+  }
+}
 
 $primary: #9A0D3A;
 $accent: lighten($primary, 20%);

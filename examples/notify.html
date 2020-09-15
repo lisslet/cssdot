@@ -35,7 +35,7 @@
                 message = message.join(' ');
 
 				this.innerHTML = `
-<div class="dot-notify-toast dot-lift2 ${_color}">
+<div class="dot-toast dot-lift2 ${_color}">
         <div class="dot-pad">
             <p class="dot-notify-toast-body">
                 ${message}
@@ -77,7 +77,7 @@
 				const _position = position ? '_' + position : '';
 
 				this.innerHTML = `
-<div class="dot-notify-pool _toast ${_position} ${_shape}">
+<div class="dot-toast-pool dot-toast${_position} dot-toast${_shape}">
     <example-toasts></example-toasts>
 </div>
     			`;
