@@ -156,13 +156,13 @@
   @return $values;
 }
 
+/// Create Theme
 @function theme($name, $values: null) {
 
   // Using Default Name
   @if $values == null {
     $values: $name;
     @if map-has-key($THEME-STORE, 'primary') {
-
       @if map-has-key($THEME-STORE, 'secondary') {
         @if map-has-key($THEME-STORE, 'tertiary') {
           @error "Default names were used all, #{$name} is required";
@@ -176,7 +176,7 @@
       $name: 'primary';
     }
   }
-  
+
   @if is-color($values) {
     $values: palette($values);
   }
@@ -185,11 +185,32 @@
     $values: ('palette': $values);
   }
 
+  @if not map-has-key($values, 'tone') {
+    $palette: map-get($values, 'palette');
+    $field: map-get($palette, 'field');
+    $tone: if(is-safe-for-black($field), 'light', 'dark');
+    $values: map-merge($values, ('tone': $tone));
+  }
+
   $values: dot-type('theme', $values);
 
   $THEME-LABELS: map-merge($THEME-STORE, ($name: $values));
-  
+
   @return $values;
+}
+
+@function is-light-theme($theme){
+  @return map-get($theme, 'tone') == 'light';
+}
+
+@function is-dark-theme($theme){
+  @return map-get($theme, 'tone') == 'dark';
+}
+
+@function vivid($theme, $color, $amount){
+  @if map-get($theme, 'tone') == 'light' {
+
+  }
 }
 
 /// get primary color of theme

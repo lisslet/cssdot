@@ -4,11 +4,12 @@
     <link rel="stylesheet" href="../prebuilt/reset.css">
     <link rel="stylesheet" href="../prebuilt/lift.css">
     <link rel="stylesheet" href="./css/notify.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <title>Notify of cssdot</title>
     <style>
-		body {
-			background-color: #999;
-		}
+        body {
+	        font-family: 'Roboto', sans-serif;
+        }
     </style>
 </head>
 <body>
@@ -27,12 +28,12 @@
 				const color  = this.getAttribute('color');
 				const _color = color ? '_' + color : '';
 
-				let end = Math.round(Math.random() * 10) + 1;
+				let end     = Math.round(Math.random() * 10) + 1;
 				let message = [];
-				while(end-->0){
+				while (end-- > 0) {
 					message.push('Message');
-                }
-                message = message.join(' ');
+				}
+				message = message.join(' ');
 
 				this.innerHTML = `
 <div class="dot-toast dot-lift2 ${_color}">
@@ -71,9 +72,9 @@
 			constructor() {
 				super();
 
-				const position = this.getAttribute('position');
-				const shape = this.getAttribute('shape');
-				const _shape = shape ? '_' + shape : '';
+				const position  = this.getAttribute('position');
+				const shape     = this.getAttribute('shape');
+				const _shape    = shape ? '_' + shape : '';
 				const _position = position ? '_' + position : '';
 
 				this.innerHTML = `

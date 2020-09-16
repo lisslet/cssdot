@@ -376,24 +376,31 @@ $__args-shorten-index: query !default;
 
     @each $property, $value in $properties {
       @if $property == 'transform' {
-        $value: list($value);
-        @each $method in $value {
-          @if starts-with($method, 'translateX') {
-            $amount: get-argument($method);
-            $translate: map-merge($translate, ('x': $amount));
-          } @else if starts-with($method, 'translateY') {
-            $amount: get-argument($method);
-            $translate: map-merge($translate, ('y': $amount));
-          } @else if starts-with($method, 'translate') {
-            $amounts: get-argument($method);
-            $amounts: str-split($amounts, ',');
-            $translate: map-merge($translate, (
-                    'x': nth($amounts, 1),
-                    'y': nth($amounts, 2)
-            ));
-          } @else {
-            $transform: append($transform, $value);
+        @if $value == 'none' {
+          $transform: map();
+        } @else {
+
+          $value: list($value);
+
+          @each $method in $value {
+            @if starts-with($method, 'translateX') {
+              $amount: get-argument($method);
+              $translate: map-merge($translate, ('x': $amount));
+            } @else if starts-with($method, 'translateY') {
+              $amount: get-argument($method);
+              $translate: map-merge($translate, ('y': $amount));
+            } @else if starts-with($method, 'translate') {
+              $amounts: get-argument($method);
+              $amounts: str-split($amounts, ',');
+              $translate: map-merge($translate, (
+                      'x': nth($amounts, 1),
+                      'y': nth($amounts, 2)
+              ));
+            } @else {
+              $transform: append($transform, $value);
+            }
           }
+
         }
         // $transform: map-merge($transform, ('transform': $value));
       } @else {

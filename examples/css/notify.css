@@ -7,67 +7,48 @@
 }
 .dot-toast_top-left .dot-toast-pool, .dot-toast-pool.dot-toast_top-left {
   top: 0;
-  bottom: inherit;
   left: 0;
-  right: auto;
-  transform: none none;
 }
 .dot-toast_top-center .dot-toast-pool, .dot-toast-pool.dot-toast_top-center {
   top: 0;
-  bottom: inherit;
   left: 50%;
-  transform: none translateX(-50%);
+  transform: translateX(-50%);
 }
 .dot-toast_top-right .dot-toast-pool, .dot-toast-pool.dot-toast_top-right {
   top: 0;
-  bottom: inherit;
-  left: auto;
   right: 0;
-  transform: none none;
 }
 .dot-toast_middle-left .dot-toast-pool, .dot-toast-pool.dot-toast_middle-left {
   top: 50%;
-  bottom: inherit;
   left: 0;
-  right: auto;
-  transform: none translateY(-50%);
+  transform: translateY(-50%);
 }
 .dot-toast_middle-center .dot-toast-pool, .dot-toast-pool.dot-toast_middle-center {
   top: 50%;
-  bottom: inherit;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 .dot-toast_middle-right .dot-toast-pool, .dot-toast-pool.dot-toast_middle-right {
   top: 50%;
-  bottom: inherit;
-  left: auto;
   right: 0;
-  transform: none translateY(-50%);
+  transform: translateY(-50%);
 }
 .dot-toast_bottom-left .dot-toast-pool, .dot-toast-pool.dot-toast_bottom-left {
-  top: inherit;
   bottom: 0;
   left: 0;
-  right: auto;
-  transform: none none;
 }
 .dot-toast_bottom-center .dot-toast-pool, .dot-toast-pool.dot-toast_bottom-center {
-  top: inherit;
   bottom: 0;
   left: 50%;
-  transform: none translateX(-50%);
+  transform: translateX(-50%);
 }
 .dot-toast_bottom-right .dot-toast-pool, .dot-toast-pool.dot-toast_bottom-right {
-  top: inherit;
   bottom: 0;
-  left: auto;
   right: 0;
-  transform: none none;
 }
 .dot-toast-pool {
   position: fixed;
-  max-width: 640px;
+  max-width: 520px;
   z-index: 10000;
 }
 .dot-toast:after {
@@ -97,37 +78,57 @@
   background-color: transparent;
   border: none;
   font-weight: bold;
+  padding: 0 0.313em;
+}
+.dot-toast button:focus {
+  outline: none;
 }
 
+.dot-toast_soft .dot-toast {
+  background-color: white;
+  color: #000;
+}
+.dot-toast_soft .dot-toast button:focus, .dot-toast_soft .dot-toast button:hover {
+  color: black;
+}
 .dot-toast_soft .dot-toast._primary {
-  background-color: #f1dde3;
-  color: #310413;
+  background-color: #f7ecef;
+  color: #9A0D3A;
 }
 .dot-toast_soft .dot-toast._primary:hover {
-  background-color: #eaccd6;
+  background-color: #f1dde3;
 }
 .dot-toast_soft .dot-toast._primary button {
   color: #9A0D3A;
 }
+.dot-toast_soft .dot-toast._primary button:hover {
+  color: #6b0928;
+}
 .dot-toast_soft .dot-toast._accent {
-  background-color: #fce0e9;
-  color: #4c0b1f;
+  background-color: #fdedf2;
+  color: #ec2162;
 }
 .dot-toast_soft .dot-toast._accent:hover {
-  background-color: #fbd0de;
+  background-color: #fce0e9;
 }
 .dot-toast_soft .dot-toast._accent button {
   color: #ec2162;
 }
+.dot-toast_soft .dot-toast._accent button:hover {
+  color: #c9114c;
+}
 .dot-toast_soft .dot-toast._warn {
-  background-color: #f5edff;
-  color: #3a2952;
+  background-color: #f9f5ff;
+  color: #b57fff;
 }
 .dot-toast_soft .dot-toast._warn:hover {
-  background-color: #efe4ff;
+  background-color: #f5edff;
 }
 .dot-toast_soft .dot-toast._warn button {
   color: #b57fff;
+}
+.dot-toast_soft .dot-toast._warn button:hover {
+  color: #984cff;
 }
 
 .dot-toast_hard .dot-toast._primary {
@@ -144,34 +145,44 @@
 }
 
 .dot-toast_vivid .dot-toast._primary {
-  background: linear-gradient(to right, #9A0D3A, #9a7d0d);
+  background: linear-gradient(to left, #9A0D3A, #9a7d0d);
   color: #fff;
 }
 .dot-toast_vivid .dot-toast._accent {
-  background: linear-gradient(to right, #ec2162, #ecc321);
+  background: linear-gradient(to left, #ec2162, #ecc321);
   color: #000;
 }
 .dot-toast_vivid .dot-toast._warn {
-  background: linear-gradient(to right, #b57fff, #ff7fba);
+  background: linear-gradient(to left, #b57fff, #ff7fba);
   color: #000;
 }
 
 .dot-toast_border .dot-toast {
-  background-color: #999;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #000;
+  background-color: white;
   color: #000;
 }
 .dot-toast_border .dot-toast._primary {
-  border: solid 2px #9A0D3A;
-  background-color: #330413;
-  color: #ae3d61;
+  border-color: #9A0D3A;
+}
+.dot-toast_border .dot-toast._primary button {
+  color: #9A0D3A;
 }
 .dot-toast_border .dot-toast._accent {
-  border: solid 2px #ec2162;
-  background-color: #4e0b20;
-  color: #f04d81;
+  border-color: #ec2162;
+}
+.dot-toast_border .dot-toast._accent button {
+  color: #ec2162;
 }
 .dot-toast_border .dot-toast._warn {
-  border: solid 2px #b57fff;
-  background-color: #3c2a54;
-  color: #c499ff;
+  border-color: #b57fff;
+}
+.dot-toast_border .dot-toast._warn button {
+  color: #b57fff;
+}
+
+body {
+  background-color: #fff;
 }

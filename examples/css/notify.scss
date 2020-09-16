@@ -3,35 +3,26 @@
 $VERTICAL-POSITIONS: (
         'top': (
                 top: 0,
-                bottom: inherit,
-                transform: none
         ),
         'middle': (
                 top:50%,
-                bottom: inherit,
                 transform:translateY(-50%)
         ),
         'bottom': (
-                top: inherit,
                 bottom:0,
-                transform: none
         )
 );
 
 $HORIZONTAL-POSITIONS: (
         'left': (
                 left: 0,
-                right: auto,
-                transform: none
         ),
         'center': (
                 left:50%,
                 transform:translateX(-50%)
         ),
         'right': (
-                left: auto,
-                right:0,
-                transform: none
+                right:0
         )
 );
 
@@ -58,7 +49,7 @@ $TOAST-SHAPES: ('soft', 'hard', 'vivid', 'border');
 
     &-pool {
       position: fixed;
-      max-width: 640px;
+      max-width: 520px;
       z-index: 10000;
     }
 
@@ -96,21 +87,62 @@ $TOAST-SHAPES: ('soft', 'hard', 'vivid', 'border');
       background-color: transparent;
       border: none;
       font-weight: bold;
+      padding: 0 0.313em;
+      &:focus {
+        outline: none;
+      }
     }
   }
 }
 
 @include toast-rule;
 
+@function light-light-dark($theme, $color, $amount) {
+  @if is-light-theme($theme) {
+    @return lighten($color, $amount);
+  }
+  @return darken($color, $amount);
+}
+
+@function light-dark-light($theme, $color, $amount) {
+  @if is-dark-theme($theme) {
+    @return lighten($color, $amount);
+  }
+  @return darken($color, $amount);
+}
+
+@function light-shade-tint($theme, $color, $amount) {
+  @if is-light-theme($theme) {
+    @return shade($color, $amount);
+  }
+  @return tint($color, $amount);
+}
+
+@function light-tint-shade($theme, $color, $amount) {
+  @if is-dark-theme($theme) {
+    @return shade($color, $amount);
+  }
+  @return tint($color, $amount);
+}
+
 @mixin toast-soft-theming($theme) {
-  $primary: -primary($theme);
-  $accent: -accent($theme);
-  $warn: -warn($theme);
-  $color: $warn;
   $labels: primary accent warn;
 
+  $text: -text($theme);
+  $field: -field($theme);
 
   .dot-toast {
+
+    background-color: light-tint-shade($theme, $field, 36%);
+    color: $text;
+
+    button {
+      &:focus,
+      &:hover {
+        color: light-dark-light($theme, $text, 10%);
+      }
+    }
+
     @each $label in $labels {
       $color: pick($theme, $label);
       $label-suffix-query: #{'._'+$label};
@@ -118,15 +150,18 @@ $TOAST-SHAPES: ('soft', 'hard', 'vivid', 'border');
       &#{$label-suffix-query} {
 
 
-        background-color: tint($color, 86%);
-        color: shade($color, 68%);
+        background-color: light-tint-shade($theme, $color, 92%);
+        color: $color; // light-shade-tint($theme, $color, 2%);
 
         &:hover {
-          background-color: tint($color, 79%);
+          background-color: light-tint-shade($theme, $color, 86%);
         }
 
         button {
           color: $color;
+          &:hover {
+            color: light-dark-light($theme, $color, 10%);
+          }
         }
       }
     }
@@ -135,10 +170,6 @@ $TOAST-SHAPES: ('soft', 'hard', 'vivid', 'border');
 }
 
 @mixin toast-hard-theming($theme) {
-  $primary: -primary($theme);
-  $accent: -accent($theme);
-  $warn: -warn($theme);
-  $color: $warn;
   $labels: primary accent warn;
 
   .dot-toast {
@@ -155,38 +186,41 @@ $TOAST-SHAPES: ('soft', 'hard', 'vivid', 'border');
 
 }
 
-@mixin toast-border-theming($theme) {
-  $primary: -primary($theme);
-  $accent: -accent($theme);
-  $warn: -warn($theme);
-  $color: $warn;
 
+
+@mixin toast-border-theming($theme) {
+  $field: -field($theme);
+  $text: -text($theme);
   $labels: primary accent warn;
 
-
+  $normal-border: $text;
+  $normal-field: light-tint-shade($theme, $field, 90%);
+  $normal-text: safe-color($normal-field);
   .dot-toast {
-    background-color: $field;
-    color: safe-color($field);
+    border-style: solid;
+    border-width: 2px;
+    border-color: $normal-border;
+    background-color: $normal-field;
+    color: $normal-text;
 
     @each $label in $labels {
       $color: pick($theme, $label);
       $label-suffix-query: #{'._'+$label};
 
       &#{$label-suffix-query} {
-        border: solid 2px $color;
-        background-color: shade($color, 67%);
-        color: tint($color, 20%);
+        border-color: $color;
+        // background-color: light-tint-shade($theme, $color, 79%);
+        // color: light-light-dark($theme, $color, 20%);
+
+        button {
+          color: $color;
+        }
       }
     }
   }
-
 }
 
 @mixin toast-vivid-theming($theme) {
-  $primary: -primary($theme);
-  $accent: -accent($theme);
-  $warn: -warn($theme);
-  $color: $warn;
   $labels: primary accent warn;
 
   .dot-toast {
@@ -195,7 +229,7 @@ $TOAST-SHAPES: ('soft', 'hard', 'vivid', 'border');
       $label-suffix-query: #{'._'+$label};
 
       &#{$label-suffix-query} {
-        background: linear-gradient(to right, $color, adjust-hue($color, 67deg));
+        background: linear-gradient(to left, $color, adjust-hue($color, 67deg));
         color: safe-color($color);
       }
     }
@@ -217,13 +251,14 @@ $TOAST-SHAPES: ('soft', 'hard', 'vivid', 'border');
   .dot-toast_border {
     @include toast-border-theming($theme);
   }
+
 }
 
 $primary: #9A0D3A;
 $accent: lighten($primary, 20%);
 $warn: #b57fff;
-$field: #999;
-$text: #fff;
+$field: #fff;
+$text: safe-color($field);
 
 $theme: theme((
         'palette': palette((
@@ -235,4 +270,8 @@ $theme: theme((
         ))
 ));
 
-@include toast-theming($theme)
+@include toast-theming($theme);
+
+body {
+  background-color: $field;
+}
