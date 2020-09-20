@@ -1,54 +1,63 @@
 .dot-toast {
   zoom: expression(this.style.zoom=1, this.innerHTML+='<div style="clear:both;">');
-  margin: 1.25em auto 0 auto;
+  margin: 0.625em auto 0 auto;
   width: auto;
-  min-width: 320px;
+  min-width: 300px;
   background-color: #fff;
 }
 .dot-toast_top-left .dot-toast-pool, .dot-toast-pool.dot-toast_top-left {
   top: 0;
   left: 0;
+  transform-origin: left top;
 }
 .dot-toast_top-center .dot-toast-pool, .dot-toast-pool.dot-toast_top-center {
   top: 0;
   left: 50%;
   transform: translateX(-50%);
+  transform-origin: center top;
 }
 .dot-toast_top-right .dot-toast-pool, .dot-toast-pool.dot-toast_top-right {
   top: 0;
   right: 0;
+  transform-origin: right top;
 }
 .dot-toast_middle-left .dot-toast-pool, .dot-toast-pool.dot-toast_middle-left {
   top: 50%;
   left: 0;
   transform: translateY(-50%);
+  transform-origin: left center;
 }
 .dot-toast_middle-center .dot-toast-pool, .dot-toast-pool.dot-toast_middle-center {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  transform-origin: center center;
 }
 .dot-toast_middle-right .dot-toast-pool, .dot-toast-pool.dot-toast_middle-right {
   top: 50%;
   right: 0;
   transform: translateY(-50%);
+  transform-origin: right center;
 }
 .dot-toast_bottom-left .dot-toast-pool, .dot-toast-pool.dot-toast_bottom-left {
   bottom: 0;
   left: 0;
+  transform-origin: left bottom;
 }
 .dot-toast_bottom-center .dot-toast-pool, .dot-toast-pool.dot-toast_bottom-center {
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
+  transform-origin: center bottom;
 }
 .dot-toast_bottom-right .dot-toast-pool, .dot-toast-pool.dot-toast_bottom-right {
   bottom: 0;
   right: 0;
+  transform-origin: right bottom;
 }
 .dot-toast-pool {
   position: fixed;
-  max-width: 520px;
+  max-width: 480px;
   z-index: 10000;
 }
 .dot-toast:after {
@@ -85,104 +94,128 @@
 }
 
 .dot-toast_soft .dot-toast {
-  background-color: white;
-  color: #000;
-}
-.dot-toast_soft .dot-toast button:focus, .dot-toast_soft .dot-toast button:hover {
-  color: black;
-}
-.dot-toast_soft .dot-toast._primary {
-  background-color: #f7ecef;
-  color: #9A0D3A;
-}
-.dot-toast_soft .dot-toast._primary:hover {
-  background-color: #f1dde3;
-}
-.dot-toast_soft .dot-toast._primary button {
-  color: #9A0D3A;
-}
-.dot-toast_soft .dot-toast._primary button:hover {
-  color: #6b0928;
-}
-.dot-toast_soft .dot-toast._accent {
-  background-color: #fdedf2;
-  color: #ec2162;
-}
-.dot-toast_soft .dot-toast._accent:hover {
-  background-color: #fce0e9;
-}
-.dot-toast_soft .dot-toast._accent button {
-  color: #ec2162;
-}
-.dot-toast_soft .dot-toast._accent button:hover {
-  color: #c9114c;
-}
-.dot-toast_soft .dot-toast._warn {
-  background-color: #f9f5ff;
-  color: #b57fff;
-}
-.dot-toast_soft .dot-toast._warn:hover {
-  background-color: #f5edff;
-}
-.dot-toast_soft .dot-toast._warn button {
-  color: #b57fff;
-}
-.dot-toast_soft .dot-toast._warn button:hover {
-  color: #984cff;
-}
-
-.dot-toast_hard .dot-toast._primary {
-  background-color: #9A0D3A;
+  background-color: #212121;
   color: #fff;
 }
+.dot-toast_soft .dot-toast button:focus, .dot-toast_soft .dot-toast button:hover {
+  color: white;
+}
+.dot-toast_soft .dot-toast._primary {
+  background-color: #020d12;
+  color: #15a2de;
+}
+.dot-toast_soft .dot-toast._primary:hover {
+  background-color: #03171f;
+}
+.dot-toast_soft .dot-toast._primary button {
+  color: #15a2de;
+}
+.dot-toast_soft .dot-toast._primary button:hover {
+  color: #3ab7ec;
+}
+.dot-toast_soft .dot-toast._secondary {
+  background-color: #141400;
+  color: yellow;
+}
+.dot-toast_soft .dot-toast._secondary:hover {
+  background-color: #242400;
+}
+.dot-toast_soft .dot-toast._secondary button {
+  color: yellow;
+}
+.dot-toast_soft .dot-toast._secondary button:hover {
+  color: #ffff33;
+}
+.dot-toast_soft .dot-toast._accent {
+  background-color: #04130c;
+  color: #34ed93;
+}
+.dot-toast_soft .dot-toast._accent:hover {
+  background-color: #072115;
+}
+.dot-toast_soft .dot-toast._accent button {
+  color: #34ed93;
+}
+.dot-toast_soft .dot-toast._accent button:hover {
+  color: #63f1ac;
+}
+.dot-toast_soft .dot-toast._warn {
+  background-color: #140909;
+  color: #ff6b6b;
+}
+.dot-toast_soft .dot-toast._warn:hover {
+  background-color: #240f0f;
+}
+.dot-toast_soft .dot-toast._warn button {
+  color: #ff6b6b;
+}
+.dot-toast_soft .dot-toast._warn button:hover {
+  color: #ff9e9e;
+}
+.dot-toast_hard .dot-toast._primary {
+  background-color: #15a2de;
+  color: #000;
+}
+.dot-toast_hard .dot-toast._secondary {
+  background-color: yellow;
+  color: #000;
+}
 .dot-toast_hard .dot-toast._accent {
-  background-color: #ec2162;
+  background-color: #34ed93;
   color: #000;
 }
 .dot-toast_hard .dot-toast._warn {
-  background-color: #b57fff;
+  background-color: #ff6b6b;
   color: #000;
 }
-
 .dot-toast_vivid .dot-toast._primary {
-  background: linear-gradient(to left, #9A0D3A, #9a7d0d);
-  color: #fff;
+  background: linear-gradient(to left, #19de15, #15a2de);
+  color: #000;
+}
+.dot-toast_vivid .dot-toast._secondary {
+  background: linear-gradient(to left, #ff0051, yellow);
+  color: #000;
 }
 .dot-toast_vivid .dot-toast._accent {
-  background: linear-gradient(to left, #ec2162, #ecc321);
+  background: linear-gradient(to left, #c9ed34, #34ed93);
   color: #000;
 }
 .dot-toast_vivid .dot-toast._warn {
-  background: linear-gradient(to left, #b57fff, #ff7fba);
+  background: linear-gradient(to left, #d06bff, #ff6b6b);
   color: #000;
 }
-
 .dot-toast_border .dot-toast {
   border-style: solid;
   border-width: 2px;
-  border-color: #000;
-  background-color: white;
-  color: #000;
+  border-color: #fff;
+  background-color: #050505;
+  color: #fff;
 }
 .dot-toast_border .dot-toast._primary {
-  border-color: #9A0D3A;
+  border-color: #15a2de;
 }
 .dot-toast_border .dot-toast._primary button {
-  color: #9A0D3A;
+  color: #15a2de;
+}
+.dot-toast_border .dot-toast._secondary {
+  border-color: yellow;
+}
+.dot-toast_border .dot-toast._secondary button {
+  color: yellow;
 }
 .dot-toast_border .dot-toast._accent {
-  border-color: #ec2162;
+  border-color: #34ed93;
 }
 .dot-toast_border .dot-toast._accent button {
-  color: #ec2162;
+  color: #34ed93;
 }
 .dot-toast_border .dot-toast._warn {
-  border-color: #b57fff;
+  border-color: #ff6b6b;
 }
 .dot-toast_border .dot-toast._warn button {
-  color: #b57fff;
+  color: #ff6b6b;
 }
 
 body {
-  background-color: #fff;
+  background-color: #333;
 }

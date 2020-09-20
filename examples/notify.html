@@ -7,17 +7,47 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <title>Notify of cssdot</title>
     <style>
-        body {
-	        font-family: 'Roboto', sans-serif;
+		body {
+			font-family: 'Roboto', sans-serif;
+            background-color: #fff;
+		}
+
+        .zone {
+	        position: relative;
+            width: 100vw;
+            height: 100vh;
+            transform: scale(0.5);
+            margin-top:-25vh;
+            margin-bottom:-25vh;
+        }
+
+        ._light {
+            background-color: #fff;
+        }
+
+        ._dark {
+            background-color: #333;
+        }
+
+        .dot-toast-pool {
+            position:absolute !important;
         }
     </style>
 </head>
 <body>
-<example-toast-pool position="top-left" shape="border"></example-toast-pool>
-<example-toast-pool position="bottom-left" shape="soft"></example-toast-pool>
-<example-toast-pool position="bottom-center" shape="hard"></example-toast-pool>
-<example-toast-pool position="bottom-right" shape="vivid"></example-toast-pool>
+<div class="zone _light">
+    <example-toast-pool position="top-left" shape="border"></example-toast-pool>
+    <example-toast-pool position="bottom-left" shape="soft"></example-toast-pool>
+    <example-toast-pool position="bottom-center" shape="hard"></example-toast-pool>
+    <example-toast-pool position="bottom-right" shape="vivid"></example-toast-pool>
+</div>
 
+<div class="zone _dark">
+    <example-toast-pool position="top-left" shape="border"></example-toast-pool>
+    <example-toast-pool position="bottom-left" shape="soft"></example-toast-pool>
+    <example-toast-pool position="bottom-center" shape="hard"></example-toast-pool>
+    <example-toast-pool position="bottom-right" shape="vivid"></example-toast-pool>
+</div>
 <script>
 	customElements.define(
 		'example-toast',
@@ -28,7 +58,7 @@
 				const color  = this.getAttribute('color');
 				const _color = color ? '_' + color : '';
 
-				let end     = Math.round(Math.random() * 10) + 1;
+				let end     = Math.round(Math.random() * 3) + 1;
 				let message = [];
 				while (end-- > 0) {
 					message.push('Message');
@@ -36,8 +66,9 @@
 				message = message.join(' ');
 
 				this.innerHTML = `
-<div class="dot-toast dot-lift2 ${_color}">
-        <div class="dot-pad">
+<div class="dot-toast dot-lift3 ${_color}">
+    <div class="dot-toast-area">
+        <div class="dot-toast-pad dot-pad">
             <p class="dot-notify-toast-body">
                 ${message}
             </p>
@@ -47,6 +78,7 @@
             </div>
         </div>
     </div>
+</div>
 				`
 			}
 		}
@@ -58,6 +90,7 @@
 				super();
 				this.innerHTML = `
 				<example-toast color="primary"></example-toast>
+				<example-toast color="secondary"></example-toast>
 				<example-toast color="accent"></example-toast>
 				<example-toast color="warn"></example-toast>
 				<example-toast></example-toast>

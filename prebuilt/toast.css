@@ -1,0 +1,189 @@
+.dot-toast {
+  zoom: expression(this.style.zoom=1, this.innerHTML+='<div style="clear:both;">');
+  margin: 0.625em auto 0 auto;
+  width: auto;
+  min-width: 300px;
+  background-color: #fff;
+}
+.dot-toast_top-left .dot-toast-pool, .dot-toast-pool.dot-toast_top-left {
+  top: 0;
+  left: 0;
+  transform-origin: left top;
+}
+.dot-toast_top-center .dot-toast-pool, .dot-toast-pool.dot-toast_top-center {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  transform-origin: center top;
+}
+.dot-toast_top-right .dot-toast-pool, .dot-toast-pool.dot-toast_top-right {
+  top: 0;
+  right: 0;
+  transform-origin: right top;
+}
+.dot-toast_middle-left .dot-toast-pool, .dot-toast-pool.dot-toast_middle-left {
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  transform-origin: left center;
+}
+.dot-toast_middle-center .dot-toast-pool, .dot-toast-pool.dot-toast_middle-center {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transform-origin: center center;
+}
+.dot-toast_middle-right .dot-toast-pool, .dot-toast-pool.dot-toast_middle-right {
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  transform-origin: right center;
+}
+.dot-toast_bottom-left .dot-toast-pool, .dot-toast-pool.dot-toast_bottom-left {
+  bottom: 0;
+  left: 0;
+  transform-origin: left bottom;
+}
+.dot-toast_bottom-center .dot-toast-pool, .dot-toast-pool.dot-toast_bottom-center {
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  transform-origin: center bottom;
+}
+.dot-toast_bottom-right .dot-toast-pool, .dot-toast-pool.dot-toast_bottom-right {
+  bottom: 0;
+  right: 0;
+  transform-origin: right bottom;
+}
+.dot-toast-pool {
+  position: fixed;
+  max-width: 480px;
+  z-index: 10000;
+}
+.dot-toast:after {
+  content: "";
+  display: block;
+  clear: both;
+  height: 0;
+}
+.dot-toast .dot-pad {
+  padding: 1.25em;
+  display: flex;
+}
+.dot-toast p,
+.dot-toast button {
+  line-height: 1.6em;
+}
+.dot-toast p {
+  float: left;
+  line-height: 1.6em;
+  flex-grow: 1;
+}
+.dot-toast .buttons {
+  text-align: right;
+}
+.dot-toast button {
+  vertical-align: middle;
+  background-color: transparent;
+  border: none;
+  font-weight: bold;
+  padding: 0 0.313em;
+}
+.dot-toast button:focus {
+  outline: none;
+}
+
+.dot-toast {
+  zoom: expression(this.style.zoom=1, this.innerHTML+='<div style="clear:both;">');
+  margin: 0.625em auto 0 auto;
+  width: auto;
+  min-width: 300px;
+  background-color: #fff;
+}
+.dot-toast_top-left .dot-toast-pool, .dot-toast-pool.dot-toast_top-left {
+  top: 0;
+  left: 0;
+  transform-origin: left top;
+}
+.dot-toast_top-center .dot-toast-pool, .dot-toast-pool.dot-toast_top-center {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  transform-origin: center top;
+}
+.dot-toast_top-right .dot-toast-pool, .dot-toast-pool.dot-toast_top-right {
+  top: 0;
+  right: 0;
+  transform-origin: right top;
+}
+.dot-toast_middle-left .dot-toast-pool, .dot-toast-pool.dot-toast_middle-left {
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  transform-origin: left center;
+}
+.dot-toast_middle-center .dot-toast-pool, .dot-toast-pool.dot-toast_middle-center {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transform-origin: center center;
+}
+.dot-toast_middle-right .dot-toast-pool, .dot-toast-pool.dot-toast_middle-right {
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  transform-origin: right center;
+}
+.dot-toast_bottom-left .dot-toast-pool, .dot-toast-pool.dot-toast_bottom-left {
+  bottom: 0;
+  left: 0;
+  transform-origin: left bottom;
+}
+.dot-toast_bottom-center .dot-toast-pool, .dot-toast-pool.dot-toast_bottom-center {
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  transform-origin: center bottom;
+}
+.dot-toast_bottom-right .dot-toast-pool, .dot-toast-pool.dot-toast_bottom-right {
+  bottom: 0;
+  right: 0;
+  transform-origin: right bottom;
+}
+.dot-toast-pool {
+  position: fixed;
+  max-width: 480px;
+  z-index: 10000;
+}
+.dot-toast:after {
+  content: "";
+  display: block;
+  clear: both;
+  height: 0;
+}
+.dot-toast .dot-pad {
+  padding: 1.25em;
+  display: flex;
+}
+.dot-toast p,
+.dot-toast button {
+  line-height: 1.6em;
+}
+.dot-toast p {
+  float: left;
+  line-height: 1.6em;
+  flex-grow: 1;
+}
+.dot-toast .buttons {
+  text-align: right;
+}
+.dot-toast button {
+  vertical-align: middle;
+  background-color: transparent;
+  border: none;
+  font-weight: bold;
+  padding: 0 0.313em;
+}
+.dot-toast button:focus {
+  outline: none;
+}

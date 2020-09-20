@@ -207,12 +207,6 @@
   @return map-get($theme, 'tone') == 'dark';
 }
 
-@function vivid($theme, $color, $amount){
-  @if map-get($theme, 'tone') == 'light' {
-
-  }
-}
-
 /// get primary color of theme
 @function -primary($name-or-theme: 'primary') {
   @return pick($name-or-theme, 'primary')
