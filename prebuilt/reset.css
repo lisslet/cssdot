@@ -5,6 +5,7 @@ body {
 
 body {
   line-height: 1;
+  word-break: break-all;
 }
 
 /*
@@ -88,6 +89,10 @@ input[type=submit],
 input[type=button],
 label {
   cursor: pointer;
+}
+
+button {
+  word-break: normal;
 }
 
 hr {
