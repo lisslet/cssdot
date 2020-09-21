@@ -156,16 +156,13 @@ task('cssdot-example-compile', done => {
 	);
 });
 
-task('cssdot-example-watch', () => {
-	return watch(
-		exampleTarget,
-		series('cssdot-example-compile')
-	);
-});
+watch(
+	[exampleTarget, $src + '**/*.scss'],
+	series('cssdot-example-compile')
+);
 
 task('cssdot-examples-only', parallel(
-	'cssdot-example-compile',
-	'cssdot-example-watch'
+	'cssdot-example-compile'
 ));
 
 task('cssdot-watch', done => {

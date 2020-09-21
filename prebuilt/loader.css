@@ -1,8 +1,8 @@
 .dot-loader {
   display: inline-block;
-  animation: zII7abNh6HihQrQFBiTANfmp9ainec 0.48s both;
+  animation: zPm9eP9IOME8dLmBOnMvwzvmHghlFX 0.48s both;
 }
-@keyframes zII7abNh6HihQrQFBiTANfmp9ainec {
+@keyframes zPm9eP9IOME8dLmBOnMvwzvmHghlFX {
   from {
     opacity: 0;
   }
@@ -20,9 +20,9 @@
   display: block;
 }
 .dot-loader._circle span {
-  animation: zpz7gv2B2TVXxyEJYAzza3vbcl35Rn 1.44s linear infinite;
+  animation: zIZhg8QllCodwh5qSrurw9V6zrcWzq 1.44s linear infinite;
 }
-@keyframes zpz7gv2B2TVXxyEJYAzza3vbcl35Rn {
+@keyframes zIZhg8QllCodwh5qSrurw9V6zrcWzq {
   to {
     transform: rotate(360deg);
   }
@@ -33,9 +33,9 @@
   border: solid gray 0.25em;
   border-radius: 50%;
   border-right-color: transparent;
-  animation: zDbq2OXqTEBmh64I7Va5ZaHS3efCUX 0.96s infinite;
+  animation: zdhlC1dahrd3pBjFJzYhLV96J0MO8Q 0.96s infinite;
 }
-@keyframes zDbq2OXqTEBmh64I7Va5ZaHS3efCUX {
+@keyframes zdhlC1dahrd3pBjFJzYhLV96J0MO8Q {
   to {
     transform: rotate(360deg);
   }
@@ -47,9 +47,9 @@
   width: 100%;
   height: 100%;
   perspective: 512px;
-  animation: zRj4PRONJCgOeL0FNWdulTI8KWEv3X 0.96s linear infinite;
+  animation: zjLltDJK7IQ7Elx9fJ9jMOSqdmatEh 0.96s linear infinite;
 }
-@keyframes zRj4PRONJCgOeL0FNWdulTI8KWEv3X {
+@keyframes zjLltDJK7IQ7Elx9fJ9jMOSqdmatEh {
   50% {
     transform: rotateX(180deg);
   }
@@ -62,9 +62,9 @@
   height: 33.33%;
   background-color: gray;
   perspective: 512px;
-  animation: z3oHURgnWT5xN8Ao5RgkI1jpDaRu6H 2.4s both infinite;
+  animation: zNGynXIZvsN4nL4szN3ObwiYimHvU3 2.4s both infinite;
 }
-@keyframes z3oHURgnWT5xN8Ao5RgkI1jpDaRu6H {
+@keyframes zNGynXIZvsN4nL4szN3ObwiYimHvU3 {
   0% {
     transform: scale(1);
   }
@@ -101,9 +101,9 @@
   height: 100%;
   background-color: gray;
   transform: scaleX(0.8) scaleY(0.5);
-  animation: zLphaIvZ05cVaJA9Z1D7l9GmODeld1 0.96s infinite;
+  animation: zaHebfKI0bwcPFLa2ELkl9hOUwvcdr 0.96s infinite;
 }
-@keyframes zLphaIvZ05cVaJA9Z1D7l9GmODeld1 {
+@keyframes zaHebfKI0bwcPFLa2ELkl9hOUwvcdr {
   50% {
     transform: scaleX(0.96) scaleY(0.66);
   }

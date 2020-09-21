@@ -43,7 +43,7 @@ $TOAST-MAX-WIDTH: 480px;
         &#{'_'+$state} &-pool,
         &-pool.dot-toast_#{$state} {
           @include properties($vertical-properties, $horizontal-properties);
-          transform-origin:  unquote($horizontal-type) $origin-y;
+          transform-origin: unquote($horizontal-type) $origin-y;
         }
       }
     }
@@ -56,14 +56,14 @@ $TOAST-MAX-WIDTH: 480px;
     }
 
     @include float;
+
     margin: 0.625em auto 0 auto;
     width: auto;
     min-width: $TOAST-MIN-WIDTH;
     background-color: #fff;
 
     .dot-pad {
-      padding: 1.25em;
-
+      padding: 0.625em 1.25em;
       display: flex;
     }
 
@@ -81,8 +81,8 @@ $TOAST-MAX-WIDTH: 480px;
 
     .buttons {
       text-align: right;
+      margin-left: 0.625em;
     }
-
 
     button {
       vertical-align: middle;
@@ -149,8 +149,6 @@ $TOAST-MAX-WIDTH: 480px;
       $label-query: #{'._'+$label};
 
       &#{$label-query} {
-
-
         background-color: light-tint-shade($theme, $color, 92%);
         color: $color; // light-shade-tint($theme, $color, 2%);
 
@@ -190,6 +188,10 @@ $TOAST-MAX-WIDTH: 480px;
 
 }
 
+@mixin hover($color) {
+  background-color: $color;
+  color: safe-color($color);
+}
 
 @mixin toast-border-theming($theme) {
   $field: -field($theme);
@@ -198,6 +200,8 @@ $TOAST-MAX-WIDTH: 480px;
   $normal-border: $text;
   $normal-field: light-tint-shade($theme, $field, 90%);
   $normal-text: safe-color($normal-field);
+
+
   #{$TOAST-QUERY} {
     border-style: solid;
     border-width: 2px;
@@ -205,17 +209,41 @@ $TOAST-MAX-WIDTH: 480px;
     background-color: $normal-field;
     color: $normal-text;
 
+    &:hover {
+      @include hover($normal-border);
+    }
+
+    button {
+      border-style: solid;
+      border-width: 2px 0;
+      border-color: transparent;
+
+      &:hover {
+        border-bottom-color: $field;
+      }
+    }
+
     @each $label in $TOAST-COLORS {
       $color: pick($theme, $label);
       $label-query: #{'._'+$label};
 
       &#{$label-query} {
         border-color: $color;
-        // background-color: light-tint-shade($theme, $color, 79%);
-        // color: light-light-dark($theme, $color, 20%);
+
+        &:hover {
+          @include hover($color);
+
+          button {
+            color: inherit;
+          }
+        }
 
         button {
           color: $color;
+
+          &:hover {
+            border-bottom-color: safe-color($color);
+          }
         }
       }
     }

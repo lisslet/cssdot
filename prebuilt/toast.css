@@ -67,7 +67,7 @@
   height: 0;
 }
 .dot-toast .dot-pad {
-  padding: 1.25em;
+  padding: 0.625em 1.25em;
   display: flex;
 }
 .dot-toast p,
@@ -81,6 +81,7 @@
 }
 .dot-toast .buttons {
   text-align: right;
+  margin-left: 0.625em;
 }
 .dot-toast button {
   vertical-align: middle;
@@ -162,7 +163,7 @@
   height: 0;
 }
 .dot-toast .dot-pad {
-  padding: 1.25em;
+  padding: 0.625em 1.25em;
   display: flex;
 }
 .dot-toast p,
@@ -176,6 +177,7 @@
 }
 .dot-toast .buttons {
   text-align: right;
+  margin-left: 0.625em;
 }
 .dot-toast button {
   vertical-align: middle;

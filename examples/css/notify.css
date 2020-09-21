@@ -67,7 +67,7 @@
   height: 0;
 }
 .dot-toast .dot-pad {
-  padding: 1.25em;
+  padding: 0.625em 1.25em;
   display: flex;
 }
 .dot-toast p,
@@ -81,6 +81,103 @@
 }
 .dot-toast .buttons {
   text-align: right;
+  margin-left: 0.625em;
+}
+.dot-toast button {
+  vertical-align: middle;
+  background-color: transparent;
+  border: none;
+  font-weight: bold;
+  padding: 0 0.313em;
+}
+.dot-toast button:focus {
+  outline: none;
+}
+
+.dot-toast {
+  zoom: expression(this.style.zoom=1, this.innerHTML+='<div style="clear:both;">');
+  margin: 0.625em auto 0 auto;
+  width: auto;
+  min-width: 300px;
+  background-color: #fff;
+}
+.dot-toast_top-left .dot-toast-pool, .dot-toast-pool.dot-toast_top-left {
+  top: 0;
+  left: 0;
+  transform-origin: left top;
+}
+.dot-toast_top-center .dot-toast-pool, .dot-toast-pool.dot-toast_top-center {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  transform-origin: center top;
+}
+.dot-toast_top-right .dot-toast-pool, .dot-toast-pool.dot-toast_top-right {
+  top: 0;
+  right: 0;
+  transform-origin: right top;
+}
+.dot-toast_middle-left .dot-toast-pool, .dot-toast-pool.dot-toast_middle-left {
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  transform-origin: left center;
+}
+.dot-toast_middle-center .dot-toast-pool, .dot-toast-pool.dot-toast_middle-center {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transform-origin: center center;
+}
+.dot-toast_middle-right .dot-toast-pool, .dot-toast-pool.dot-toast_middle-right {
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  transform-origin: right center;
+}
+.dot-toast_bottom-left .dot-toast-pool, .dot-toast-pool.dot-toast_bottom-left {
+  bottom: 0;
+  left: 0;
+  transform-origin: left bottom;
+}
+.dot-toast_bottom-center .dot-toast-pool, .dot-toast-pool.dot-toast_bottom-center {
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  transform-origin: center bottom;
+}
+.dot-toast_bottom-right .dot-toast-pool, .dot-toast-pool.dot-toast_bottom-right {
+  bottom: 0;
+  right: 0;
+  transform-origin: right bottom;
+}
+.dot-toast-pool {
+  position: fixed;
+  max-width: 480px;
+  z-index: 10000;
+}
+.dot-toast:after {
+  content: "";
+  display: block;
+  clear: both;
+  height: 0;
+}
+.dot-toast .dot-pad {
+  padding: 0.625em 1.25em;
+  display: flex;
+}
+.dot-toast p,
+.dot-toast button {
+  line-height: 1.6em;
+}
+.dot-toast p {
+  float: left;
+  line-height: 1.6em;
+  flex-grow: 1;
+}
+.dot-toast .buttons {
+  text-align: right;
+  margin-left: 0.625em;
 }
 .dot-toast button {
   vertical-align: middle;
@@ -191,31 +288,79 @@
   background-color: #050505;
   color: #fff;
 }
+.dot-toast_border .dot-toast:hover {
+  background-color: #fff;
+  color: #000;
+}
+.dot-toast_border .dot-toast button {
+  border-style: solid;
+  border-width: 2px 0;
+  border-color: transparent;
+}
+.dot-toast_border .dot-toast button:hover {
+  border-bottom-color: #333;
+}
 .dot-toast_border .dot-toast._primary {
   border-color: #15a2de;
+}
+.dot-toast_border .dot-toast._primary:hover {
+  background-color: #15a2de;
+  color: #000;
+}
+.dot-toast_border .dot-toast._primary:hover button {
+  color: inherit;
 }
 .dot-toast_border .dot-toast._primary button {
   color: #15a2de;
 }
+.dot-toast_border .dot-toast._primary button:hover {
+  border-bottom-color: #000;
+}
 .dot-toast_border .dot-toast._secondary {
   border-color: yellow;
+}
+.dot-toast_border .dot-toast._secondary:hover {
+  background-color: yellow;
+  color: #000;
+}
+.dot-toast_border .dot-toast._secondary:hover button {
+  color: inherit;
 }
 .dot-toast_border .dot-toast._secondary button {
   color: yellow;
 }
+.dot-toast_border .dot-toast._secondary button:hover {
+  border-bottom-color: #000;
+}
 .dot-toast_border .dot-toast._accent {
   border-color: #34ed93;
+}
+.dot-toast_border .dot-toast._accent:hover {
+  background-color: #34ed93;
+  color: #000;
+}
+.dot-toast_border .dot-toast._accent:hover button {
+  color: inherit;
 }
 .dot-toast_border .dot-toast._accent button {
   color: #34ed93;
 }
+.dot-toast_border .dot-toast._accent button:hover {
+  border-bottom-color: #000;
+}
 .dot-toast_border .dot-toast._warn {
   border-color: #ff6b6b;
+}
+.dot-toast_border .dot-toast._warn:hover {
+  background-color: #ff6b6b;
+  color: #000;
+}
+.dot-toast_border .dot-toast._warn:hover button {
+  color: inherit;
 }
 .dot-toast_border .dot-toast._warn button {
   color: #ff6b6b;
 }
-
-body {
-  background-color: #333;
+.dot-toast_border .dot-toast._warn button:hover {
+  border-bottom-color: #000;
 }
