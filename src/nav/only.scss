@@ -325,11 +325,6 @@
 
 /// @access private
 @mixin nav-core-rule() {
-  li,
-  a {
-    @include trans(background-color color);
-  }
-
   li {
     position: relative;
   }
