@@ -91,14 +91,15 @@ label {
   cursor: pointer;
 }
 
-button {
-  word-break: normal;
-}
-
 hr {
   display: none;
 }
 
 code {
   font-family: "Courier New", sans-serif;
+}
+
+button, table thead thead th,
+table thead thead td {
+  word-break: normal;
 }

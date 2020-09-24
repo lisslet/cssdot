@@ -95,15 +95,28 @@
     cursor: pointer;
   }
 
-  button {
-    word-break: normal;
-  }
-
   hr {
     display: none;
   }
 
   code {
     font-family: 'Courier New', sans-serif;
+  }
+
+  %word-break {
+    word-break: normal;
+  }
+
+  table thead {
+    thead {
+      th,
+      td {
+        @extend %word-break;
+      }
+    }
+  }
+
+  button {
+    @extend %word-break;
   }
 }
