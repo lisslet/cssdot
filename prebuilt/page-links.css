@@ -1,0 +1,26 @@
+.dot-page-links {
+  margin: 0.626em 0;
+  display: flex;
+  justify-content: center;
+}
+.dot-page-links li {
+  margin: 0 0.626em;
+}
+.dot-page-links a {
+  border: solid 2px transparent;
+}
+.dot-page-links ._active {
+  font-weight: bold;
+}
+.dot-page-links ._first {
+  margin-right: 2em;
+}
+.dot-page-links ._previous {
+  margin-right: 1.25em;
+}
+.dot-page-links ._next {
+  margin-left: 1.25em;
+}
+.dot-page-links ._end {
+  margin-left: 2em;
+}

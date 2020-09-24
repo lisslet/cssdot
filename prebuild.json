@@ -88,5 +88,12 @@
       "filename": "nav",
       "content": "@include nav-rule;"
     }
+  },
+  {
+    "scss": "page-links/index",
+    "files": {
+      "filename": "page-links",
+      "content": "@include page-links-rule"
+    }
   }
 ]

@@ -1,0 +1,134 @@
+@import '../scss';
+
+@mixin page-links-rule() {
+  .dot-page-links {
+    margin: 0.626em 0;
+    display: flex;
+    justify-content: center;
+
+    li {
+      margin: 0 0.626em;
+    }
+
+    a {
+      border: solid 2px transparent;
+    }
+
+    ._active {
+      font-weight: bold;
+    }
+
+    ._first {
+      margin-right: 2em;
+    }
+
+    ._previous {
+      margin-right:1.25em;
+    }
+
+    ._next {
+      margin-left:1.25em;
+    }
+
+    ._end {
+      margin-left: 2em;
+    }
+  }
+
+}
+
+@mixin page-links-hard-theming($theme) {
+
+  $primary: -primary($theme);
+  $accent: -accent($theme);
+  $text: -text($theme);
+
+  .dot-page-links {
+    li {
+      margin: 0;
+    }
+
+    $size: 2.5em;
+    $padding: 0.625em;
+
+    a {
+      display: inline-block;
+      min-width: $size - ($padding * 2);
+      height: $size;
+      line-height: $size;
+      padding:0 $padding;
+      text-align: center;
+      border-radius: $size / 2;
+
+
+      &:hover {
+        background-color: $primary;
+        color: safe-color($primary);
+      }
+
+      &:active {
+        background-color: $accent;
+        color: safe-color($accent);
+      }
+    }
+
+    ._active {
+      background-color: $text;
+      color: safe-color($text);
+    }
+  }
+}
+
+@mixin page-links-border-theming($theme) {
+
+  $primary: -primary($theme);
+  $accent: -accent($theme);
+  $text: -text($theme);
+
+  .dot-page-links {
+    li {
+      margin: 0;
+    }
+
+    $size: 2.5em;
+    $padding: 0.625em;
+
+    a {
+      display: inline-block;
+      min-width: $size - ($padding * 2);
+      height: $size;
+      line-height: $size;
+      padding:0 $padding;
+      text-align: center;
+      border-radius: $size / 2;
+
+
+
+      &:hover {
+        border-color: $primary;
+        color: $primary;
+      }
+
+      &:active {
+        border-color: $accent;
+        color: $accent;
+      }
+    }
+
+    ._active {
+      border-color: $text;
+      color: $text;
+    }
+  }
+}
+
+@mixin page-links-theming($theme){
+  .dot-page-links {
+    &_hard {
+      @include page-links-hard-theming($theme);
+    }
+    &_border {
+      @include page-links-border-theming($theme);
+    }
+  }
+}

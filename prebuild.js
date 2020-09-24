@@ -107,6 +107,7 @@ module.exports = (() => {
 			}
 		} else {
 			option.files.forEach(file => {
+				console.log(file);
 				return next(templates, imports, file.filename, file.content);
 			});
 		}

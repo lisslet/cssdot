@@ -1,0 +1,84 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+body, input, textarea, select, button {
+  font-family: "Roboto";
+}
+
+.dot-page-links {
+  margin: 0.626em 0;
+  display: flex;
+  justify-content: center;
+}
+.dot-page-links li {
+  margin: 0 0.626em;
+}
+.dot-page-links a {
+  border: solid 2px transparent;
+}
+.dot-page-links ._active {
+  font-weight: bold;
+}
+.dot-page-links ._first {
+  margin-right: 2em;
+}
+.dot-page-links ._previous {
+  margin-right: 1.25em;
+}
+.dot-page-links ._next {
+  margin-left: 1.25em;
+}
+.dot-page-links ._end {
+  margin-left: 2em;
+}
+
+body {
+  background-color: #ccc;
+}
+
+.dot-page-links_hard .dot-page-links li {
+  margin: 0;
+}
+.dot-page-links_hard .dot-page-links a {
+  display: inline-block;
+  min-width: 1.25em;
+  height: 2.5em;
+  line-height: 2.5em;
+  padding: 0 0.625em;
+  text-align: center;
+  border-radius: 1.25em;
+}
+.dot-page-links_hard .dot-page-links a:hover {
+  background-color: #15a2de;
+  color: #000;
+}
+.dot-page-links_hard .dot-page-links a:active {
+  background-color: #34ed93;
+  color: #000;
+}
+.dot-page-links_hard .dot-page-links ._active {
+  background-color: #fff;
+  color: #000;
+}
+.dot-page-links_border .dot-page-links li {
+  margin: 0;
+}
+.dot-page-links_border .dot-page-links a {
+  display: inline-block;
+  min-width: 1.25em;
+  height: 2.5em;
+  line-height: 2.5em;
+  padding: 0 0.625em;
+  text-align: center;
+  border-radius: 1.25em;
+}
+.dot-page-links_border .dot-page-links a:hover {
+  border-color: #15a2de;
+  color: #15a2de;
+}
+.dot-page-links_border .dot-page-links a:active {
+  border-color: #34ed93;
+  color: #34ed93;
+}
+.dot-page-links_border .dot-page-links ._active {
+  border-color: #fff;
+  color: #fff;
+}
