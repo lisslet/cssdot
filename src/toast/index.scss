@@ -100,34 +100,6 @@ $TOAST-MAX-WIDTH: 480px;
 
 @include toast-rule;
 
-@function light-light-dark($theme, $color, $amount) {
-  @if is-light-theme($theme) {
-    @return lighten($color, $amount);
-  }
-  @return darken($color, $amount);
-}
-
-@function light-dark-light($theme, $color, $amount) {
-  @if is-dark-theme($theme) {
-    @return lighten($color, $amount);
-  }
-  @return darken($color, $amount);
-}
-
-@function light-shade-tint($theme, $color, $amount) {
-  @if is-light-theme($theme) {
-    @return shade($color, $amount);
-  }
-  @return tint($color, $amount);
-}
-
-@function light-tint-shade($theme, $color, $amount) {
-  @if is-dark-theme($theme) {
-    @return shade($color, $amount);
-  }
-  @return tint($color, $amount);
-}
-
 @mixin toast-soft-theming($theme) {
   $text: -text($theme);
   $field: -field($theme);

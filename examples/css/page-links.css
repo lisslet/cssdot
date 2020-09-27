@@ -3,6 +3,11 @@ body, input, textarea, select, button {
   font-family: "Roboto";
 }
 
+body {
+  background-color: #fff;
+  color: #000;
+}
+
 .dot-page-links {
   margin: 0.626em 0;
   display: flex;
@@ -55,8 +60,8 @@ body {
   color: #000;
 }
 .dot-page-links_hard .dot-page-links ._active {
-  background-color: #fff;
-  color: #000;
+  background-color: #000;
+  color: #fff;
 }
 .dot-page-links_border .dot-page-links li {
   margin: 0;
@@ -79,6 +84,6 @@ body {
   color: #34ed93;
 }
 .dot-page-links_border .dot-page-links ._active {
-  border-color: #fff;
-  color: #fff;
+  border-color: #000;
+  color: #000;
 }

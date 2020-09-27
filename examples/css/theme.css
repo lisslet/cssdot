@@ -2,3 +2,8 @@
 body, input, textarea, select, button {
   font-family: "Roboto";
 }
+
+body {
+  background-color: #fff;
+  color: #000;
+}

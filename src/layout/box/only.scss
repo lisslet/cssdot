@@ -1,11 +1,12 @@
 @import '../ratio/only';
 
+@warn 'deprecated, using/box/index';
+
 @mixin box-rule($options: null) {
   $options: rule-arguments($options, null, box);
   $selector: map-get($options, selector);
 
   $bg-color: map-get-if($options, -bg-c(), #fff);
-  $shadow: map-get-if($options, shadow box-shadow, (0 2px 1px -1px rgba(0, 0, 0, .2), 0 1px 1px 0 rgba(0, 0, 0, .14), 0 1px 3px 0 rgba(0, 0, 0, .12)));
 
   @at-root #{$selector} {
     &es #{$selector} {
@@ -84,8 +85,4 @@
       cursor:default;
     }
   }
-}
-
-@mixin box-child-rule($options: null) {
-  @include box-rule(arguments($options, (parent-selector: unquote("#{&}"))));
 }

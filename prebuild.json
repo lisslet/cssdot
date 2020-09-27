@@ -39,7 +39,7 @@
     ]
   },
   {
-    "scss": "layout/box/standalone",
+    "scss": "box/index",
     "files": [
       {
         "filename": "box",

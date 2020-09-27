@@ -3,6 +3,11 @@ body, input, textarea, select, button {
   font-family: "Roboto";
 }
 
+body {
+  background-color: #fff;
+  color: #000;
+}
+
 .dot-toast {
   zoom: expression(this.style.zoom=1, this.innerHTML+='<div style="clear:both;">');
   margin: 0.625em auto 0 auto;
@@ -196,63 +201,63 @@ body, input, textarea, select, button {
 }
 
 .dot-toast_soft .dot-toast {
-  background-color: #212121;
-  color: #fff;
+  background-color: white;
+  color: #000;
 }
 .dot-toast_soft .dot-toast button:focus, .dot-toast_soft .dot-toast button:hover {
-  color: white;
+  color: black;
 }
 .dot-toast_soft .dot-toast._primary {
-  background-color: #020d12;
+  background-color: #ecf8fc;
   color: #15a2de;
 }
 .dot-toast_soft .dot-toast._primary:hover {
-  background-color: #03171f;
+  background-color: #def2fa;
 }
 .dot-toast_soft .dot-toast._primary button {
   color: #15a2de;
 }
 .dot-toast_soft .dot-toast._primary button:hover {
-  color: #3ab7ec;
+  color: #1180af;
 }
 .dot-toast_soft .dot-toast._secondary {
-  background-color: #141400;
+  background-color: #ffffeb;
   color: yellow;
 }
 .dot-toast_soft .dot-toast._secondary:hover {
-  background-color: #242400;
+  background-color: #ffffdb;
 }
 .dot-toast_soft .dot-toast._secondary button {
   color: yellow;
 }
 .dot-toast_soft .dot-toast._secondary button:hover {
-  color: #ffff33;
+  color: #cccc00;
 }
 .dot-toast_soft .dot-toast._accent {
-  background-color: #04130c;
+  background-color: #effef6;
   color: #34ed93;
 }
 .dot-toast_soft .dot-toast._accent:hover {
-  background-color: #072115;
+  background-color: #e3fcf0;
 }
 .dot-toast_soft .dot-toast._accent button {
   color: #34ed93;
 }
 .dot-toast_soft .dot-toast._accent button:hover {
-  color: #63f1ac;
+  color: #13db7a;
 }
 .dot-toast_soft .dot-toast._warn {
-  background-color: #140909;
+  background-color: #fff3f3;
   color: #ff6b6b;
 }
 .dot-toast_soft .dot-toast._warn:hover {
-  background-color: #240f0f;
+  background-color: #ffeaea;
 }
 .dot-toast_soft .dot-toast._warn button {
   color: #ff6b6b;
 }
 .dot-toast_soft .dot-toast._warn button:hover {
-  color: #ff9e9e;
+  color: #ff3838;
 }
 .dot-toast_hard .dot-toast._primary {
   background-color: #15a2de;
@@ -289,13 +294,13 @@ body, input, textarea, select, button {
 .dot-toast_border .dot-toast {
   border-style: solid;
   border-width: 2px;
-  border-color: #fff;
-  background-color: #050505;
-  color: #fff;
+  border-color: #000;
+  background-color: white;
+  color: #000;
 }
 .dot-toast_border .dot-toast:hover {
-  background-color: #fff;
-  color: #000;
+  background-color: #000;
+  color: #fff;
 }
 .dot-toast_border .dot-toast button {
   border-style: solid;
@@ -303,7 +308,7 @@ body, input, textarea, select, button {
   border-color: transparent;
 }
 .dot-toast_border .dot-toast button:hover {
-  border-bottom-color: #333;
+  border-bottom-color: #fff;
 }
 .dot-toast_border .dot-toast._primary {
   border-color: #15a2de;

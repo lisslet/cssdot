@@ -36,7 +36,6 @@ $black-relative-luminance: relative-luminance(black) !default;
   @return if(is-safe-for-black($color), #000, #fff);
 }
 
-
 /// Slightly lighten a color
 @function tint($color, $amount) {
   @return mix(white, $color, $amount);

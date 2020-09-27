@@ -1,94 +1,20 @@
 .dot-box {
-  display: block;
-  background-color: #fff;
-  box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12);
-}
-.dot-boxes .dot-box {
-  margin-bottom: 20px;
-}
-.dot-boxes .dot-box:last-child {
-  margin-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
 }
 .dot-box-pad {
-  padding: 1.256rem;
+  padding: 1.25em;
 }
-.dot-box-media {
-  position: relative;
-  position: relative;
+.dot-box-main {
+  flex-grow: 1;
 }
-.dot-box-media .dot-box-media219, .dot-box-media .dot-box-media1610, .dot-box-media .dot-box-media169, .dot-box-media .dot-box-media85, .dot-box-media .dot-box-media43, .dot-box-media .dot-box-media32 {
-  position: relative;
-  height: 0;
-}
-.dot-box-media32 {
-  padding-bottom: 66.66%;
-  position: relative;
-}
-.dot-box-media32 .ratio-area {
-  position: absolute;
-}
-.dot-box-media43 {
-  padding-bottom: 75%;
-  position: relative;
-}
-.dot-box-media43 .ratio-area {
-  position: absolute;
-}
-.dot-box-media85 {
-  padding-bottom: 62.5%;
-  position: relative;
-}
-.dot-box-media85 .ratio-area {
-  position: absolute;
-}
-.dot-box-media169 {
-  padding-bottom: 56.25%;
-  position: relative;
-}
-.dot-box-media169 .ratio-area {
-  position: absolute;
-}
-.dot-box-media1610 {
-  padding-bottom: 62.5%;
-  position: relative;
-}
-.dot-box-media1610 .ratio-area {
-  position: absolute;
-}
-.dot-box-media219 {
-  padding-bottom: 42.85%;
-  position: relative;
-}
-.dot-box-media219 .ratio-area {
-  position: absolute;
-}
-.dot-box-media-area {
-  overflow: hidden;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-}
-.dot-box-media-area img {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  min-width: 100%;
-}
-
-.dot-boxes_full .dot-box, .dot-box_full {
-  height: 100%;
-}
-.dot-boxes_thin .dot-box .dot-box-head .dot-box-pad, .dot-box_thin .dot-box-head .dot-box-pad {
+.dot-box_thins .dot-box .dot-box-head .dot-box-pad, .dot-box._thin .dot-box-head .dot-box-pad {
   padding-bottom: 0;
 }
-.dot-boxes_thin .dot-box .dot-box-foot .dot-box-pad, .dot-box_thin .dot-box-foot .dot-box-pad {
+.dot-box_thins .dot-box .dot-box-foot .dot-box-pad, .dot-box._thin .dot-box-foot .dot-box-pad {
   padding-top: 0;
 }
-.dot-boxes_link .dot-box, .dot-box_link {
-  cursor: pointer;
-}
-.dot-boxes_disable .dot-box, .dot-box_disable {
-  cursor: default;
+.dot-box .dot-box {
+  min-height: auto;
 }

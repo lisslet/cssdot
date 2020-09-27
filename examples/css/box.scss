@@ -1,0 +1,105 @@
+@import './theme';
+
+$BOX-QUERY: '.dot-box';
+
+@mixin box-rule() {
+  #{$BOX-QUERY} {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+
+    &-pad {
+      padding: 1.25em;
+    }
+
+    &-main {
+      flex-grow: 1;
+    }
+
+    &_thins &,
+    &._thin {
+      #{$BOX-QUERY} {
+        &-head .dot-box-pad {
+          padding-bottom: 0;
+        }
+
+        &-foot .dot-box-pad {
+          padding-top: 0;
+        }
+      }
+    }
+
+    #{$BOX-QUERY} {
+      min-height: auto;
+    }
+  }
+}
+
+@mixin box-theming($theme) {
+  $field: -field($theme);
+
+  $box-field: if(
+                  is-light-theme($theme),
+                  tint($field, 3%),
+                  light-shade-tint($theme, $field, 3%)
+  );
+
+  .dot-box {
+    background-color: $box-field;
+
+    .dot-box {
+      background-color: tint($box-field, 3%);
+    }
+  }
+}
+
+@mixin box-clear-theming($theme) {
+$field: -field($theme);
+
+.dot-box {
+  $labels: primary accent warn;
+
+  @each $label in $labels {
+    $color: pick($theme, $label);
+
+    &.#{'_'+$label} {
+      > .dot-box-head {
+        color: $color;
+      }
+
+      &:hover {
+        background-color: rgba($color, 0.06);
+      }
+    }
+  }
+}
+}
+
+@mixin box-hard-theming($theme) {
+  .dot-box {
+    $labels: primary accent warn;
+
+    @each $label in $labels {
+      $color: pick($theme, $label);
+
+      &.#{'_'+$label} {
+        > .dot-box-head {
+          background-color: $color;
+          color: safe-color($color);
+        }
+
+        > .dot-box-foot {
+          color: $color;
+        }
+
+        &:hover {
+          background-color: rgba($color, 0.06);
+        }
+      }
+    }
+  }
+}
+
+@include box-rule;
+@include box-theming($theme);
+@include box-clear-theming($theme);

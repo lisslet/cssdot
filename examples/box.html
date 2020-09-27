@@ -1,0 +1,99 @@
+!
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>box of cssdot</title>
+    <link rel="stylesheet" href="../prebuilt/reset.css">
+    <link rel="stylesheet" href="../prebuilt/lift.css">
+    <link rel="stylesheet" href="../prebuilt/dynamic/grid.css">
+    <link rel="stylesheet" href="./css/box.css">
+    <style>
+        .dot-box {
+            font-size: 0.875em;
+        }
+    </style>
+</head>
+<body>
+<div class="dot-grid-4 _gap-10">
+    <dot-box class="_primary">
+        <dot-box-head>Heading</dot-box-head>
+        <dot-box-main>
+            Message
+        </dot-box-main>
+        <dot-box-foot>Foot</dot-box-foot>
+    </dot-box>
+
+    <dot-box class="_accent">
+        <dot-box-head>Heading</dot-box-head>
+        <dot-box-main>
+            Message
+        </dot-box-main>
+        <dot-box-foot>Foot</dot-box-foot>
+    </dot-box>
+
+    <dot-box class="_warn">
+        <dot-box-head>Heading</dot-box-head>
+        <dot-box-main>
+        </dot-box-main>
+        <dot-box-foot>Foot</dot-box-foot>
+    </dot-box>
+</div>
+<script>
+
+	customElements.define(
+		'dot-box-head',
+        class BoxHeadElement extends HTMLElement {
+			constructor() {
+				super();
+				this.className += ' dot-box-head';
+				this.innerHTML = `
+				<div class="dot-box-pad dot-pad">
+				    ${this.innerHTML}
+                </div>
+				`
+			}
+        }
+    );
+
+	customElements.define(
+		'dot-box-main',
+		class BoxHeadElement extends HTMLElement {
+			constructor() {
+				super();
+				this.className += ' dot-box-main';
+				this.innerHTML = `
+				<div class="dot-box-pad dot-pad">
+				    ${this.innerHTML}
+                </div>
+				`
+			}
+		}
+	);
+
+	customElements.define(
+		'dot-box-foot',
+		class BoxFootElement extends HTMLElement {
+			constructor() {
+				super();
+				this.className += ' dot-box-foot';
+				this.innerHTML = `
+				<div class="dot-box-pad dot-pad">
+				    ${this.innerHTML}
+                </div>
+				`
+			}
+		}
+	);
+
+    customElements.define(
+    	'dot-box',
+        class BoxElement extends HTMLElement {
+    		constructor() {
+    			super();
+    			this.className += ' dot-box dot-lift1-2';
+    		}
+        }
+    );
+</script>
+</body>
+</html>

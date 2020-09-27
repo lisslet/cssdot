@@ -1,0 +1,56 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+body, input, textarea, select, button {
+  font-family: "Roboto";
+}
+
+body {
+  background-color: #fff;
+  color: #000;
+}
+
+.dot-box {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+.dot-box-pad {
+  padding: 1.25em;
+}
+.dot-box-main {
+  flex-grow: 1;
+}
+.dot-box_thins .dot-box .dot-box-head .dot-box-pad, .dot-box._thin .dot-box-head .dot-box-pad {
+  padding-bottom: 0;
+}
+.dot-box_thins .dot-box .dot-box-foot .dot-box-pad, .dot-box._thin .dot-box-foot .dot-box-pad {
+  padding-top: 0;
+}
+.dot-box .dot-box {
+  min-height: auto;
+}
+
+.dot-box {
+  background-color: white;
+}
+.dot-box .dot-box {
+  background-color: white;
+}
+
+.dot-box._primary > .dot-box-head {
+  color: #15a2de;
+}
+.dot-box._primary:hover {
+  background-color: rgba(21, 162, 222, 0.06);
+}
+.dot-box._accent > .dot-box-head {
+  color: #34ed93;
+}
+.dot-box._accent:hover {
+  background-color: rgba(52, 237, 147, 0.06);
+}
+.dot-box._warn > .dot-box-head {
+  color: #ff6b6b;
+}
+.dot-box._warn:hover {
+  background-color: rgba(255, 107, 107, 0.06);
+}

@@ -1,4 +1,3 @@
-
 @import '../../src/scss';
 
 $primary: #9A0D3A;
@@ -10,8 +9,11 @@ $secondary: yellow;
 $accent: #34ed93;
 $warn: #ff6b6b;
 
-$field: #333;
+$field: #fff;
 $text: safe-color($field);
+
+//$field: #333;
+//$text: safe-color($field);
 
 $theme: theme((
         'palette': palette((
@@ -25,3 +27,15 @@ $theme: theme((
 ));
 
 @include google-font('Roboto');
+
+@mixin theming($theme) {
+  $field: -field($theme);
+  $text: -text($theme);
+
+  body {
+    background-color: $field;
+    color: $text;
+  }
+}
+
+@include theming($theme);
