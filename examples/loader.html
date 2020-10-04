@@ -6,110 +6,85 @@
     <link rel="stylesheet" href="../prebuilt/reset.css">
     <link rel="stylesheet" href="../prebuilt/box.css">
     <link rel="stylesheet" href="../prebuilt/dynamic/grid.css">
-    <link rel="stylesheet" href="css/loader.css">
-    <link rel="stylesheet" href="../prebuilt/dynamic/frame/1800.css">
-
-    <style>
-        .dot-box-pad {
-            position: relative;
-        }
-
-        .dot-loader {
-            font-size: 3em;
-            position: absolute;
-            right: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-        }
-    </style>
+    <link rel="stylesheet" href="../prebuilt/lift.css">
+    <link rel="stylesheet" href="./css/loader.css">
 </head>
 <body>
 <h1>Loader</h1>
 
 <div id="dot-main-area">
     <div id="dot-main" class="dot-grid-4 _gap-20">
-        <div class="dot-box">
+        <div class="dot-box dot-lift1">
             <div class="dot-box-pad">
                 <h2>
                     Circle
                 </h2>
-                <span class="dot-loader _circle">
-            <span>
-                <b></b>
-                <b></b>
-                <b></b>
-                <b></b>
-                <b></b>
-                <b></b>
-                <b></b>
-                <b></b>
-                <b></b>
-                <b></b>
-            </span>
-                </span>
+                <dot-loader shape="circle"></dot-loader>
+                <dot-loader shape="circle" class="_primary"></dot-loader>
+                <dot-loader shape="circle" class="_accent"></dot-loader>
+                <dot-loader shape="circle" class="_warn"></dot-loader>
             </div>
         </div>
 
-        <div class="dot-box">
+        <div class="dot-box dot-lift1">
             <div class="dot-box-pad">
                 <h2>
                     Flip
                 </h2>
-                <span class="dot-loader _flip">
-            <span>
-                <b></b>
-                <b></b>
-                <b></b>
-                <b></b>
-                <b></b>
-                <b></b>
-                <b></b>
-                <b></b>
-                <b></b>
-                <b></b>
-            </span>
+                <dot-loader shape="flip"></dot-loader>
+                <dot-loader shape="flip" class="_primary"></dot-loader>
+                <dot-loader shape="flip" class="_accent"></dot-loader>
+                <dot-loader shape="flip" class="_warn"></dot-loader>
         </span>
             </div>
         </div>
-        <div class="dot-box">
+        <div class="dot-box dot-lift1">
             <div class="dot-box-pad">
                 <h2>Flip9</h2>
-                <span class="dot-loader _flip9">
-            <span>
-                <b></b>
-                <b></b>
-                <b></b>
-                <b></b>
-                <b></b>
-                <b></b>
-                <b></b>
-                <b></b>
-                <b></b>
-                <b></b>
-            </span>
-        </span>
+                <dot-loader shape="flip9"></dot-loader>
+                <dot-loader shape="flip9" class="_primary"></dot-loader>
+                <dot-loader shape="flip9" class="_accent"></dot-loader>
+                <dot-loader shape="flip9" class="_warn"></dot-loader>
             </div>
         </div>
-        <div class="dot-box">
+        <div class="dot-box dot-lift1">
             <div class="dot-box-pad">
                 <h2>Bar</h2>
-                <span class="dot-loader _bar">
-            <span>
-                <b></b>
-                <b></b>
-                <b></b>
-                <b></b>
-                <b></b>
-                <b></b>
-                <b></b>
-                <b></b>
-                <b></b>
-                <b></b>
-            </span>
-        </span>
+                <dot-loader shape="bar"></dot-loader>
+                <dot-loader shape="bar" class="_primary"></dot-loader>
+                <dot-loader shape="bar" class="_accent"></dot-loader>
+                <dot-loader shape="bar" class="_warn"></dot-loader>
             </div>
         </div>
     </div>
+
+    <script>
+		customElements.define(
+			'dot-loader',
+			class LoaderElement extends HTMLElement {
+				constructor() {
+					super();
+					this.className += ' dot-loader';
+					this.className += ' _' + (this.getAttribute('shape') || 'circle');
+
+					this.innerHTML = `
+            <span>
+                <b></b>
+                <b></b>
+                <b></b>
+                <b></b>
+                <b></b>
+                <b></b>
+                <b></b>
+                <b></b>
+                <b></b>
+                <b></b>
+            </span>
+        			`;
+				}
+			}
+		)
+    </script>
 </div>
 </body>
 </html>

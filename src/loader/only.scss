@@ -2,7 +2,7 @@
 
 @mixin loader-rule() {
   $box-size: 1.5em;
-  $border-size: 0.25em;
+  $border-size: 0.125em;
   $content-size: $box-size - ($border-size * 2);
   $radius-size: 50%;
   $color: lighten(#000, 50%);
@@ -35,7 +35,7 @@
       position: absolute;
       top: 0;
       left: 0;
-      display: block;
+      display: none;
     }
 
     &._circle {
@@ -47,17 +47,21 @@
         }
       }
 
-      b:nth-child(1) {
+      b {
         width: $content-size;
         height: $content-size;
         border: solid $color $border-size;
         border-radius: $radius-size;
-        border-right-color: transparent;
+        border-right-color: transparent !important;
 
         @include animate($x2 infinite) {
           to {
             transform: rotate(360deg);
           }
+        }
+
+        &:nth-child(1) {
+          display: block;
         }
       }
     }
@@ -65,9 +69,8 @@
     &._flip {
       b {
         background-color: $color;
-      }
 
-      b:nth-child(1) {
+
         width: 100%;
         height: 100%;
         perspective: $perspective;
@@ -79,31 +82,28 @@
             transform: rotateX(180deg) rotateY(180deg);
           }
         }
+
+        &:nth-child(1) {
+          display: block;
+        }
       }
     }
 
     &._flip9 {
       b {
-        &:nth-child(1),
-        &:nth-child(2),
-        &:nth-child(3),
-        &:nth-child(4),
-        &:nth-child(5),
-        &:nth-child(6),
-        &:nth-child(7),
-        &:nth-child(8),
-        &:nth-child(9) {
-          width: 33.33%;
-          height: 33.33%;
-          background-color: $color;
-          perspective: $perspective;
-          @include animate($x5 both infinite) {
-            0% {
-              transform: scale(1);
-            }
-            100% {
-              transform: scale(1) rotateX(-180deg) rotateY(180deg);
-            }
+        background-color: $color;
+
+        width: 33.33%;
+        height: 33.33%;
+        perspective: $perspective;
+        display: block;
+
+        @include animate($x5 both infinite) {
+          0% {
+            transform: scale(1);
+          }
+          100% {
+            transform: scale(1) rotateX(-180deg) rotateY(180deg);
           }
         }
 
@@ -155,34 +155,63 @@
 
     &._bar {
       b {
+        background-color: $color;
+
+        width: 15.626%;
+        height: 100%;
+
+        @include animate($x2 infinite) {
+          50% {
+            transform: scaleY(0.46);
+          }
+        }
+
         &:nth-child(1),
         &:nth-child(2),
         &:nth-child(3),
         &:nth-child(4) {
-          width: 25%;
-          height: 100%;
-          background-color: $color;
-          transform: scaleX(0.8) scaleY(0.5);
-          @include animate($x2 infinite) {
-            50% {
-              transform: scaleX(0.96) scaleY(0.66);
-            }
-          }
+          display: block;
         }
 
         &:nth-child(2) {
-          left: 25%;
+          left: 28.126%;
           animation-delay: $x1/4;
         }
 
         &:nth-child(3) {
-          left: 50%;
+          left: 56.252%;
           animation-delay: $x2/4;
         }
 
         &:nth-child(4) {
-          left: 75%;
+          left: 84.378%;
           animation-delay: $x3/4;
+        }
+      }
+    }
+  }
+}
+
+@mixin loader-theming($theme) {
+
+  $labels: text primary accent warn;
+
+  .dot-loader {
+    @each $label in $labels {
+      $color: pick($theme, $label);
+      $label-query: if($label == 'text', '', '._'+$label);
+      &#{$label-query} {
+
+        &._circle {
+          b {
+            border-color: $color;
+          }
+        }
+
+        &._flip, &._flip9, &._bar {
+          b {
+            background-color: $color;
+          }
         }
       }
     }

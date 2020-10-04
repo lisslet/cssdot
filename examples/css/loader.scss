@@ -1,0 +1,6 @@
+@import './theme';
+@import '../../src/loader/standalone';
+
+@include loader-rule;
+
+@include loader-theming($theme);
