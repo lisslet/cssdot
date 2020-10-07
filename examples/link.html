@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="../prebuilt/reset.css">
     <link rel="stylesheet" href="../prebuilt/frame.css">
     <link rel="stylesheet" href="./css/link3.css">
-    <link rel="stylesheet" href="../prebuilt/lift.css"
+    <link rel="stylesheet" href="../prebuilt/lift.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap" rel="stylesheet">
     <style>
 		h2 {
@@ -86,8 +86,8 @@
 			this.classList.add('example-link-items');
 
 			this.heading    = this.getAttribute('heading');
-			const linkStyle = this.getAttribute('linkStyle');
-			this.classNames = `dot-link ${linkStyle}`;
+			this.linkStyle = this.getAttribute('linkStyle');
+			this.classNames = `dot-link ${this.linkStyle}`;
 		}
 	}
 
@@ -97,16 +97,22 @@
 			constructor() {
 				super();
 
-				const {heading, classNames} = this;
+				let {heading, classNames} = this;
+
+				classNames += ' dot-fx-ripple';
+				console.log(this.linkStyle);
+				if(this.linkStyle.indexOf('_border') < 0 && this.linkStyle.indexOf('_clear') < 0){
+					classNames += ' dot-lift1';
+                }
 
 				this.innerHTML = `
 <div>
     <h4>${heading}</h4>
     <button class="${classNames}"><span>Normal</span></button>
-    <a href="#" class="${classNames} _primary dot-fx-ripple"><span>Primary</span></a>
-    <button class="${classNames} _secondary  dot-fx-ripple"><span>Secondary</span></button>
-    <a href="#" class="${classNames} _accent  dot-fx-ripple"><span>Accent</span></a>
-    <button class="${classNames} _warn  dot-fx-ripple"><span>Warn</span></button>
+    <a href="#" class="${classNames} _primary"><span>Primary</span></a>
+    <button class="${classNames} _secondary"><span>Secondary</span></button>
+    <a href="#" class="${classNames} _accent"><span>Accent</span></a>
+    <button class="${classNames} _warn"><span>Warn</span></button>
 </div>
     			`;
 			}

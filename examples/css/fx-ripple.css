@@ -1,0 +1,67 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+body, input, textarea, select, button {
+  font-family: "Roboto";
+}
+
+body {
+  background-color: #fff;
+  color: #000;
+}
+
+.dot-fx-ripple {
+  position: relative;
+  overflow: hidden;
+}
+.dot-fx-ripple-instance, .dot-fx-ripple:before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 200%;
+  height: 0;
+  padding-bottom: 200%;
+  top: 50%;
+  left: 50%;
+  background-color: rgba(0, 0, 0, 0.12);
+  border-radius: 50%;
+  z-index: -1;
+  transform: translate(-50%, -50%);
+  animation: zW4F5EIm1rYN9D2D9tqMioLr60NtWv 0.72s both ease-out;
+}
+@keyframes zW4F5EIm1rYN9D2D9tqMioLr60NtWv {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+  }
+  35% {
+    opacity: 1;
+  }
+  67% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.dot-fx-ripple:before {
+  display: none;
+}
+.dot-fx-ripple:active:before, .dot-fx-ripple:focus:before {
+  display: block;
+}
+.dot-fx-ripple_js:before {
+  display: none !important;
+  animation: none;
+}
+
+.dot-fx-ripple._primary:before {
+  background-color: rgba(17, 130, 178, 0.35);
+}
+.dot-fx-ripple._secondary:before {
+  background-color: rgba(204, 204, 0, 0.35);
+}
+.dot-fx-ripple._accent:before {
+  background-color: rgba(42, 190, 118, 0.35);
+}
+.dot-fx-ripple._warn:before {
+  background-color: rgba(204, 86, 86, 0.35);
+}

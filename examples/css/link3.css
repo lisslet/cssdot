@@ -1,3 +1,13 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+body, input, textarea, select, button {
+  font-family: "Roboto";
+}
+
+body {
+  background-color: #fff;
+  color: #000;
+}
+
 .dot-link {
   display: inline-block;
   vertical-align: middle;
@@ -14,281 +24,326 @@
 .dot-link > span {
   display: inline-block;
   text-align: center;
-  padding: 0.625em;
+  padding-left: 0.625em;
+  padding-right: 0.625em;
 }
 .dot-link:focus {
   outline: none;
 }
 .dot-link_clears .dot-link._primary, .dot-link._primary {
-  color: #1E88E5;
+  color: #15a2de;
 }
 .dot-link_clears .dot-link._primary._focus, .dot-link_clears .dot-link._primary:focus, .dot-link._primary._focus, .dot-link._primary:focus {
-  background-color: rgba(30, 136, 229, 0.06);
+  background-color: rgba(21, 162, 222, 0.06);
 }
 .dot-link_clears .dot-link._primary._hover, .dot-link_clears .dot-link._primary:hover, .dot-link._primary._hover, .dot-link._primary:hover {
-  background-color: rgba(30, 136, 229, 0.12);
-  color: #1E88E5;
+  background-color: rgba(21, 162, 222, 0.12);
+  color: #15a2de;
 }
 .dot-link_clears .dot-link._primary._active, .dot-link_clears .dot-link._primary:active, .dot-link._primary._active, .dot-link._primary:active {
-  color: #1E88E5;
-  background-color: rgba(30, 136, 229, 0.24);
+  color: #15a2de;
+  background-color: rgba(21, 162, 222, 0.24);
+}
+.dot-link_clears .dot-link._primary._active.dot-fx-ripple, .dot-link_clears .dot-link._primary:active.dot-fx-ripple, .dot-link._primary._active.dot-fx-ripple, .dot-link._primary:active.dot-fx-ripple {
+  background-color: "$color", "@opacity", 0.12;
 }
 .dot-link_clears .dot-link._secondary, .dot-link._secondary {
-  color: #00ACC1;
+  color: yellow;
 }
 .dot-link_clears .dot-link._secondary._focus, .dot-link_clears .dot-link._secondary:focus, .dot-link._secondary._focus, .dot-link._secondary:focus {
-  background-color: rgba(0, 172, 193, 0.06);
+  background-color: rgba(255, 255, 0, 0.06);
 }
 .dot-link_clears .dot-link._secondary._hover, .dot-link_clears .dot-link._secondary:hover, .dot-link._secondary._hover, .dot-link._secondary:hover {
-  background-color: rgba(0, 172, 193, 0.12);
-  color: #00ACC1;
+  background-color: rgba(255, 255, 0, 0.12);
+  color: yellow;
 }
 .dot-link_clears .dot-link._secondary._active, .dot-link_clears .dot-link._secondary:active, .dot-link._secondary._active, .dot-link._secondary:active {
-  color: #00ACC1;
-  background-color: rgba(0, 172, 193, 0.24);
+  color: yellow;
+  background-color: rgba(255, 255, 0, 0.24);
+}
+.dot-link_clears .dot-link._secondary._active.dot-fx-ripple, .dot-link_clears .dot-link._secondary:active.dot-fx-ripple, .dot-link._secondary._active.dot-fx-ripple, .dot-link._secondary:active.dot-fx-ripple {
+  background-color: "$color", "@opacity", 0.12;
 }
 .dot-link_clears .dot-link._tertiary, .dot-link._tertiary {
-  color: #1E88E5;
+  color: #15a2de;
 }
 .dot-link_clears .dot-link._tertiary._focus, .dot-link_clears .dot-link._tertiary:focus, .dot-link._tertiary._focus, .dot-link._tertiary:focus {
-  background-color: rgba(30, 136, 229, 0.06);
+  background-color: rgba(21, 162, 222, 0.06);
 }
 .dot-link_clears .dot-link._tertiary._hover, .dot-link_clears .dot-link._tertiary:hover, .dot-link._tertiary._hover, .dot-link._tertiary:hover {
-  background-color: rgba(30, 136, 229, 0.12);
-  color: #1E88E5;
+  background-color: rgba(21, 162, 222, 0.12);
+  color: #15a2de;
 }
 .dot-link_clears .dot-link._tertiary._active, .dot-link_clears .dot-link._tertiary:active, .dot-link._tertiary._active, .dot-link._tertiary:active {
-  color: #1E88E5;
-  background-color: rgba(30, 136, 229, 0.24);
+  color: #15a2de;
+  background-color: rgba(21, 162, 222, 0.24);
+}
+.dot-link_clears .dot-link._tertiary._active.dot-fx-ripple, .dot-link_clears .dot-link._tertiary:active.dot-fx-ripple, .dot-link._tertiary._active.dot-fx-ripple, .dot-link._tertiary:active.dot-fx-ripple {
+  background-color: "$color", "@opacity", 0.12;
 }
 .dot-link_clears .dot-link._accent, .dot-link._accent {
-  color: orange;
+  color: #34ed93;
 }
 .dot-link_clears .dot-link._accent._focus, .dot-link_clears .dot-link._accent:focus, .dot-link._accent._focus, .dot-link._accent:focus {
-  background-color: rgba(255, 165, 0, 0.06);
+  background-color: rgba(52, 237, 147, 0.06);
 }
 .dot-link_clears .dot-link._accent._hover, .dot-link_clears .dot-link._accent:hover, .dot-link._accent._hover, .dot-link._accent:hover {
-  background-color: rgba(255, 165, 0, 0.12);
-  color: orange;
+  background-color: rgba(52, 237, 147, 0.12);
+  color: #34ed93;
 }
 .dot-link_clears .dot-link._accent._active, .dot-link_clears .dot-link._accent:active, .dot-link._accent._active, .dot-link._accent:active {
-  color: orange;
-  background-color: rgba(255, 165, 0, 0.24);
+  color: #34ed93;
+  background-color: rgba(52, 237, 147, 0.24);
+}
+.dot-link_clears .dot-link._accent._active.dot-fx-ripple, .dot-link_clears .dot-link._accent:active.dot-fx-ripple, .dot-link._accent._active.dot-fx-ripple, .dot-link._accent:active.dot-fx-ripple {
+  background-color: "$color", "@opacity", 0.12;
 }
 .dot-link_clears .dot-link._warn, .dot-link._warn {
-  color: #E53935;
+  color: #ff6b6b;
 }
 .dot-link_clears .dot-link._warn._focus, .dot-link_clears .dot-link._warn:focus, .dot-link._warn._focus, .dot-link._warn:focus {
-  background-color: rgba(229, 57, 53, 0.06);
+  background-color: rgba(255, 107, 107, 0.06);
 }
 .dot-link_clears .dot-link._warn._hover, .dot-link_clears .dot-link._warn:hover, .dot-link._warn._hover, .dot-link._warn:hover {
-  background-color: rgba(229, 57, 53, 0.12);
-  color: #E53935;
+  background-color: rgba(255, 107, 107, 0.12);
+  color: #ff6b6b;
 }
 .dot-link_clears .dot-link._warn._active, .dot-link_clears .dot-link._warn:active, .dot-link._warn._active, .dot-link._warn:active {
-  color: #E53935;
-  background-color: rgba(229, 57, 53, 0.24);
+  color: #ff6b6b;
+  background-color: rgba(255, 107, 107, 0.24);
+}
+.dot-link_clears .dot-link._warn._active.dot-fx-ripple, .dot-link_clears .dot-link._warn:active.dot-fx-ripple, .dot-link._warn._active.dot-fx-ripple, .dot-link._warn:active.dot-fx-ripple {
+  background-color: "$color", "@opacity", 0.12;
 }
 .dot-link_softs .dot-link._primary, .dot-link._soft._primary {
-  background-color: rgba(30, 136, 229, 0.12);
-  color: #1E88E5;
+  background-color: rgba(21, 162, 222, 0.12);
+  color: #15a2de;
 }
 .dot-link_softs .dot-link._primary._hover, .dot-link_softs .dot-link._primary:hover, .dot-link._soft._primary._hover, .dot-link._soft._primary:hover {
   color: #000;
-  background-color: rgba(30, 136, 229, 0.64);
+  background-color: rgba(21, 162, 222, 0.64);
+}
+.dot-link_softs .dot-link._primary._active.dot-fx-ripple, .dot-link_softs .dot-link._primary:active.dot-fx-ripple, .dot-link._soft._primary._active.dot-fx-ripple, .dot-link._soft._primary:active.dot-fx-ripple {
+  background-color: "$color", "@opacity", 0.64;
 }
 .dot-link_softs .dot-link._secondary, .dot-link._soft._secondary {
-  background-color: rgba(0, 172, 193, 0.12);
-  color: #00ACC1;
+  background-color: rgba(255, 255, 0, 0.12);
+  color: yellow;
 }
 .dot-link_softs .dot-link._secondary._hover, .dot-link_softs .dot-link._secondary:hover, .dot-link._soft._secondary._hover, .dot-link._soft._secondary:hover {
   color: #000;
-  background-color: rgba(0, 172, 193, 0.64);
+  background-color: rgba(255, 255, 0, 0.64);
+}
+.dot-link_softs .dot-link._secondary._active.dot-fx-ripple, .dot-link_softs .dot-link._secondary:active.dot-fx-ripple, .dot-link._soft._secondary._active.dot-fx-ripple, .dot-link._soft._secondary:active.dot-fx-ripple {
+  background-color: "$color", "@opacity", 0.64;
 }
 .dot-link_softs .dot-link._tertiary, .dot-link._soft._tertiary {
-  background-color: rgba(30, 136, 229, 0.12);
-  color: #1E88E5;
+  background-color: rgba(21, 162, 222, 0.12);
+  color: #15a2de;
 }
 .dot-link_softs .dot-link._tertiary._hover, .dot-link_softs .dot-link._tertiary:hover, .dot-link._soft._tertiary._hover, .dot-link._soft._tertiary:hover {
   color: #000;
-  background-color: rgba(30, 136, 229, 0.64);
+  background-color: rgba(21, 162, 222, 0.64);
+}
+.dot-link_softs .dot-link._tertiary._active.dot-fx-ripple, .dot-link_softs .dot-link._tertiary:active.dot-fx-ripple, .dot-link._soft._tertiary._active.dot-fx-ripple, .dot-link._soft._tertiary:active.dot-fx-ripple {
+  background-color: "$color", "@opacity", 0.64;
 }
 .dot-link_softs .dot-link._accent, .dot-link._soft._accent {
-  background-color: rgba(255, 165, 0, 0.12);
-  color: orange;
+  background-color: rgba(52, 237, 147, 0.12);
+  color: #34ed93;
 }
 .dot-link_softs .dot-link._accent._hover, .dot-link_softs .dot-link._accent:hover, .dot-link._soft._accent._hover, .dot-link._soft._accent:hover {
   color: #000;
-  background-color: rgba(255, 165, 0, 0.64);
+  background-color: rgba(52, 237, 147, 0.64);
+}
+.dot-link_softs .dot-link._accent._active.dot-fx-ripple, .dot-link_softs .dot-link._accent:active.dot-fx-ripple, .dot-link._soft._accent._active.dot-fx-ripple, .dot-link._soft._accent:active.dot-fx-ripple {
+  background-color: "$color", "@opacity", 0.64;
 }
 .dot-link_softs .dot-link._warn, .dot-link._soft._warn {
-  background-color: rgba(229, 57, 53, 0.12);
-  color: #E53935;
+  background-color: rgba(255, 107, 107, 0.12);
+  color: #ff6b6b;
 }
 .dot-link_softs .dot-link._warn._hover, .dot-link_softs .dot-link._warn:hover, .dot-link._soft._warn._hover, .dot-link._soft._warn:hover {
-  color: #fff;
-  background-color: rgba(229, 57, 53, 0.64);
+  color: #000;
+  background-color: rgba(255, 107, 107, 0.64);
+}
+.dot-link_softs .dot-link._warn._active.dot-fx-ripple, .dot-link_softs .dot-link._warn:active.dot-fx-ripple, .dot-link._soft._warn._active.dot-fx-ripple, .dot-link._soft._warn:active.dot-fx-ripple {
+  background-color: "$color", "@opacity", 0.64;
 }
 .dot-link_hards .dot-link._primary, .dot-link._hard._primary {
-  background-color: #1E88E5;
+  background-color: #15a2de;
   color: #000;
 }
 .dot-link_hards .dot-link._primary._focus, .dot-link_hards .dot-link._primary:focus, .dot-link._hard._primary._focus, .dot-link._hard._primary:focus {
-  background-color: #55a5eb;
+  background-color: #43baed;
   color: #000;
 }
 .dot-link_hards .dot-link._primary._hover, .dot-link_hards .dot-link._primary:hover, .dot-link._hard._primary._hover, .dot-link._hard._primary:hover {
-  background-color: #8cc2f2;
+  background-color: #7bcff3;
   color: #000;
 }
 .dot-link_hards .dot-link._primary._active, .dot-link_hards .dot-link._primary:active, .dot-link._hard._primary._active, .dot-link._hard._primary:active {
-  background-color: rgba(30, 136, 229, 0.1);
+  background-color: rgba(21, 162, 222, 0.1);
   color: #000;
 }
+.dot-link_hards .dot-link._primary._active.dot-fx-ripple, .dot-link_hards .dot-link._primary:active.dot-fx-ripple, .dot-link._hard._primary._active.dot-fx-ripple, .dot-link._hard._primary:active.dot-fx-ripple {
+  background-color: "$color", "@bright", 0.24;
+}
 .dot-link_hards .dot-link._secondary, .dot-link._hard._secondary {
-  background-color: #00ACC1;
+  background-color: yellow;
   color: #000;
 }
 .dot-link_hards .dot-link._secondary._focus, .dot-link_hards .dot-link._secondary:focus, .dot-link._hard._secondary._focus, .dot-link._hard._secondary:focus {
-  background-color: #00e3fe;
+  background-color: #ffff3d;
   color: #000;
 }
 .dot-link_hards .dot-link._secondary._hover, .dot-link_hards .dot-link._secondary:hover, .dot-link._hard._secondary._hover, .dot-link._hard._secondary:hover {
-  background-color: #3ceaff;
+  background-color: #ffff7a;
   color: #000;
 }
 .dot-link_hards .dot-link._secondary._active, .dot-link_hards .dot-link._secondary:active, .dot-link._hard._secondary._active, .dot-link._hard._secondary:active {
-  background-color: rgba(0, 172, 193, 0.1);
+  background-color: rgba(255, 255, 0, 0.1);
   color: #000;
 }
+.dot-link_hards .dot-link._secondary._active.dot-fx-ripple, .dot-link_hards .dot-link._secondary:active.dot-fx-ripple, .dot-link._hard._secondary._active.dot-fx-ripple, .dot-link._hard._secondary:active.dot-fx-ripple {
+  background-color: "$color", "@bright", 0.24;
+}
 .dot-link_hards .dot-link._tertiary, .dot-link._hard._tertiary {
-  background-color: #1E88E5;
+  background-color: #15a2de;
   color: #000;
 }
 .dot-link_hards .dot-link._tertiary._focus, .dot-link_hards .dot-link._tertiary:focus, .dot-link._hard._tertiary._focus, .dot-link._hard._tertiary:focus {
-  background-color: #55a5eb;
+  background-color: #43baed;
   color: #000;
 }
 .dot-link_hards .dot-link._tertiary._hover, .dot-link_hards .dot-link._tertiary:hover, .dot-link._hard._tertiary._hover, .dot-link._hard._tertiary:hover {
-  background-color: #8cc2f2;
+  background-color: #7bcff3;
   color: #000;
 }
 .dot-link_hards .dot-link._tertiary._active, .dot-link_hards .dot-link._tertiary:active, .dot-link._hard._tertiary._active, .dot-link._hard._tertiary:active {
-  background-color: rgba(30, 136, 229, 0.1);
+  background-color: rgba(21, 162, 222, 0.1);
   color: #000;
 }
+.dot-link_hards .dot-link._tertiary._active.dot-fx-ripple, .dot-link_hards .dot-link._tertiary:active.dot-fx-ripple, .dot-link._hard._tertiary._active.dot-fx-ripple, .dot-link._hard._tertiary:active.dot-fx-ripple {
+  background-color: "$color", "@bright", 0.24;
+}
 .dot-link_hards .dot-link._accent, .dot-link._hard._accent {
-  background-color: orange;
+  background-color: #34ed93;
   color: #000;
 }
 .dot-link_hards .dot-link._accent._focus, .dot-link_hards .dot-link._accent:focus, .dot-link._hard._accent._focus, .dot-link._hard._accent:focus {
-  background-color: #ffbb3d;
+  background-color: #6cf2b1;
   color: #000;
 }
 .dot-link_hards .dot-link._accent._hover, .dot-link_hards .dot-link._accent:hover, .dot-link._hard._accent._hover, .dot-link._hard._accent:hover {
-  background-color: #ffd07a;
+  background-color: #a4f7cf;
   color: #000;
 }
 .dot-link_hards .dot-link._accent._active, .dot-link_hards .dot-link._accent:active, .dot-link._hard._accent._active, .dot-link._hard._accent:active {
-  background-color: rgba(255, 165, 0, 0.1);
+  background-color: rgba(52, 237, 147, 0.1);
   color: #000;
 }
+.dot-link_hards .dot-link._accent._active.dot-fx-ripple, .dot-link_hards .dot-link._accent:active.dot-fx-ripple, .dot-link._hard._accent._active.dot-fx-ripple, .dot-link._hard._accent:active.dot-fx-ripple {
+  background-color: "$color", "@bright", 0.24;
+}
 .dot-link_hards .dot-link._warn, .dot-link._hard._warn {
-  background-color: #E53935;
-  color: #fff;
+  background-color: #ff6b6b;
+  color: #000;
 }
 .dot-link_hards .dot-link._warn._focus, .dot-link_hards .dot-link._warn:focus, .dot-link._hard._warn._focus, .dot-link._hard._warn:focus {
-  background-color: #ec6e6b;
-  color: #fff;
+  background-color: #ffa8a8;
+  color: #000;
 }
 .dot-link_hards .dot-link._warn._hover, .dot-link_hards .dot-link._warn:hover, .dot-link._hard._warn._hover, .dot-link._hard._warn:hover {
-  background-color: #f3a3a1;
-  color: #fff;
+  background-color: #ffe5e5;
+  color: #000;
 }
 .dot-link_hards .dot-link._warn._active, .dot-link_hards .dot-link._warn:active, .dot-link._hard._warn._active, .dot-link._hard._warn:active {
-  background-color: rgba(229, 57, 53, 0.1);
-  color: #fff;
+  background-color: rgba(255, 107, 107, 0.1);
+  color: #000;
+}
+.dot-link_hards .dot-link._warn._active.dot-fx-ripple, .dot-link_hards .dot-link._warn:active.dot-fx-ripple, .dot-link._hard._warn._active.dot-fx-ripple, .dot-link._hard._warn:active.dot-fx-ripple {
+  background-color: "$color", "@bright", 0.24;
 }
 .dot-link_borders .dot-link, .dot-link._border {
   border-style: solid;
   border-width: 2px;
 }
 .dot-link_borders .dot-link._primary, .dot-link._border._primary {
-  border-color: #1E88E5;
-  color: #1E88E5;
+  border-color: #15a2de;
+  color: #15a2de;
 }
 .dot-link_borders .dot-link._primary._focus, .dot-link_borders .dot-link._primary:focus, .dot-link._border._primary._focus, .dot-link._border._primary:focus {
-  border-color: #55a5eb;
+  border-color: #43baed;
 }
 .dot-link_borders .dot-link._primary._hover, .dot-link_borders .dot-link._primary:hover, .dot-link._border._primary._hover, .dot-link._border._primary:hover {
-  border-color: #8cc2f2;
-  color: #1E88E5;
+  border-color: #7bcff3;
+  color: #15a2de;
 }
 .dot-link_borders .dot-link._primary._active, .dot-link_borders .dot-link._primary:active, .dot-link._border._primary._active, .dot-link._border._primary:active {
-  color: #1E88E5;
-  background-color: rgba(30, 136, 229, 0.1);
+  color: #15a2de;
+  background-color: rgba(21, 162, 222, 0.1);
 }
 .dot-link_borders .dot-link._secondary, .dot-link._border._secondary {
-  border-color: #00ACC1;
-  color: #00ACC1;
+  border-color: yellow;
+  color: yellow;
 }
 .dot-link_borders .dot-link._secondary._focus, .dot-link_borders .dot-link._secondary:focus, .dot-link._border._secondary._focus, .dot-link._border._secondary:focus {
-  border-color: #00e3fe;
+  border-color: #ffff3d;
 }
 .dot-link_borders .dot-link._secondary._hover, .dot-link_borders .dot-link._secondary:hover, .dot-link._border._secondary._hover, .dot-link._border._secondary:hover {
-  border-color: #3ceaff;
-  color: #00ACC1;
+  border-color: #ffff7a;
+  color: yellow;
 }
 .dot-link_borders .dot-link._secondary._active, .dot-link_borders .dot-link._secondary:active, .dot-link._border._secondary._active, .dot-link._border._secondary:active {
-  color: #00ACC1;
-  background-color: rgba(0, 172, 193, 0.1);
+  color: yellow;
+  background-color: rgba(255, 255, 0, 0.1);
 }
 .dot-link_borders .dot-link._tertiary, .dot-link._border._tertiary {
-  border-color: #1E88E5;
-  color: #1E88E5;
+  border-color: #15a2de;
+  color: #15a2de;
 }
 .dot-link_borders .dot-link._tertiary._focus, .dot-link_borders .dot-link._tertiary:focus, .dot-link._border._tertiary._focus, .dot-link._border._tertiary:focus {
-  border-color: #55a5eb;
+  border-color: #43baed;
 }
 .dot-link_borders .dot-link._tertiary._hover, .dot-link_borders .dot-link._tertiary:hover, .dot-link._border._tertiary._hover, .dot-link._border._tertiary:hover {
-  border-color: #8cc2f2;
-  color: #1E88E5;
+  border-color: #7bcff3;
+  color: #15a2de;
 }
 .dot-link_borders .dot-link._tertiary._active, .dot-link_borders .dot-link._tertiary:active, .dot-link._border._tertiary._active, .dot-link._border._tertiary:active {
-  color: #1E88E5;
-  background-color: rgba(30, 136, 229, 0.1);
+  color: #15a2de;
+  background-color: rgba(21, 162, 222, 0.1);
 }
 .dot-link_borders .dot-link._accent, .dot-link._border._accent {
-  border-color: orange;
-  color: orange;
+  border-color: #34ed93;
+  color: #34ed93;
 }
 .dot-link_borders .dot-link._accent._focus, .dot-link_borders .dot-link._accent:focus, .dot-link._border._accent._focus, .dot-link._border._accent:focus {
-  border-color: #ffbb3d;
+  border-color: #6cf2b1;
 }
 .dot-link_borders .dot-link._accent._hover, .dot-link_borders .dot-link._accent:hover, .dot-link._border._accent._hover, .dot-link._border._accent:hover {
-  border-color: #ffd07a;
-  color: orange;
+  border-color: #a4f7cf;
+  color: #34ed93;
 }
 .dot-link_borders .dot-link._accent._active, .dot-link_borders .dot-link._accent:active, .dot-link._border._accent._active, .dot-link._border._accent:active {
-  color: orange;
-  background-color: rgba(255, 165, 0, 0.1);
+  color: #34ed93;
+  background-color: rgba(52, 237, 147, 0.1);
 }
 .dot-link_borders .dot-link._warn, .dot-link._border._warn {
-  border-color: #E53935;
-  color: #E53935;
+  border-color: #ff6b6b;
+  color: #ff6b6b;
 }
 .dot-link_borders .dot-link._warn._focus, .dot-link_borders .dot-link._warn:focus, .dot-link._border._warn._focus, .dot-link._border._warn:focus {
-  border-color: #ec6e6b;
+  border-color: #ffa8a8;
 }
 .dot-link_borders .dot-link._warn._hover, .dot-link_borders .dot-link._warn:hover, .dot-link._border._warn._hover, .dot-link._border._warn:hover {
-  border-color: #f3a3a1;
-  color: #E53935;
+  border-color: #ffe5e5;
+  color: #ff6b6b;
 }
 .dot-link_borders .dot-link._warn._active, .dot-link_borders .dot-link._warn:active, .dot-link._border._warn._active, .dot-link._border._warn:active {
-  color: #E53935;
-  background-color: rgba(229, 57, 53, 0.1);
+  color: #ff6b6b;
+  background-color: rgba(255, 107, 107, 0.1);
 }
-
 .dot-fx-ripple {
   position: relative;
   overflow: hidden;
@@ -306,9 +361,9 @@
   display: none;
   z-index: -1;
   transform: translate(-50%, -50%);
-  animation: zXwXxGgHb1EByBnwTks0YDXELop0Vx 0.48s both;
+  animation: zYt5kwOjRGaYiwXCYQiUQWOxPtmuPi 0.48s both;
 }
-@keyframes zXwXxGgHb1EByBnwTks0YDXELop0Vx {
+@keyframes zYt5kwOjRGaYiwXCYQiUQWOxPtmuPi {
   0% {
     transform: translate(-50%, -50%) scale(0);
   }
@@ -322,4 +377,17 @@
 }
 .dot-fx-ripple:active:before, .dot-fx-ripple:focus:before {
   display: block;
+}
+
+.dot-fx-ripple._primary:before {
+  background-color: rgba(17, 130, 178, 0.35);
+}
+.dot-fx-ripple._secondary:before {
+  background-color: rgba(204, 204, 0, 0.35);
+}
+.dot-fx-ripple._accent:before {
+  background-color: rgba(42, 190, 118, 0.35);
+}
+.dot-fx-ripple._warn:before {
+  background-color: rgba(204, 86, 86, 0.35);
 }

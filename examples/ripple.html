@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../prebuilt/reset.css">
+    <link rel="stylesheet" href="../prebuilt/box.css">
+    <link rel="stylesheet" href="../prebuilt/lift.css">
+    <link rel="stylesheet" href="./css/fx-ripple.css">
+    <style>
+        section {
+            padding: 1.25em;
+        }
+		button {
+			background-color: transparent;
+			border: none;
+			padding: 20px;
+		}
+        button:focus {
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+
+<section>
+
+    <button class="dot-fx-ripple">
+        <span>Ah!</span>
+    </button>
+
+    <button class="dot-fx-ripple">
+        <span>Ah!!!!!!</span>
+    </button>
+
+    <button class="dot-fx-ripple">
+        <span>Ah!!!!!!!!!!!!!!!!!!</span>
+    </button>
+
+    <div class="dot-box dot-fx-ripple dot-lift1">
+        <div class="dot-box-pad dot-pad">
+            Ripple Box
+        </div>
+    </div>
+
+</section>
+
+<script>
+	Array.from(document.querySelectorAll('.dot-fx-ripple'))
+		.forEach(button => {
+			console.log(button);
+			button.className += ' dot-fx-ripple_js';
+			button.addEventListener('click', setRipple);
+		});
+
+	function setRipple(event) {
+		const fx = document.createElement('span');
+		fx.addEventListener('animationend', popRipple)
+		fx.className = 'dot-fx-ripple-instance'
+
+		const rect = this.getBoundingClientRect();
+		const x = event.clientX - rect.left;
+		const y = event.clientY - rect.top
+
+        fx.style.left = x + 'px';
+		fx.style.top = y + 'px';
+
+		this.appendChild(fx);
+	}
+
+	function popRipple(event) {
+		this.parentNode.removeChild(this);
+	}
+
+</script>
+
+</body>
+</html>
