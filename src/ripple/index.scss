@@ -1,3 +1,5 @@
+@import '../scss';
+
 @mixin fx-ripple-rule() {
   .dot-fx {
     &-ripple {
@@ -67,8 +69,9 @@
     @each $label in $labels {
       $color: pick($theme, $label);
       &#{'._'+$label} {
+        .dot-fx-ripple-instance,
         &:before {
-          background-color: rgba(light-shade-tint($theme, $color, 20%), 0.35);
+          background-color: rgba(light-tint-shade($theme, $color, 20%), 0.35);
         }
       }
     }

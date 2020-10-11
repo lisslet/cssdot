@@ -252,79 +252,77 @@ $INITIALIZED-STYLES: get-initialize-properties($SHAPES);
   }
 }
 
-@mixin link-rule() {
-  .dot-link {
-    // a, other
+@debug "INITIALIZED-STYLES";
+@debug stringify($INITIALIZED-STYLES);
+
+.dot-link {
+
+  // a, other
+  display: inline-block;
+  vertical-align: middle;
+
+  // button
+  background-color: transparent;
+  border: none;
+  margin: 0;
+  padding: 0;
+
+
+  font-size: 1rem;
+  cursor: pointer;
+  box-sizing: border-box;
+  border-radius: 4px;
+  line-height: 36px;
+
+  > span {
     display: inline-block;
-    vertical-align: middle;
-
-    // button
-    background-color: transparent;
-    border: none;
-    margin: 0;
-    padding: 0;
-
-
-    font-size: 1rem;
-    cursor: pointer;
-    box-sizing: border-box;
-    border-radius: 4px;
-    line-height: 36px;
-
-    > span {
-      display: inline-block;
-      // min-width: 48px;
-      text-align: center;
-      padding-left: 0.625em;
-      padding-right: 0.625em;
-    }
-
-    &:focus {
-      outline: none;
-    }
+    // min-width: 48px;
+    text-align: center;
+    padding-left: 0.625em;
+    padding-right: 0.625em;
   }
-}
 
-@mixin link-theming($theme){
-  .dot-link {
-    @each $style, $states in $SHAPES {
-      $single-query: if($style == $DEFAULT-SHAPE, '', #{'._' + $style});
+  &:focus {
+    outline: none;
+  }
 
-      &#{'_' + $style + 's'} &,
-      &#{$single-query} {
-        $core-properties: map-get($states, 'core');
+  @each $style, $states in $SHAPES {
+    $single-query: if($style == $DEFAULT-SHAPE, '', #{'._' + $style});
 
-        $link-properties: map-get($states, 'normal');
-        $focus-properties: map-get($states, 'focus');
-        $hover-properties: map-get($states, 'react');
-        $active-properties: map-get($states, 'active');
+    &#{'_' + $style + 's'} &,
+    &#{$single-query} {
+      $core-properties: map-get($states, 'core');
 
-        // core properties
-        @include properties($core-properties);
+      $link-properties: map-get($states, 'normal');
+      $focus-properties: map-get($states, 'focus');
+      $hover-properties: map-get($states, 'react');
+      $active-properties: map-get($states, 'active');
 
-        // coloring properties
-        @each $theme-label in $THEME-THEMING-LABELS {
+      // core properties
+      @include properties($core-properties);
 
-          &#{'._'+$theme-label} {
-            @include theme-properties($theme, $theme-label, $link-properties);
+      // coloring properties
+      @each $theme-label in $THEME-THEMING-LABELS {
 
-            &._focus,
-            &:focus {
-              @include theme-properties($theme, $theme-label, $focus-properties);
-            }
+        &#{'._'+$theme-label} {
+          @include theme-properties($theme, $theme-label, $link-properties);
 
-            &._hover,
-            &:hover {
-              @include theme-properties($theme, $theme-label, $hover-properties);
-            }
+          &._focus,
+          &:focus {
+            @include theme-properties($theme, $theme-label, $focus-properties);
+          }
 
-            &._active,
-            &:active {
-              @include theme-properties($theme, $theme-label, $active-properties);
+          &._hover,
+          &:hover {
+            @include theme-properties($theme, $theme-label, $hover-properties);
+          }
 
-              &.dot-fx-ripple {
-                background-color: map-get($hover-properties, background-color);
-              }
+          &._active,
+          &:active {
+            @include theme-properties($theme, $theme-label, $active-properties);
+
+            &.dot-fx-ripple {
+              background-color: map-get($hover-properties, background-color);
             }
           }
         }
@@ -332,3 +330,68 @@ $INITIALIZED-STYLES: get-initialize-properties($SHAPES);
     }
   }
 }
+
+
+.dot-fx {
+  &-ripple {
+    position: relative;
+    overflow: hidden;
+
+    &:before {
+      content: '';
+      position: absolute;
+      width: 200%;
+      height: 0;
+      padding-bottom: 200%;
+      top: 50%;
+      left: 50%;
+      background-color: rgba(0, 0, 0, 0.12);
+      border-radius: 50%;
+      display: none;
+      z-index: -1;
+      transform: translate(-50%, -50%);
+      @include animate(0.48s both) {
+        0% {
+          transform: translate(-50%, -50%) scale(0);
+        }
+
+        34% {
+          opacity: 1;
+          // transform: translate(-50%, -50%);
+        }
+
+        100% {
+          opacity: 0;
+          transform: translate(-50%, -50%) scale(1);
+        }
+
+      }
+
+    }
+
+    &:active,
+    &:focus {
+      &:before {
+        display: block;
+      }
+    }
+
+    $labels: primary accent warn;
+  }
+}
+
+@mixin fx-ripple-theming($theme) {
+  $labels: primary secondary accent warn;
+  .dot-fx-ripple {
+    @each $label in $labels {
+      $color: pick($theme, $label);
+      &#{'._'+$label} {
+        &:before {
+          background-color: rgba(light-shade-tint($theme, $color, 20%), 0.35);
+        }
+      }
+    }
+  }
+}
+
+@include fx-ripple-theming($theme);

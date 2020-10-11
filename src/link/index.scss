@@ -1,3 +1,5 @@
+@import '../scss';
+
 /// Link Styles
 $SHAPES: (
         'clear': (
@@ -72,29 +74,29 @@ $SHAPES: (
                         background-color: ('$color', '@opacity', 0.1)
                 )
         ),
-  //'line': (
-  //        'core': (
-  //                border-style: solid,
-  //                border-width: 0 0 2px 0,
-  //                border-bottom-left-radius: 0,
-  //                border-bottom-right-radius: 0
-  //        ),
-  //        'normal': (
-  //                border-color: '$color',
-  //                color: '$color',
-  //        ),
-  //        'focus': (
-  //                border-color: ('$color', '@bright', 0.12),
-  //        ),
-  //        'react': (
-  //                color: '$color',
-  //                border-color: ('$color', '@bright', 0.24)
-  //        ),
-  //        'active': (
-  //                color: '$color',
-  //                background-color: ('$color', '@opacity', 0.1)
-  //        )
-  //),
+        'line': (
+                'core': (
+                        border-style: solid,
+                        border-width: 0 0 2px 0,
+                        border-bottom-left-radius: 0,
+                        border-bottom-right-radius: 0
+                ),
+                'normal': (
+                        border-color: '$color',
+                        color: '$color',
+                ),
+                'focus': (
+                        border-color: ('$color', '@bright', 0.12),
+                ),
+                'react': (
+                        color: '$color',
+                        border-color: ('$color', '@bright', 0.24)
+                ),
+                'active': (
+                        color: '$color',
+                        background-color: ('$color', '@opacity', 0.1)
+                )
+        ),
 );
 
 $DEFAULT-SHAPE: 'clear';
@@ -269,7 +271,7 @@ $INITIALIZED-STYLES: get-initialize-properties($SHAPES);
     border-radius: 4px;
     line-height: 36px;
 
-    > span {
+    &-area {
       display: inline-block;
       // min-width: 48px;
       text-align: center;
@@ -283,46 +285,44 @@ $INITIALIZED-STYLES: get-initialize-properties($SHAPES);
   }
 }
 
-@mixin link-theming($theme){
-  .dot-link {
-    @each $style, $states in $SHAPES {
-      $single-query: if($style == $DEFAULT-SHAPE, '', #{'._' + $style});
+@mixin link-theming($theme) {
+  @each $shape, $states in $SHAPES {
+    $single-query: if($shape == $DEFAULT-SHAPE, '', #{'._' + $shape});
 
-      &#{'_' + $style + 's'} &,
-      &#{$single-query} {
-        $core-properties: map-get($states, 'core');
+    #{'.dot-link_' + $shape + 's'} .dot-link,
+    #{'.dot-link'+$single-query} {
+      $core-properties: map-get($states, 'core');
 
-        $link-properties: map-get($states, 'normal');
-        $focus-properties: map-get($states, 'focus');
-        $hover-properties: map-get($states, 'react');
-        $active-properties: map-get($states, 'active');
+      $link-properties: map-get($states, 'normal');
+      $focus-properties: map-get($states, 'focus');
+      $hover-properties: map-get($states, 'react');
+      $active-properties: map-get($states, 'active');
 
-        // core properties
-        @include properties($core-properties);
+      // core properties
+      @include properties($core-properties);
 
-        // coloring properties
-        @each $theme-label in $THEME-THEMING-LABELS {
+      // coloring properties
+      @each $theme-label in $THEME-THEMING-LABELS {
 
-          &#{'._'+$theme-label} {
-            @include theme-properties($theme, $theme-label, $link-properties);
+        &#{'._'+$theme-label} {
+          @include theme-properties($theme, $theme-label, $link-properties);
 
-            &._focus,
-            &:focus {
-              @include theme-properties($theme, $theme-label, $focus-properties);
-            }
+          &._focus,
+          &:focus {
+            @include theme-properties($theme, $theme-label, $focus-properties);
+          }
 
-            &._hover,
-            &:hover {
-              @include theme-properties($theme, $theme-label, $hover-properties);
-            }
+          &._hover,
+          &:hover {
+            @include theme-properties($theme, $theme-label, $hover-properties);
+          }
 
-            &._active,
-            &:active {
-              @include theme-properties($theme, $theme-label, $active-properties);
+          &._active,
+          &:active {
+            @include theme-properties($theme, $theme-label, $active-properties);
 
-              &.dot-fx-ripple {
-                background-color: map-get($hover-properties, background-color);
-              }
+            &.dot-fx-ripple {
+              background-color: map-get($hover-properties, background-color);
             }
           }
         }

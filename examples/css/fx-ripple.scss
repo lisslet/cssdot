@@ -69,6 +69,7 @@
     @each $label in $labels {
       $color: pick($theme, $label);
       &#{'._'+$label} {
+        .dot-fx-ripple-instance,
         &:before {
           background-color: rgba(light-shade-tint($theme, $color, 20%), 0.35);
         }
