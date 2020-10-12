@@ -23,11 +23,11 @@ body {
   left: 50%;
   background-color: rgba(0, 0, 0, 0.12);
   border-radius: 50%;
-  z-index: -1;
+  z-index: 1;
   transform: translate(-50%, -50%);
-  animation: zW4F5EIm1rYN9D2D9tqMioLr60NtWv 0.72s both ease-out;
+  animation: zG547szDWdrCdj9xuiWsgLMylLWxQk 0.72s both ease-out;
 }
-@keyframes zW4F5EIm1rYN9D2D9tqMioLr60NtWv {
+@keyframes zG547szDWdrCdj9xuiWsgLMylLWxQk {
   0% {
     transform: translate(-50%, -50%) scale(0);
   }
@@ -53,15 +53,18 @@ body {
   animation: none;
 }
 
-.dot-fx-ripple._primary:before {
-  background-color: rgba(17, 130, 178, 0.35);
+.dot-fx-ripple._primary .dot-fx-ripple-instance, .dot-fx-ripple._primary:before {
+  background-color: rgba(128, 176, 255, 0.36);
 }
-.dot-fx-ripple._secondary:before {
-  background-color: rgba(204, 204, 0, 0.35);
+.dot-fx-ripple._secondary .dot-fx-ripple-instance, .dot-fx-ripple._secondary:before {
+  background-color: rgba(128, 221, 254, 0.36);
 }
-.dot-fx-ripple._accent:before {
-  background-color: rgba(42, 190, 118, 0.35);
+.dot-fx-ripple._tertiary .dot-fx-ripple-instance, .dot-fx-ripple._tertiary:before {
+  background-color: rgba(203, 213, 137, 0.36);
 }
-.dot-fx-ripple._warn:before {
-  background-color: rgba(204, 86, 86, 0.35);
+.dot-fx-ripple._accent .dot-fx-ripple-instance, .dot-fx-ripple._accent:before {
+  background-color: rgba(175, 159, 255, 0.36);
+}
+.dot-fx-ripple._warn .dot-fx-ripple-instance, .dot-fx-ripple._warn:before {
+  background-color: rgba(255, 181, 181, 0.36);
 }

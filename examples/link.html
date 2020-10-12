@@ -5,7 +5,8 @@
     <link rel="stylesheet" href="../prebuilt/frame.css">
     <link rel="stylesheet" href="./css/link3.css">
     <link rel="stylesheet" href="../prebuilt/lift.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/fx-ripple.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <style>
 		h2 {
 			font-size: 3em;
@@ -19,7 +20,7 @@
 			margin-bottom: 1.125em;
 		}
 
-		._anchors, ._links{
+		._anchors, ._links {
 			float: left;
 			width: 50%;
 		}
@@ -33,16 +34,17 @@
 		.dot-link {
 			min-width: 120px;
 			text-align: center;
+            text-transform: uppercase;
 		}
 
 		h2, h3 {
 			margin-bottom: 0.313em;
 		}
 
-        .example-link-items {
-            display:block;
-            margin-bottom: 1.2em;
-        }
+		.example-link-items {
+			display: block;
+			margin-bottom: 1.2em;
+		}
 
     </style>
 
@@ -67,31 +69,29 @@
                 heading="border"
                 linkStyle="_border"
         ></example-links>
-<!--        <example-links-->
-<!--                heading="line"-->
-<!--                linkStyle="_line"-->
-<!--        ></example-links>-->
-
-
+        <example-links
+                heading="line"
+                linkStyle="_line"
+        ></example-links>
     </div>
 </main>
 
 
 <script>
 
-    class ExampleLinkItemsBase  extends HTMLElement {
+	class ExampleLinkItemsBase extends HTMLElement {
 		constructor() {
 			super();
 
 			this.classList.add('example-link-items');
 
 			this.heading    = this.getAttribute('heading');
-			this.linkStyle = this.getAttribute('linkStyle');
+			this.linkStyle  = this.getAttribute('linkStyle');
 			this.classNames = `dot-link ${this.linkStyle}`;
 		}
 	}
 
-  	customElements.define(
+	customElements.define(
 		'example-link-button-items',
 		class extends ExampleLinkItemsBase {
 			constructor() {
@@ -101,18 +101,21 @@
 
 				classNames += ' dot-fx-ripple';
 				console.log(this.linkStyle);
-				if(this.linkStyle.indexOf('_border') < 0 && this.linkStyle.indexOf('_clear') < 0){
+				if (this.linkStyle.indexOf('border') < 0 && this.linkStyle.indexOf('line') < 0) {
 					classNames += ' dot-lift1';
-                }
+				}
 
 				this.innerHTML = `
 <div>
     <h4>${heading}</h4>
+    <div style="display:flex">
     <button class="${classNames}"><span>Normal</span></button>
-    <a href="#" class="${classNames} _primary"><span>Primary</span></a>
+    <a class="${classNames} _primary"><span>Primary</span></a>
     <button class="${classNames} _secondary"><span>Secondary</span></button>
-    <a href="#" class="${classNames} _accent"><span>Accent</span></a>
+    <button class="${classNames} _tertiary"><span>Tertiary</span></button>
+    <a class="${classNames} _accent"><span>Accent</span></a>
     <button class="${classNames} _warn"><span>Warn</span></button>
+    </div>
 </div>
     			`;
 			}
@@ -125,13 +128,14 @@
 			constructor() {
 				super();
 
-				const heading = this.getAttribute('heading');
+				const heading   = this.getAttribute('heading');
 				const linkStyle = this.getAttribute('linkStyle') || '';
 
 				this.innerHTML = `
 <h2>${heading}</h2>
     <h3>Button</h3>
     <example-link-button-items heading="Normal State" linkStyle="${linkStyle}"></example-link-button-items>
+    <example-link-button-items heading="Focus State" linkStyle="${linkStyle} _focus"></example-link-button-items>
     <example-link-button-items heading="Hover State" linkStyle="${linkStyle} _hover"></example-link-button-items>
     <example-link-button-items heading="Active State" linkStyle="${linkStyle} _active"></example-link-button-items>
         			`;

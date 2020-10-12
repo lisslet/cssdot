@@ -37,16 +37,16 @@ body {
 }
 
 .dot-box._primary > .dot-box-head {
-  color: #15a2de;
+  color: #0061ff;
 }
 .dot-box._primary:hover {
-  background-color: rgba(21, 162, 222, 0.06);
+  background-color: rgba(0, 97, 255, 0.06);
 }
 .dot-box._accent > .dot-box-head {
-  color: #34ed93;
+  color: #5f3eff;
 }
 .dot-box._accent:hover {
-  background-color: rgba(52, 237, 147, 0.06);
+  background-color: rgba(95, 62, 255, 0.06);
 }
 .dot-box._warn > .dot-box-head {
   color: #ff6b6b;

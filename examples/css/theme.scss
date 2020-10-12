@@ -1,13 +1,10 @@
 @import '../../src/scss';
 
-$primary: #9A0D3A;
-$accent: lighten($primary, 20%);
-$warn: #b57fff;
-
-$primary: #15a2de;
-$secondary: yellow;
-$accent: #34ed93;
-$warn: #ff6b6b;
+$primary: #2a529a;
+$secondary: #10c8ff;
+$tertiary: #ade100;
+$accent: #5b3fff;
+$warn: #f96161;
 
 $field: #fff;
 $text: safe-color($field);
@@ -19,6 +16,7 @@ $theme: theme((
         'palette': palette((
                 'primary': $primary,
                 'secondary': $secondary,
+                'tertiary': $tertiary,
                 'accent': $accent,
                 'warn': $warn,
                 'field': $field,

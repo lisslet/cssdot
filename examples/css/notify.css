@@ -208,43 +208,43 @@ body {
   color: black;
 }
 .dot-toast_soft .dot-toast._primary {
-  background-color: #ecf8fc;
-  color: #15a2de;
+  background-color: #ebf2ff;
+  color: #0061ff;
 }
 .dot-toast_soft .dot-toast._primary:hover {
-  background-color: #def2fa;
+  background-color: #dbe9ff;
 }
 .dot-toast_soft .dot-toast._primary button {
-  color: #15a2de;
+  color: #0061ff;
 }
 .dot-toast_soft .dot-toast._primary button:hover {
-  color: #1180af;
+  color: #004ecc;
 }
 .dot-toast_soft .dot-toast._secondary {
-  background-color: #ffffeb;
-  color: yellow;
+  background-color: #ebf9ff;
+  color: #00bafc;
 }
 .dot-toast_soft .dot-toast._secondary:hover {
-  background-color: #ffffdb;
+  background-color: #dbf5ff;
 }
 .dot-toast_soft .dot-toast._secondary button {
-  color: yellow;
+  color: #00bafc;
 }
 .dot-toast_soft .dot-toast._secondary button:hover {
-  color: #cccc00;
+  color: #0094c9;
 }
 .dot-toast_soft .dot-toast._accent {
-  background-color: #effef6;
-  color: #34ed93;
+  background-color: #f2f0ff;
+  color: #5f3eff;
 }
 .dot-toast_soft .dot-toast._accent:hover {
-  background-color: #e3fcf0;
+  background-color: #e9e4ff;
 }
 .dot-toast_soft .dot-toast._accent button {
-  color: #34ed93;
+  color: #5f3eff;
 }
 .dot-toast_soft .dot-toast._accent button:hover {
-  color: #13db7a;
+  color: #350bff;
 }
 .dot-toast_soft .dot-toast._warn {
   background-color: #fff3f3;
@@ -260,32 +260,32 @@ body {
   color: #ff3838;
 }
 .dot-toast_hard .dot-toast._primary {
-  background-color: #15a2de;
-  color: #000;
+  background-color: #0061ff;
+  color: #fff;
 }
 .dot-toast_hard .dot-toast._secondary {
-  background-color: yellow;
+  background-color: #00bafc;
   color: #000;
 }
 .dot-toast_hard .dot-toast._accent {
-  background-color: #34ed93;
-  color: #000;
+  background-color: #5f3eff;
+  color: #fff;
 }
 .dot-toast_hard .dot-toast._warn {
   background-color: #ff6b6b;
   color: #000;
 }
 .dot-toast_vivid .dot-toast._primary {
-  background: linear-gradient(to left, #19de15, #15a2de);
-  color: #000;
+  background: linear-gradient(to left, #00ff4d, #0061ff);
+  color: #fff;
 }
 .dot-toast_vivid .dot-toast._secondary {
-  background: linear-gradient(to left, #ff0051, yellow);
+  background: linear-gradient(to left, #0efc00, #00bafc);
   color: #000;
 }
 .dot-toast_vivid .dot-toast._accent {
-  background: linear-gradient(to left, #c9ed34, #34ed93);
-  color: #000;
+  background: linear-gradient(to left, #3effe3, #5f3eff);
+  color: #fff;
 }
 .dot-toast_vivid .dot-toast._warn {
   background: linear-gradient(to left, #d06bff, #ff6b6b);
@@ -311,52 +311,52 @@ body {
   border-bottom-color: #fff;
 }
 .dot-toast_border .dot-toast._primary {
-  border-color: #15a2de;
+  border-color: #0061ff;
 }
 .dot-toast_border .dot-toast._primary:hover {
-  background-color: #15a2de;
-  color: #000;
+  background-color: #0061ff;
+  color: #fff;
 }
 .dot-toast_border .dot-toast._primary:hover button {
   color: inherit;
 }
 .dot-toast_border .dot-toast._primary button {
-  color: #15a2de;
+  color: #0061ff;
 }
 .dot-toast_border .dot-toast._primary button:hover {
-  border-bottom-color: #000;
+  border-bottom-color: #fff;
 }
 .dot-toast_border .dot-toast._secondary {
-  border-color: yellow;
+  border-color: #00bafc;
 }
 .dot-toast_border .dot-toast._secondary:hover {
-  background-color: yellow;
+  background-color: #00bafc;
   color: #000;
 }
 .dot-toast_border .dot-toast._secondary:hover button {
   color: inherit;
 }
 .dot-toast_border .dot-toast._secondary button {
-  color: yellow;
+  color: #00bafc;
 }
 .dot-toast_border .dot-toast._secondary button:hover {
   border-bottom-color: #000;
 }
 .dot-toast_border .dot-toast._accent {
-  border-color: #34ed93;
+  border-color: #5f3eff;
 }
 .dot-toast_border .dot-toast._accent:hover {
-  background-color: #34ed93;
-  color: #000;
+  background-color: #5f3eff;
+  color: #fff;
 }
 .dot-toast_border .dot-toast._accent:hover button {
   color: inherit;
 }
 .dot-toast_border .dot-toast._accent button {
-  color: #34ed93;
+  color: #5f3eff;
 }
 .dot-toast_border .dot-toast._accent button:hover {
-  border-bottom-color: #000;
+  border-bottom-color: #fff;
 }
 .dot-toast_border .dot-toast._warn {
   border-color: #ff6b6b;

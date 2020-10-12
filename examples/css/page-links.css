@@ -52,12 +52,12 @@ body {
   border-radius: 1.25em;
 }
 .dot-page-links_hard .dot-page-links a:hover {
-  background-color: #15a2de;
-  color: #000;
+  background-color: #0061ff;
+  color: #fff;
 }
 .dot-page-links_hard .dot-page-links a:active {
-  background-color: #34ed93;
-  color: #000;
+  background-color: #5f3eff;
+  color: #fff;
 }
 .dot-page-links_hard .dot-page-links ._active {
   background-color: #000;
@@ -76,12 +76,12 @@ body {
   border-radius: 1.25em;
 }
 .dot-page-links_border .dot-page-links a:hover {
-  border-color: #15a2de;
-  color: #15a2de;
+  border-color: #0061ff;
+  color: #0061ff;
 }
 .dot-page-links_border .dot-page-links a:active {
-  border-color: #34ed93;
-  color: #34ed93;
+  border-color: #5f3eff;
+  color: #5f3eff;
 }
 .dot-page-links_border .dot-page-links ._active {
   border-color: #000;

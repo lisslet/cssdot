@@ -447,3 +447,25 @@ $__args-shorten-index: query !default;
     }
   }
 }
+
+@function stringify($target, $tap: '') {
+  // \A is Line breaker
+  $lines: '';
+  $type: type-of($target);
+  @if $type == 'map' {
+    $lines: #{$lines + $tap + '(\A'};
+    @each $key, $value in $target {
+      $lines: #{$lines + $tap + $key + ': ' + stringify($value, $tap + '  ') + '\A'};
+    }
+    $lines: #{$lines + $tap + ')\A'};
+  } @else if ($type == 'list') {
+    $lines: #{$lines + $tap + '(\A'};
+    @each $value in $target {
+      $lines: #{$lines + $tap + stringify($value, $tap +  '  ') + '\A'}
+    }
+    $lines: #{$lines + $tap + ')\A'};
+  } @else {
+    $lines: #{$lines + inspect($target) + '\A'};
+  }
+  @return $lines;
+}

@@ -18,7 +18,7 @@
         left: 50%;
         background-color: rgba(0, 0, 0, 0.12);
         border-radius: 50%;
-        z-index: -1;
+        z-index: 1;
         transform: translate(-50%, -50%);
         @include animate(0.72s both ease-out) {
           0% {
@@ -27,7 +27,6 @@
 
           35% {
             opacity: 1;
-            // transform: translate(-50%, -50%);
           }
 
           67% {
@@ -64,14 +63,14 @@
 }
 
 @mixin fx-ripple-theming($theme) {
-  $labels: primary secondary accent warn;
+  $labels: primary secondary tertiary accent warn;
   .dot-fx-ripple {
     @each $label in $labels {
       $color: pick($theme, $label);
       &#{'._'+$label} {
         .dot-fx-ripple-instance,
         &:before {
-          background-color: rgba(light-shade-tint($theme, $color, 20%), 0.35);
+          background-color: rgba(light-tint-shade($theme, $color, 50%), 0.36);
         }
       }
     }
