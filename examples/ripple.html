@@ -4,26 +4,28 @@
     <link rel="stylesheet" href="../prebuilt/reset.css">
     <link rel="stylesheet" href="../prebuilt/box.css">
     <link rel="stylesheet" href="../prebuilt/lift.css">
-    <link rel="stylesheet" href="./css/fx-ripple.css">
+    <link rel="stylesheet" href="./css/ripple2.css">
     <style>
-        section {
-            padding: 1.25em;
-        }
+		section {
+			padding: 1.25em;
+		}
+
 		button {
 			background-color: transparent;
 			border: none;
 			padding: 20px;
 		}
-        button:focus {
-            outline: none;
-        }
+
+		button:focus {
+			outline: none;
+		}
     </style>
 </head>
 <body>
 
 <section>
 
-    <button class="dot-fx-ripple">
+    <button class="dot-fx-ripple dot-lift1" style="width:100px;height:100px;">
         <span>Ah!</span>
     </button>
 
@@ -44,31 +46,68 @@
 </section>
 
 <script>
+
 	Array.from(document.querySelectorAll('.dot-fx-ripple'))
-		.forEach(button => {
-			console.log(button);
-			button.className += ' dot-fx-ripple_js';
-			button.addEventListener('click', setRipple);
+		.forEach(node => {
+
+			node.className += ' dot-fx-ripple_js';
+
+			const area     = document.createElement('span');
+			area.className = 'dot-fx-ripple-area';
+			node.appendChild(area);
+
+			node._rippleArea = area;
+			node.addEventListener('click', setRipple);
 		});
 
 	function setRipple(event) {
-		const fx = document.createElement('span');
-		fx.addEventListener('animationend', popRipple)
-		fx.className = 'dot-fx-ripple-instance'
+		const instance = document.createElement('span');
+		instance.addEventListener('animationend', popRipple)
+		instance.className = 'dot-fx-ripple-instance'
 
-		const rect = this.getBoundingClientRect();
-		const x = event.clientX - rect.left;
-		const y = event.clientY - rect.top
+		const {left, top, width, height} = this.getBoundingClientRect();
+		const x                          = event.clientX - left;
+		const y                          = event.clientY - top
 
-        fx.style.left = x + 'px';
-		fx.style.top = y + 'px';
+		const size = Math.max(width, height);
 
-		this.appendChild(fx);
+		instance.style.width             = size + 'px';
+		instance.style.height            = size + 'px';
+		instance.style.left              = x + 'px';
+		instance.style.top               = y + 'px';
+		this._rippleArea.appendChild(instance);
 	}
 
 	function popRipple(event) {
 		this.parentNode.removeChild(this);
 	}
+
+
+	// Array.from(document.querySelectorAll('.dot-fx-ripple'))
+	// 	.forEach(button => {
+	// 		console.log(button);
+	// 		button.className += ' dot-fx-ripple_js';
+	// 		button.addEventListener('click', setRipple);
+	// 	});
+	//
+	// function setRipple(event) {
+	// 	const fx = document.createElement('span');
+	// 	fx.addEventListener('animationend', popRipple)
+	// 	fx.className = 'dot-fx-ripple-instance'
+	//
+	// 	const rect = this.getBoundingClientRect();
+	// 	const x = event.clientX - rect.left;
+	// 	const y = event.clientY - rect.top
+	//
+	//     fx.style.left = x + 'px';
+	// 	fx.style.top = y + 'px';
+	//
+	// 	this.appendChild(fx);
+	// }
+	//
+	// function popRipple(event) {
+	// 	this.parentNode.removeChild(this);
+	// }
 
 </script>
 

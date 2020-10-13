@@ -37,20 +37,20 @@ body {
 }
 
 .dot-box._primary > .dot-box-head {
-  color: #0061ff;
+  color: #2a529a;
 }
 .dot-box._primary:hover {
-  background-color: rgba(0, 97, 255, 0.06);
+  background-color: rgba(42, 82, 154, 0.06);
 }
 .dot-box._accent > .dot-box-head {
-  color: #5f3eff;
+  color: #5b3fff;
 }
 .dot-box._accent:hover {
-  background-color: rgba(95, 62, 255, 0.06);
+  background-color: rgba(91, 63, 255, 0.06);
 }
 .dot-box._warn > .dot-box-head {
-  color: #ff6b6b;
+  color: #f96161;
 }
 .dot-box._warn:hover {
-  background-color: rgba(255, 107, 107, 0.06);
+  background-color: rgba(249, 97, 97, 0.06);
 }

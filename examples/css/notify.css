@@ -208,87 +208,87 @@ body {
   color: black;
 }
 .dot-toast_soft .dot-toast._primary {
-  background-color: #ebf2ff;
-  color: #0061ff;
+  background-color: #eef1f7;
+  color: #2a529a;
 }
 .dot-toast_soft .dot-toast._primary:hover {
-  background-color: #dbe9ff;
+  background-color: #e1e7f1;
 }
 .dot-toast_soft .dot-toast._primary button {
-  color: #0061ff;
+  color: #2a529a;
 }
 .dot-toast_soft .dot-toast._primary button:hover {
-  color: #004ecc;
+  color: #1f3d72;
 }
 .dot-toast_soft .dot-toast._secondary {
-  background-color: #ebf9ff;
-  color: #00bafc;
+  background-color: #ecfbff;
+  color: #10c8ff;
 }
 .dot-toast_soft .dot-toast._secondary:hover {
-  background-color: #dbf5ff;
+  background-color: #def7ff;
 }
 .dot-toast_soft .dot-toast._secondary button {
-  color: #00bafc;
+  color: #10c8ff;
 }
 .dot-toast_soft .dot-toast._secondary button:hover {
-  color: #0094c9;
+  color: #00a9dc;
 }
 .dot-toast_soft .dot-toast._accent {
   background-color: #f2f0ff;
-  color: #5f3eff;
+  color: #5b3fff;
 }
 .dot-toast_soft .dot-toast._accent:hover {
-  background-color: #e9e4ff;
+  background-color: #e8e4ff;
 }
 .dot-toast_soft .dot-toast._accent button {
-  color: #5f3eff;
+  color: #5b3fff;
 }
 .dot-toast_soft .dot-toast._accent button:hover {
-  color: #350bff;
+  color: #2f0cff;
 }
 .dot-toast_soft .dot-toast._warn {
-  background-color: #fff3f3;
-  color: #ff6b6b;
+  background-color: #fff2f2;
+  color: #f96161;
 }
 .dot-toast_soft .dot-toast._warn:hover {
-  background-color: #ffeaea;
+  background-color: #fee9e9;
 }
 .dot-toast_soft .dot-toast._warn button {
-  color: #ff6b6b;
+  color: #f96161;
 }
 .dot-toast_soft .dot-toast._warn button:hover {
-  color: #ff3838;
+  color: #f73030;
 }
 .dot-toast_hard .dot-toast._primary {
-  background-color: #0061ff;
+  background-color: #2a529a;
   color: #fff;
 }
 .dot-toast_hard .dot-toast._secondary {
-  background-color: #00bafc;
+  background-color: #10c8ff;
   color: #000;
 }
 .dot-toast_hard .dot-toast._accent {
-  background-color: #5f3eff;
+  background-color: #5b3fff;
   color: #fff;
 }
 .dot-toast_hard .dot-toast._warn {
-  background-color: #ff6b6b;
+  background-color: #f96161;
   color: #000;
 }
 .dot-toast_vivid .dot-toast._primary {
-  background: linear-gradient(to left, #00ff4d, #0061ff);
+  background: linear-gradient(to left, #2a9a4f, #2a529a);
   color: #fff;
 }
 .dot-toast_vivid .dot-toast._secondary {
-  background: linear-gradient(to left, #0efc00, #00bafc);
+  background: linear-gradient(to left, #25ff10, #10c8ff);
   color: #000;
 }
 .dot-toast_vivid .dot-toast._accent {
-  background: linear-gradient(to left, #3effe3, #5f3eff);
+  background: linear-gradient(to left, #3fffde, #5b3fff);
   color: #fff;
 }
 .dot-toast_vivid .dot-toast._warn {
-  background: linear-gradient(to left, #d06bff, #ff6b6b);
+  background: linear-gradient(to left, #c961f9, #f96161);
   color: #000;
 }
 .dot-toast_border .dot-toast {
@@ -311,65 +311,65 @@ body {
   border-bottom-color: #fff;
 }
 .dot-toast_border .dot-toast._primary {
-  border-color: #0061ff;
+  border-color: #2a529a;
 }
 .dot-toast_border .dot-toast._primary:hover {
-  background-color: #0061ff;
+  background-color: #2a529a;
   color: #fff;
 }
 .dot-toast_border .dot-toast._primary:hover button {
   color: inherit;
 }
 .dot-toast_border .dot-toast._primary button {
-  color: #0061ff;
+  color: #2a529a;
 }
 .dot-toast_border .dot-toast._primary button:hover {
   border-bottom-color: #fff;
 }
 .dot-toast_border .dot-toast._secondary {
-  border-color: #00bafc;
+  border-color: #10c8ff;
 }
 .dot-toast_border .dot-toast._secondary:hover {
-  background-color: #00bafc;
+  background-color: #10c8ff;
   color: #000;
 }
 .dot-toast_border .dot-toast._secondary:hover button {
   color: inherit;
 }
 .dot-toast_border .dot-toast._secondary button {
-  color: #00bafc;
+  color: #10c8ff;
 }
 .dot-toast_border .dot-toast._secondary button:hover {
   border-bottom-color: #000;
 }
 .dot-toast_border .dot-toast._accent {
-  border-color: #5f3eff;
+  border-color: #5b3fff;
 }
 .dot-toast_border .dot-toast._accent:hover {
-  background-color: #5f3eff;
+  background-color: #5b3fff;
   color: #fff;
 }
 .dot-toast_border .dot-toast._accent:hover button {
   color: inherit;
 }
 .dot-toast_border .dot-toast._accent button {
-  color: #5f3eff;
+  color: #5b3fff;
 }
 .dot-toast_border .dot-toast._accent button:hover {
   border-bottom-color: #fff;
 }
 .dot-toast_border .dot-toast._warn {
-  border-color: #ff6b6b;
+  border-color: #f96161;
 }
 .dot-toast_border .dot-toast._warn:hover {
-  background-color: #ff6b6b;
+  background-color: #f96161;
   color: #000;
 }
 .dot-toast_border .dot-toast._warn:hover button {
   color: inherit;
 }
 .dot-toast_border .dot-toast._warn button {
-  color: #ff6b6b;
+  color: #f96161;
 }
 .dot-toast_border .dot-toast._warn button:hover {
   border-bottom-color: #000;
