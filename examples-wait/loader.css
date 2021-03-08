@@ -10,9 +10,9 @@ body {
 
 .dot-loader {
   display: inline-block;
-  animation: zTD0ScMXXuutulJ86gc7bZGGNAysKB 0.48s both;
+  animation: zz5nGQWmdItUE1t1HNT8q0UPo5vZrP 0.48s both;
 }
-@keyframes zTD0ScMXXuutulJ86gc7bZGGNAysKB {
+@keyframes zz5nGQWmdItUE1t1HNT8q0UPo5vZrP {
   from {
     opacity: 0;
   }
@@ -30,9 +30,9 @@ body {
   display: none;
 }
 .dot-loader._circle span {
-  animation: zIJdZBsxSTlIDQ8yJMess86JBsCr7G 1.44s linear infinite;
+  animation: z3exEei0yp1y80Vfy3jdSFyrnkNUEc 1.44s linear infinite;
 }
-@keyframes zIJdZBsxSTlIDQ8yJMess86JBsCr7G {
+@keyframes z3exEei0yp1y80Vfy3jdSFyrnkNUEc {
   to {
     transform: rotate(360deg);
   }
@@ -43,9 +43,9 @@ body {
   border: solid gray 0.125em;
   border-radius: 50%;
   border-right-color: transparent !important;
-  animation: z0WFBY8D9ShGhFKuN2xV0scNwkANUZ 0.96s infinite;
+  animation: z3u3uny96WlDxfZ1Uk6vHaOvBiLvdT 0.96s infinite;
 }
-@keyframes z0WFBY8D9ShGhFKuN2xV0scNwkANUZ {
+@keyframes z3u3uny96WlDxfZ1Uk6vHaOvBiLvdT {
   to {
     transform: rotate(360deg);
   }
@@ -58,9 +58,9 @@ body {
   width: 100%;
   height: 100%;
   perspective: 512px;
-  animation: zNN2nyOnn1dgL3URPOJEw350sb0BIW 0.96s linear infinite;
+  animation: ztg0tNkANxMuqLawqFACn8QKsABgZV 0.96s linear infinite;
 }
-@keyframes zNN2nyOnn1dgL3URPOJEw350sb0BIW {
+@keyframes ztg0tNkANxMuqLawqFACn8QKsABgZV {
   50% {
     transform: rotateX(180deg);
   }
@@ -77,9 +77,9 @@ body {
   height: 33.33%;
   perspective: 512px;
   display: block;
-  animation: zley10knhDBut8OuEIPnpznzW78aOq 2.4s both infinite;
+  animation: zDqjOsOEbJTGAcANECm0w6Cw5k3M5q 2.4s both infinite;
 }
-@keyframes zley10knhDBut8OuEIPnpznzW78aOq {
+@keyframes zDqjOsOEbJTGAcANECm0w6Cw5k3M5q {
   0% {
     transform: scale(1);
   }
@@ -115,9 +115,9 @@ body {
   background-color: gray;
   width: 15.626%;
   height: 100%;
-  animation: zpNVy4mTCBzJkMlu8M118WNwQGwzaX 0.96s infinite;
+  animation: zXLwWF5HcLuDCmRNu09PDZGS1LRR4W 0.96s infinite;
 }
-@keyframes zpNVy4mTCBzJkMlu8M118WNwQGwzaX {
+@keyframes zXLwWF5HcLuDCmRNu09PDZGS1LRR4W {
   50% {
     transform: scaleY(0.46);
   }

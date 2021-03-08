@@ -1,0 +1,117 @@
+.dot-menu._y li ul, .dot-menu._x li ul, .dot-menu._xy li ul,
+.dot-menu._y li section,
+.dot-menu._x li section,
+.dot-menu._xy li section {
+  display: none;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 100%;
+  background-color: rgba(255, 0, 0, 0.2);
+}
+.dot-menu._y li section > ul, .dot-menu._x li section > ul, .dot-menu._xy li li section > ul, .dot-menu._xy li section > ul {
+  display: block;
+  position: static;
+  left: inherit;
+  transform: none;
+}
+.dot-menu._y li, .dot-menu._x li, .dot-menu._xy li {
+  position: relative;
+  display: block;
+}
+.dot-menu._y a, .dot-menu._x a, .dot-menu._xy a {
+  display: inline-flex;
+  white-space: nowrap;
+}
+.dot-menu._y li:hover > ul, .dot-menu._x li:hover > ul, .dot-menu._xy li li:hover > ul, .dot-menu._xy li:hover > ul,
+.dot-menu._y li:hover > section,
+.dot-menu._x li:hover > section,
+.dot-menu._xy li li:hover > section,
+.dot-menu._xy li:hover > section,
+.dot-menu._y a:focus + ul,
+.dot-menu._x a:focus + ul,
+.dot-menu._xy li a:focus + ul,
+.dot-menu._xy a:focus + ul,
+.dot-menu._y a:focus + section,
+.dot-menu._x a:focus + section,
+.dot-menu._xy li a:focus + section,
+.dot-menu._xy a:focus + section {
+  display: block;
+}
+
+.dot-menu._xy {
+  /* lower rule */
+}
+.dot-menu._xy li ul,
+.dot-menu._xy li section {
+  z-index: 901;
+}
+.dot-menu._xy ul {
+  display: inline-flex;
+}
+.dot-menu._xy section > ul {
+  min-width: auto;
+}
+.dot-menu._xy li:hover > ul,
+.dot-menu._xy li:hover > section,
+.dot-menu._xy a:focus + ul,
+.dot-menu._xy a:focus + section {
+  display: flex;
+}
+.dot-menu._xy li {
+  /* lower rule */
+}
+.dot-menu._xy li li ul,
+.dot-menu._xy li li section {
+  z-index: 902;
+}
+.dot-menu._xy li li ul,
+.dot-menu._xy li li section {
+  top: 100%;
+}
+.dot-menu._xy li li ul ul,
+.dot-menu._xy li li ul section,
+.dot-menu._xy li li section ul,
+.dot-menu._xy li li section section {
+  top: 0;
+  left: 100%;
+  transform: none;
+}
+.dot-menu._xy li a {
+  display: block;
+}
+.dot-menu._x {
+  /* lower rule */
+}
+.dot-menu._x li ul,
+.dot-menu._x li section {
+  z-index: 901;
+}
+.dot-menu._x ul {
+  display: inline-flex;
+}
+.dot-menu._x section > ul {
+  min-width: auto;
+}
+.dot-menu._x li:hover > ul,
+.dot-menu._x li:hover > section,
+.dot-menu._x a:focus + ul,
+.dot-menu._x a:focus + section {
+  display: flex;
+}
+.dot-menu._y {
+  /* lower rule */
+}
+.dot-menu._y li ul,
+.dot-menu._y li section {
+  z-index: 901;
+}
+.dot-menu._y li ul,
+.dot-menu._y li section {
+  top: 0;
+  left: 100%;
+  transform: none;
+}
+.dot-menu._y a {
+  display: block;
+}

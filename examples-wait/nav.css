@@ -1,30 +1,205 @@
-.dot-nav {
-  color: #333;
+.dot-nav li {
+  position: relative;
 }
-.dot-nav a {
-  color: #333;
-  padding: 0.626em;
+.dot-nav ul._fold {
+  display: none;
 }
-.dot-nav a:hover,
-.dot-nav li:hover > a {
-  background-color: blue;
+.dot-nav ul._unfold {
+  display: block;
 }
-.dot-nav li ul {
-  color: #fff;
+.dot-nav._on-right._x > ul > li:last-child ul,
+.dot-nav._on-right._x > li:last-child ul, .dot-nav._on-right._xy > ul > li:last-child ul,
+.dot-nav._on-right._xy > li:last-child ul {
+  left: inherit;
+  right: 0;
 }
-.dot-nav li ul li {
-  background-color: blue;
+.dot-nav._on-right._xy > ul > li:last-child ul ul,
+.dot-nav._on-right._xy > li:last-child ul ul {
+  right: 100%;
 }
-.dot-nav li ul a {
-  color: #fff;
+.dot-nav._on-right._xy > ul > li ul ul,
+.dot-nav._on-right._xy > li ul ul {
+  left: inherit;
+  right: 100%;
 }
-.dot-nav li ul li ul li {
-  background-color: navy;
+.dot-nav._on-right._y > ul > li ul,
+.dot-nav._on-right._y > li ul {
+  left: inherit;
+  right: 100%;
 }
-.example {
-  min-height: 10em;
+.dot-nav button {
+  float: right;
+  background-color: transparent;
+  border: none;
+  width: 24px;
+  height: 24px;
+  overflow: hidden;
 }
-.example-scroll {
-  width: 320px;
-  border: solid;
+.dot-nav button:focus {
+  outline: none;
+}
+.dot-nav._xy {
+  font-size: 0;
+}
+.dot-nav._xy li ul,
+.dot-nav._xy li ._sub-lists {
+  display: none;
+  position: absolute;
+  z-index: 901;
+  min-width: 100%;
+  left: 0;
+}
+.dot-nav._xy li ._sub-lists > ul {
+  position: static;
+  display: block;
+}
+.dot-nav._xy li:hover > ul, a:hover + ul .dot-nav._xy li:hover > ._sub-lists,
+.dot-nav._xy li a:hover + ._sub-lists {
+  display: block;
+}
+.dot-nav._xy a {
+  display: block;
+  white-space: nowrap;
+}
+.dot-nav._xy li {
+  display: inline-block;
+  font-size: 1rem;
+  white-space: nowrap;
+}
+.dot-nav._xy li ul li ul {
+  top: 0;
+  left: 100%;
+}
+.dot-nav._xy li ul li {
+  display: block;
+}
+.dot-nav._x {
+  font-size: 0;
+}
+.dot-nav._x li ul,
+.dot-nav._x li ._sub-lists {
+  display: none;
+  position: absolute;
+  z-index: 901;
+  min-width: 100%;
+  left: 0;
+}
+.dot-nav._x li ._sub-lists > ul {
+  position: static;
+  display: block;
+}
+.dot-nav._x li:hover > ul, a:hover + ul .dot-nav._x li:hover > ._sub-lists,
+.dot-nav._x li a:hover + ._sub-lists {
+  display: block;
+}
+.dot-nav._x a {
+  display: block;
+  white-space: nowrap;
+}
+.dot-nav._x li {
+  display: inline-block;
+  font-size: 1rem;
+  white-space: nowrap;
+}
+.dot-nav._y li {
+  display: block;
+}
+.dot-nav._y li ul,
+.dot-nav._y li ._sub-lists {
+  display: none;
+  position: absolute;
+  z-index: 901;
+  top: 0;
+  left: 100%;
+}
+.dot-nav._y li ._sub-lists > ul {
+  position: static;
+  display: block;
+}
+.dot-nav._y li:hover > ul, a:hover + ul .dot-nav._y li:hover > ._sub-lists,
+.dot-nav._y li a:hover + ._sub-lists {
+  display: block;
+}
+.dot-nav._y a {
+  display: block;
+  white-space: nowrap;
+}
+.dot-nav._y li {
+  display: block;
+}
+.dot-nav._tree li {
+  display: block;
+}
+.dot-nav._tree li ._sub-lists > ul {
+  position: static;
+  display: block;
+}
+.dot-nav._tree a {
+  display: block;
+  white-space: nowrap;
+}
+.dot-nav._scroll {
+  position: relative;
+}
+.dot-nav._scroll > ul {
+  overflow: auto;
+  white-space: nowrap;
+  scroll-snap-type: x proximity;
+}
+.dot-nav._scroll li {
+  position: static;
+  scroll-snap-align: center;
+}
+.dot-nav._scroll li ul {
+  right: 0;
+  max-height: 50vh;
+  overflow-y: auto;
+}
+.dot-nav._scroll li ul ul {
+  overflow-y: visible;
+  height: auto;
+  position: static;
+  display: block;
+  top: 100%;
+  left: 0;
+  padding-left: 1.25em;
+  font-size: 0.875em;
+}
+@media only screen and (min-width: 1000px) {
+  .dot-nav._scroll {
+    position: inherit;
+  }
+  .dot-nav._scroll > ul {
+    overflow: visible;
+    white-space: inherit;
+    scroll-snap-type: none;
+  }
+  .dot-nav._scroll li {
+    position: relative;
+    scroll-snap-align: none;
+  }
+  .dot-nav._scroll li ul {
+    position: absolute;
+    right: inherit;
+    max-height: inherit;
+    overflow-y: visible;
+    display: none;
+  }
+  .dot-nav._scroll li ul ul {
+    overflow-y: inherit;
+    position: absolute;
+    display: none;
+    top: inherit;
+    left: inherit;
+    padding-left: inherit;
+    font-size: inherit;
+  }
+}
+.dot-nav._toggle-on-left button {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.dot-nav._toggle-on-left a {
+  padding-left: 34px;
 }

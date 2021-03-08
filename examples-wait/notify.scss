@@ -1,3 +1,7 @@
-@import '../../src/notify/standalone';
+@import './theme';
 
-@include notify-rule;
+@import '../../src/toast/index';
+
+@include toast-rule();
+
+@include toast-theming($theme);

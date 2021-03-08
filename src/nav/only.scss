@@ -28,7 +28,8 @@
         display: block;
       }
 
-      ul {
+      ul,
+      ._sub-lists {
         @if $is-tree {
 
         } @else {
@@ -47,11 +48,19 @@
         }
       }
 
+      ._sub-lists {
+        > ul {
+          position: static;
+          display: block;
+        }
+      }
+
       @if not $is-tree {
         // display sub nav
         &:hover > ul,
         a:hover + ul // does not meaningless at mouse move to sub nav
-        {
+        &:hover > ._sub-lists,
+        a:hover + ._sub-lists {
           display: block;
         }
       }
@@ -118,7 +127,7 @@
 
   // theming variables
   $text: map-get-if($options, 'text');
-  $field: map-get-if($options, 'field', if($is-root, null, #fff));
+  $field: map-get-if($options, 'field');
 
   $react-field: map-get-if($options, 'react-field');
   $react-text: map-get-if($options, 'react-text');

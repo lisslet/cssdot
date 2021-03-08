@@ -48,8 +48,7 @@
   min-width: 100%;
   left: 0;
 }
-.dot-nav._xy li:hover > ul,
-.dot-nav._xy li a:hover + ul {
+.dot-nav._xy li:hover > ul, a:hover + ul .dot-nav._xy li:hover > .sub-lists {
   display: block;
 }
 .dot-nav._xy a {
@@ -68,9 +67,6 @@
 .dot-nav._xy li ul li {
   display: block;
 }
-.dot-nav._xy ul li {
-  background-color: #fff;
-}
 .dot-nav._x {
   font-size: 0;
 }
@@ -81,8 +77,7 @@
   min-width: 100%;
   left: 0;
 }
-.dot-nav._x li:hover > ul,
-.dot-nav._x li a:hover + ul {
+.dot-nav._x li:hover > ul, a:hover + ul .dot-nav._x li:hover > .sub-lists {
   display: block;
 }
 .dot-nav._x a {
@@ -104,8 +99,7 @@
   top: 0;
   left: 100%;
 }
-.dot-nav._y li:hover > ul,
-.dot-nav._y li a:hover + ul {
+.dot-nav._y li:hover > ul, a:hover + ul .dot-nav._y li:hover > .sub-lists {
   display: block;
 }
 .dot-nav._y a {

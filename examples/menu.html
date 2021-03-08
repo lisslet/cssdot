@@ -1,0 +1,140 @@
+<html lang="ko">
+<head>
+    <title>Menu</title>
+    <link rel="stylesheet" href="../prebuilt/reset.css">
+    <link rel="stylesheet" href="../prebuilt/frame.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <style>
+        hr {
+            display: block;
+            height: 200px;
+            border: none;
+        }
+
+        .dot-menu li:hover {
+            background-color: rgba(255, 0, 0, 0.1);
+        }
+
+        .dot-menu a {
+            padding: 1.25em;
+        }
+
+        .dot-menu._y {
+            width: 200px;
+        }
+    </style>
+</head>
+<body class="_maxs12">
+
+<main id="dot-main">
+    <div id="dot-main-area">
+        <template id="menu-template">
+
+            <ul>
+                <li>
+                    <a href="#">Alpha</a>
+                </li>
+                <li>
+                    <a href="#">Bravo</a>
+                    <ul>
+                        <li>
+                            <a href="#">Bravo Alpha</a>
+                            <ul>
+                                <li>
+                                    <a href="#">
+                                        Bravo Alpha Alpha
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        Bravo Alpha Bravo
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        Bravo Alpha Charlie
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">Bravo Bravo</a>
+                            <ul>
+                                <li>
+                                    <a href="#">
+                                        Bravo Bravo Alpha
+                                    </a>
+                                    <section>
+                                        <ul>
+                                            <li>
+                                                <a href="#">Bravo Bravo Alpha Alpha</a>
+                                            </li>
+                                        </ul>
+                                    </section>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Charlie</a>
+                    <section>
+                        <ul>
+                            <li>
+                                <a href="#">Charlie Alpha</a>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li>
+                                <a href="#">Charlie Bravo</a>
+                            </li>
+                        </ul>
+                    </section>
+                </li>
+                <li>
+                    <a href="#">Delta</a>
+
+                    <ul>
+                        <li>
+                            <a href="#">Delta Alpha</a>
+                            <section>
+                                <ul>
+                                    <li>
+                                        <a href="#">Delta Alpha Alpha</a>
+                                    </li>
+                                </ul>
+                                <ul>
+                                    <li>
+                                        <a href="#">Delta Bravo Alpha</a>
+                                    </li>
+                                </ul>
+                            </section>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </template>
+
+        <nav class="dot-menu _xy">
+        </nav>
+
+        <hr>
+
+        <nav class="dot-menu _x">
+        </nav>
+
+        <hr>
+
+        <nav class="dot-menu _y">
+        </nav>
+    </div>
+</main>
+<script>
+	const template = document.getElementById('menu-template').innerHTML;
+	Array.from(document.querySelectorAll('.dot-menu'))
+		.forEach(parent => {
+			parent.innerHTML = template;
+		});
+</script>
+</body>
+</html>
