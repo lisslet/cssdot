@@ -69,6 +69,13 @@
     }
   },
   {
+    "scss": "alert/index",
+    "files": {
+      "filename": "alert",
+      "content": "@include alert-rule;"
+    }
+  },
+  {
     "scss": "suffixes/position/standalone",
     "files": {
       "filename": "suffixes/position",
