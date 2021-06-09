@@ -274,10 +274,15 @@
 /// @content keyframes
 @mixin animate($value: $DOT-DEFAULT-DURATION, $delay: null) {
   $name: rand-string();
-  animation: $name $value;
-  @if ($delay) {
-    animation-delay: $delay;
+
+  @if($delay){
+    @warn '$delay arguments is deprecated';
+    $value: list($value);
+    $value: append($value, $delay);
   }
+
+  animation: $name $value;
+
   @include frames($name) {
     @content;
   }

@@ -41,15 +41,20 @@
 .dot-nav._xy {
   font-size: 0;
 }
-.dot-nav._xy li ul {
+.dot-nav._xy li ul,
+.dot-nav._xy li ._sub-lists {
   display: none;
   position: absolute;
   z-index: 901;
   min-width: 100%;
   left: 0;
 }
-.dot-nav._xy li:hover > ul,
-.dot-nav._xy li a:hover + ul {
+.dot-nav._xy li ._sub-lists > ul {
+  position: static;
+  display: block;
+}
+.dot-nav._xy li:hover > ul, a:hover + ul .dot-nav._xy li:hover > ._sub-lists,
+.dot-nav._xy li a:hover + ._sub-lists {
   display: block;
 }
 .dot-nav._xy a {
@@ -68,21 +73,23 @@
 .dot-nav._xy li ul li {
   display: block;
 }
-.dot-nav._xy ul li {
-  background-color: #fff;
-}
 .dot-nav._x {
   font-size: 0;
 }
-.dot-nav._x li ul {
+.dot-nav._x li ul,
+.dot-nav._x li ._sub-lists {
   display: none;
   position: absolute;
   z-index: 901;
   min-width: 100%;
   left: 0;
 }
-.dot-nav._x li:hover > ul,
-.dot-nav._x li a:hover + ul {
+.dot-nav._x li ._sub-lists > ul {
+  position: static;
+  display: block;
+}
+.dot-nav._x li:hover > ul, a:hover + ul .dot-nav._x li:hover > ._sub-lists,
+.dot-nav._x li a:hover + ._sub-lists {
   display: block;
 }
 .dot-nav._x a {
@@ -97,15 +104,20 @@
 .dot-nav._y li {
   display: block;
 }
-.dot-nav._y li ul {
+.dot-nav._y li ul,
+.dot-nav._y li ._sub-lists {
   display: none;
   position: absolute;
   z-index: 901;
   top: 0;
   left: 100%;
 }
-.dot-nav._y li:hover > ul,
-.dot-nav._y li a:hover + ul {
+.dot-nav._y li ._sub-lists > ul {
+  position: static;
+  display: block;
+}
+.dot-nav._y li:hover > ul, a:hover + ul .dot-nav._y li:hover > ._sub-lists,
+.dot-nav._y li a:hover + ._sub-lists {
   display: block;
 }
 .dot-nav._y a {
@@ -116,6 +128,10 @@
   display: block;
 }
 .dot-nav._tree li {
+  display: block;
+}
+.dot-nav._tree li ._sub-lists > ul {
+  position: static;
   display: block;
 }
 .dot-nav._tree a {

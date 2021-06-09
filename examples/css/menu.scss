@@ -1,0 +1,193 @@
+@import '../../src/scss';
+
+$query: '.dot-menu';
+
+$MENU-DEFAULT-SHAPES: (
+        'xy': ('x', 'y'),
+        'x': ('x'),
+        'y': ('y'),
+  //'t': ('t')
+) !default;
+
+$MENU-DEFAULT-SHAPE: 'xy';
+
+$MENU-Z-INDEX-FROM: 900 !default;
+
+%--menu-float-type-sub-list {
+  li {
+    ul,
+    section {
+      display: none;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      min-width: 100%;
+      background-color: rgba(red, 0.2);
+    }
+
+    section {
+      > ul {
+        display: block;
+        position: static;
+        left: inherit;
+        transform: none;
+      }
+    }
+  }
+
+  li {
+    position: relative;
+    display: block;
+
+
+  }
+
+  a {
+    display: inline-flex;
+    white-space: nowrap;
+  }
+
+  li:hover > ul,
+  li:hover > section,
+  a:focus + ul,
+  a:focus + section {
+    display: block;
+  }
+}
+
+@mixin --menu-core-rule($depth, $upper-condition, $lower-condition-list...) {
+
+  $condition: nth($lower-condition-list, 1);
+  $remained-condition-list: shift($lower-condition-list);
+
+  $type: map-get($condition, 'type');
+
+  $is-x: $type == 'x';
+  $is-y: $type == 'y';
+  $is-t: $type == 't';
+
+  $is-root: $depth == 1;
+
+  $z-index: map-get-if($condition, 'z-index', $MENU-Z-INDEX-FROM) + $depth;
+
+
+  @if not $is-t {
+    @extend %--menu-float-type-sub-list;
+    li {
+      ul,
+      section {
+        z-index: $z-index;
+      }
+    }
+  }
+
+  @if $is-x {
+    ul {
+      display: inline-flex;
+    }
+
+    section {
+      > ul {
+        min-width: auto;
+      }
+    }
+
+    li:hover > ul,
+    li:hover > section,
+    a:focus + ul,
+    a:focus + section {
+      display: flex;
+    }
+
+  }
+
+  @if $is-y {
+    li {
+      ul,
+      section {
+        @if $upper-condition and map-get($upper-condition, 'type') == 'x' {
+          top: 100%;
+          ul,
+          section {
+            top: 0;
+            left: 100%;
+            transform: none;
+          }
+        } @else {
+          top: 0;
+          left: 100%;
+          transform: none;
+        }
+      }
+    }
+
+    a {
+      display: block;
+    }
+  }
+
+  /* lower rule */
+
+  li {
+    @if length($remained-condition-list) > 0 {
+      @include --menu-core-rule($depth + 1, $condition, $remained-condition-list...);
+    }
+  }
+}
+
+@mixin --menu-shape-rule($shape-condition) {
+  @include --menu-core-rule(1, null, $shape-condition...);
+}
+
+@function --formalize-shape-condition($shape-condition) {
+  $upper-shape: $MENU-DEFAULT-SHAPE;
+  $index: 1;
+
+  @each $option in $shape-condition {
+    @if type-of($option) != 'map' {
+      $option: ('type': $option);
+    }
+
+    @if not map-has-key($option, 'type') {
+      $option: map-merge($option, ('type': $upper-shape));
+    }
+
+    $upper-type: map-get($option, 'type');
+    $shape-condition: set-nth($shape-condition, $index, $option);
+    $index: $index + 1;
+  }
+
+  @return $shape-condition;
+}
+
+@function --formalize-shape-conditions($shape-conditions) {
+  @each $shape, $condition in $shape-conditions {
+    $condition: --formalize-shape-condition($condition);
+    $shape-conditions: map-merge($shape-conditions, ($shape: $condition));
+  }
+
+  @return $shape-conditions;
+}
+
+
+@mixin menu-rule($shape-conditions...) {
+  @if length($shape-conditions) < 1 {
+    $shape-conditions: $MENU-DEFAULT-SHAPES;
+  }
+
+  $shape-conditions: --formalize-shape-conditions($shape-conditions);
+
+  $query: '.dot-menu';
+
+  #{$query} {
+    @each $shape, $shape-condition in $shape-conditions {
+      $shape-query: '._' + $shape;
+      &#{$shape-query} {
+        @include --menu-shape-rule($shape-condition);
+      }
+    }
+  }
+}
+
+
+@include menu-rule;

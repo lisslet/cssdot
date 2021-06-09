@@ -1,0 +1,247 @@
+@import '../scss';
+
+$ALERT-MIN-WIDTH: 320px;
+$ALERT-MAX-WIDTH: 640px;
+
+$VERTICAL-POSITIONS: (
+        'top': (
+                top: 0,
+        ),
+        'middle': (
+                top:50%,
+                transform:translateY(-50%)
+        ),
+        'bottom': (
+                bottom:0,
+        )
+);
+
+$HORIZONTAL-POSITIONS: (
+        'left': (
+                left: 0,
+        ),
+        'center': (
+                left:50%,
+                transform:translateX(-50%)
+        ),
+        'right': (
+                right:0
+        )
+);
+
+$pad: 1.25em;
+
+$ALERT_ANIMATE_DURATION: 0.36s;
+
+@mixin alert-rule() {
+  $animate-duration: $ALERT_ANIMATE_DURATION;
+  $z-index: 10000;
+  $query: '.dot-alert';
+
+  //////////////////////////////
+  /// Alert
+  //////////////////////////////
+
+  #{$query} {
+    @each $vertical-type, $vertical-properties in $VERTICAL-POSITIONS {
+      $origin-y: unquote(if($vertical-type == 'middle', 'center', $vertical-type));
+      @each $horizontal-type, $horizontal-properties in $HORIZONTAL-POSITIONS {
+        $state: $vertical-type + '-' + $horizontal-type;
+
+        &#{'_'+$state} &-pool,
+        &-pool.dot-alert_#{$state} {
+          @include properties($vertical-properties, $horizontal-properties);
+          transform-origin: unquote($horizontal-type) $origin-y;
+        }
+      }
+    }
+
+    &-pool {
+      position: fixed;
+      z-index: $z-index;
+      // block the over size from animate
+      overflow: hidden;
+
+      &-area {
+        // block the over size from animate
+        margin: 100px;
+        max-width: $ALERT-MAX-WIDTH;
+      }
+
+      // fix the delay of new alert
+      &._js {
+        &:empty {
+          display:none;
+        }
+
+        .dot-alert {
+          animation-delay: 0s;
+        }
+      }
+    }
+
+    &_top-left,
+    &-middle-left,
+    &_bottom-left {
+      footer {
+        justify-content: flex-end;
+      }
+    }
+
+    &_top {
+      &-left,
+      &-center,
+      &-right {
+        .dot-alert-pool-area {
+          margin-top: 0;
+          display: flex;
+          flex-direction: column-reverse;
+        }
+      }
+
+      &-center {
+        .dot-alert {
+          transform-origin: center top;
+          @include animate($animate-duration both) {
+            from {
+              transform: scale(0) translateY(-100%);
+            }
+          }
+        }
+      }
+    }
+
+    &_bottom {
+      &-left,
+      &-center,
+      &-right {
+        .dot-alert-pool-area {
+          margin-bottom: $pad;
+        }
+      }
+
+      &-center {
+        .dot-alert {
+          transform-origin: center bottom;
+          @include animate($animate-duration both) {
+            from {
+              transform: scale(0) translateY(100%);
+            }
+          }
+        }
+      }
+    }
+
+
+    &_top,
+    &_middle,
+    &_bottom {
+      &-left {
+        .dot-alert-pool-area {
+          margin-left: 0;
+          @include mq-min-width(1000) {
+            margin-left: $pad;
+          }
+        }
+
+        .dot-alert {
+          transform-origin: left center;
+          @include animate($animate-duration both) {
+            from {
+              transform: scale(0) translateX(-100%);
+            }
+          }
+        }
+      }
+
+      &-right {
+        .dot-alert-pool-area {
+          margin-right: 0;
+          @include mq-min-width(1000) {
+            margin-right: $pad;
+          }
+        }
+
+        .dot-alert {
+          transform-origin: right center;
+          @include animate($animate-duration both) {
+            from {
+              transform: scale(0) translateX(100%);
+            }
+          }
+        }
+      }
+    }
+
+    @include animate-delays($animate-duration/2);
+    display: block;
+    position: relative;
+    background-color: #fff;
+    color: #000;
+    margin-top: $pad;
+    min-width: $ALERT-MIN-WIDTH;
+
+    header,
+    &-main,
+    aside {
+      padding: $pad;
+    }
+
+    &-main {
+      padding-top: 0;
+      padding-bottom: 0;
+      white-space: pre-line;
+    }
+
+    h1 {
+      font-size: 1em;
+    }
+
+    time {
+      display: block;
+      margin-top: 0.313em;
+      transform: scale(0.875);
+      transform-origin: left center;
+    }
+
+    footer {
+      display: flex;
+    }
+
+    button {
+      padding-left: $pad;
+      padding-right: $pad;
+      background-color: transparent;
+      border: 0;
+      margin: 0;
+      color: inherit;
+      text-transform: uppercase;
+      font-size: 0.875em;
+      height: 48px;
+      line-height: 48px;
+    }
+
+    &._close {
+      animation: $animate-duration dot-alert_close both !important;
+    }
+
+    &._dismiss {
+      transform-origin: center;
+      animation: $animate-duration dot-alert_dismiss both !important;
+    }
+    
+  }
+}
+
+@keyframes dot-alert_dismiss {
+  to {
+    opacity:0;
+    transform: scale(0);
+  }
+}
+
+@keyframes dot-alert_close {
+  to {
+    transform: scale(0);
+  }
+}

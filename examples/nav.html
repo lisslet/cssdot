@@ -4,12 +4,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" href="../prebuilt/reset.css">
-    <link rel="stylesheet" href="../prebuilt/dynamic/frame/1400.css">
+    <link rel="stylesheet" href="../prebuilt/frame.css">
     <link rel="stylesheet" href="css/globals.css">
-    <link rel="stylesheet" href="css/nav2.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <style>
+        .dot-nav a {
+            padding: 20px;
+        }
+    </style>
 </head>
 <body>
-<div id="dots">
+<div id="dots" class="_maxs16">
     <template id="nav-list">
         <ul>
             <li>
@@ -17,17 +22,37 @@
                 <ul>
                     <li>
                         <a href="#nav">1-1</a>
-                        <ul>
-                            <li>
-                                <a href="#nav">1-1-1</a>
-                            </li>
-                            <li>
-                                <a href="#nav">1-1-2</a>
-                            </li>
-                            <li>
-                                <a href="#nav">1-1-2</a>
-                            </li>
-                        </ul>
+                        <div class="_sub-lists">
+                            <h3>First</h3>
+                            <ul>
+                                <li>
+                                    <a href="#nav">1-1-1</a>
+                                    <ul>
+                                        <li>
+                                            <a href="#nav">1-1-1-1</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#nav">1-1-2</a>
+                                </li>
+                                <li>
+                                    <a href="#nav">1-1-2</a>
+                                </li>
+                            </ul>
+                            <h3>Second</h3>
+                            <ul>
+                                <li>
+                                    <a href="#nav">1-1-1</a>
+                                </li>
+                                <li>
+                                    <a href="#nav">1-1-2</a>
+                                </li>
+                                <li>
+                                    <a href="#nav">1-1-2</a>
+                                </li>
+                            </ul>
+                        </div>
                     </li>
                     <li>
                         <a href="#nav">1-2</a>
@@ -133,31 +158,31 @@
                 <h3>XY Style</h3>
                 <nav class="dot-nav _xy">
                 </nav>
-                <nav class="dot-nav _xy _on-right">
-                </nav>
+                <!--                <nav class="dot-nav _xy _on-right">-->
+                <!--                </nav>-->
             </section>
-            <hr class="space">
-            <section class="example">
-                <h3>X</h3>
-                <nav class="dot-nav _x">
-                </nav>
-                <nav class="dot-nav _x _on-right">
-                </nav>
-            </section>
-            <hr class="space">
-            <section class="example">
-                <h3>Y</h3>
-                <nav class="dot-nav _y" style="width:200px">
-                </nav>
-                <nav class="dot-nav _y _on-right" style="width:200px">
-                </nav>
-            </section>
-            <hr class="space">
-            <section class="example">
-                <h3>TREE</h3>
-                <nav class="dot-nav _tree _toggle-to-left" style="width:200px">
-                </nav>
-            </section>
+            <!--            <hr class="space">-->
+            <!--            <section class="example">-->
+            <!--                <h3>X</h3>-->
+            <!--                <nav class="dot-nav _x">-->
+            <!--                </nav>-->
+            <!--                <nav class="dot-nav _x _on-right">-->
+            <!--                </nav>-->
+            <!--            </section>-->
+            <!--            <hr class="space">-->
+            <!--            <section class="example">-->
+            <!--                <h3>Y</h3>-->
+            <!--                <nav class="dot-nav _y" style="width:200px">-->
+            <!--                </nav>-->
+            <!--                <nav class="dot-nav _y _on-right" style="width:200px">-->
+            <!--                </nav>-->
+            <!--            </section>-->
+            <!--            <hr class="space">-->
+            <!--            <section class="example">-->
+            <!--                <h3>TREE</h3>-->
+            <!--                <nav class="dot-nav _tree _toggle-to-left" style="width:200px">-->
+            <!--                </nav>-->
+            <!--            </section>-->
         </div>
     </main>
     <footer id="dot-foot">
@@ -166,10 +191,10 @@
         </div>
     </footer>
     <script>
-        const list = document.getElementById('nav-list').innerHTML;
-        document.querySelectorAll('.example nav').forEach(node => {
-           node.innerHTML = list;
-        });
+		const list = document.getElementById('nav-list').innerHTML;
+		document.querySelectorAll('.example nav').forEach(node => {
+			node.innerHTML = list;
+		});
     </script>
 </div>
 </body>

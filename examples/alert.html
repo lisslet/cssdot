@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../prebuilt/reset.css">
+    <link rel="stylesheet" href="../prebuilt/lift.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/alert.css">
+
+    <title>Notify Alert of cssdot</title>
+    <style>
+        .dot-alert-pool {
+            position: absolute !important;
+        }
+    </style>
+</head>
+<body>
+
+<div class="_light">
+    <example-alert-pool position="top-left"></example-alert-pool>
+    <example-alert-pool position="top-center"></example-alert-pool>
+    <example-alert-pool position="top-right"></example-alert-pool>
+    <example-alert-pool position="bottom-left"></example-alert-pool>
+    <example-alert-pool position="bottom-center"></example-alert-pool>
+    <example-alert-pool position="bottom-right"></example-alert-pool>
+</div>
+
+<!--<div class="zone _dark">-->
+<!--    <example-alert-pool position="top-left"></example-alert-pool>-->
+<!--    <example-alert-pool position="top-center"></example-alert-pool>-->
+<!--    <example-alert-pool position="top-right"></example-alert-pool>-->
+<!--    <example-alert-pool position="bottom-left"></example-alert-pool>-->
+<!--    <example-alert-pool position="bottom-center"></example-alert-pool>-->
+<!--    <example-alert-pool position="bottom-right"></example-alert-pool>-->
+<!--</div>-->
+
+<script>
+	class AlertElement extends HTMLElement {
+		constructor(color) {
+			super();
+			this.classList.add('dot-alert', 'dot-lift7-9');
+			const _color = color || this.getAttribute('color');
+			this.innerHTML = `
+                <header>
+                        <h1>${_color}</h1>
+                </header>
+                <div class="dot-alert-main">
+                     ${(Array.from(Array(Math.round(Math.random() * 10)))).map(() => 'Message').join(', ')}
+                    <time>${new Date().toLocaleString()}</time>
+                </div>
+                <footer>
+				    <button>Dismiss</button>
+
+                </footer>
+				`
+		}
+	}
+
+	customElements.define(
+		'example-alert',
+		AlertElement
+	);
+
+	customElements.define(
+		'example-alerts',
+		class extends HTMLElement {
+			constructor() {
+				super();
+
+				[
+					'primary',
+					'accent',
+					'warn'
+				].forEach(color => {
+					this.parentNode.appendChild(new AlertElement(color));
+				});
+			}
+		}
+	);
+	customElements.define(
+		'example-alert-pool',
+		class extends HTMLElement {
+			constructor() {
+				super();
+
+				const position = this.getAttribute('position');
+				const shape = this.getAttribute('shape');
+
+				const _position = position ? '_' + position : '';
+				const _shape = shape ? '_' + shape : '';
+
+				this.innerHTML = `
+
+                <div class="dot-alert-pool dot-alert${_position}">
+                    <div class="dot-alert-pool-area">
+				        <example-alerts></example-alerts>
+                    </div>
+				</div>
+
+				`
+			}
+		}
+	)
+</script>
+</body>
+</html>
