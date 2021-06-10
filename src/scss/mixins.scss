@@ -1,4 +1,4 @@
-@use "sass:math";
+
 
 @import 'mixins/hack';
 
@@ -18,7 +18,7 @@
   $size: to-number($size, true);
   $rem-size: $size;
   @if ($size > 10) {
-    $rem-size: math.div($size, 16) * 1;
+    $rem-size: ($size / 16) * 1;
   } @else {
     $size: $size * 16;
   }

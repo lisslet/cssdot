@@ -1,4 +1,4 @@
-@use "sass:math";
+
 
 @import './theme';
 
@@ -67,7 +67,7 @@ body {
       line-height: $size;
       padding:0 $padding;
       text-align: center;
-      border-radius: math.div($size, 2);
+      border-radius: ($size / 2);
 
 
       &:hover {

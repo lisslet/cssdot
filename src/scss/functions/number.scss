@@ -1,8 +1,8 @@
-@use "sass:math";
+
 
 @function to-fixed($float, $digits: 2) {
   $pow: pow(10, $digits);
-  @return math.div(round($float * $pow), $pow);
+  @return (round($float * $pow) / $pow);
 }
 
 @function pct($value) {
@@ -28,7 +28,7 @@
     }
   } @else if $exponent < 0 {
     @for $i from 1 through -$exponent {
-      $value: math.div($value, $number);
+      $value: ($value / $number);
     }
   }
 
@@ -60,7 +60,7 @@
 }
 
 @function exp-maclaurin($x, $n) {
-  @return math.div(pow($x, $n), factorial($n));
+  @return (pow($x, $n) / factorial($n));
 }
 
 @function exp($value) {
@@ -68,7 +68,7 @@
 }
 
 @function ln-maclaurin($x, $n) {
-  @return math.div(pow(-1, $n + 1), $n) * (pow($x - 1, $n));
+  @return (pow(-1, $n + 1) / $n) * (pow($x - 1, $n));
 }
 
 @function ln($value) {
@@ -79,7 +79,7 @@
     $ten-exp: $ten-exp + 1;
   }
 
-  @return summation(get-function('ln-maclaurin'), math.div($value, pow(10, $ten-exp)), 1, 100) + $ten-exp * $ln-ten;
+  @return summation(get-function('ln-maclaurin'), ($value / pow(10, $ten-exp)), 1, 100) + $ten-exp * $ln-ten;
 }
 
 

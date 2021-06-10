@@ -1,16 +1,16 @@
 
 /// https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html
 /// https://www.w3.org/TR/2008/REC-WCAG20-20081211/#relativeluminancedef
-@use "sass:math";
+
 
 @function relative-luminance($color) {
-  $r: math.div(red($color), 255);
-  $g: math.div(green($color), 255);
-  $b: math.div(blue($color), 255);
+  $r: (red($color) / 255);
+  $g: (green($color) / 255);
+  $b: (blue($color) / 255);
 
-  $r: if($r <= 0.03928, math.div($r, 12.92), pow(math.div($r, 1.055), 2.4));
-  $g: if($g <= 0.03928, math.div($g, 12.92), pow(math.div($g, 1.055), 2.4));
-  $b: if($b <= 0.03928, math.div($b, 12.92), pow(math.div($b, 1.055), 2.4));
+  $r: if($r <= 0.03928, ($r / 12.92), pow(($r / 1.055), 2.4));
+  $g: if($g <= 0.03928, ($g / 12.92), pow(($g / 1.055), 2.4));
+  $b: if($b <= 0.03928, ($b / 12.92), pow(($b / 1.055), 2.4));
 
   @return (0.2126 * $r) + (0.7152 * $g) + (0.0722 * $b);
 }
@@ -19,7 +19,7 @@ $white-relative-luminance: relative-luminance(white) !default;
 $black-relative-luminance: relative-luminance(black) !default;
 
 @function contrast-ratio($luminance1, $luminance2) {
-  @return math.div($luminance1 + 0.05, $luminance2 + 0.05)
+  @return ($luminance1 + 0.05 / $luminance2 + 0.05)
 }
 
 

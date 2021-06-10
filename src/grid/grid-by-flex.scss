@@ -1,4 +1,4 @@
-@use "sass:math";
+
 
 @mixin grid-rule-by-flex($options) {
   $selector: map-get($options, 'selector');
@@ -22,7 +22,7 @@
 
           $gap-query: get-grid-gap-suffix($gap, $layout-width);
 
-          $margin: px(math.div($gap, 2));
+          $margin: px(($gap / 2));
 
           // gap*[class*=dot-grid]
           // gap* [class*=dot-grid]
@@ -57,7 +57,7 @@
             // *-at**
             $grid-query: __add-width-selector-suffix($column, $layout-width);
 
-            $width: #{math.div(100, $column) + '%'};
+            $width: #{(100 / $column) + '%'};
 
             &#{$grid-query} {
               @extend %grid-area#{$layout-width};

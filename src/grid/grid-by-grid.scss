@@ -1,5 +1,5 @@
 
-@use "sass:math";
+
 
 @mixin grid-rule-by-grid($options) {
   $selector: map-get($options, 'selector');
@@ -22,7 +22,7 @@
         @while ($gap <= $DOT-GRID-GAP-TO) {
           $gap-query: get-grid-gap-suffix($gap, $layout-width);
 
-          $margin: px(math.div($gap, 2));
+          $margin: px(($gap / 2));
 
           #{$gap-query} {
             // gap*[class*=dot-grid]

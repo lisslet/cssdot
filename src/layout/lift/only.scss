@@ -1,4 +1,4 @@
-@use "sass:math";
+
 
 @function --lift-get-step($min, $max, $total-step, $step) {
   @if $step > 0 {
@@ -44,10 +44,10 @@
 
     $glow-color: --lift-get-rgba($color, $glow-alpha-min, $glow-alpha-max, $limit-before, $level-before);
     $glow-range: --lift-get-step($glow-min, $glow-max, $limit-before, $level-before);
-    $glow-y: round(math.div($glow-range, $limit) * round(math.div($level, 1.5)));
+    $glow-y: round(($glow-range / $limit) * round(($level / 1.5)));
 
     $shadow-range: --lift-get-step($shadow-min, $shadow-max, $limit-before, $level-before);
-    $shadow-y: round(math.div($shadow-range, $limit) * 1.2);
+    $shadow-y: round(($shadow-range / $limit) * 1.2);
 
     $shadow-color: --lift-get-rgba($color, $shadow-alpha-min, $shadow-alpha-max, $limit-before, $level-before);
 
