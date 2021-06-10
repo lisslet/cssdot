@@ -1,3 +1,5 @@
+@use "sass:math";
+
 $dot-imported-functions-string: true !default;
 
 @function starts-with($string, $substring) {
@@ -60,7 +62,7 @@ $dot-imported-functions-string: true !default;
         $result: $result * 10 + __number($char);
       } @else {
         $digits: $digits * 10;
-        $result: $result + __number($char) / $digits;
+        $result: $result + math.div(__number($char), $digits);
       }
     }
   }

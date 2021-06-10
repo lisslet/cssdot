@@ -1,3 +1,5 @@
+@use "sass:math";
+
 @import '../scss';
 
 $ALERT-MIN-WIDTH: 320px;
@@ -173,7 +175,7 @@ $ALERT_ANIMATE_DURATION: 0.36s;
       }
     }
 
-    @include animate-delays($animate-duration/2);
+    @include animate-delays(math.div($animate-duration, 2));
     display: block;
     position: relative;
     background-color: #fff;

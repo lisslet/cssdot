@@ -1,3 +1,5 @@
+@use "sass:math";
+
 @import './theme';
 
 @mixin page-links-rule() {
@@ -65,7 +67,7 @@ body {
       line-height: $size;
       padding:0 $padding;
       text-align: center;
-      border-radius: $size / 2;
+      border-radius: math.div($size, 2);
 
 
       &:hover {
@@ -107,7 +109,7 @@ body {
       line-height: $size;
       padding:0 $padding;
       text-align: center;
-      border-radius: $size / 2;
+      border-radius: math.div($size, 2);
 
 
 

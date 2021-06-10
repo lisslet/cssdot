@@ -1,3 +1,5 @@
+@use "sass:math";
+
 $dot-imported-mixins-decorate: true !default;
 
 @mixin arrow-up($size:0.5em, $color: #000) {
@@ -37,7 +39,7 @@ $dot-imported-mixins-decorate: true !default;
 }
 
 @mixin arrow-left-top($size:0.5em, $color: #000) {
-  $size: $size / 2;
+  $size: math.div($size, 2);
   width: 0;
   height: 0;
   border: $size solid $color;
@@ -46,7 +48,7 @@ $dot-imported-mixins-decorate: true !default;
 }
 
 @mixin arrow-left-bottom($size:0.5em, $color: #000) {
-  $size: $size / 2;
+  $size: math.div($size, 2);
   width: 0;
   height: 0;
   border: $size solid transparent;
@@ -55,7 +57,7 @@ $dot-imported-mixins-decorate: true !default;
 }
 
 @mixin arrow-right-top($size:0.5em, $color: #000) {
-  $size: $size / 2;
+  $size: math.div($size, 2);
   width: 0;
   height: 0;
   border: $size solid $color;
@@ -64,7 +66,7 @@ $dot-imported-mixins-decorate: true !default;
 }
 
 @mixin arrow-right-bottom($size:0.5em, $color: #000) {
-  $size: $size / 2;
+  $size: math.div($size, 2);
   width: 0;
   height: 0;
   border: $size solid transparent;

@@ -1,3 +1,14 @@
+@keyframes dot-alert_dismiss {
+  to {
+    opacity: 0;
+    transform: scale(0);
+  }
+}
+@keyframes dot-alert_close {
+  to {
+    transform: scale(0);
+  }
+}
 .dot-alert {
   display: block;
   position: relative;
@@ -65,6 +76,9 @@
   margin: 100px;
   max-width: 640px;
 }
+.dot-alert-pool._js:empty {
+  display: none;
+}
 .dot-alert-pool._js .dot-alert {
   animation-delay: 0s;
 }
@@ -78,9 +92,9 @@
 }
 .dot-alert_top-center .dot-alert {
   transform-origin: center top;
-  animation: zuqNGlHU0HlkHSw2EDgfiejO85jwqG 0.36s both;
+  animation: z2jScKJpThnd5r3PODnja8FGmcq4CE 0.36s both;
 }
-@keyframes zuqNGlHU0HlkHSw2EDgfiejO85jwqG {
+@keyframes z2jScKJpThnd5r3PODnja8FGmcq4CE {
   from {
     transform: scale(0) translateY(-100%);
   }
@@ -90,9 +104,9 @@
 }
 .dot-alert_bottom-center .dot-alert {
   transform-origin: center bottom;
-  animation: zcLlZIm8Zhs7xAzwz5eOLps4Pz9vuw 0.36s both;
+  animation: ztlrQFyMXpLlZvgXHFcwPiVLKz5YMo 0.36s both;
 }
-@keyframes zcLlZIm8Zhs7xAzwz5eOLps4Pz9vuw {
+@keyframes ztlrQFyMXpLlZvgXHFcwPiVLKz5YMo {
   from {
     transform: scale(0) translateY(100%);
   }
@@ -107,9 +121,9 @@
 }
 .dot-alert_top-left .dot-alert, .dot-alert_middle-left .dot-alert, .dot-alert_bottom-left .dot-alert {
   transform-origin: left center;
-  animation: z8hArf0qjIlol7MbdV1pfx6RjvgxkP 0.36s both;
+  animation: zfGC6OyP8nDPfrzAjAogm6V9lXZZBv 0.36s both;
 }
-@keyframes z8hArf0qjIlol7MbdV1pfx6RjvgxkP {
+@keyframes zfGC6OyP8nDPfrzAjAogm6V9lXZZBv {
   from {
     transform: scale(0) translateX(-100%);
   }
@@ -124,9 +138,9 @@
 }
 .dot-alert_top-right .dot-alert, .dot-alert_middle-right .dot-alert, .dot-alert_bottom-right .dot-alert {
   transform-origin: right center;
-  animation: zrqLP8B2ERfqbmwdsUt7iqxnbKbicb 0.36s both;
+  animation: zFY1DRPMchTM7fOIMBaG0UGQtBui0c 0.36s both;
 }
-@keyframes zrqLP8B2ERfqbmwdsUt7iqxnbKbicb {
+@keyframes zFY1DRPMchTM7fOIMBaG0UGQtBui0c {
   from {
     transform: scale(0) translateX(100%);
   }
@@ -193,4 +207,11 @@
   font-size: 0.875em;
   height: 48px;
   line-height: 48px;
+}
+.dot-alert._close {
+  animation: 0.36s dot-alert_close both !important;
+}
+.dot-alert._dismiss {
+  transform-origin: center;
+  animation: 0.36s dot-alert_dismiss both !important;
 }
