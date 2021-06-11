@@ -1,7 +1,0 @@
-@import './theme';
-
-@import '../../src/toast/index';
-
-@include toast-rule();
-
-@include toast-theming($theme);

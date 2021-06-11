@@ -19,7 +19,7 @@ $white-relative-luminance: relative-luminance(white) !default;
 $black-relative-luminance: relative-luminance(black) !default;
 
 @function contrast-ratio($luminance1, $luminance2) {
-  @return ($luminance1 + 0.05 / $luminance2 + 0.05)
+  @return ($luminance1 + 0.05) / ($luminance2 + 0.05);
 }
 
 
