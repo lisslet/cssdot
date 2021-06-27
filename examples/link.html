@@ -56,8 +56,8 @@
         <example-links heading="Clear(Default)"></example-links>
         <example-links heading="Soft" linkStyle="_soft"></example-links>
         <example-links heading="hard" linkStyle="_hard"></example-links>
-        <example-links heading="border" linkStyle="_border"></example-links>
-        <example-links heading="line" linkStyle="_line"></example-links>
+<!--        <example-links heading="border" linkStyle="_border"></example-links>-->
+<!--        <example-links heading="line" linkStyle="_line"></example-links>-->
     </div>
 </main>
 
@@ -86,9 +86,9 @@
 
 				classNames += ' dot-fx-ripple';
 				console.log(this.linkStyle);
-				if (this.linkStyle.indexOf('border') < 0 && this.linkStyle.indexOf('line') < 0) {
-					classNames += ' dot-lift1';
-				}
+				// if (this.linkStyle.indexOf('border') < 0 && this.linkStyle.indexOf('line') < 0) {
+				// 	classNames += ' dot-lift1';
+				// }
 
 				this.innerHTML = `
 <div>

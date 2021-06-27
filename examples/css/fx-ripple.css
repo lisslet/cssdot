@@ -25,9 +25,9 @@ body {
   border-radius: 50%;
   z-index: 1;
   transform: translate(-50%, -50%);
-  animation: zCtT4YsRTtY74zk5AUgf4q9Y30WVSY 0.72s both ease-out;
+  animation: z94qMjU13Ct9M6jMLvsvDB8c9vwevH 0.72s both ease-out;
 }
-@keyframes zCtT4YsRTtY74zk5AUgf4q9Y30WVSY {
+@keyframes z94qMjU13Ct9M6jMLvsvDB8c9vwevH {
   0% {
     transform: translate(-50%, -50%) scale(0);
   }
@@ -45,7 +45,7 @@ body {
 .dot-fx-ripple:before {
   display: none;
 }
-.dot-fx-ripple:active:before, .dot-fx-ripple:focus:before {
+.dot-fx-ripple:focus:before {
   display: block;
 }
 .dot-fx-ripple_js:before {

@@ -199,11 +199,11 @@
   @return $values;
 }
 
-@function is-light-theme($theme){
+@function is-light-theme($theme) {
   @return map-get($theme, 'tone') == 'light';
 }
 
-@function is-dark-theme($theme){
+@function is-dark-theme($theme) {
   @return map-get($theme, 'tone') == 'dark';
 }
 
@@ -273,4 +273,96 @@
     @return shade($color, $amount);
   }
   @return tint($color, $amount);
+}
+
+/// String to palette color
+/// @private
+@function theme-replace-string($theme, $value, $default-label) {
+  @if starts-with($value, '$') {
+    $label: str-slice($value, 2);
+    @if ($label == 'color') {
+      $label: $default-label;
+    }
+
+    $color: pick($theme, $label);
+    @return $color;
+  }
+  @return $value;
+}
+
+/// Create new color based on pallet
+/// @description
+///   : Method starts with `@`
+///   text - safe color of palette color
+///   bright - lighten color of palette color
+///   opacity - transparency applied color of palette color
+/// @private
+@function theme-replace-list($theme, $value, $default-label) {
+
+  // @debug $value, $default-label;
+
+  $length: length($value);
+  $color: nth($value, 1);
+  $color: theme-replace-string($theme, $color, $default-label);
+
+  $function: '@bright';
+  $amount: 0.1;
+  // $color, $method, $amount
+  @if $length == 3 {
+    $function: nth($value, 2);
+    $amount: nth($value, 3);
+
+    // $color, $function
+    // OR
+    // $color, $amount
+  } @else if $length == 2 {
+    $function-or-amount: nth($value, 2);
+    // $color, (@bright), $amount
+    @if type-of($function-or-amount) == 'string' {
+      $function: $function-or-amount;
+      // $color, $method, (0.1)
+    } @else {
+      $amount: $function-or-amount;
+    }
+  }
+
+  // remove @
+  $function: str-slice($function, 2);
+
+  // convert amount to percent unit
+  @if $amount < 2 {
+    $amount: $amount * 100%;
+  }
+
+  // @debug $color, $function, $amount;
+
+  @if $function == 'text' {
+    $color: safe-color($color);
+  } @else if $function == 'bright' {
+    $color: lighten($color, $amount);
+  } @else if $function == 'opacity' {
+    $color: rgba($color, $amount);
+  }
+
+  @return $color;
+}
+
+/// Get theme value
+@function theme-value($theme, $value, $default-label) {
+  $type: type-of($value);
+  @if $type == 'list' {
+    @return theme-replace-list($theme, $value, $default-label);
+  } @else if $type == 'string' {
+    @return theme-replace-string($theme, $value, $default-label);
+  }
+
+  @return $value;
+}
+
+/// Set theme related property
+@mixin theme-properties($theme, $label, $properties) {
+  @each $property, $value in $properties {
+    $value: theme-value($theme, $value, $label);
+    #{$property}: $value;
+  }
 }

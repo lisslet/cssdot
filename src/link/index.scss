@@ -3,35 +3,37 @@
 /// Link Styles
 $SHAPES: (
         'clear': (
-                'core': (),
+                'core': (
+                ),
                 'normal': (
                         color: '$color',
                 ),
                 'focus': (
-                        background-color: ('$color', '@opacity', 0.06)
+                        background-color: ('$color', '@opacity', 0.12)
                 ),
                 'react': (
-                        background-color: ('$color', '@opacity', 0.12),
+                        background-color: ('$color', '@opacity', 0.18),
                         color: '$color'
                 ),
                 'active': (
                         color: '$color',
-                        background-color: ('$color', '@opacity', 0.24),
+                        background-color: transparent
                 )
         ),
         'soft': (
                 'core': (),
                 'normal': (
-                        background-color: ('$color', '@opacity', 0.12),
+                        background-color: ('$color', '@opacity', 0.08),
                         color: '$color'
                 ),
                 'focus': (
+                        background-color: ('$color', '@opacity', 0.12),
                 ),
                 'react': (
-                        color: ('$color', '@text'),
-                        background-color: ('$color', '@opacity', 0.64)
+                        background-color: ('$color', '@opacity', 0.18)
                 ),
                 'active': (
+                        background-color: ('$color', '@opacity', 0.08),
                 )
         ),
         'hard': (
@@ -41,62 +43,64 @@ $SHAPES: (
                         color: ('$color', '@text')
                 ),
                 'focus': (
-                        background-color: ('$color', '@bright', 0.12),
-                        color: ('$color', '@text')
+                        background-color: ('$color', '@opacity', 0.12),
+                        color: ('$color')
                 ),
                 'react': (
-                        background-color: ('$color', '@bright', 0.24),
-                        color: ('$color', '@text')
-                ),
-                'active': (
-                        background-color: ('$color', '@opacity', 0.1),
-                        color: ('$color', '@text')
-                )
-        ),
-        'border': (
-                'core': (
-                        border-style:solid,
-                        border-width: 2px
-                ),
-                'normal': (
-                        border-color: '$color',
-                        color: '$color'
-                ),
-                'focus': (
-                        border-color: ('$color', '@bright', 0.12),
-                ),
-                'react': (
-                        border-color: ('$color', '@bright', 0.24),
+                        background-color: ('$color', '@opacity', 0.18),
                         color: '$color'
                 ),
                 'active': (
-                        color: '$color',
-                        background-color: ('$color', '@opacity', 0.1)
+                        background-color: '$color',
+                        color: ('$color', '@text')
                 )
         ),
-        'line': (
-                'core': (
-                        border-style: solid,
-                        border-width: 0 0 2px 0,
-                        border-bottom-left-radius: 0,
-                        border-bottom-right-radius: 0
-                ),
-                'normal': (
-                        border-color: '$color',
-                        color: '$color',
-                ),
-                'focus': (
-                        border-color: ('$color', '@bright', 0.12),
-                ),
-                'react': (
-                        color: '$color',
-                        border-color: ('$color', '@bright', 0.24)
-                ),
-                'active': (
-                        color: '$color',
-                        background-color: ('$color', '@opacity', 0.1)
-                )
-        ),
+  /*
+  'border': (
+          'core': (
+                  border-style:solid,
+                  border-width: 2px
+          ),
+          'normal': (
+                  border-color: '$color',
+                  color: '$color'
+          ),
+          'focus': (
+                  border-color: ('$color', '@bright', 0.12),
+          ),
+          'react': (
+                  background-color: ('$color', '@opacity', 0.18),
+          ),
+          'active': (
+                  background-color: '$color',
+                  color: ('$color', '@text')
+          )
+  ),
+  'line': (
+          'core': (
+                  border-style: solid,
+                  border-width: 0 0 2px 0,
+                  border-radius: 0
+          ),
+          'normal': (
+                  border-color: '$color',
+                  color: '$color',
+          ),
+          'focus': (
+                  border-color: ('$color', '@bright', 0.12),
+          ),
+          'react': (
+                  color: ('$color', '@bright', 0.12),
+                  border-color: ('$color', '@bright', 0.12),
+                  background-color: transparent
+          ),
+          'active': (
+                  border-color: '$color',
+                  color: '$color',
+                  background-color: transparent
+          )
+  ),
+   */
 );
 
 $DEFAULT-SHAPE: 'clear';
@@ -138,125 +142,13 @@ $DEFAULT-SHAPE: 'clear';
 
 $INITIALIZED-STYLES: get-initialize-properties($SHAPES);
 
-@function stringify($target, $tap: '') {
-  // \A is Line breaker
-  $lines: '';
-  $type: type-of($target);
-  @if $type == 'map' {
-    $lines: #{$lines + $tap + '(\A'};
-    @each $key, $value in $target {
-      $lines: #{$lines + $tap + $key + ': ' + stringify($value, $tap + '  ') + '\A'};
-    }
-    $lines: #{$lines + $tap + ')\A'};
-  } @else if ($type == 'list') {
-    $lines: #{$lines + $tap + '(\A'};
-    @each $value in $target {
-      $lines: #{$lines + $tap + stringify($value, $tap +  '  ') + '\A'}
-    }
-    $lines: #{$lines + $tap + ')\A'};
-  } @else {
-    $lines: #{$lines + inspect($target) + '\A'};
-  }
-  @return $lines;
-}
-
-/// String to palette color
-/// @private
-@function theme-replace-string($theme, $value, $default-label) {
-  @if starts-with($value, '$') {
-    $label: str-slice($value, 2);
-    @if ($label == 'color') {
-      $label: $default-label;
-    }
-
-    $color: pick($theme, $label);
-    @return $color;
-  }
-  @return $value;
-}
-
-/// Create new color based on pallet
-/// @description
-///   : Method starts with `@`
-///   text - safe color of palette color
-///   bright - lighten color of palette color
-///   opacity - transparency applied color of palette color
-/// @private
-@function theme-replace-list($theme, $value, $default-label) {
-
-  // @debug $value, $default-label;
-
-  $length: length($value);
-  $color: nth($value, 1);
-  $color: theme-replace-string($theme, $color, $default-label);
-
-  $function: '@bright';
-  $amount: 0.1;
-  // $color, $method, $amount
-  @if $length == 3 {
-    $function: nth($value, 2);
-    $amount: nth($value, 3);
-
-    // $color, $function
-    // OR
-    // $color, $amount
-  } @else if $length == 2 {
-    $function-or-amount: nth($value, 2);
-    // $color, (@bright), $amount
-    @if type-of($function-or-amount) == 'string' {
-      $function: $function-or-amount;
-      // $color, $method, (0.1)
-    } @else {
-      $amount: $function-or-amount;
-    }
-  }
-
-  // remove @
-  $function: str-slice($function, 2);
-
-  // convert amount to percent unit
-  @if $amount < 2 {
-    $amount: $amount * 100%;
-  }
-
-  // @debug $color, $function, $amount;
-
-  @if $function == 'text' {
-    $color: safe-color($color);
-  } @else if $function == 'bright' {
-    $color: lighten($color, $amount);
-  } @else if $function == 'opacity' {
-    $color: rgba($color, $amount);
-  }
-
-  @return $color;
-}
-
-/// Get theme value
-@function theme-value($theme, $value, $default-label) {
-  $type: type-of($value);
-  @if $type == 'list' {
-    @return theme-replace-list($theme, $value, $default-label);
-  } @else if $type == 'string' {
-    @return theme-replace-string($theme, $value, $default-label);
-  }
-
-  @return $value;
-}
-
-/// Set theme related property
-@mixin theme-properties($theme, $label, $properties) {
-  @each $property, $value in $properties {
-    $value: theme-value($theme, $value, $label);
-    #{$property}: $value;
-  }
-}
 
 @mixin link-rule() {
   .dot-link {
     // a, other
     display: inline-block;
     vertical-align: middle;
+    color: currentColor;
 
     // button
     background-color: transparent;
@@ -268,12 +160,11 @@ $INITIALIZED-STYLES: get-initialize-properties($SHAPES);
     font-size: 1rem;
     cursor: pointer;
     box-sizing: border-box;
-    border-radius: 4px;
     line-height: 36px;
+    border-radius: 0.313em;
 
-    &-area {
+    > span {
       display: inline-block;
-      // min-width: 48px;
       text-align: center;
       padding-left: 0.625em;
       padding-right: 0.625em;
@@ -282,47 +173,58 @@ $INITIALIZED-STYLES: get-initialize-properties($SHAPES);
     &:focus {
       outline: none;
     }
+
+    @each $shape, $states in $SHAPES {
+      $single-query: if($shape == $DEFAULT-SHAPE, '', #{'._' + $shape});
+      $multiple-query: '_' + $shape + 's';
+
+      &#{$multiple-query} &,
+      &#{$single-query} {
+        // core properties
+        $core-properties: map-get($states, 'core');
+        @include properties($core-properties);
+      }
+    }
   }
 }
 
 @mixin link-theming($theme) {
-  @each $shape, $states in $SHAPES {
-    $single-query: if($shape == $DEFAULT-SHAPE, '', #{'._' + $shape});
+  .dot-link {
+    @each $style, $states in $SHAPES {
+      $single-query: if($style == $DEFAULT-SHAPE, '', #{'._' + $style});
+      $multiple-query: '_' + $style + 's';
+      &#{$multiple-query} &,
+      &#{$single-query} {
+        $link-properties: map-get($states, 'normal');
+        $focus-properties: map-get($states, 'focus');
+        $hover-properties: map-get($states, 'react');
+        $active-properties: map-get($states, 'active');
 
-    #{'.dot-link_' + $shape + 's'} .dot-link,
-    #{'.dot-link'+$single-query} {
-      $core-properties: map-get($states, 'core');
+        // coloring properties
+        @each $theme-label in $THEME-THEMING-LABELS {
+          $color-query: if($theme-label == 'text', '', '._'+$theme-label);
 
-      $link-properties: map-get($states, 'normal');
-      $focus-properties: map-get($states, 'focus');
-      $hover-properties: map-get($states, 'react');
-      $active-properties: map-get($states, 'active');
+          &#{$color-query} {
+            @include theme-properties($theme, $theme-label, $link-properties);
 
-      // core properties
-      @include properties($core-properties);
+            &._focus,
+            &:focus {
+              @include theme-properties($theme, $theme-label, $focus-properties);
+            }
 
-      // coloring properties
-      @each $theme-label in $THEME-THEMING-LABELS {
+            &._hover,
+            &:hover {
+              @include theme-properties($theme, $theme-label, $hover-properties);
+            }
 
-        &#{'._'+$theme-label} {
-          @include theme-properties($theme, $theme-label, $link-properties);
+            &._active,
+            &:active {
+              @include theme-properties($theme, $theme-label, $active-properties);
 
-          &._focus,
-          &:focus {
-            @include theme-properties($theme, $theme-label, $focus-properties);
-          }
-
-          &._hover,
-          &:hover {
-            @include theme-properties($theme, $theme-label, $hover-properties);
-          }
-
-          &._active,
-          &:active {
-            @include theme-properties($theme, $theme-label, $active-properties);
-
-            &.dot-fx-ripple {
-              background-color: map-get($hover-properties, background-color);
+              &.dot-fx-ripple {
+                // background-color: map-get($hover-properties, background-color);
+                // background-color: transparent;
+              }
             }
           }
         }
