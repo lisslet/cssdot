@@ -46,7 +46,6 @@
         display:none;
       }
 
-      &:active,
       &:focus {
         &:before {
           display: block;
@@ -58,15 +57,13 @@
         animation:none;
       }
 
-      $labels: primary accent warn;
     }
   }
 }
 
 @mixin fx-ripple-theming($theme) {
-  $labels: primary secondary accent warn;
   .dot-fx-ripple {
-    @each $label in $labels {
+    @each $label in $THEME-THEMING-LABELS {
       $color: pick($theme, $label);
       &#{'._'+$label} {
         .dot-fx-ripple-instance,
