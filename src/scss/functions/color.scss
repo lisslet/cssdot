@@ -22,8 +22,8 @@ $BLACK-RELATIVE-LUMINANCE: relative-luminance(black) !default;
 }
 
 @function is-safe-for-black($color) {
-  $white: contrast-ratio($white-relative-luminance, relative-luminance($color));
-  $black: contrast-ratio(relative-luminance($color), $black-relative-luminance);
+  $white: contrast-ratio($WHITE-RELATIVE-LUMINANCE, relative-luminance($color));
+  $black: contrast-ratio(relative-luminance($color), $BLACK-RELATIVE-LUMINANCE);
   @return $white < $black;
 }
 

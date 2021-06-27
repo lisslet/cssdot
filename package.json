@@ -1,6 +1,6 @@
 {
   "name": "@lisslet/cssdot",
-  "version": "33.1.1",
+  "version": "33.1.2",
   "description": "SASS based CSS Framework",
   "main": "index.js",
   "scripts": {
